@@ -1,0 +1,377 @@
+/* ===========================================================
+   Shared styles for the hiking app auth screens
+   (Onboarding / Sign Up / Sign In / Forgot Password)
+   =========================================================== */
+
+:root {
+  --bg: #fbe9e2;
+  --text-dark: #3d2620;
+  --text-muted: #9c8a86;
+  --placeholder: #c3aca6;
+  --input-bg: #ffffff;
+  --input-border: #efe0da;
+  --primary: #b97686;
+  --primary-pressed: #a4677a;
+  --dark-btn: #3d2620;
+  --link: #b97686;
+  --divider: #e7d3ca;
+  --status-bar: #3d2620;
+  --radius-lg: 28px;
+  --radius-md: 16px;
+  --radius-pill: 999px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  background: #e7e2e2;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 16px;
+}
+
+/* ---------- Phone frame ---------- */
+.screen {
+  position: relative;
+  width: 390px;
+  min-height: 844px;
+  background: var(--bg);
+  border-radius: 44px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Status bar ---------- */
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px 0;
+  color: var(--status-bar);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.status-bar .icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-bar svg {
+  display: block;
+}
+
+/* ---------- Top nav (back button) ---------- */
+.top-nav {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px 0;
+  min-height: 44px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.top-nav .title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-left: 4px;
+}
+
+/* ---------- Content ---------- */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 28px 40px;
+  text-align: center;
+}
+
+.boot {
+  font-size: 56px;
+  line-height: 1;
+  margin: 12px 0 20px;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 6px 10px rgba(61, 38, 32, 0.15));
+}
+
+.boot.small {
+  font-size: 44px;
+  margin: 4px 0 16px;
+}
+
+h1.heading {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+
+p.subheading {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 28px;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+/* ---------- Language toggle (onboarding) ---------- */
+.lang-toggle {
+  display: inline-flex;
+  background: #f3d9d0;
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  margin-bottom: auto;
+  gap: 2px;
+}
+
+.lang-toggle button {
+  border: none;
+  background: transparent;
+  padding: 8px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.lang-toggle button.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ---------- Form ---------- */
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrap input {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  font-size: 15px;
+  color: var(--text-dark);
+  outline: none;
+  font-family: var(--font);
+}
+
+.input-wrap input::placeholder {
+  color: var(--placeholder);
+}
+
+.input-wrap input:focus {
+  border-color: var(--primary);
+}
+
+.eye-toggle {
+  position: absolute;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.forgot-link {
+  align-self: flex-end;
+  font-size: 13px;
+  color: var(--link);
+  text-decoration: underline;
+  font-weight: 600;
+  margin-top: -4px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  width: 100%;
+  padding: 17px;
+  border-radius: var(--radius-md);
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:active {
+  background: var(--primary-pressed);
+}
+
+.btn-dark {
+  background: var(--dark-btn);
+  color: #fff;
+}
+
+.btn-outline {
+  background: #ffffff;
+  color: var(--text-dark);
+  border: 1px solid var(--input-border);
+}
+
+.social-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.icon-glyph {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ---------- Divider ---------- */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 4px 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--divider);
+}
+
+/* ---------- Footer texts ---------- */
+.terms {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 18px 0 6px;
+  line-height: 1.5;
+}
+
+.terms a {
+  color: var(--text-muted);
+  text-decoration: underline;
+}
+
+.switch-text {
+  font-size: 14px;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.switch-text a {
+  color: var(--link);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Push footer group to bottom on shorter forms */
+.spacer {
+  flex: 1;
+}
+
+.bottom-group {
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------- Home indicator ---------- */
+.home-indicator {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 8px;
+}
+
+.home-indicator span {
+  width: 134px;
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: var(--text-dark);
+  opacity: 0.85;
+  display: block;
+}
+
+/* ---------- Responsive tweak ---------- */
+@media (max-width: 420px) {
+  .screen {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    min-height: 100vh;
+  }
+  body {
+    padding: 0;
+  }
+}
