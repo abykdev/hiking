@@ -3,9 +3,11 @@ import { useAuth } from './components/auth/AuthContext'
 import './App.css'
 import OnboardingScreen from './components/OnboardingScreen.jsx'
 import SignInScreen from './components/SignInScreen.jsx'
+import SignUpScreen from './components/SignUpScreen.jsx'
 const screens = {
   "onboarding": OnboardingScreen,
   "signin": SignInScreen,
+  "signup": SignUpScreen,
 }
 function App() {
   const [screen, setScreen] = useState("onboarding");

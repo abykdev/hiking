@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from './auth/AuthContext'
 
 
-function SignInScreen() {
+function SignInScreen({ onNext }) {
     const { t, i18n } = useTranslation('signin');
     console.log('language:', i18n.language);
     console.log('all data from SignInScreen:', i18n.store.data);
@@ -54,9 +54,9 @@ function SignInScreen() {
                     <div className="spacer"></div>
 
                     <div className="bottom-group">
-                        <button className="btn btn-primary" type="button">{t('button')}</button>
+                        <button className="btn btn-primary" type="submit">{t('button')}</button>
                         <p className="terms">{t('terms')}</p>
-                        <p className="switch-text">{t('switch-text')} <span className="link">{t('signUp')}</span></p>
+                        <p className="switch-text">{t('switch-text')} <span className="link" onClick={() => onNext('signup')}>{t('signUp')}</span></p>
                     </div>
                 </form>
             </div>

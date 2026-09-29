@@ -375,3 +375,9 @@ p.subheading {
     padding: 0;
   }
 }
+.link {
+  cursor: pointer;
+  color: var(--link);
+  font-weight: 700;
+  text-decoration: none;
+}

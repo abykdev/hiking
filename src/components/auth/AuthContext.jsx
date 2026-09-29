@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext(null);
+const url = 'https://hikingapi.abyk.ru';
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -41,12 +42,26 @@ export function AuthProvider({ children }) {
   }, [token]);
 
   const login = async (email, password) => {
-    const res = await fetch('/api/login', {
+    const res = await fetch(url+'/user/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     });
     if (!res.ok) throw new Error('Login failed');
+
+    const data = await res.json();
+    localStorage.setItem('token', data.token);
+    setToken(data.token);
+    setUser(data.user);
+    setStatus('authenticated');
+  };
+  const register = async (email, password) => {
+    const res = await fetch(url+'/api/users/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+    if (!res.ok) throw new Error('Registration failed');
 
     const data = await res.json();
     localStorage.setItem('token', data.token);
@@ -63,7 +78,7 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, status, login, logout }}>
+    <AuthContext.Provider value={{ user, token, status, login, register, logout }}>
       {children}
     </AuthContext.Provider>
   );
