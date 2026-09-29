@@ -2,13 +2,14 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import enOnboarding from '../locales/en/onboarding.json';
 import ruOnboarding from '../locales/ru/onboarding.json';
-
+import enSignIn from '../locales/en/signin.json';
+import ruSignIn from '../locales/ru/signin.json';
 i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: { onboarding: enOnboarding },
-      ru: { onboarding: ruOnboarding }
+      en: { onboarding: enOnboarding,signin: enSignIn },
+      ru: { onboarding: ruOnboarding,signin: ruSignIn }
     },
     lng: localStorage.getItem('lang') || 'en',
     fallbackLng: 'en',

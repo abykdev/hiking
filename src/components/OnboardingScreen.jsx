@@ -1,14 +1,12 @@
 import { useState } from 'react';
-
 import { useTranslation } from 'react-i18next';
 
 
-function OnboardingScreen() {
+function OnboardingScreen({ onNext }) {
   const { t, i18n } = useTranslation('onboarding');
-  console.log('current ns:', i18n.options.defaultNS);
-  console.log('language:', i18n.language);
-  console.log('all data:', i18n.store.data);
-  console.log('t:', t('heading'));
+  //console.log('language:', i18n.language);
+  //console.log('all data:', i18n.store.data);
+  //console.log('t:', t('heading'));
   const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
 
   return (
@@ -38,7 +36,7 @@ function OnboardingScreen() {
           </div>
 
           <div className="bottom-group">
-            <button className="btn btn-primary" type="button">{t('getStarted')}</button>
+            <button className="btn btn-primary" type="button" onClick={() => onNext('signin')}>{t('getStarted')}</button>
           </div>
 
         </div>
