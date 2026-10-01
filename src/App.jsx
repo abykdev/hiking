@@ -1,34 +1,33 @@
 import { useState } from 'react'
 import { useAuth } from './components/auth/AuthContext'
 import './App.css'
+import { useLanguage } from './i18n/LanguageContext';
 import OnboardingScreen from './components/OnboardingScreen.jsx'
 import SignInScreen from './components/SignInScreen.jsx'
-import SignUpScreen from './components/SignUpScreen.jsx'
-const screens = {
-  "onboarding": OnboardingScreen,
-  "signin": SignInScreen,
-  "signup": SignUpScreen,
-}
+import SignUpScreen from './components/SignUpScreen.jsx';
+import AppNavigator from './navigation/AppNavigator.jsx'
+
 function App() {
-  const [screen, setScreen] = useState("onboarding");
-  const CurrentScreen = screens[screen];
-  const [value, setValue] = useState('');
+  //const [screen, setScreen] = useState("onboarding");
+  //const CurrentScreen = screens[screen];
+  //const [value, setValue] = useState('');
   const { status } = useAuth();
-  const handleNext = (target) => {
-    // Авторизован → вместо формы сразу успех
-    if (target === 'signin' && status === 'authenticated') {
-      setScreen('success');
-      return;
-    }
-    setScreen(target);
-  };
-  return (
-    <CurrentScreen
-      value={value}
-      onChangeValue={setValue}
-      onNext={handleNext}
-    />
-  )
+  const { lang } = useLanguage();
+
+  const [authScreen, setAuthScreen] = useState('signin');  // 'signin' | 'signup'
+  if (status === 'loading') {
+    return <div className="screen">Загрузка…</div>;
+  }
+  if (!lang) return <OnboardingScreen />;
+  if (status === 'authenticated') {
+    return <AppNavigator />;
+  }
+
+  if (authScreen === 'signup') {
+    return <SignUpScreen onGoToSignIn={() => setAuthScreen('signin')} />;
+  }
+  return <SignInScreen onGoToSignUp={() => setAuthScreen('signup')} />;
 }
+
 
 export default App

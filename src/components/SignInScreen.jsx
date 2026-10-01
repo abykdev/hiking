@@ -5,17 +5,18 @@ import { useAuth } from './auth/AuthContext'
 
 function SignInScreen({ onNext }) {
     const { t, i18n } = useTranslation('signin');
-    console.log('language:', i18n.language);
-    console.log('all data from SignInScreen:', i18n.store.data);
-    console.log('t:', t('heading'));
+    //console.log('language:', i18n.language);
+    //console.log('all data from SignInScreen:', i18n.store.data);
+    //console.log('t:', t('heading'));
     const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
     const { login } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = async (e) => {
-        if (!value.trim() || loading) return;
+        if (!email.trim() || !password.trim()) return;
         e.preventDefault();
         setLoading(true);
         setError(null);

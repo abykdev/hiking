@@ -5,9 +5,9 @@ import { useAuth } from './auth/AuthContext'
 
 function SignUpScreen({ onNext }) {
     const { t, i18n } = useTranslation('signup');
-    console.log('language:', i18n.language);
-    console.log('all data from SignInScreen:', i18n.store.data);
-    console.log('t:', t('heading'));
+    //console.log('language:', i18n.language);
+    //console.log('all data from SignInScreen:', i18n.store.data);
+    //console.log('t:', t('heading'));
     const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
