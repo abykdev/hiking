@@ -1,6 +1,11 @@
 import HomeScreen from '../components/HomeScreen';
 export const screens = {
-  Home: HomeScreen,
-  
-  // ...10–20 записей
+  home: HomeScreen,
+  explore: ExploreScreen,
+  hikeDetail: HikeDetailScreen,
+  createEvent: CreateEventScreen,
+  findBuddies: FindBuddiesScreen,
+  messages: MessagesScreen,
+  profileMe: ProfileScreen,
+  routes: RoutesScreen,
 };

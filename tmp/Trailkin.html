@@ -1,0 +1,2624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"v":1,"cred":"query","capabilities":{"artifact":"artifact.Kiow93e4.js","assets":"assets.DOAjpBS9.js","comments":"comments.DrhK3r8W.js","db":"db.zFlAA4qL.js","downloads":"downloads.axDW2QAi.js","embed":"embed.DcZf-TSv.js","endpoints":"endpoints.BPfoKaE1.js","files":"files.IkpCjcgM.js","mcp":"mcp.C8qKIFvQ.js","network":"network.B5UA9Su4.js","permissions":"permissions.DWFFeHI0.js","room":"room.DRL7voHn.js","sample":"sample.DZwWAZDd.js","self":"artifact.Kiow93e4.js","user":"user.CB0zJsP2.js"},"transforms":"_transforms.CkRgqq9F.js","comments":"_comments.DUaNQZcg.js","translate":"_translate.DqxC5ek1.js","ldx":"_ldx.B4FSryPi.js"}                                 </script><script>(function(){"use strict";function lr(t){return t==="cookie"||t==="query"?t:void 0}var Gn=3e5;function cr(t,e){try{const r=t("navigation")[0],n=[r.responseStart,r.redirectEnd-r.redirectStart,r.domContentLoadedEventStart,e(),r.connectEnd-r.domainLookupStart,r.responseStart-r.requestStart];r.requestStart>0||(n.length=4);for(let a=0;a<n.length;a++)if(n[a]>=0&&n[a]<=3e5)n[a]=n[a]|0;else{if(a<4)return;n.length=4}return n}catch{return}}var ur=["light","dark","system"],fr=/^[A-Za-z0-9_-]{1,64}$/,Rt=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,dr=new Set(["class","hidden","value","checked","style","title","alt","placeholder","lang","dir","role","tabindex","disabled","readonly","contenteditable","open","colspan","rowspan"]);function hr(t){const e=t.toLowerCase();return e.startsWith("data-")||e.startsWith("aria-")||dr.has(e)}var Tt="data-ldx-props";function pr(t,e){if(e.toLowerCase()===Tt)return!0;const r=t.getAttribute(Tt);if(r===null)return!1;try{const n=JSON.parse(r);if(n===null||typeof n!="object"||Array.isArray(n))return!0;const a=e.toLowerCase();return Object.keys(n).some(s=>s.toLowerCase()===a)}catch{return!0}}var zn="http://www.w3.org/1999/xhtml",mr="http://www.w3.org/2000/svg",vr=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),_r=new Set(["script","style"]);function yr(t){const e=t.localName.toLowerCase();return t.namespaceURI==="http://www.w3.org/1999/xhtml"?!vr.has(e):t.namespaceURI===mr?!_r.has(e):!1}function Ze(t,e){return t===e||(t===160||t===32)&&(e===160||e===32)}function gr(t,e){const r=t.length,n=e.length;let a=0;for(;a<r&&a<n&&Ze(t.charCodeAt(a),e.charCodeAt(a));)a++;let s=0;for(;s<r-a&&s<n-a&&Ze(t.charCodeAt(r-1-s),e.charCodeAt(n-1-s));)s++;return{p:a,s}}function wr(t,e){const r=t.firstChild;if(t.childNodes.length!==1||r===null||r.nodeType!==Node.TEXT_NODE){t.textContent=e;return}const n=r.data,a=n.length,s=e.length,{p:c,s:d}=gr(n,e);c===a&&d===0&&a===s||r.replaceData(c,a-c-d,e.slice(c,s-d));const L=r.data,E=t.ownerDocument.getSelection?.()??null,w=E!==null&&E.rangeCount>0&&(E.anchorNode===r||E.focusNode===r)?{anchor:E.anchorNode,anchorOffset:E.anchorOffset,focus:E.focusNode,focusOffset:E.focusOffset}:null;let m=-1,k=-1;for(let h=0;h<L.length&&h<e.length;h++){const p=L.charCodeAt(h),x=e.charCodeAt(h);p!==x&&Ze(p,x)&&(m<0&&(m=h),k=h)}const O=m>=0;if(O&&r.replaceData(m,k-m+1,e.slice(m,k+1)),O&&w!==null&&w.anchor!==null&&w.focus!==null)try{E.setBaseAndExtent(w.anchor,w.anchorOffset,w.focus,w.focusOffset)}catch{}}var br=new Set(["html","head","body","frameset"]);function Er(t){return t.namespaceURI==="http://www.w3.org/1999/xhtml"&&br.has(t.localName)}function Sr(t){if(t===null||typeof t!="object")return!1;const e=t;if(typeof e.target!="string"||!fr.test(e.target)||e.text!==void 0&&typeof e.text!="string")return!1;if(e.attrsSet!==void 0){if(e.attrsSet===null||typeof e.attrsSet!="object")return!1;for(const[r,n]of Object.entries(e.attrsSet))if(!Rt.test(r)||typeof n!="string")return!1}if(e.attrsRemoved!==void 0){if(!Array.isArray(e.attrsRemoved))return!1;for(const r of e.attrsRemoved)if(typeof r!="string"||!Rt.test(r))return!1}return!0}function Ar(t,e){if(t===null||typeof t!="object")return!1;const{seq:r,elements:n}=t;if(typeof r!="number"||!Number.isSafeInteger(r)||!Array.isArray(n)||n.length===0||n.length>64)return!1;for(let a=0;a<n.length;a++)if(!e(n[a]))return!1;return!0}function kr(t){return t===null||typeof t!="object"?!1:Ar(t.__frame_patch,Sr)}function Rr(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_init;return e!==null&&typeof e=="object"}function Tr(t){return t!==null&&typeof t=="object"&&t.__frame_size_poke===!0}function Lr(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_host_visible;return e!==null&&typeof e=="object"&&typeof e.visible=="boolean"}function Or(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_theme;if(e===null||typeof e!="object")return!1;const r=e.theme;return typeof r=="string"&&ur.includes(r)}var Pr=["ok","empty","snapshot_error","snapshot_timeout","unclonable","oversize","unavailable","restore_error","withheld"],Mr=["TypeError","RangeError","ReferenceError","SyntaxError","DataCloneError","QuotaExceededError","AbortError","TimeoutError","SecurityError","Error","other"];function Nr(t){return typeof t=="string"&&Mr.includes(t)?t:"other"}var Cr=Object.freeze({until:null,now:!1}),jr="__claude_hot",Fr="__claude_hot_in",Ir=/^__claude_hot(?:_in)?(?::|$)/,Lt=/^[0-9a-z]{1,32}$/,Qe=t=>t===void 0?jr:"__claude_hot:"+t,Ae=t=>t===void 0?Fr:"__claude_hot_in:"+t;function xr(t,e){const r=[];for(let n=0;n<t.length;n++){const a=t.key(n);a!==null&&a!==e&&Ir.test(a)&&r.push(a)}for(const n of r)t.removeItem(n)}function Dr(t){let e=null;try{e=B(JSON.parse(t)?.hot)}catch{return null}return e===null||typeof e.k!="string"||!Lt.test(e.k)?null:ue(e.g)?{k:e.k,g:e.g}:{k:e.k}}var $n=262144,Hr=3e3,qr=5e3,Ot=/^[a-z0-9._:-]{1,64}$/,Br=["none","hot-restart","hard-reload"],Ur=["asset","doc","added","removed"],Kr=1500,Gr=/^[0-9a-f]{64}$/;function B(t){return t!==null&&typeof t=="object"?t:null}function ue(t){return typeof t=="number"&&Number.isInteger(t)&&t>=0&&t<2**31}function Pt(t){return t===void 0||typeof t=="number"&&Number.isFinite(t)}function zr(t){return t===void 0||typeof t=="string"&&Ot.test(t)}function Mt(t){const e=B(t);return e!==null&&(e.until===null||typeof e.until=="number"&&Number.isFinite(e.until))&&typeof e.now=="boolean"}function et(t){const e=B(t);return e!==null&&typeof e.ver=="string"&&e.ver.length<=128&&Pt(e.seq)&&typeof e.handoff=="string"&&Pr.includes(e.handoff)&&zr(e.note)}function Nt(t){const e=B(t);return e!==null&&ue(e.gen)&&(e.phase==="final"||e.phase==="pending")&&(e.from===null||et(e.from))}function $r(t){const e=B(t);return e!==null&&e.kv===1&&ue(e.gen)&&et(e.from)&&Object.hasOwn(e,"data")}function Wr(t){const e=B(t);return e!==null&&e.__frame_hot_snapshot===!0&&ue(e.gen)&&typeof e.timeoutMs=="number"&&e.timeoutMs>=0&&e.timeoutMs<=6e4&&(e.handoff===void 0||typeof e.handoff=="boolean")&&(e.deadline===void 0||Mt(e.deadline))&&Pt(e.seq)&&(e.note===void 0||typeof e.note=="string")&&(e.key===void 0||typeof e.key=="string")}function Vr(t){const e=B(t);return e!==null&&e.__frame_hot_start===!0&&ue(e.gen)&&et(e.from)}function Xr(t){return typeof t=="string"&&t.length>=1&&t.length<=128}function Ct(t){return B(t)!==null&&!Array.isArray(t)}function Yr(t){const e=B(t);return e!==null&&e.__frame_cap_grant===!0&&typeof e.cap=="string"&&Xr(e.ver)&&(e.grant===void 0||Ct(e.grant))&&(e.budgets===void 0||Ct(e.budgets)&&Object.values(e.budgets).every(Number.isFinite))&&(e.brokerGen===void 0||ue(e.brokerGen))}function Jr(t){const e=B(t);return e!==null&&e.__frame_cap_rewired===!0&&(e.caps===void 0||Array.isArray(e.caps)&&e.caps.every(r=>typeof r=="string"))&&(e.brokerGen===void 0||ue(e.brokerGen))}function jt(t){const e=B(t);return e!==null&&typeof e.ver=="string"&&e.ver.length<=128&&Number.isFinite(e.seq)}function Ft(t){if(t==null||typeof t=="string")return!0;const e=B(t);return e!==null&&typeof e.doc=="string"&&typeof e.profile=="string"}function Zr(t){const e=B(t);return e!==null&&typeof e.path=="string"&&Ur.includes(e.kind)&&Ft(e.from)&&Ft(e.to)}function Qr(t){return t===null?null:Object.freeze(t.filter(Zr))}function en(t){const e=B(t);return e!==null&&e.__frame_hot_update===!0&&Number.isFinite(e.id)&&jt(e.from)&&jt(e.to)&&(e.changed===null||Array.isArray(e.changed))&&Br.includes(e.required)&&Mt(e.deadline)&&typeof e.verdictTimeoutMs=="number"&&e.verdictTimeoutMs>=0&&e.verdictTimeoutMs<=6e4&&(e.preflight===void 0||typeof e.preflight=="string"&&Gr.test(e.preflight))}var fe=/^[\w.-]+\.js$/;function tn(t,e,r){return r?"inert":typeof e=="string"&&fe.test(e)?t?[e]:"inert":t?"inert":"framed"}var It=Object.freeze({[Symbol("claude.hot.restart")]:!0});function xt(t,e){let r;try{r=t??sessionStorage}catch{return null}const n=Qe(e?.k),a=Ae(e?.k);let s=null;try{s=r.getItem(n)}catch{}try{r.removeItem(n)}catch{}try{xr(r,a)}catch{}let c=null;if(s!==null&&!(e!==null&&e.g===void 0))try{const d=JSON.parse(s);$r(d)&&(e===null||d.gen===e.g)&&(c=d)}catch{}if(c===null)try{r.removeItem(a)}catch{}return c}function Dt(){const t=/^\/_f\/([^/]{1,128})\//.exec(location.pathname);return t?t[1]:""}var rn=/^[^/\\?#]{1,128}$/,Ht=t=>rn.test(t)&&t!=="."&&t!=="..";function qt(t,e,r){const n=new URL(t),a="/_f/"+e+"/";if(!e||!n.pathname.startsWith(a)||!Ht(r))return null;const s=n.search.slice(1).split("&").filter(c=>!/^__frame_t(?:=|$)/.test(c)).join("&");return n.origin+"/_f/"+r+"/"+n.pathname.slice(a.length)+(s?"?"+s:"")+n.hash}var De="{}";function ke(t){if(!t)return null;const e={ver:t.ver,handoff:t.handoff};return t.seq!==void 0&&(e.seq=t.seq),t.note!==void 0&&(e.note=t.note),e}function Bt(t,e){return t!==null&&t.note===void 0&&e?.note!==void 0?{...t,note:e.note}:t}function Ut(t){const e=t?.k;return e!==null&&typeof e=="object"?e:void 0}function nn(t,e,r,n=null){const a=setTimeout,s=clearTimeout,c=queueMicrotask,d=performance.now.bind(performance),L=new TextEncoder;let E=null,w=null;try{E=history,w=E.replaceState.bind(E)}catch{}const m=(...o)=>{try{console.warn(...o)}catch{}};let k=Dt(),O=null;try{O=sessionStorage}catch{}const h={storage:O,fetch:typeof fetch=="function"?fetch.bind(globalThis):null,entry:location.origin+location.pathname+location.search,ver:k,key:n?.k};let p=n?.k;const x=typeof requestAnimationFrame=="function"?requestAnimationFrame:o=>a(()=>o(d()),16);let y=e?.data??{},F=ke(e?.from),P=e?.gen??0,D=e!==null,$=!1,Q=!1,X=null,Oe=!1;const Pe=new AbortController;let Me=null,H=null,ve=null,Ke=!1,le=()=>{};const l=new Promise(o=>{le=o});let b=!1,g=!1,C=!1,N,j=null,W=!1,re=!1,Y=!1,Ne=!1,ee=!1,_e=!1;const Ce=o=>{for(const u of[Qe(o),Ae(o)])try{O?.removeItem(u)}catch{}},K=(o,u)=>{try{u!==null&&r.post(o,u)}catch{}},je=()=>ee||=Y&&(H===null||Ne),q=()=>{const o={__frame_hot:!0,ready:H!==null,accept:ve!==null,demand:!0};_e=!ee,_e&&(o.booting=!0),b&&(o.readData=!0),C&&(o.threw=!0),j?.assess&&(o.preflight=!0),K(o,X)};let Fe=!1,Ie=!1,ce=!1,Ge=!1;const ze=()=>{Fe||!Oe||ce||(Fe=!0,K({__frame_reveal_hold:!0},"*"))},ne=()=>new Promise(o=>{let u,f=0;const S=I=>{if(u===void 0)u=I;else if(I!==u||++f>=8){o();return}try{x(S)}catch{o()}};try{x(S)}catch{o()}}),ye=()=>{ce=!0,K({__frame_reveal_ready:!0},"*")},ge=o=>{Ie||(Ie=!0,o.then(u=>{if(u===!1)return;let f=null;try{f=j?.settle?.()??null}catch{}return(f===null?ne():new Promise(S=>{a(S,50),Promise.resolve(f).then(S,S)}).then(ne)).then(ye)}))},$e=()=>{if(Ge||!ce)return;Ge=!0;const o=()=>{try{j?.afterReveal?.()}catch{}};o(),ne().then(()=>{o(),ye()})},i=(o=!1)=>{if(Ke||H===null||!D||!Q)return;Ke=!0;const u=H,f=y;c(()=>{let S;try{S=u(f)}catch(U){throw le(!1),U}let I=!1;try{I=typeof S?.then=="function"}catch{}if(!I){le(!0);return}Promise.resolve(S).then(()=>le(!0),U=>{le(!1),c(()=>{throw U})})}),ge(o?l:r.dcl.then(()=>l))},v=o=>typeof o=="string"&&Ot.test(o)?o:void 0,_=o=>{const u={__frame_hot_restart:!0},f=v(o?.note);f!==void 0&&(u.note=f),o?.required==="hard-reload"&&(u.required="hard-reload"),K(u,X)},R=Object.freeze({get data(){return Q||(g=!0),!D&&!b&&(b=!0,Q&&q()),y},get from(){return F},get gen(){return P},signal:Pe.signal,snapshot(o){typeof o=="function"&&(Me=o)},ready(o){typeof o!="function"||H!==null||(H=o,ze(),q(),$&&K({__frame_hot_ready:!0,gen:P},X),i())},accept(o){typeof o=="function"&&(ve=o,q())},restart(o){const u={note:o?.note,required:o?.required};if(Q){_(u);return}const f=N;N={note:v(f?.note)??u.note,required:f?.required==="hard-reload"||u.required==="hard-reload"?"hard-reload":void 0}}});let G=null,J=()=>{};const he=new Promise(o=>{J=o});let xn=null;const rr=()=>xn??=r.dcl.then(()=>{let o=!1;try{o=G!==null&&G.expect()}catch{}if(!o)return;const u=G.maxMs;return new Promise(f=>{he.then(f),a(f,u)})}),nr=()=>{if(!W||re||j===null)return;re=!0;const o=j;rr().then(()=>{try{ce||o.afterStart(Ut(e),!1)}catch{}})},or=o=>{e!==null&&g&&(b=!0),y={},F=null,P=0;try{O?.removeItem(Ae(n?.k))}catch{}e!==null&&!o&&ge(r.dcl.then(()=>H!==null?l:void 0))},Dn=()=>{W=!0,ge(rr().then(()=>H!==null?l:void 0)),nr()};try{addEventListener("error",()=>{C||H!==null||(C=!0,q())})}catch{}const ar=()=>{a(()=>{!ee&&je()&&_e&&q()},0)};try{Y=document.readyState==="complete",Y||addEventListener("load",()=>{Y=!0,ar()},{once:!0})}catch{Y=!0}je(),l.then(()=>{Ne=!0,ar()});let pe=-1,vt,_t,xe=!0,yt=!1,gt,We=null;const wt=o=>{const u=We===null;We=xe&&o[0]!=="withheld"?o:["withheld",o[1],De];let f=o[0];if(xe&&f!=="withheld"){const I={ver:k,handoff:f};vt!==void 0&&(I.seq=vt),_t!==void 0&&(I.note=_t);try{if(O===null)throw new Error("no storage");O.setItem(Qe(p),'{"kv":1,"gen":'+pe+',"from":'+JSON.stringify(I)+(gt!==void 0?',"k":'+JSON.stringify(gt):"")+',"data":'+(f==="ok"?o[2]:De)+"}")}catch{f="unavailable"}}else{f="withheld",Ce(p);try{j?.release?.()}catch{}}const S={__frame_hot_snapshotted:!0,gen:pe,handoff:f,bytes:o[1]};o[3]!==void 0&&(S.errName=o[3]),K(S,X),u&&(f==="snapshot_error"||f==="unclonable"||f==="oversize")&&m("claude.hot: snapshot",f,o[3])},we=o=>{try{return Nr(o?.name)}catch{return"other"}},be=(o,u,f=0)=>wt(u===void 0?[o,f,De]:[o,f,De,we(u)]),Hn=o=>{if(o.gen<=pe)return;const u=pe>=0;if(pe=o.gen,vt=o.seq,_t=v(o.note),typeof o.key=="string"&&Lt.test(o.key)&&o.key!==p&&(Ce(p),p=o.key),xe&&=o.handoff!==!1,u){We!==null?wt(We):yt&&K({__frame_hot_held:!0,gen:pe},X);return}Pe.abort();const f=Object.freeze({handoff:xe,timeoutMs:o.timeoutMs,deadline:o.deadline??Cr}),S=Me,I=()=>{if(xe)try{gt=j?.capture()}catch{}if(S===null){be("empty");return}let T=!1;const z=a(()=>{T||(T=!0,be("snapshot_timeout"))},Math.max(0,f.timeoutMs));Promise.resolve().then(()=>S(f)).then(Ee=>{if(T)return;T=!0,s(z);let oe;try{oe=JSON.stringify(Ee)}catch(bt){be("unclonable",bt);return}if(typeof oe!="string"){be("unclonable");return}let ae=oe.length;try{ae=L.encode(oe).length}catch{}if(ae>262144){be("oversize",void 0,ae);return}wt(["ok",ae,oe])},Ee=>{T||(T=!0,s(z),be("snapshot_error",Ee))})};let U=null;try{U=j?.holdForIme()??null}catch{}if(U===null)I();else{yt=!0,K({__frame_hot_held:!0,gen:pe},X);const T=()=>{yt=!1,I()};U.then(T,T)}},qn=o=>{if(!$||D||H===null||o.gen!==P)return;let u=null;try{u=xt(O,n&&{k:n.k,g:o.gen})}catch{}if(u!==null&&u.gen!==o.gen){u=null;try{O?.removeItem(Ae(n?.k))}catch{}}y=u?.data??{},F=Bt(ke(u?.from??o.from),ke(o.from)),u!==null&&(P=u.gen),D=!0,$=!1;const f=Ut(u);l.then(S=>{try{S&&j?.afterStart(f,!0)}catch{}}),i(!0)};let Ve=0;const Bn=o=>{const u=ve;if(u===null||o.id<=Ve)return;Ve=o.id;const f=j?.assess;if(o.preflight===void 0||f===void 0){sr(o,u);return}let S=!1;const I=z=>{S||(S=!0,s(T),o.id===Ve&&sr(o,u,z))},U=()=>I(f.timeout(o)),T=a(U,Kr+100);f.run(o,window).then(I,U)},sr=(o,u,f)=>{let S,I=!1,U=!1,T,z,Ee=null;const oe=A=>{if(U)return!1;if(T!==void 0&&T!==A)return m(`claude.hot: u.${A}() ignored - u.${T}() was called first`),!1;const te=T===void 0;return T=A,te},ae=A=>{T="restart",m(`claude.hot: ${A} - restarting`)},bt=()=>{if(!oe("adopt")||o.id!==Ve)return;const A=o.to.ver;if(Xe.required!=="none"){ae(`u.adopt() needs required 'none', it is '${Xe.required}'`);return}if(!Ht(A)){ae("u.adopt() cannot address this version");return}if(!k||A===k)return;const te=k,Z=h.entry;let Ye="",St,Se=null,Je;try{Ye=location.href,St=E.state,Se=qt(Ye,te,A),Se!==null&&(w(St,"",Se),location.pathname.startsWith("/_f/"+A+"/")?Se=location.href:Je="navigate event canceled")}catch(kt){Je=we(kt)}if(Je!==void 0){z="adopt_failed",ae(`adopt_failed ${Je}; URL not changed`);return}Se===null?(z="adopt_skipped",m(`claude.hot: adopt_skipped - page already left /_f/${te}/; URL not changed, update still applied`)):z="adopted",k=h.ver=A;try{h.entry=qt(Z,te,A)??Z}catch{}const At=Se;Ee=()=>{if(k===A){if(At!==null)try{if(location.href!==At)m("claude.hot: adopt_revert_skipped - update not applied; URL left where the page navigated");else{if(w(St,"",Ye),location.href!==Ye){m("claude.hot: adopt_revert_failed navigate event canceled - URL still at the new version");return}z="adopt_reverted",m("claude.hot: adopt_reverted - adopt() was called but the handler threw; URL restored")}}catch(kt){m(`claude.hot: adopt_revert_failed ${we(kt)} - URL still at the new version`);return}k=h.ver=te,h.entry=Z,At===null&&(z=void 0)}}},Xe=Object.freeze({from:{ver:o.from.ver,seq:o.from.seq},to:{ver:o.to.ver,seq:o.to.seq},changed:Qr(o.changed),required:o.required,deadline:o.deadline,adopt:bt,defer(){return oe("defer")&&Xe.deadline.now&&ae("u.defer() past the deadline"),It},restart(A){return oe("restart"),T==="restart"&&!U&&(S??=v(A?.note),I||=A?.required==="hard-reload"),It},...f?.update}),Un=(A,te)=>{U=!0,A==="threw"?(Ee?.(),S??=we(te).toLowerCase()):T===void 0&&m(A==="timeout"?"claude.hot: accept handler did not answer in time - restarting":"claude.hot: accept handler settled without defer/restart/adopt - restarting");const Z={__frame_hot_verdict:!0,id:o.id};Z.verdict=A==="threw"||T===void 0||T==="restart"?"restart":T==="adopt"?"applied":"deferred",Z.verdict==="restart"&&(I&&(Z.required="hard-reload"),S!==void 0&&(Z.note=S)),z!==void 0&&(Z.verdict==="applied"||z!=="adopted")&&(Z.adopt=z),K(Object.assign(Z,f?.verdict),X)};let ir=!1;const Et=(A,te)=>ir?!1:(ir=!0,s(Kn),Un(A,te),!0),Kn=a(()=>Et("timeout"),o.verdictTimeoutMs);Promise.resolve().then(()=>u(Xe)).then(()=>Et("settled"),A=>{!Et("threw",A)&&T==="adopt"&&_({note:we(A).toLowerCase()}),m("claude.hot: accept",we(A))})};try{t.hot===void 0&&Object.defineProperty(t,"hot",{value:R,writable:!1,configurable:!1,enumerable:!1})}catch{}return{hot:R,boot:h,afterConnect(){Oe=!0,(e!==null||H!==null)&&ze()},onInit(o,u){X=u,Q=!0;const f=Nt(o)?o:null;f?.phase==="final"&&e!==null&&e.gen===f.gen?(D=!0,F=Bt(F,ke(f.from)),Dn()):($=f?.phase==="pending",or($),D=!$,P=f?.gen??0,F=ke(f?.from)),q(),_e&&a(()=>{ee||(ee=!0,q())},qr),$&&H!==null&&K({__frame_hot_ready:!0,gen:P},u),N!==void 0&&(_(N),N=void 0),i()},onNoInit(){Q=!0,or(!1),D=!0,i()},onShell(o){return o?.__frame_revealed===!0?($e(),!1):Wr(o)?(Hn(o),!0):Vr(o)?(qn(o),!0):en(o)?(Bn(o),!0):!1},attachExtras(o){j=o,nr(),o.assess&&q()},inSlot:()=>Ae(p),hydration(o,u){G??={expect:o,maxMs:u}},hydrated(){J()},carried(){return D?y:{}},presented:()=>ce}}var Wn="frame_ldx_runtime",on="frame_ldx_build",Vn="script#an-form",an=256;function Kt(t,e,r){for(const n of t)r(n)&&t.delete(n);t.size>=an&&!t.has(e)&&t.delete(t.values().next().value),t.add(e)}function tt(t,e,r){try{const n=t[e];if(typeof n!="function")return;t[e]=function(...a){const s=n.apply(this,a);try{r(this)}catch{}return s}}catch{}}var rt;function sn(){if(rt)return rt;const t={media:new Set,contexts:new Set,onStart:null,onPause:null};rt=t;const e=window.HTMLMediaElement?.prototype;e&&(tt(e,"play",a=>{Kt(t.media,a,s=>s.paused),t.onStart?.(a)}),tt(e,"pause",a=>t.onPause?.(a)));const r=window.AudioContext,n=window.AudioNode?.prototype;return r&&n&&tt(n,"connect",a=>{const s=a.context;s instanceof r&&(Kt(t.contexts,s,c=>c.state==="closed"),t.onStart?.(s))}),t}function ln(t){let e=window;for(let r=0;e.parent&&e.parent!==e&&r<8;r++)if(e=e.parent,t(e))return!0;return!1}function cn(){let t=null;const e=()=>t??parent,r=n=>t?n===t:ln(a=>a===n);return{post(n,a){if(t){e().postMessage(n,a);return}let s=parent;for(let c=0;c<8&&(s.postMessage(n,a),!(!s.parent||s.parent===s));c++)s=s.parent},on(n){const a=s=>{const c=s.source;r(c)&&n(s.data,s.origin,s.isTrusted,()=>{t??=c})};return addEventListener("message",a),()=>removeEventListener("message",a)},port:n=>({post(a,s){if(s?.activation){e().postMessage(a,{targetOrigin:n,includeUserActivation:!0});return}if(s?.transfer){e().postMessage(a,n,s.transfer);return}e().postMessage(a,n)},on(a,s){const c=d=>{r(d.source)&&d.origin===n&&a(d.data,d)};return addEventListener("message",c,s),()=>removeEventListener("message",c,s)}})}}function un(){const t={post:()=>{},on:()=>()=>{}};return{...t,port:()=>t}}var fn=500,dn=2e4,hn="data-token-reads",pn="data-frame-refused-watch",mn="data-frame-unsupported",vn=/(?:^|\s)stylesheet(?:\s|$)/i;function _n(t,e){let r="";if(t instanceof HTMLScriptElement?r=t.src:t instanceof HTMLLinkElement&&vn.test(t.rel)&&(r=t.href),!r)return null;try{const n=new URL(r);return n.origin===location.origin&&n.pathname.startsWith(e)?n.origin+n.pathname:null}catch{return null}}function yn(t,e,r){if(!t||e!=="query")return;const n="/_f/"+t+"/";document.documentElement.setAttribute(pn,"");const a=location.href,s=fetch,c=setTimeout,d={method:"HEAD",cache:"no-store",credentials:"same-origin"},L=h=>h.ok||h.status===304;let E=!1,w=!1;const m=()=>removeEventListener("error",O,!0),k=async h=>{const p=await s(h,d);if(L(p))w=!0;else if(p.status===403){const x=await s(a,d);if(L(x)){const y=(await s(h,d)).status;y===403?(w=!0,document.documentElement.setAttribute(mn,""),r()):y<500&&(w=!0)}else x.status>=400&&x.status<500&&(w=!0)}},O=h=>{if(w||E)return;if(document.documentElement.hasAttribute(hn)){w=!0,m();return}const p=_n(h.target,n);p&&(E=!0,c(()=>{k(p).catch(()=>{}).finally(()=>{E=!1,w&&m()})},fn))};addEventListener("error",O,!0),addEventListener("load",m,{once:!0}),c(m,dn)}var nt="__frame_scroll",gn=150,wn=310,bn=160,En=3e4;function Sn(){let t=0,e=!1,r=!1,n=!1,a=0,s=null;const c=y=>{try{sessionStorage.setItem(nt,JSON.stringify({y}))}catch{}},d=()=>{if(clearTimeout(t),s===null)return;const y=s;s=null,c(y)},L=()=>{if(e){e=!1;return}r=!0,s=scrollY,clearTimeout(t),t=setTimeout(d,gn)};try{addEventListener("scroll",L,{passive:!0}),addEventListener("pagehide",d)}catch{}const E=()=>{let y;try{y=sessionStorage.getItem(nt)}catch{return null}if(y===null)return null;let F;try{F=JSON.parse(y)}catch{F=null}const P=F?.y;if(!(typeof P=="number"&&Number.isFinite(P)&&P>=0)){try{sessionStorage.removeItem(nt)}catch{}return null}return P};let w=!1;const m=y=>{try{const F=scrollY;scrollTo({top:y,left:0,behavior:"instant"}),a=y,n=!0,clearTimeout(t),s=null,c(y);const P=scrollY;P!==F&&(e=!0),P!==y&&!w&&(w=!0,addEventListener("load",()=>{try{if(scrollY===P){const D=E();m(D!==null?D:a)}}catch{}},{once:!0}))}catch{}},k=()=>{try{return!!location.hash}catch{return!0}};let O=!1;const h=()=>{try{if(O||innerWidth>wn||innerHeight>bn)return;O=!0;const y=Date.now(),F=()=>{try{removeEventListener("resize",F)}catch{}if(Date.now()-y>En||r||k())return;const P=E();m(P!==null?P:a)};addEventListener("resize",F)}catch{}};let p=!1,x=!1;return{restore(){if(p||(p=!0,k()))return;const y=E();y!==null&&(m(y),h())},promoted(){if(x||(x=!0,k()))return;const y=E();y!==null?(m(y),h()):n&&m(a)}}}function An(t,e,r,n){let a=null;try{a=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:L=>L})??null}catch{}const s=window.Worker,c=s?.prototype,d=Object.freeze({Worker:s,workerOn:c?.addEventListener,workerPost:c?.postMessage,workerTerminate:c?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,now:Date.now,policy:a,origins:e});r(t).then(L=>L?.bootTopLevel?L.bootTopLevel(d,n):n.settle()).catch(()=>n.settle())}var Xn="modulepreload",Yn=function(t){return"/"+t},Jn={},kn=function(e,r,n){let a=Promise.resolve();function s(c){const d=new Event("vite:preloadError",{cancelable:!0});if(d.payload=c,window.dispatchEvent(d),!d.defaultPrevented)throw c}return a.then(c=>{for(const d of c||[])d.status==="rejected"&&s(d.reason);return e().catch(s)})},Rn=window===top,Gt=Object.getOwnPropertyDescriptor(window,"claude"),He=tn(Rn,window.__FRAME_PREAMBLE?.topLevel,Gt?.writable===!1),ot=typeof He=="object"&&He[0],M=ot?un():cn();(function(){const t=Object.defineProperty,e=globalThis,r=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let n=0;for(let a=0;a<r.length;a++){const s=r[a];try{t(e,s,{value:void 0,writable:!1,configurable:!1})}catch{try{delete e[s]}catch{}try{t(e,s,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof e[s]=="function"&&n++}if(n&&He==="framed")try{M.post({__frame_rtc_lockdown_failed:n},"*")}catch{}})();var zt=1e4,Tn=2e3,at=2e3,st=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function $t(t){for(const e of st)if(e.endsWith(":*"))try{const r=new URL(t);if(`${r.protocol}//${r.hostname}:*`===e)return!0}catch{}else if(t===e)return!0;return!1}var Re=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),Te=window.__FRAME_PREAMBLE?.transforms,it=window.__FRAME_PREAMBLE?.comments,lt=window.__FRAME_PREAMBLE?.translate,de=window.__FRAME_PREAMBLE?.ldx,ct=lr(window.__FRAME_PREAMBLE?.cred);function Wt(t){return kn(()=>import("/_runtime/"+t),void 0)}var Le=new Set,Vt=setTimeout,Ln=fetch,On=AbortController,Pn=800+800*Math.random(),Mn=3e3,qe=null,Xt=new Map;function Nn(t,e){let r=Xt.get(t);return r||Xt.set(t,r=Cn(t,e)),r}function Cn(t,e){if(qe?.has(t))return Promise.resolve("csp");if(navigator.onLine===!1)return Promise.resolve("offline");const r=new On;let n=!1;return Vt(()=>{n=!0,r.abort()},Mn),Ln("/_runtime/"+t,{signal:r.signal}).then(a=>(r.abort(),a.ok?/javascript/i.test(a.headers.get("content-type")??"")?e instanceof Error&&/:\d+:\d+\)?$/m.test(e.stack??"")?"eval":"served":"mime":"http"),()=>n?"timeout":qe?.has(t)?"csp":"net")}function se(t){if(!qe){const e=qe=new Set;try{document.addEventListener("securitypolicyviolation",r=>{const n=/\/_runtime\/([^/?#]+)/.exec(r.blockedURI);n&&r.disposition!=="report"&&e.add(n[1])})}catch{}}return Wt(t).catch(()=>new Promise(e=>Vt(e,Pn)).then(()=>Wt(t+"?r=1")).then(e=>(e!==void 0&&Le.add(t),e)))}function Yt(t,e,r){return{contract:t.contract,changes:new Set(t.changes??[]),flags:new Set(t.flags??[]),capabilities:t.capabilities??{},capBudgets:t.capBudgets??{},brokerGen:t.brokerGen,transforms:new Map,shellOrigin:e,shell:r,mount:mt,hooks:Be,pipe:()=>({wrap:(n,a)=>(...s)=>{try{return a(...s)}catch(c){return Promise.reject(c)}}})}}var me=null,V=null;function Jt(t,e,r){try{Object.defineProperty(t,e,{value:r,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(t,e,{value:r,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var ut=!1,Be={editBefore:null,edit:null};function jn(t,e,r=!1){const n=[];let a;if(r)try{Be.editBefore?.(t)}catch{}for(const s of t.elements){const c=document.querySelector(`[data-id="${s.target}"]`);if(!c){a=s.target;break}if([...Object.keys(s.attrsSet??{}),...s.attrsRemoved??[]].some(d=>!hr(d)||pr(c,d))){a=s.target;break}if(s.text!==void 0&&(!yr(c)||Er(c))){a=s.target;break}for(const[d,L]of Object.entries(s.attrsSet??{}))if(!Qt(c,d)){try{c.setAttribute(d,L)}catch{}Zt(c,d,L)}for(const d of s.attrsRemoved??[])Qt(c,d)||(c.removeAttribute(d),Zt(c,d,null));typeof s.text=="string"&&wr(c,s.text),n.push(s.target)}if(r)try{Be.edit?.(t.seq,n,a)}catch{}if(a!==void 0){M.post({__frame_patch_miss:{seq:t.seq}},e);return}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:t.seq,targets:n}}))}catch{}}function Zt(t,e,r){if(!(t instanceof HTMLInputElement))return;const n=e.toLowerCase();n==="checked"?t.checked=r!==null:n==="value"&&t.type!=="file"&&(t.value=r??"")}function Qt(t,e){const r=e.toLowerCase(),n=t;return r==="data-id"||(r==="value"||r==="checked")&&(n.__artifactSecret===!0||/^(password|hidden|file)$/.test(n.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${t.getAttribute("autocomplete")??""} ${n.autocomplete??""}`))}function er(t){const e=document.documentElement;t==="light"||t==="dark"?(e.dataset.theme=t,e.style.colorScheme=t,ut=!0):ut&&(delete e.dataset.theme,e.style.colorScheme="",ut=!1)}var ie=new Map,ft=null;function dt(){let t;const e={u:new Promise(r=>{t=r}),r:r=>{e.done=!0,t(r)},done:!1,nulled:!1};return e}function Ue(t,e){t.nulled=!0,t.ver=e,t.r(null)}function ht(t,e){for(const[r,n]of ie)n.done||(e&&n.asked?e(r,n):Ue(n,t))}function Fn(){for(const t of ie.values())if(t.asked&&!t.done)return!0;return!1}var In=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),pt=!1,mt=(t,e)=>{let r=ie.get(t);if(r?.nulled&&pt)r=dt(),ie.set(t,r);else if(!r||r.done){r?.nulled&&V&&M.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:t,phase:"install"}},V);return}const n=typeof e=="function"?Object.setPrototypeOf(e,In):Object.assign(Object.create(null),e);typeof n.then=="function"&&delete n.then,r.want=void 0,r.r(Object.freeze(n))};function tr(){const t=Gt?.value??{};Jt(window,"claude",t);for(const e of Object.keys(Re)){if(t[e]!==void 0){Jt(t,e,t[e]);continue}ie.set(e,dt())}if(t.use===void 0){const e=r=>{if(typeof r!="string"||!Object.hasOwn(Re,r))return Promise.resolve(null);let n=ie.get(r);return n?(ft&&(n.nulled||n.want!==void 0)&&(n=ft(r,n)),n.asked=!0,n.u):Promise.resolve(t[r]??null)};try{Object.defineProperty(t,"use",{value:e,writable:!0,configurable:!0,enumerable:!1})}catch{}}return t}if(He==="framed"){let t;const e=Te&&fe.test(Te)?se(Te).catch(l=>{t={f:Te,e:l}}):Promise.resolve(void 0),r=l=>{if(l.type==="auxclick"&&l.button!==1)return;const b=l.target,g=b&&b.closest?b.closest("a[href],area[href]"):null;if(!g)return;const C=g.getAttribute("href");if(!C)return;let N;try{N=new URL(C,document.baseURI)}catch{return}if((N.protocol==="http:"||N.protocol==="https:")&&N.origin!==location.origin){l.preventDefault();const j=(g.getAttribute("target")??"").toLowerCase(),W=l.type==="auxclick"||l.metaKey||l.ctrlKey||l.shiftKey||l.altKey||!["","_self","_top","_parent"].includes(j);M.post({__frame_nav:!0,url:N.href,newTab:W},"*")}};addEventListener("click",r,!0),addEventListener("auxclick",r,!0);const n={},a=l=>{l.isTrusted&&(n.pointer=!0)},s=l=>{l.isTrusted&&(n.click=!0)};addEventListener("pointermove",a,{capture:!0,passive:!0}),addEventListener("click",s,{capture:!0,passive:!0});const c={cb:null};addEventListener("keydown",l=>c.cb?.(l),!0);const d={cb:null};addEventListener("keydown",l=>d.cb?.(l));const L=sn();e.then(l=>l?.installEscapeForward?.(c,b=>{V&&M.post(b,V)})),e.then(l=>{try{l?.installFocusKeep?.()}catch{}}),e.then(l=>{if(!l?.wireNav)return;const b=M.port("*");l.wireNav(b),removeEventListener("click",r,!0),removeEventListener("auxclick",r,!0),removeEventListener("pointermove",a,!0),removeEventListener("click",s,!0),l.wireEngagement?.(n,b,L)});let E=null;try{E=Sn()}catch{}const w=document.readyState==="loading"?new Promise(l=>document.addEventListener("DOMContentLoaded",()=>l(),{once:!0})):Promise.resolve();let m=null,k=null;try{k=Dr(window.name),m=xt(null,k)}catch{}const O=tr();let h=null;try{h=nn(O,m,{post:(l,b)=>M.post(l,b),dcl:w},k)}catch{}e.then(l=>{try{h&&l?.installHotExtras?.(h)}catch{}});let p=null;const x=()=>Array.isArray(p?.flags)&&p.flags.includes("frame_ldx_runtime")&&!!de&&fe.test(de)&&document.querySelector("script#an-form")!==null;try{h?.hydration(x,Hr)}catch{}let y=null,F=0;const P=M.on((l,b,g,C)=>{$t(b)&&Rr(l)&&(C(),p=l.__frame_init,V=b,P(),clearTimeout(F),y?.())});if(ct)for(const l of st)try{l.endsWith(":*")||M.post({__frame_cred:ct},l)}catch{}M.post({__frame_connect:!0},"*");try{h?.afterConnect()}catch{}const D=setTimeout,$=clearTimeout;let Q=()=>NaN,X=()=>[];try{Q=performance.now.bind(performance),X=performance.getEntriesByType.bind(performance)}catch{}let Oe=0;const Pe=()=>{try{M.post({__frame_alive:!0},"*")}catch{}Oe=D(Pe,Tn)},Me=()=>$(Oe);Pe(),addEventListener("load",Me,{once:!0});const H=new Promise(l=>{y=l,F=setTimeout(()=>{P(),l()},zt)}),ve=new WeakSet;addEventListener("error",l=>{l.target&&ve.add(l.target)},!0);try{yn(Dt(),ct,()=>{e.then(l=>{try{l?.drawRefusedNotice?.()}catch{}})})}catch{}const Ke=()=>{let l=[];try{l=[...document.querySelectorAll("link[rel~=stylesheet]:not([rel~=alternate])")].filter(g=>!g.sheet&&!g.disabled&&!ve.has(g)&&g.getAttribute("href")&&URL.canParse(g.href)&&(!g.media||matchMedia(g.media).matches))}catch{}let b=l.length;return b===0?Promise.resolve():new Promise(g=>{try{const C=at-Q(),N=D(g,C>0?C<at?C:at:0),j=()=>{--b===0&&($(N),g())};for(const W of l)W.addEventListener("load",j,{once:!0}),W.addEventListener("error",j,{once:!0})}catch{g()}})};w.then(()=>{try{E?.restore()}catch{}}),Promise.all([H,w,e]).then(([,,l])=>{if(p?.hostOverlays!==!0||!V)return;let b=!1;try{b=l?.declaresCover?.()===!0}catch{}M.post({__frame_layout:{cover:b}},V)});const le={cb:null};M.on((l,b)=>{if($t(b)&&Tr(l)){try{E?.promoted()}catch{}le.cb?.()}}),H.then(async()=>{if(!p||!V){ht();try{h?.onNoInit()}catch{}return}if(er(p.theme),p.hostVisible===!1&&e.then(i=>i?.applyHostVisible?.(!1,L)),p.hostKeys!==void 0){const i=V,v=p.hostKeys;e.then(_=>_?.installHostKeyForward?.(d,v,R=>M.post(R,i)))}try{h?.onInit(p.hot,V)}catch{}let l;const b=()=>{try{!l&&de&&x()&&(l=se(de),l.then(i=>i?.prefetch?.()).catch(()=>{}))}catch{}};b(),w.then(b);const g=V,C=M.port(g),N=(i,v)=>M.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:i,phase:v}},g),j=(i,v,_)=>{new Promise(R=>R(Nn(v,_))).then(R=>N(i,R),()=>N(i))},W=i=>M.post({__frame_cap_recovered:{cap:i}},g);let re=p.brokerGen;const Y=()=>h?.boot.ver??"",Ne=Y(),ee=(i,v)=>{const _=Y();$(v.t),v.want=_,v.t=D(()=>{v.done||Ue(v,_)},zt),M.post({__frame_cap_want:!0,cap:i,ver:_},g)},_e=(i,v)=>{const _=ie.get(i.cap),R=Re[i.cap];if(!v||!_||_.done||_.want!==i.ver||!fe.test(R))return;if($(_.t),_.want=void 0,re=i.brokerGen??re,i.ver!==Y()){ee(i.cap,_);return}if(!i.grant||i.cap==="network"){Ue(_,i.ver);return}const G=me,J=me={...G,capabilities:{...G.capabilities,[i.cap]:i.grant},capBudgets:{...G.capBudgets,[i.cap]:{...G.capBudgets[i.cap],...i.budgets}}};se(R).then(he=>{Le.has(R)&&W(i.cap),J.brokerGen=re,pt=!0;try{he?.install?.(J)}catch{N(i.cap,"install")}finally{pt=!1}},he=>j(i.cap,R,he)).then(()=>{_.done||Ue(_,i.ver)})};let Ce=!1,K=!1;M.on((i,v,_)=>{if(v!==g)return;try{if(h?.onShell(i))return}catch{}if(Or(i)&&er(i.__frame_theme.theme),Yr(i)&&_e(i,_),_&&Jr(i)&&(re=i.brokerGen??re),Lr(i)){const J=i.__frame_host_visible.visible;e.then(he=>he?.applyHostVisible?.(J,L))}kr(i)&&jn(i.__frame_patch,g,_);const R=i?.__fc_mode;R&&typeof R=="object"&&!Ce&&it&&fe.test(it)&&(Ce=!0,se(it).then(J=>J.install?.(g,R.on===!0,C)).catch(()=>{}));const G=i?.__ft_cmd;G&&typeof G=="object"&&!K&&lt&&fe.test(lt)&&(K=!0,se(lt).then(J=>J.install?.(g,G,C)).catch(()=>{}))});const je=Object.keys(p.capabilities??{}).filter(i=>Object.hasOwn(Re,i)).map(i=>[i,Re[i]]).filter(i=>typeof i[1]=="string"&&fe.test(i[1])),q=g;let Fe=()=>{};const Ie=new Promise(i=>{Fe=i}),ce=m!==null||Nt(p.hot)||p.hostVisible===!1||p.hostOverlays===!0,Ge=w.then(()=>ce?Ie:new Promise(i=>D(i,0))).then(Ke).then(()=>{let i=!0;try{i=ce||Fn()}catch{}return i?Ie:void 0}).then(()=>{Me();const i=cr(X,Q);M.post(i?{__frame_ready:!0,nav:i}:{__frame_ready:!0},q),e.then(v=>{v?.installSizeReporter?.(q,le,C),v?.installPaintReporter?.(C)})}),ze=await Promise.allSettled(je.map(([,i])=>se(i))),ne=await e;if(ne?.buildBoot||(t?j("_transforms",t.f,t.e):N("_transforms")),ne?.buildBoot)try{me=ne.buildBoot(p,ne.TRANSFORMS??{},{shellOrigin:q,mount:mt,hooks:Be,shell:C},i=>M.post({__frame_cap_telemetry:i},q))}catch{N("_transforms","install"),me=Yt(p,q,C)}else me=Yt(p,q,C);ne?.buildBoot&&Le.has(Te??"")&&W("_transforms");const ye=me;ye.brokerGen=re,ze.forEach((i,v)=>{const[_,R]=je[v];if(i.status!=="fulfilled"){j(_,R,i.reason);return}Le.has(R)&&W(_);try{i.value?.install?.(ye)}catch{N(_,"install")}});const ge=p.capWants===!0;ge&&(ft=(i,v)=>{const _=Y();if(!_)return v;if(!v.nulled)return v.want!==_&&ee(i,v),v;if(_===v.ver)return v;const R=dt();return ie.set(i,R),ee(i,R),R}),ht(Ne,ge&&Y()!==Ne?ee:void 0),Fe(),await Ge;let $e=!1;try{$e=x()}catch{}de&&$e?(l??se(de)).then(i=>i?.boot?.({shellOrigin:g,build:ye.flags.has(on),hot:h?.hot??null,carried:h?.carried(),presented:()=>h?.presented()??!0})).catch(()=>!1).then(i=>{h?.hydrated(),i!==!0?N("_ldx"):Le.has(de)&&W("_ldx")}):h?.hydrated()})}else ot&&(tr(),An(ot,st,se,{settle:ht,mount:mt}))})();</script><!-- /frame-runtime -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<title>Trailkin</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Trailkin">
+<meta name="theme-color" content="#C17A82">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEYElEQVR4nO3cQU4bQRCF4TjKCdhxBARruADcE3GN7LzLPlKOkF3OkIUlC4HfMDPdXfWq/X/LJIJO9+9qYzs53D8/fgMu+Z69APgiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAPSj+wFQPr989fnX3x4eQpbwIF/8WboYhbvxSTCtWLnyzJW/pl2xOFl/akH9EEcRrae9+g+iMPFvpMe2gdxQCIOCy0DYNzwIA5IxAGJOCARByTigEQckIjDQssbaePehCMOC8e31+wlXEAcLvYNgKHv3RNHvtPYOL69bj3p0Z/qIA4v68874PM+xJHs87ONNafOJ8GuzjmUh5cndfwLv9UdHzDOtPxDSuRniS9ickAijjQXx4bVCx7EAYk4clhNCIU47Ph0QxwJfI5/GXE4MqmHOKKZHPwaxAGJOEKtHxsOA4Y4IBFHHIdhsAlx+EqPacI4Yv5jk63ST3qH2eI4leHZRzmzxeFp99jInTdTxfF+YDA82k0Vxwcm17zJMnaYJ47Po+Lm9q7uwZwl/hUmiUNdIje3d8Er+aB0nZPEsaD08eSaIY7l556Jl0uv75u1/vJxrNw45scO5eNY86wi5ZnHBDnWjmP9ixnVf3JJWXztOLYK2+LSIZ4VjmPra6Cny6XuscWvvGoczmfsvLZNqsax7zlm9eERrGQcLW+qje5jaHnBWdeLo/orS4XUi6P9RYtxL3tMFlyxOPrufsWzjFxzsTh6PejPX6fjXldMbVmlOPp+uGtEH5MpE4f5EUYuL+x7lYljxLNIhseyGnEEHF7Lt5i1rQJxHN9ex/3w+f4rFzrjmKXW+H9I//39k70EqVBSW7lPjuCtn/ikd3CPI96mPhJjCvjW1nFU/2Bwdb5x+J+Q/wob+caRq8TBj16kaRwOZ7O8BocVjuYYh8+++6xEGbpCxzj8+UfThV0cbvvutp5IdnEY+tCHWy7j1uMVh9u+n9kubCijOEocQIlF9mIUhznnLAatzSUO560/K7HIjiziuLZNr8IiDrQb8QDLj4OxYSs/DthKjoOx0VH3zcyMgzLMca1ASouDsTFC313NiYMySuBagZQQB2NjqI7by+SAFB0HYyNAr00OjYMyauFagRQXB2MjUpfdDoqDMiriWoEUEQdjI0X7tjM5IA2Pg7FR19g4KCNX4/5zrUAaGAdjo7pRcVCGiZaD4FqBNCQOxsYcmBzz2/1Y7R8HY2ManeOgjJlwrVyFfQ/annEwNibTLQ7KMLfjgLhWIPWJg7ExJSbHFdn6GO4QB2NjVq1xUMbEuFauy6YHc1McjI25He6fH7PXAFNcK5CIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTgg/Qf3TV3SuTnHkQAAAABJRU5ErkJggg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Warm, soft "feminine" palette — dusty rose primary, blush surfaces,
+       a muted sage kept only as a small secondary accent so it still reads
+       as an outdoors app rather than a straight beauty/dating-app pink. */
+    --forest: #C17A82;       /* primary actions, active states — dusty rose */
+    --forest-deep: #9C5C64;  /* pressed/dark accent — deeper rose */
+    --charcoal: #4A3236;     /* primary text — warm plum-brown, not pure black */
+    --off-white: #FFF8F5;    /* primary background — soft cream */
+    --sand: #F7E4DF;         /* secondary surface / cards — blush */
+    --stone: #B08A8C;        /* secondary text, borders — muted mauve */
+    --sage: #C9A6AE;         /* secondary accent, tags, badges — dusty pink-mauve */
+    --alert: #D1495B;        /* SOS / destructive only */
+    --bg: var(--off-white);
+    --surface: #FFFFFF;
+    --text: var(--charcoal);
+    --text-muted: #8A6A6D;
+    --radius: 16px;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      /* Kept light even in system dark mode — the "cute" palette reads much
+         better on a pale background than a dark one, so the app no longer
+         switches to a dark surface on phones set to dark mode. */
+      --bg: #FFF8F5;
+      --surface: #FFFFFF;
+      --text: #4A3236;
+      --text-muted: #8A6A6D;
+      --sand: #F7E4DF;
+      --stone: #B08A8C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #FFF8F5;
+    --surface: #FFFFFF;
+    --text: #4A3236;
+    --text-muted: #8A6A6D;
+    --sand: #F7E4DF;
+    --stone: #B08A8C;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; overflow: hidden; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  #shell {
+    max-width: 460px;
+    margin: 0 auto;
+    height: 100dvh;
+    height: 100vh;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  #screen { flex: 1 1 auto; min-height: 0; padding: 20px 20px 12px; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 20px 4px;
+  }
+  .back-btn {
+    background: none; border: none; color: var(--text); font-size: 20px;
+    cursor: pointer; padding: 4px 8px; border-radius: 8px;
+  }
+  .lang-toggle {
+    display: flex; background: var(--sand); border-radius: 20px; padding: 3px;
+    font-size: 12px; font-weight: 600;
+  }
+  .lang-toggle button {
+    border: none; background: none; padding: 5px 12px; border-radius: 16px;
+    cursor: pointer; color: var(--text-muted); font-family: inherit; font-weight: 600;
+  }
+  .lang-toggle button.active { background: var(--forest); color: #fff; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    border: none; border-radius: 12px; padding: 14px 20px; font-size: 15px;
+    font-weight: 600; cursor: pointer; font-family: inherit; width: 100%;
+    transition: transform .08s ease;
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-primary { background: var(--forest); color: #fff; }
+  .btn-secondary { background: var(--sand); color: var(--text); }
+  .btn-outline { background: transparent; color: var(--forest); border: 1.5px solid var(--forest); }
+  .btn-alert { background: var(--alert); color: #fff; }
+  .btn-sm { padding: 9px 14px; font-size: 13px; width: auto; }
+
+  .card {
+    background: var(--surface); border-radius: var(--radius); padding: 16px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px; padding: 9px 14px;
+    border-radius: 20px; background: var(--sand); color: var(--text);
+    font-size: 13.5px; font-weight: 500; cursor: pointer; border: 1.5px solid transparent;
+    margin: 0 8px 8px 0;
+  }
+  .chip.selected { border-color: var(--forest); background: var(--forest); color: #fff; }
+  .chip-row { display: flex; flex-wrap: wrap; }
+  .field-label { font-size: 12.5px; font-weight: 600; color: var(--text-muted); margin: 18px 0 8px; text-transform: none; }
+  input[type=text], textarea {
+    width: 100%; padding: 12px 14px; border-radius: 10px; border: 1.5px solid var(--sand);
+    background: var(--surface); color: var(--text); font-family: inherit; font-size: 15px;
+  }
+  textarea { resize: none; min-height: 64px; }
+
+  .tabbar {
+    flex: 0 0 auto;
+    display: flex; flex-direction: row; flex-wrap: nowrap; align-items: stretch;
+    border-top: 1px solid rgba(0,0,0,0.08); background: var(--surface);
+    padding: 8px 4px calc(8px + env(safe-area-inset-bottom, 0px));
+  }
+  .tab {
+    flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 3px;
+    background: none; border: none; font-family: inherit; cursor: pointer;
+    color: var(--text-muted); font-size: 10.5px; font-weight: 600; padding: 4px 2px;
+    white-space: nowrap;
+  }
+  .tab.active { color: var(--forest); }
+  .tab .ic { font-size: 19px; }
+  #topbar.topbar { flex: 0 0 auto; }
+  #activebar { flex: 0 0 auto; }
+
+  .active-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--forest); color: #fff; padding: 10px 16px; font-size: 13px; font-weight: 600;
+    cursor: pointer;
+  }
+  .active-bar .pulse {
+    width: 8px; height: 8px; border-radius: 50%; background: #9BE39B;
+    display: inline-block; margin-right: 8px; animation: pulse 1.6s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+  .avatar {
+    width: 34px; height: 34px; border-radius: 50%; background: var(--sage);
+    display: flex; align-items: center; justify-content: center; font-weight: 700;
+    color: #fff; font-size: 13px; flex-shrink: 0;
+  }
+  .row { display: flex; align-items: center; gap: 10px; }
+  .space-between { display: flex; align-items: center; justify-content: space-between; }
+  .muted { color: var(--text-muted); font-size: 13px; }
+  .tag { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 8px; background: var(--sage); color: #fff; }
+  .divider { height: 1px; background: rgba(0,0,0,0.07); margin: 14px 0; }
+  .section-title { font-size: 13px; font-weight: 700; color: var(--text-muted); margin: 22px 0 10px; }
+  .hero-img {
+    height: 150px; border-radius: var(--radius); background: linear-gradient(135deg, var(--forest) 0%, var(--sage) 100%);
+    display: flex; align-items: flex-end; padding: 14px; color: #fff; position: relative; overflow: hidden;
+  }
+  .compat-badge {
+    background: var(--forest); color: #fff; font-weight: 700; font-size: 13px;
+    padding: 6px 12px; border-radius: 10px; display: inline-block;
+  }
+  .progress-track { height: 6px; background: var(--sand); border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--forest); }
+  .msg { background: var(--sand); border-radius: 12px; padding: 8px 12px; margin-bottom: 8px; font-size: 14px; max-width: 80%; }
+  .msg.me { background: var(--forest); color: #fff; margin-left: auto; }
+  .star-row span { font-size: 26px; cursor: pointer; margin-right: 4px; color: var(--stone); }
+  .star-row span.filled { color: var(--forest); }
+  .avatar.clickable { cursor: pointer; }
+  .offline-tag {
+    display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700;
+    color: var(--forest); background: rgba(143,161,137,0.25); padding: 5px 10px; border-radius: 8px;
+  }
+  .thumb-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .thumb {
+    width: 62px; height: 62px; border-radius: 10px; object-fit: cover; border: 1px solid rgba(0,0,0,0.08);
+  }
+  .thumb-wrap { position: relative; }
+  .thumb-remove {
+    position: absolute; top: -6px; right: -6px; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--alert); color: #fff; border: none; font-size: 12px; line-height: 1; cursor: pointer;
+  }
+  .upload-btn {
+    display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; border-radius: 10px;
+    background: var(--sand); font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 8px;
+  }
+  .ping-card {
+    background: rgba(181,80,45,0.1); border: 1px solid rgba(181,80,45,0.3); border-radius: 12px;
+    padding: 12px 14px; margin-top: 14px; font-size: 13px;
+  }
+  .sms-link {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+    padding: 12px; border-radius: 12px; background: var(--sand); color: var(--text); font-weight: 600;
+    font-size: 14px; text-decoration: none; margin-top: 8px;
+  }
+  .route-card { display: flex; gap: 12px; align-items: flex-start; }
+  .toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
+  .switch { width: 40px; height: 24px; border-radius: 14px; background: var(--sand); position: relative; cursor: pointer; flex-shrink: 0; }
+  .switch.on { background: var(--forest); }
+  .switch .knob { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform .15s ease; }
+  .switch.on .knob { transform: translateX(16px); }
+  #toast {
+    position: fixed; left: 50%; bottom: 96px; transform: translate(-50%, 12px);
+    background: var(--charcoal); color: #fff; padding: 12px 20px; border-radius: 24px;
+    font-size: 13.5px; font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease;
+    z-index: 999; max-width: 82%; text-align: center;
+  }
+  #toast.show { opacity: 1; transform: translate(-50%, 0); }
+  .inline-confirm { background: var(--sand); border-radius: 14px; padding: 14px; margin-top: 12px; text-align: center; }
+  .search-pill {
+    display:flex; align-items:center; gap:10px; background:var(--surface); border-radius:26px;
+    padding:12px 16px; border:1px solid rgba(0,0,0,0.06);
+  }
+  .search-pill input { border:none; outline:none; background:none; flex:1; font-size:14px; font-family:inherit; color:var(--text); }
+  .route-hero {
+    position:relative; height:190px; border-radius:var(--radius); background:var(--sand);
+    overflow:hidden; margin-top:14px;
+  }
+  .route-hero .fab {
+    position:absolute; right:14px; bottom:14px; display:flex; align-items:center; gap:8px;
+    background:var(--charcoal); color:#fff; border:none; border-radius:26px; padding:12px 18px;
+    font-weight:700; font-size:13.5px; cursor:pointer;
+  }
+  .route-hero .badge {
+    position:absolute; left:16px; bottom:16px; background:var(--forest-deep); color:#fff;
+    border-radius:20px; padding:7px 14px 7px 8px; font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px;
+  }
+  .route-hero .badge .dot { width:22px; height:22px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-size:11px; }
+</style>
+</head>
+<body>
+<div id="shell">
+  <div id="activebar"></div>
+  <div id="topbar" class="topbar"></div>
+  <div id="screen"></div>
+  <div id="toast"></div>
+  <div id="tabbar" class="tabbar"></div>
+</div>
+
+<script>
+const STORAGE_KEY = 'trailkin_state_v1';
+
+const I18N = {
+  en: {
+    tagline: "Find your trail. Find your people.",
+    subtagline: "This weekend, you have someone to hike with.",
+    getStarted: "Get started",
+    chooseLang: "Choose your language",
+    motivationTitle: "What brings you outdoors?",
+    motivations: ["Meet hiking friends","Explore new trails","Feel safer outdoors","Start hiking","Find weekend adventures","Join group hikes","Travel and explore"],
+    continue: "Continue",
+    profileTitle: "Build your hiking profile",
+    profileSub: "Takes about a minute. You can skip anything.",
+    name: "Name", namePh: "How should we call you?",
+    city: "City", cityPh: "Where are you based?",
+    experience: "Outdoor experience",
+    expLevels: ["Beginner","Intermediate","Advanced","Expert"],
+    pace: "Hiking pace",
+    paceLevels: ["Chill","Moderate","Fast","Very fast"],
+    distance: "Preferred distance",
+    distLevels: ["0–5 km","5–10 km","10–15 km","15–25 km","25+ km"],
+    style: "Hiking style",
+    styleTags: ["Social","Photography","Fitness","Nature","Quiet","Adventure","Exploration"],
+    finishProfile: "Finish profile",
+    whatDoYouFeel: "What do you feel like doing?",
+    quick: ["🥾 Easy hike","⛰ Challenge me","🌅 Sunrise hike","📸 Scenic hike","☕ Hike + coffee","🏕 Overnight","🏃 Trail run","✨ Surprise me"],
+    hikingToday: "Hiking today",
+    joined: "joined", spotsLeft: "spots left",
+    happeningNear: "Happening near you",
+    lookingForBuddies: "Looking for hiking buddies",
+    beginnerFriendly: "Beginner-friendly",
+    join: "Join hike",
+    requested: "Requested",
+    viewGroup: "View group",
+    compatMatch: "hiking match",
+    whyMatch: "Why you match",
+    matchReasons: ["Same pace","Both prefer morning starts","Similar distance preference"],
+    participants: "Participants",
+    confirmed: "Confirmed", waitlist: "Backup list",
+    transport: "How are we getting there?",
+    offerSeat: "Offer a seat", requestSeat: "Request a seat",
+    checklist: "Checklist",
+    groupChat: "Group chat",
+    sendMsg: "Message…", send: "Send",
+    startHike: "Start hike",
+    trustedContacts: "Trusted contacts",
+    trustedSub: "Choose someone who'll know your plan before you start.",
+    contactName: "Contact name", contactPhone: "Phone number",
+    addContact: "Add contact",
+    saveAndStart: "Save & start hike",
+    tripActive: "TRIP ACTIVE",
+    elapsed: "Elapsed",
+    expectedFinish: "Expected finish",
+    safetyCenter: "Safety", sos: "SOS",
+    imBack: "I'm back safely", needTime: "Need more time", needHelp: "Need help",
+    endedTrip: "Trip completed",
+    goToReview: "Review your hike",
+    sosTitle: "SOS", sosSub: "Your location and plan, ready to share.",
+    coords: "Current coordinates", nearestExit: "Nearest known exit point",
+    callEmergency: "Call emergency services", callContact: "Call trusted contact",
+    shareLocation: "Share current location", copyCoords: "Copy GPS coordinates",
+    reviewTitle: "How was your hike?",
+    trailCondition: "Trail condition", soloComfort: "Solo comfort experience",
+    companionFeedback: "Companion feedback",
+    compTags: ["Punctual","Respectful","Pace accurate","Prepared","Good communicator"],
+    hikeAgain: "Would you hike together again?",
+    yes: "Yes", maybe: "Maybe", no: "No",
+    submitReview: "Submit review",
+    reviewDone: "Thanks — logged to your profile.",
+    home: "Home", explore: "Explore", hikes: "Hikes", messages: "Messages", profile: "Profile",
+    yourStats: "Your stats", hikesCompleted: "Hikes completed", badges: "Badges",
+    settings: "Settings", language: "Language",
+    disclaimer: "Community reports are subjective and conditions can change. You remain responsible for assessing routes and conditions. Safety features depend on device connectivity.",
+    editProfile: "Edit profile",
+    startedTrip: "Trip started — sharing with your trusted contact.",
+    firstHikeBadge: "First hike",
+    noneYet: "None yet — complete a hike to earn your first badge.",
+    difficulty: "Moderate", elevation: "Elevation gain", duration: "Est. duration",
+    viewProfile: "View profile", message: "Message",
+    about: "About", hikingStats: "Hiking stats",
+    routeMapTitle: "Route map", waypoints: "Waypoints",
+    wpStart: "Start", wpWater: "Water point", wpView: "Viewpoint", wpEnd: "Finish",
+    viewRouteMap: "View route map",
+    offline: "Available offline", makeOffline: "Make available offline", offlineOn: "Downloaded for offline",
+    offlineNote: "Map, route, emergency info and meeting point are cached on your device.",
+    autoPing: "Auto safety ping every 30 min",
+    pingReminder: "It's been 30 minutes on trail.",
+    sendSmsUpdate: "Send a quick SMS update",
+    smsMsgBody: "I'm on the trail, all good. Will check in again soon.",
+    pingLogTitle: "Trip log",
+    addNote: "Add a note about this route",
+    notePh: "How was it? Anything worth remembering…",
+    addPhotos: "Add photos",
+    photosOptional: "Photos (optional)",
+    routeHistoryTitle: "Route history",
+    noHistoryYet: "Completed hikes will show up here with your notes and photos.",
+    trailReviewsTitle: "Reviews from this trail",
+    noReviewsYet: "No reviews yet — be the first.",
+    photosCount: "photos",
+    safetyCheckTitle: "Safety check",
+    safetyCheckSub: "One quick step before you start tracking.",
+    expectedDuration: "Expected duration",
+    editContact: "Change contact",
+    noContactYet: "No trusted contact set for this hike.",
+    addTrustedContact: "Add a trusted contact",
+    startTracking: "Start tracking",
+    skipForNow: "Skip for now",
+    navMode: "Navigation",
+    distanceTravelled: "Travelled", remainingDistance: "Remaining",
+    elapsedTime: "Elapsed", centerOnMe: "Center on me", fitRoute: "Fit route",
+    pause: "Pause", resume: "Resume", finishHike: "Finish hike",
+    offRouteWarning: "You appear to be off the trail.",
+    noRouteGeometry: "A detailed route map isn't available for this trail yet — showing the trailhead only.",
+    gpsAccuracy: "GPS accuracy",
+    tileNote: "Route shown schematically — live map tiles aren't available in this build.",
+    offlineTilesNote: "Route & safety info cached for offline use. Offline map tiles aren't available yet.",
+    confirmFinish: "Finish this hike now?",
+    yourLocation: "You",
+    routesTab: "Routes",
+    recordRoute: "Record a route",
+    recordRouteSub: "Track your own path live with GPS, then save or share it — like Strava.",
+    startRecording: "Start recording",
+    pauseRecording: "Pause",
+    resumeRecording: "Resume",
+    finishRecording: "Finish",
+    discardRecording: "Discard",
+    recording: "Recording",
+    recordedPoints: "GPS points",
+    liveDistance: "Distance",
+    liveDuration: "Duration",
+    publishRouteTitle: "Save your route",
+    routeName: "Route name",
+    routeNamePh: "e.g. My morning loop",
+    routeDescription: "Description (optional)",
+    routeDescPh: "What's this route like?",
+    visibility: "Visibility",
+    visPublic: "Public — visible to everyone",
+    visPrivate: "Private — only you",
+    publishRoute: "Save route",
+    minPointsWarning: "Record at least a short distance before saving.",
+    myRoutesTitle: "My routes",
+    noMyRoutesYet: "Routes you record will show up here.",
+    communityRoutesTitle: "Community routes",
+    recordedByUser: "Recorded by a hiker",
+    noCommunityRoutes: "No community-recorded routes yet.",
+    upcomingEventsTitle: "Upcoming events",
+    noUpcomingEvents: "Nothing planned yet.",
+    planEvent: "Plan an event",
+    createEventTitle: "Plan an event",
+    eventTitle: "Event title",
+    eventTitlePh: "e.g. Sunrise hike at Garni",
+    eventDate: "When",
+    eventDatePh: "e.g. This Saturday, 9:00",
+    eventMeetingPoint: "Meeting point",
+    eventMeetingPointPh: "e.g. Republic Square",
+    createEventBtn: "Create event",
+    eventCreated: "Event added to your upcoming events.",
+    deleteEvent: "Remove",
+    pointsCount: "points",
+    findBuddiesTitle: "Find Buddies",
+    buddyJoin: "Join",
+    buddyJoined: "Joined ✓",
+    buddyMessage: "Message",
+    buddyNewHiker: "New hiker",
+    buddyHikesCount: "hikes",
+    routeDescTitle: "Route",
+    photosSection: "Photos",
+    noPhotosYet: "No photos added for this route yet.",
+    addRoute: "Add route",
+    addedToMyRoutes: "Added to your routes.",
+    tripCompleteTitle: "Hike complete! 🎉",
+    tripCompleteSub: "Nice work — here's your summary.",
+    traveledMap: "Your route",
+    noTraveledRoute: "No GPS track was recorded for this hike.",
+    statDistance: "Distance",
+    statDuration: "Duration",
+    statElevation: "Elevation gain",
+    statSteps: "Est. steps",
+    continueToReview: "Continue",
+    notificationsTitle: "Notifications",
+    notifInvites: "Hike invitations",
+    notifMessages: "New messages",
+    notifReminders: "Hike reminders",
+    notifWeather: "Weather changes",
+    notifWaitlist: "Waitlist spot available",
+    privacyTitle: "Privacy",
+    profileVisibility: "Profile visible to others",
+    shareLocationDefault: "Share location by default on new hikes",
+    blockedUsers: "Blocked users",
+    noBlockedUsers: "You haven't blocked anyone.",
+    exportData: "Export my data",
+    deleteAccount: "Delete account",
+    exportRequested: "Export requested — you'll get a copy by email.",
+    deleteAccountConfirmTitle: "This will permanently delete your account.",
+    deleteAccountCancelled: "Account not deleted.",
+    viewRoute: "View route",
+    leaveGroup: "Leave group",
+    leaveGroupConfirm: "Leave this hike's group?",
+    leftGroupToast: "You've left the group.",
+    logOut: "Log out",
+    loggedOutToast: "Logged out.",
+    safetyCenterTitle: "Safety Center",
+    safetyCenterSub: "Everything you need before, during, and after a hike.",
+    trustedContactSection: "Trusted contact",
+    manageTrustedContact: "Manage",
+    noContactSet: "No trusted contact set yet.",
+    emergencyNumbersTitle: "Emergency numbers",
+    emergencyGeneral: "General emergency (Armenia)",
+    medicalInfoTitle: "Medical info",
+    medicalInfoSub: "Stored on this device only — visible to you, shown on the SOS screen.",
+    bloodType: "Blood type",
+    bloodTypePh: "e.g. O+",
+    allergies: "Allergies",
+    allergiesPh: "e.g. Penicillin, bee stings",
+    conditions: "Medical conditions",
+    conditionsPh: "e.g. Asthma, diabetes",
+    saveMedicalInfo: "Save",
+    savedConfirm: "Saved.",
+    satelliteSOSTitle: "No signal? Use satellite SOS",
+    satelliteSOSDesc: "Many phones now (iPhone 14+, some newer Android) have built-in satellite emergency messaging for when there's no cell coverage — common on remote Armenian trails. Trailkin can't provide this itself; it's a feature of your phone.",
+    satelliteSOSHow: "How to check: Settings → Emergency SOS on iPhone, or your phone maker's safety app on Android.",
+    openSosScreen: "Open SOS screen",
+    autoCheckinSection: "Auto safety check-in",
+    stepOf: "Step {n} of {total}",
+    stepBasics: "The basics",
+    stepExperience: "Experience & pace",
+    stepStyle: "Style & timing",
+    stepLogistics: "Logistics",
+    bio: "Short bio (optional)",
+    bioPh: "A sentence or two about you…",
+    elevationPref: "Preferred elevation gain",
+    elevLevels: ["Low","Moderate","High","Very high"],
+    startTimePref: "Preferred start",
+    startLevels: ["Sunrise","Morning","Afternoon","Flexible"],
+    stopsPref: "Stops along the way",
+    stopsLevels: ["Frequent","Normal","Minimal"],
+    transportPref: "Transportation",
+    hasCarYes: "Has a car", hasCarNo: "No car",
+    seatsLabel: "Available passenger seats",
+    dogsPref: "Hiking with dogs",
+    dogsOk: "Dogs okay", dogsNo: "No dogs",
+    extrasPref: "Also interested in",
+    extrasTags: ["Camping","Trail running","Climbing","Cycling","SUP","Snow activities"],
+    back: "Back",
+    next: "Continue",
+    skipField: "Skip this",
+  },
+  ru: {
+    tagline: "Найди свою тропу. Найди своих людей.",
+    subtagline: "В эти выходные тебе будет с кем пойти в поход.",
+    getStarted: "Начать",
+    chooseLang: "Выберите язык",
+    motivationTitle: "Что привело тебя на природу?",
+    motivations: ["Найти подруг для походов","Открыть новые тропы","Чувствовать себя безопаснее","Начать ходить в походы","Найти приключения на выходные","Присоединиться к групповым походам","Путешествовать и исследовать"],
+    continue: "Продолжить",
+    profileTitle: "Заполни профиль туриста",
+    profileSub: "Займёт около минуты. Любой пункт можно пропустить.",
+    name: "Имя", namePh: "Как тебя называть?",
+    city: "Город", cityPh: "Где ты находишься?",
+    experience: "Опыт походов",
+    expLevels: ["Новичок","Средний","Продвинутый","Эксперт"],
+    pace: "Темп ходьбы",
+    paceLevels: ["Неспешный","Средний","Быстрый","Очень быстрый"],
+    distance: "Предпочитаемая дистанция",
+    distLevels: ["0–5 км","5–10 км","10–15 км","15–25 км","25+ км"],
+    style: "Стиль похода",
+    styleTags: ["Общение","Фотография","Фитнес","Природа","Тишина","Приключения","Исследование"],
+    finishProfile: "Завершить профиль",
+    whatDoYouFeel: "Чем хочешь заняться?",
+    quick: ["🥾 Лёгкий поход","⛰ Бросить вызов","🌅 Поход на рассвете","📸 Живописный маршрут","☕ Поход + кофе","🏕 С ночёвкой","🏃 Трейл-ран","✨ Удиви меня"],
+    hikingToday: "Поход сегодня",
+    joined: "присоединились", spotsLeft: "мест осталось",
+    happeningNear: "Рядом с тобой",
+    lookingForBuddies: "Ищут компанию для похода",
+    beginnerFriendly: "Подходит новичкам",
+    join: "Присоединиться",
+    requested: "Заявка отправлена",
+    viewGroup: "Открыть группу",
+    compatMatch: "совпадение",
+    whyMatch: "Почему вы подходите друг другу",
+    matchReasons: ["Одинаковый темп","Обе предпочитают утренний старт","Похожая дистанция"],
+    participants: "Участницы",
+    confirmed: "Подтверждено", waitlist: "Резервный список",
+    transport: "Как добираемся?",
+    offerSeat: "Предложить место", requestSeat: "Запросить место",
+    checklist: "Чек-лист",
+    groupChat: "Чат группы",
+    sendMsg: "Сообщение…", send: "Отправить",
+    startHike: "Начать поход",
+    trustedContacts: "Доверенные контакты",
+    trustedSub: "Выбери человека, который будет знать твой план.",
+    contactName: "Имя контакта", contactPhone: "Номер телефона",
+    addContact: "Добавить контакт",
+    saveAndStart: "Сохранить и начать поход",
+    tripActive: "ПОХОД АКТИВЕН",
+    elapsed: "Прошло времени",
+    expectedFinish: "Ожидаемое завершение",
+    safetyCenter: "Безопасность", sos: "SOS",
+    imBack: "Я в безопасности", needTime: "Нужно больше времени", needHelp: "Нужна помощь",
+    endedTrip: "Поход завершён",
+    goToReview: "Оставить отзыв",
+    sosTitle: "SOS", sosSub: "Твоё местоположение и план — готовы к отправке.",
+    coords: "Текущие координаты", nearestExit: "Ближайший известный выход",
+    callEmergency: "Позвонить в экстренную службу", callContact: "Позвонить доверенному контакту",
+    shareLocation: "Поделиться местоположением", copyCoords: "Скопировать координаты",
+    reviewTitle: "Как прошёл поход?",
+    trailCondition: "Состояние тропы", soloComfort: "Комфорт в одиночном походе",
+    companionFeedback: "Отзыв о попутчицах",
+    compTags: ["Пунктуальность","Уважительность","Темп совпал","Подготовленность","Хорошая коммуникация"],
+    hikeAgain: "Пошли бы снова вместе?",
+    yes: "Да", maybe: "Возможно", no: "Нет",
+    submitReview: "Отправить отзыв",
+    reviewDone: "Спасибо — сохранено в профиле.",
+    home: "Главная", explore: "Открыть", hikes: "Походы", messages: "Сообщения", profile: "Профиль",
+    yourStats: "Статистика", hikesCompleted: "Завершено походов", badges: "Значки",
+    settings: "Настройки", language: "Язык",
+    disclaimer: "Отзывы сообщества субъективны, а условия могут меняться. Ответственность за оценку маршрута остаётся на тебе. Функции безопасности зависят от связи на устройстве.",
+    editProfile: "Редактировать профиль",
+    startedTrip: "Поход начат — данные передаются доверенному контакту.",
+    firstHikeBadge: "Первый поход",
+    noneYet: "Пока нет значков — заверши поход, чтобы получить первый.",
+    difficulty: "Средняя", elevation: "Набор высоты", duration: "Прим. длительность",
+    viewProfile: "Открыть профиль", message: "Написать",
+    about: "О себе", hikingStats: "Статистика походов",
+    routeMapTitle: "Карта маршрута", waypoints: "Точки маршрута",
+    wpStart: "Старт", wpWater: "Вода", wpView: "Смотровая площадка", wpEnd: "Финиш",
+    viewRouteMap: "Смотреть карту маршрута",
+    offline: "Доступно офлайн", makeOffline: "Сделать доступным офлайн", offlineOn: "Загружено офлайн",
+    offlineNote: "Карта, маршрут, экстренная информация и точка встречи сохранены на устройстве.",
+    autoPing: "Автопроверка каждые 30 минут",
+    pingReminder: "Прошло 30 минут на маршруте.",
+    sendSmsUpdate: "Отправить SMS с коротким апдейтом",
+    smsMsgBody: "Я на маршруте, всё хорошо. Скоро снова напишу.",
+    pingLogTitle: "Журнал похода",
+    addNote: "Добавь заметку об этом маршруте",
+    notePh: "Как всё прошло? Что стоит запомнить…",
+    addPhotos: "Добавить фото",
+    photosOptional: "Фото (необязательно)",
+    routeHistoryTitle: "История маршрутов",
+    noHistoryYet: "Завершённые походы появятся здесь вместе с заметками и фото.",
+    trailReviewsTitle: "Отзывы об этом маршруте",
+    noReviewsYet: "Пока нет отзывов — стань первой.",
+    photosCount: "фото",
+    safetyCheckTitle: "Проверка безопасности",
+    safetyCheckSub: "Один короткий шаг перед началом отслеживания.",
+    expectedDuration: "Ожидаемая длительность",
+    editContact: "Изменить контакт",
+    noContactYet: "Для этого похода доверенный контакт не выбран.",
+    addTrustedContact: "Добавить доверенный контакт",
+    startTracking: "Начать отслеживание",
+    skipForNow: "Пропустить пока",
+    navMode: "Навигация",
+    distanceTravelled: "Пройдено", remainingDistance: "Осталось",
+    elapsedTime: "Прошло времени", centerOnMe: "Центрировать на мне", fitRoute: "Весь маршрут",
+    pause: "Пауза", resume: "Продолжить", finishHike: "Завершить поход",
+    offRouteWarning: "Похоже, ты сошла с маршрута.",
+    noRouteGeometry: "Подробная карта маршрута для этой тропы пока недоступна — показана только точка старта.",
+    gpsAccuracy: "Точность GPS",
+    tileNote: "Маршрут показан схематично — в этой сборке недоступны живые тайлы карты.",
+    offlineTilesNote: "Маршрут и информация о безопасности сохранены офлайн. Офлайн-тайлы карты пока недоступны.",
+    confirmFinish: "Завершить поход сейчас?",
+    yourLocation: "Ты",
+    routesTab: "Маршруты",
+    recordRoute: "Записать маршрут",
+    recordRouteSub: "Отслеживай свой путь вживую по GPS, потом сохрани или опубликуй его — как в Strava.",
+    startRecording: "Начать запись",
+    pauseRecording: "Пауза",
+    resumeRecording: "Продолжить",
+    finishRecording: "Завершить",
+    discardRecording: "Удалить запись",
+    recording: "Идёт запись",
+    recordedPoints: "GPS-точек",
+    liveDistance: "Дистанция",
+    liveDuration: "Длительность",
+    publishRouteTitle: "Сохрани маршрут",
+    routeName: "Название маршрута",
+    routeNamePh: "например, Моя утренняя петля",
+    routeDescription: "Описание (необязательно)",
+    routeDescPh: "Какой это маршрут?",
+    visibility: "Видимость",
+    visPublic: "Публичный — видят все",
+    visPrivate: "Приватный — только ты",
+    publishRoute: "Сохранить маршрут",
+    minPointsWarning: "Запиши хотя бы небольшую дистанцию перед сохранением.",
+    myRoutesTitle: "Мои маршруты",
+    noMyRoutesYet: "Записанные тобой маршруты появятся здесь.",
+    communityRoutesTitle: "Маршруты сообщества",
+    recordedByUser: "Записано туристкой",
+    noCommunityRoutes: "Пока нет маршрутов, записанных сообществом.",
+    upcomingEventsTitle: "Предстоящие события",
+    noUpcomingEvents: "Пока ничего не запланировано.",
+    planEvent: "Спланировать событие",
+    createEventTitle: "Спланировать событие",
+    eventTitle: "Название события",
+    eventTitlePh: "например, Поход на рассвете в Гарни",
+    eventDate: "Когда",
+    eventDatePh: "например, Эта суббота, 9:00",
+    eventMeetingPoint: "Место встречи",
+    eventMeetingPointPh: "например, площадь Республики",
+    createEventBtn: "Создать событие",
+    eventCreated: "Событие добавлено в предстоящие.",
+    deleteEvent: "Удалить",
+    pointsCount: "точек",
+    findBuddiesTitle: "Найти попутчиц",
+    buddyJoin: "Вступить",
+    buddyJoined: "Вступила ✓",
+    buddyMessage: "Написать",
+    buddyNewHiker: "Новенькая",
+    buddyHikesCount: "походов",
+    routeDescTitle: "Маршрут",
+    photosSection: "Фото",
+    noPhotosYet: "Для этого маршрута пока нет фото.",
+    addRoute: "Добавить маршрут",
+    addedToMyRoutes: "Добавлено в твои маршруты.",
+    tripCompleteTitle: "Поход завершён! 🎉",
+    tripCompleteSub: "Отличная работа — вот твоя сводка.",
+    traveledMap: "Твой маршрут",
+    noTraveledRoute: "GPS-трек для этого похода не был записан.",
+    statDistance: "Дистанция",
+    statDuration: "Длительность",
+    statElevation: "Набор высоты",
+    statSteps: "Прим. шагов",
+    continueToReview: "Продолжить",
+    notificationsTitle: "Уведомления",
+    notifInvites: "Приглашения в походы",
+    notifMessages: "Новые сообщения",
+    notifReminders: "Напоминания о походах",
+    notifWeather: "Изменения погоды",
+    notifWaitlist: "Освободилось место в резерве",
+    privacyTitle: "Приватность",
+    profileVisibility: "Профиль виден другим",
+    shareLocationDefault: "Делиться геолокацией по умолчанию в новых походах",
+    blockedUsers: "Заблокированные",
+    noBlockedUsers: "Ты никого не заблокировала.",
+    exportData: "Выгрузить мои данные",
+    deleteAccount: "Удалить аккаунт",
+    exportRequested: "Запрос отправлен — копия придёт на почту.",
+    deleteAccountConfirmTitle: "Это навсегда удалит твой аккаунт.",
+    deleteAccountCancelled: "Аккаунт не удалён.",
+    viewRoute: "Смотреть маршрут",
+    leaveGroup: "Покинуть группу",
+    leaveGroupConfirm: "Покинуть группу этого похода?",
+    leftGroupToast: "Ты покинула группу.",
+    logOut: "Выйти",
+    loggedOutToast: "Ты вышла из аккаунта.",
+    safetyCenterTitle: "Центр безопасности",
+    safetyCenterSub: "Всё, что нужно до, во время и после похода.",
+    trustedContactSection: "Доверенный контакт",
+    manageTrustedContact: "Управлять",
+    noContactSet: "Доверенный контакт пока не указан.",
+    emergencyNumbersTitle: "Экстренные номера",
+    emergencyGeneral: "Единый номер экстренных служб (Армения)",
+    medicalInfoTitle: "Медицинская информация",
+    medicalInfoSub: "Хранится только на этом устройстве — видна тебе и показывается на экране SOS.",
+    bloodType: "Группа крови",
+    bloodTypePh: "например, O+",
+    allergies: "Аллергии",
+    allergiesPh: "например, пенициллин, укусы пчёл",
+    conditions: "Хронические заболевания",
+    conditionsPh: "например, астма, диабет",
+    saveMedicalInfo: "Сохранить",
+    savedConfirm: "Сохранено.",
+    satelliteSOSTitle: "Нет сигнала? Спутниковый SOS",
+    satelliteSOSDesc: "У многих современных телефонов (iPhone 14+, некоторые новые Android) есть встроенная спутниковая связь для экстренных случаев — как раз для удалённых троп Армении без покрытия сети. Trailkin не может это обеспечить сам — это функция самого телефона.",
+    satelliteSOSHow: "Как проверить: Настройки → Экстренный SOS на iPhone, либо приложение безопасности производителя на Android.",
+    openSosScreen: "Открыть экран SOS",
+    autoCheckinSection: "Автоматический чек-ин безопасности",
+    stepOf: "Шаг {n} из {total}",
+    stepBasics: "Основное",
+    stepExperience: "Опыт и темп",
+    stepStyle: "Стиль и время",
+    stepLogistics: "Логистика",
+    bio: "Короткая биография (необязательно)",
+    bioPh: "Пара предложений о тебе…",
+    elevationPref: "Предпочитаемый набор высоты",
+    elevLevels: ["Низкий","Средний","Высокий","Очень высокий"],
+    startTimePref: "Предпочитаемое начало",
+    startLevels: ["Рассвет","Утро","День","Гибко"],
+    stopsPref: "Остановки в пути",
+    stopsLevels: ["Часто","Обычно","Минимум"],
+    transportPref: "Транспорт",
+    hasCarYes: "Есть машина", hasCarNo: "Без машины",
+    seatsLabel: "Свободные места для пассажиров",
+    dogsPref: "Походы с собаками",
+    dogsOk: "Можно с собакой", dogsNo: "Без собак",
+    extrasPref: "Также интересует",
+    extrasTags: ["Кемпинг","Трейл-ран","Скалолазание","Велоспорт","SUP","Зимние активности"],
+    back: "Назад",
+    next: "Продолжить",
+    skipField: "Пропустить",
+  }
+};
+
+const BUDDY_POST = {
+  id: 'sofia-sat', authorName: 'Sofia',
+  dateLabel: { en: 'Sat, Sep 28', ru: 'Сб, 28 сентября' },
+  location: { en: 'Dilijan', ru: 'Дилижан' },
+  difficulty: { en: 'Moderate', ru: 'Средняя' },
+  title: { en: 'Looking for buddies for Saturday', ru: 'Ищу компанию на субботу' },
+  body: {
+    en: "Hi! I'd love to find 2-3 people to hike Parz Lake - Goshavank this Saturday. Moderate pace, around 8-10 km. Open to new friends!",
+    ru: 'Привет! Хочу найти 2-3 человек для похода на Парз — Гошаванк в эту субботу. Средний темп, около 8-10 км. Рада новым знакомствам!',
+  },
+};
+
+const PROFILES = {
+  Anna:  { experience: { en:'Advanced', ru:'Продвинутый' }, pace: { en:'Moderate', ru:'Средний' }, hikes: 24, bio: { en:'Organizes weekend hikes around Dilijan most months. Always brings extra water.', ru:'Почти каждый месяц организует походы в районе Дилижана. Всегда берёт запасную воду.' } },
+  Elena: { experience: { en:'Intermediate', ru:'Средний' }, pace: { en:'Chill', ru:'Неспешный' }, hikes: 9,  bio: { en:'New to the area, loves photography stops along the way.', ru:'Недавно в городе, любит фотоостановки по пути.' } },
+  Maria: { experience: { en:'Beginner', ru:'Новичок' },     pace: { en:'Chill', ru:'Неспешный' }, hikes: 3,  bio: { en:'On her third hike ever — looking for patient, friendly groups.', ru:'Это уже третий поход — ищет дружелюбные, неспешные группы.' } },
+  Sofia: { experience: { en:'Advanced', ru:'Продвинутый' }, pace: { en:'Fast', ru:'Быстрый' },    hikes: 31, bio: { en:'Trail runner on weekdays, hikes with friends on weekends.', ru:'В будни бегает трейлы, по выходным ходит в походы с подругами.' } },
+};
+
+const TRAILS = [
+  { id:'garni', name:'Garni Gorge — Symphony of Stones', nameRu:'Ущелье Гарни — Симфония камней',
+    region:'Garni, Kotayk', regionRu:'Гарни, Котайкская область',
+    distance:6.0, elevation:180, difficulty:'easy', duration:'2h',
+    lat:40.1063, lng:44.7302,
+    desc:'An easy loop from Garni village down into the gorge to see the basalt column formations.',
+    descRu:'Лёгкая петля от села Гарни вниз в ущелье к базальтовым колоннам.',
+    // Illustrative waypoint path (not a surveyed GPS trace) — enough points to
+    // demo real route-geometry math (nearest-point, progress, off-route).
+    routeGeometry: [
+      {lat:40.1063,lng:44.7302},{lat:40.1049,lng:44.7285},{lat:40.1031,lng:44.7268},
+      {lat:40.1018,lng:44.7251},{lat:40.1009,lng:44.7238},{lat:40.1002,lng:44.7226},
+    ] },
+  { id:'parz', name:'Parz Lake — Goshavank', nameRu:'Озеро Парз — Гошаванк',
+    region:'Dilijan, Tavush', regionRu:'Дилижан, Тавушская область',
+    distance:8.0, elevation:250, difficulty:'moderate', duration:'3h',
+    lat:40.7419, lng:44.8927,
+    desc:'Forested trail from Parz Lake through beech woods to the 13th-century Goshavank monastery.',
+    descRu:'Лесная тропа от озера Парз через буковый лес к монастырю Гошаванк XIII века.',
+    routeGeometry: [
+      {lat:40.7419,lng:44.8927},{lat:40.7438,lng:44.8901},{lat:40.7461,lng:44.8878},
+      {lat:40.7479,lng:44.8845},{lat:40.7492,lng:44.8809},{lat:40.7498,lng:44.8771},
+      {lat:40.7496,lng:44.8730},
+    ] },
+  { id:'matosavank', name:'Matosavank — Jukhtak Monastery Loop', nameRu:'Матосаванк — петля Джухтак',
+    region:'Dilijan, Tavush', regionRu:'Дилижан, Тавушская область',
+    distance:5.8, elevation:160, difficulty:'easy', duration:'2h',
+    lat:40.7524, lng:44.8419,
+    desc:'A gentle loop past two small ruined monasteries in the forest above Dilijan.',
+    descRu:'Спокойная петля мимо двух небольших монастырей-руин в лесу над Дилижаном.' },
+  { id:'aragats', name:'Mount Aragats — Southern Summit', nameRu:'Гора Арагац — Южная вершина',
+    region:'Aragatsotn, Kari Lake', regionRu:'Арагацотн, озеро Кари',
+    distance:11.7, elevation:900, difficulty:'hard', duration:'5h',
+    lat:40.5333, lng:44.1833,
+    desc:"Armenia's most accessible 4,000m peak — a loop from Kari Lake up loose scree to the southern summit.",
+    descRu:'Самая доступная четырёхтысячная вершина Армении — петля от озера Кари по осыпи к южной вершине.',
+    routeGeometry: [
+      {lat:40.5333,lng:44.1833},{lat:40.5301,lng:44.1809},{lat:40.5268,lng:44.1782},
+      {lat:40.5241,lng:44.1758},{lat:40.5219,lng:44.1739},{lat:40.5203,lng:44.1725},
+    ] },
+  { id:'jermuk', name:'Jermuk Waterfall & Hot Springs', nameRu:'Джермукский водопад и горячие источники',
+    region:'Jermuk, Vayots Dzor', regionRu:'Джермук, Вайоц Дзор',
+    distance:7.0, elevation:200, difficulty:'easy', duration:'2.5h',
+    lat:39.8386, lng:45.6739,
+    desc:'Descend the Arpa Gorge past mineral hot springs to the Jermuk waterfall.',
+    descRu:'Спуск по ущелью Арпы мимо горячих минеральных источников к водопаду Джермук.' },
+  { id:'tatev', name:"Tatev — Devil's Bridge Gorge", nameRu:'Татев — ущелье Чёртова моста',
+    region:'Syunik, near Tatev', regionRu:'Сюник, около Татева',
+    distance:9.0, elevation:350, difficulty:'moderate', duration:'3.5h',
+    lat:39.3783, lng:46.2500,
+    desc:'A gorge descent to a natural travertine bridge and hot springs below Tatev monastery.',
+    descRu:'Спуск в ущелье к натуральному травертиновому мосту и горячим источникам под монастырём Татев.' },
+  { id:'debed', name:'Haghpat — Sanahin Monastery Trail', nameRu:'Ахпат — Санаин, тропа монастырей',
+    region:'Debed Canyon, Lori', regionRu:'Дебедское ущелье, Лори',
+    distance:6.5, elevation:150, difficulty:'easy', duration:'2h',
+    lat:41.0967, lng:44.7217,
+    desc:'Walk between two UNESCO World Heritage monasteries across the Debed Canyon.',
+    descRu:'Переход между двумя монастырями из списка ЮНЕСКО через Дебедское ущелье.' },
+  { id:'khustup', name:'Khustup Peak', nameRu:'Пик Хуступ',
+    region:'Kapan, Syunik', regionRu:'Капан, Сюник',
+    distance:14.0, elevation:1400, difficulty:'hard', duration:'7-8h',
+    lat:39.2058, lng:46.4058,
+    desc:"One of the South Caucasus's most dramatic ridge hikes, above the town of Kapan.",
+    descRu:'Один из самых впечатляющих гребневых походов Южного Кавказа, над городом Капан.' },
+];
+function toRad(d){ return d*Math.PI/180; }
+function haversineKm(lat1,lng1,lat2,lng2){
+  const R=6371, dLat=toRad(lat2-lat1), dLng=toRad(lng2-lng1);
+  const a=Math.sin(dLat/2)**2 + Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLng/2)**2;
+  return R*2*Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+function difficultyLabel(diff){
+  const map = { en:{easy:'Easy',moderate:'Moderate',hard:'Hard'}, ru:{easy:'Лёгкая',moderate:'Средняя',hard:'Сложная'} };
+  return map[state.lang][diff];
+}
+
+// ---------- RouteService: nearest-point / progress / off-route math ----------
+// Unit-tested standalone before integration (10/10 passing) — see project notes.
+// Uses a local equirectangular projection, valid at hiking scale (a few tens of km).
+function ptXY(p, ref) {
+  const R = 6371000;
+  return { x: toRad(p.lng-ref.lng)*Math.cos(toRad(ref.lat))*R, y: toRad(p.lat-ref.lat)*R };
+}
+function cumulativeDistances(route) {
+  const cum = [0];
+  for (let i=1;i<route.length;i++) cum.push(cum[i-1] + haversineKm(route[i-1].lat,route[i-1].lng,route[i].lat,route[i].lng));
+  return cum;
+}
+function nearestOnSegment(p, a, b) {
+  const P=ptXY(p,a), A=ptXY(a,a), B=ptXY(b,a);
+  const ABx=B.x-A.x, ABy=B.y-A.y, len2=ABx*ABx+ABy*ABy;
+  let t = len2===0 ? 0 : ((P.x-A.x)*ABx+(P.y-A.y)*ABy)/len2;
+  t = Math.max(0, Math.min(1, t));
+  const Cx=A.x+t*ABx, Cy=A.y+t*ABy, dx=P.x-Cx, dy=P.y-Cy;
+  return { t, distanceKm: Math.sqrt(dx*dx+dy*dy)/1000 };
+}
+// Returns null for routes with fewer than 2 points — caller must show an
+// explicit "no route geometry" state rather than fabricate a straight line.
+function nearestOnRoute(p, route) {
+  if (!route || route.length < 2) return null;
+  const cum = cumulativeDistances(route);
+  const totalRouteKm = cum[cum.length-1];
+  let best = null;
+  for (let i=0;i<route.length-1;i++) {
+    const seg = nearestOnSegment(p, route[i], route[i+1]);
+    const alongKm = cum[i] + seg.t * (cum[i+1]-cum[i]);
+    if (!best || seg.distanceKm < best.distanceKm) best = { t:seg.t, distanceKm:seg.distanceKm, distanceAlongRouteKm:alongKm, totalRouteKm };
+  }
+  return best;
+}
+// 50m default off-route threshold: wide enough for normal consumer-GPS noise
+// (5-15m open sky, worse in gorges/tree cover), narrow enough to catch a real wrong turn.
+function isOffRoute(p, route, thresholdKm=0.05) {
+  const n = nearestOnRoute(p, route);
+  return n ? n.distanceKm > thresholdKm : false;
+}
+// GPS-accuracy filtering + monotonic progress (never regress from noise, but
+// allow a small grace margin so a genuine backtrack isn't hidden forever).
+function createProgressTracker(accuracyThresholdM=30, graceMarginKm=0.03) {
+  let maxAlongKm = 0;
+  return {
+    update(fix, route) {
+      if (fix.accuracy != null && fix.accuracy > accuracyThresholdM)
+        return { accepted:false, reason:'low_accuracy', distanceTravelledKm:maxAlongKm };
+      const n = nearestOnRoute(fix, route);
+      if (!n) return { accepted:false, reason:'no_route_geometry', distanceTravelledKm:maxAlongKm };
+      if (n.distanceAlongRouteKm >= maxAlongKm - graceMarginKm) maxAlongKm = Math.max(maxAlongKm, n.distanceAlongRouteKm);
+      return {
+        accepted:true, distanceTravelledKm:maxAlongKm,
+        remainingKm: Math.max(0, n.totalRouteKm - maxAlongKm),
+        progress: n.totalRouteKm ? maxAlongKm/n.totalRouteKm : 0,
+        offRoute: n.distanceKm > 0.05, perpendicularDistanceKm: n.distanceKm,
+      };
+    },
+    reset() { maxAlongKm = 0; },
+    setProgress(km) { maxAlongKm = km; },
+  };
+}
+
+const SAMPLE_HIKE = {
+  id: 'h1', trailId: 'parz', trailName: 'Parz Lake — Goshavank', trailNameRu: 'Озеро Парз — Гошаванк',
+  location: 'Dilijan', locationRu: 'Дилижан',
+  distance: 8, elevation: 250, startTime: '09:30', duration: '3h',
+  joinedCount: 4, spots: 2,
+  participants: ['Anna','Elena','Maria','Sofia'],
+};
+
+function defaultState() {
+  return {
+    lang: 'en',
+    onboarded: false,
+    screen: 'welcome',
+    tab: 'home',
+    motivations: [],
+    profile: { name: '', city: '', bio: '', experience: null, pace: null, distance: null, styles: [],
+               elevation: null, startTime: null, stops: null, hasCar: null, carSeats: 1, dogsOk: null, extras: [] },
+    hikeStatus: 'none', // none | requested | confirmed
+    chatMessages: [
+      { from: 'Anna', text: { en: "See you all at the trailhead at 9:15!", ru: "Встречаемся у начала тропы в 9:15!" } },
+      { from: 'Elena', text: { en: "I'll bring extra water 💧", ru: "Возьму запасную воду 💧" } },
+    ],
+    trustedContact: null,
+    hikeSession: null, // structured HikeSession — see createHikeSession()/updateHikeSession()
+    completedHikes: 0,
+    review: { trailRating: 0, comfortRating: 0, companionTags: [], hikeAgain: null, note: '', photos: [] },
+    badges: [],
+    viewingProfile: null,
+    offlineTrails: {},
+    autoPingEnabled: true,
+    lastPingAt: null,
+    pingLog: [],
+    routeHistory: [],
+    trailReviews: { h1: [] },
+    trailInterest: {},
+    viewingTrailId: null,
+    plannedEvents: [],   // user-created events: { id, title, date, meetingPoint, createdAt }
+    myRoutes: [],
+    medicalInfo: { bloodType: '', allergies: '', conditions: '' },
+    buddyJoined: false,
+    buddyChatOpen: false,
+    savedRoutes: [], // ids of community routes the user added via "Add route"
+    viewingRouteId: null,
+    notificationSettings: { invites: true, messages: true, reminders: true, weather: true, waitlist: true },
+    privacySettings: { profileVisible: true, shareLocationDefault: false },
+  };
+}
+
+// Ephemeral (never persisted) — real device location for this session only,
+// consistent with the app's own safety model: location is temporary, not stored.
+let userLocation = null;
+let locationStatus = 'idle'; // idle | requesting | granted | denied | unsupported
+
+function requestLocation() {
+  if (!('geolocation' in navigator)) { locationStatus = 'unsupported'; render(); return; }
+  locationStatus = 'requesting'; render();
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      userLocation = { lat: pos.coords.latitude, lng: pos.coords.longitude, accuracy: pos.coords.accuracy };
+      locationStatus = 'granted';
+      applyFixToSession(userLocation);
+      render();
+    },
+    err => { locationStatus = 'denied'; render(); },
+    { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
+  );
+}
+function mapsHref(lat, lng, label) {
+  return `https://maps.apple.com/?ll=${lat},${lng}&q=${encodeURIComponent(label||'Trailhead')}`;
+}
+
+// ---------- HikeSession: structured model + progress tracker instance ----------
+// { id, trailId, status: active|paused|finished, startedAt, accumulatedPauseMs,
+//   pausedAt, finishedAt, distanceTravelledKm, offRoute, lastAccuracyM }
+// Persisted via the normal save() so an accidental close/reopen restores it —
+// raw location fixes are NOT persisted (kept in the ephemeral userLocation var
+// only), consistent with the app's "temporary, not stored" location model.
+let progressTracker = null;
+
+function trailForSession(session) {
+  return TRAILS.find(x => x.id === session.trailId) || null;
+}
+function startHikeSession(trailId) {
+  showFinishConfirm = false;
+  state.hikeSession = {
+    id: 'hs_' + Date.now(), trailId, status: 'active',
+    startedAt: Date.now(), accumulatedPauseMs: 0, pausedAt: null, finishedAt: null,
+    distanceTravelledKm: 0, offRoute: false, lastAccuracyM: null,
+    points: [], // real recorded GPS points along the way — used for the trip-complete map
+  };
+  progressTracker = createProgressTracker();
+  save();
+}
+function pauseHikeSession() {
+  if (!state.hikeSession || state.hikeSession.status !== 'active') return;
+  state.hikeSession.status = 'paused';
+  state.hikeSession.pausedAt = Date.now();
+  save(); render();
+}
+function resumeHikeSession() {
+  if (!state.hikeSession || state.hikeSession.status !== 'paused') return;
+  state.hikeSession.accumulatedPauseMs += Date.now() - state.hikeSession.pausedAt;
+  state.hikeSession.pausedAt = null;
+  state.hikeSession.status = 'active';
+  save(); render();
+}
+function elapsedMsForSession(s) {
+  if (!s) return 0;
+  const pauseMs = s.accumulatedPauseMs + (s.status === 'paused' && s.pausedAt ? Date.now() - s.pausedAt : 0);
+  const end = s.finishedAt || Date.now();
+  return Math.max(0, end - s.startedAt - pauseMs);
+}
+// Applies one location fix to the active session's progress tracker.
+// No-ops safely if the trail has no route geometry, per the error-handling spec —
+// distance-travelled and off-route just stay unavailable rather than being faked.
+function applyFixToSession(fix) {
+  const s = state.hikeSession;
+  if (!s || s.status !== 'active') return;
+  s.lastAccuracyM = fix.accuracy != null ? Math.round(fix.accuracy) : null;
+  // Record the real point regardless of whether we have curated route geometry —
+  // this is what the trip-complete map is drawn from afterwards.
+  if (fix.accuracy == null || fix.accuracy <= 50) {
+    if (!s.points) s.points = [];
+    s.points.push({ lat: fix.lat, lng: fix.lng });
+  }
+  const trail = trailForSession(s);
+  if (trail && trail.routeGeometry) {
+    if (!progressTracker) progressTracker = createProgressTracker();
+    const r = progressTracker.update(fix, trail.routeGeometry);
+    if (r.accepted) {
+      s.distanceTravelledKm = r.distanceTravelledKm;
+      s.offRoute = r.offRoute;
+    }
+  }
+  save();
+}
+
+let state = load();
+
+function load() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return Object.assign(defaultState(), JSON.parse(raw));
+  } catch (e) { console.warn('storage read failed', e); }
+  return defaultState();
+}
+function save() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+  catch (e) { console.warn('storage write failed', e); }
+}
+function t(key) { return I18N[state.lang][key]; }
+function go(screen) { state.screen = screen; save(); render(); window.scrollTo(0,0); }
+function setTab(tab) { state.tab = tab; state.screen = tab; save(); render(); }
+
+function toggleLang(l) { state.lang = l; save(); render(); }
+
+// ---------- Screens ----------
+
+function screenWelcome() {
+  return `
+    <div style="min-height:70vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:22px;">
+      <div style="font-size:46px;">🥾</div>
+      <h1 class="display" style="font-size:32px; line-height:1.15;">${t('tagline')}</h1>
+      <p class="muted" style="font-size:15px;">${t('subtagline')}</p>
+      <div class="lang-toggle" style="margin-top:8px;">
+        <button class="${state.lang==='en'?'active':''}" onclick="toggleLang('en')">EN</button>
+        <button class="${state.lang==='ru'?'active':''}" onclick="toggleLang('ru')">RU</button>
+      </div>
+      <div style="width:100%; margin-top:18px;">
+        <button class="btn btn-primary" onclick="go('motivation')">${t('getStarted')}</button>
+      </div>
+    </div>`;
+}
+
+function screenMotivation() {
+  const opts = t('motivations');
+  return `
+    <h2 style="font-size:24px; margin-bottom:18px;">${t('motivationTitle')}</h2>
+    <div class="chip-row">
+      ${opts.map((m,i) => `<div class="chip ${state.motivations.includes(i)?'selected':''}" onclick="toggleMotivation(${i})">${m}</div>`).join('')}
+    </div>
+    <div style="margin-top:28px;">
+      <button class="btn btn-primary" onclick="goToProfileBuild('motivation')">${t('continue')}</button>
+    </div>`;
+}
+function toggleMotivation(i) {
+  const idx = state.motivations.indexOf(i);
+  if (idx > -1) state.motivations.splice(idx,1); else state.motivations.push(i);
+  save(); render();
+}
+
+let profileBuildReturnTo = 'motivation'; // 'motivation' for fresh onboarding, 'profileMe' when editing an existing profile
+function goToProfileBuild(returnTo) { profileBuildReturnTo = returnTo || 'motivation'; go('profileBuild'); }
+
+function screenProfileBuild() {
+  const p = state.profile;
+  return `
+    <h2 style="font-size:24px;">${t('profileTitle')}</h2>
+    <p class="muted" style="margin:4px 0 6px;">${t('profileSub')}</p>
+
+    <div class="field-label">${t('name')}</div>
+    <input type="text" placeholder="${t('namePh')}" value="${p.name}" oninput="updateProfile('name', this.value)">
+    <div class="field-label">${t('city')}</div>
+    <input type="text" placeholder="${t('cityPh')}" value="${p.city}" oninput="updateProfile('city', this.value)">
+    <div class="field-label">${t('bio')}</div>
+    <textarea placeholder="${t('bioPh')}" oninput="updateProfile('bio', this.value)">${p.bio}</textarea>
+
+    <div class="field-label">${t('experience')}</div>
+    <div class="chip-row">${t('expLevels').map((l,i)=>`<div class="chip ${p.experience===i?'selected':''}" onclick="updateProfile('experience', ${i})">${l}</div>`).join('')}</div>
+    <div class="field-label">${t('pace')}</div>
+    <div class="chip-row">${t('paceLevels').map((l,i)=>`<div class="chip ${p.pace===i?'selected':''}" onclick="updateProfile('pace', ${i})">${l}</div>`).join('')}</div>
+    <div class="field-label">${t('distance')}</div>
+    <div class="chip-row">${t('distLevels').map((l,i)=>`<div class="chip ${p.distance===i?'selected':''}" onclick="updateProfile('distance', ${i})">${l}</div>`).join('')}</div>
+    <div class="field-label">${t('elevationPref')}</div>
+    <div class="chip-row">${t('elevLevels').map((l,i)=>`<div class="chip ${p.elevation===i?'selected':''}" onclick="updateProfile('elevation', ${i})">${l}</div>`).join('')}</div>
+
+    <div class="field-label">${t('style')}</div>
+    <div class="chip-row">${t('styleTags').map((l,i)=>`<div class="chip ${p.styles.includes(i)?'selected':''}" onclick="toggleStyle(${i})">${l}</div>`).join('')}</div>
+    <div class="field-label">${t('startTimePref')}</div>
+    <div class="chip-row">${t('startLevels').map((l,i)=>`<div class="chip ${p.startTime===i?'selected':''}" onclick="updateProfile('startTime', ${i})">${l}</div>`).join('')}</div>
+    <div class="field-label">${t('stopsPref')}</div>
+    <div class="chip-row">${t('stopsLevels').map((l,i)=>`<div class="chip ${p.stops===i?'selected':''}" onclick="updateProfile('stops', ${i})">${l}</div>`).join('')}</div>
+
+    <div class="field-label">${t('transportPref')}</div>
+    <div class="chip-row">
+      <div class="chip ${p.hasCar===true?'selected':''}" onclick="updateProfile('hasCar', true)">${t('hasCarYes')}</div>
+      <div class="chip ${p.hasCar===false?'selected':''}" onclick="updateProfile('hasCar', false)">${t('hasCarNo')}</div>
+    </div>
+    ${p.hasCar===true ? `
+    <div class="field-label">${t('seatsLabel')}</div>
+    <div class="chip-row">${[1,2,3,4].map(n=>`<div class="chip ${p.carSeats===n?'selected':''}" onclick="updateProfile('carSeats', ${n})">${n}</div>`).join('')}</div>
+    ` : ''}
+    <div class="field-label">${t('dogsPref')}</div>
+    <div class="chip-row">
+      <div class="chip ${p.dogsOk===true?'selected':''}" onclick="updateProfile('dogsOk', true)">${t('dogsOk')}</div>
+      <div class="chip ${p.dogsOk===false?'selected':''}" onclick="updateProfile('dogsOk', false)">${t('dogsNo')}</div>
+    </div>
+    <div class="field-label">${t('extrasPref')}</div>
+    <div class="chip-row">${t('extrasTags').map((l,i)=>`<div class="chip ${p.extras.includes(i)?'selected':''}" onclick="toggleExtra(${i})">${l}</div>`).join('')}</div>
+
+    <div style="margin-top:26px;">
+      <button class="btn btn-primary" onclick="finishProfile()">${t('finishProfile')}</button>
+    </div>
+  `;
+}
+function updateProfile(key, val) { state.profile[key] = val; save(); render(); }
+function toggleStyle(i) {
+  const s = state.profile.styles; const idx = s.indexOf(i);
+  if (idx > -1) s.splice(idx,1); else s.push(i);
+  save(); render();
+}
+function toggleExtra(i) {
+  const s = state.profile.extras; const idx = s.indexOf(i);
+  if (idx > -1) s.splice(idx,1); else s.push(i);
+  save(); render();
+}
+function finishProfile() {
+  state.onboarded = true;
+  go(profileBuildReturnTo === 'profileMe' ? 'profileMe' : 'home');
+}
+
+function hikeCardHTML() {
+  const h = SAMPLE_HIKE;
+  const loc = state.lang==='ru' ? h.locationRu : h.location;
+  return `
+    <div class="card" style="margin-top:10px; cursor:pointer;" onclick="go('hikeDetail')">
+      <div class="hero-img">
+        <div>
+          <div style="font-size:11px; font-weight:700; opacity:.85; text-transform:uppercase; letter-spacing:.04em;">${t('hikingToday')}</div>
+          <div class="display" style="font-size:20px;">${loc}</div>
+        </div>
+      </div>
+      <div class="space-between" style="margin-top:12px;">
+        <span class="muted">${h.distance} km · +${h.elevation} m · ${t('difficulty')}</span>
+        <span class="muted">${h.startTime}</span>
+      </div>
+      <div class="space-between" style="margin-top:10px;">
+        <span class="muted">👥 ${h.joinedCount} ${t('joined')} · ${h.spots} ${t('spotsLeft')}</span>
+        <span class="tag">92%</span>
+      </div>
+    </div>`;
+}
+
+function upcomingEventsHTML() {
+  const joined = state.hikeStatus !== 'none' && (!state.hikeSession || state.hikeSession.status !== 'finished');
+  const items = [];
+  if (joined) {
+    items.push(`
+      <div class="card row" style="margin-bottom:8px; cursor:pointer;" onclick="go('hikeDetail')">
+        <div class="avatar">🥾</div>
+        <div style="flex:1;">
+          <div style="font-weight:600; font-size:14px;">${state.lang==='ru'?SAMPLE_HIKE.trailNameRu:SAMPLE_HIKE.trailName}</div>
+          <div class="muted">${SAMPLE_HIKE.startTime} · ${state.lang==='ru'?SAMPLE_HIKE.locationRu:SAMPLE_HIKE.location}</div>
+        </div>
+      </div>`);
+  }
+  state.plannedEvents.forEach(ev => {
+    items.push(`
+      <div class="card row" style="margin-bottom:8px;">
+        <div class="avatar">📅</div>
+        <div style="flex:1;">
+          <div style="font-weight:600; font-size:14px;">${escapeHtml(ev.title)}</div>
+          <div class="muted">${escapeHtml(ev.date)}${ev.meetingPoint ? ' · ' + escapeHtml(ev.meetingPoint) : ''}</div>
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="deletePlannedEvent('${ev.id}')">${t('deleteEvent')}</button>
+      </div>`);
+  });
+  if (!items.length) return `<p class="muted">${t('noUpcomingEvents')}</p>`;
+  return items.join('');
+}
+
+function screenCreateEvent() {
+  return `
+    <h2 style="font-size:22px;">${t('createEventTitle')}</h2>
+    <div class="field-label">${t('eventTitle')}</div>
+    <input type="text" id="evTitle" placeholder="${t('eventTitlePh')}">
+    <div class="field-label">${t('eventDate')}</div>
+    <input type="text" id="evDate" placeholder="${t('eventDatePh')}">
+    <div class="field-label">${t('eventMeetingPoint')}</div>
+    <input type="text" id="evMeeting" placeholder="${t('eventMeetingPointPh')}">
+    <div style="margin-top:22px;">
+      <button class="btn btn-primary" onclick="submitCreateEvent()">${t('createEventBtn')}</button>
+    </div>
+  `;
+}
+function submitCreateEvent() {
+  const title = document.getElementById('evTitle').value.trim();
+  const date = document.getElementById('evDate').value.trim();
+  const meetingPoint = document.getElementById('evMeeting').value.trim();
+  if (!title || !date) { showToast(state.lang==='ru' ? 'Укажи название и дату.' : 'Add a title and a date.'); return; }
+  state.plannedEvents.unshift({ id: 'ev_' + Date.now(), title, date, meetingPoint, createdAt: Date.now() });
+  save();
+  showToast(t('eventCreated'));
+  setTab('home');
+}
+function deletePlannedEvent(id) {
+  state.plannedEvents = state.plannedEvents.filter(e => e.id !== id);
+  save(); render();
+}
+
+function screenHome() {
+  return `
+    <div class="space-between">
+      <div>
+        <div class="muted">${state.profile.city || '—'}</div>
+        <h2 style="font-size:24px;">${t('whatDoYouFeel')}</h2>
+      </div>
+      <div class="avatar">${(state.profile.name||'?').slice(0,1).toUpperCase()}</div>
+    </div>
+    <div class="chip-row" style="margin-top:16px;">
+      ${t('quick').map((q,i)=>`<div class="chip" onclick="goExploreSorted(${i===0?"'easy'":i===1?"'challenge'":'null'})">${q}</div>`).join('')}
+    </div>
+
+    <div class="section-title">${t('upcomingEventsTitle')}</div>
+    ${upcomingEventsHTML()}
+    <button class="btn btn-outline" style="margin-top:8px;" onclick="go('createEvent')">+ ${t('planEvent')}</button>
+
+    <div class="section-title">${t('hikingToday')}</div>
+    ${hikeCardHTML()}
+
+    <div class="section-title">${t('lookingForBuddies')}</div>
+    <div class="card row clickable" onclick="go('findBuddies')" style="cursor:pointer;">
+      <div class="avatar">S</div>
+      <div style="flex:1;">
+        <div style="font-weight:600; font-size:14px;">Sofia</div>
+        <div class="muted">${state.lang==='ru'?'Ищет компанию на субботу':'Looking for company on Saturday'}</div>
+      </div>
+      <button class="btn btn-outline btn-sm" onclick="event.stopPropagation(); go('findBuddies')">${state.lang==='ru'?'Открыть':'Open'}</button>
+    </div>
+
+    <div class="section-title">${t('beginnerFriendly')}</div>
+    <div class="card row">
+      <div class="avatar" style="background:var(--stone);">🌄</div>
+      <div style="flex:1;">
+        <div style="font-weight:600; font-size:14px;">${state.lang==='ru'?'Гарни — короткая тропа':'Garni Short Loop'}</div>
+        <div class="muted">4.5 km · ${t('difficulty')==='Moderate'?'Easy':'Лёгкая'}</div>
+      </div>
+    </div>
+  `;
+}
+
+function screenHikeDetail() {
+  const h = SAMPLE_HIKE;
+  const trailData = TRAILS.find(x => x.id === h.trailId);
+  const loc = state.lang==='ru' ? h.locationRu : h.location;
+  const trail = state.lang==='ru' ? h.trailNameRu : h.trailName;
+  const dist = userLocation && trailData ? haversineKm(userLocation.lat, userLocation.lng, trailData.lat, trailData.lng).toFixed(1) : null;
+  return `
+    <div class="hero-img" style="height:150px;">
+      <div>
+        <div class="display" style="font-size:22px;">${trail}</div>
+        <div style="font-size:13px; opacity:.9;">${loc} · ${h.startTime}</div>
+      </div>
+    </div>
+
+    <div class="space-between" style="margin-top:16px;">
+      <div><div class="muted">${state.lang==='ru'?'Дистанция':'Distance'}</div><div style="font-weight:700;">${h.distance} km</div></div>
+      <div><div class="muted">${t('elevation')}</div><div style="font-weight:700;">+${h.elevation} m</div></div>
+      <div><div class="muted">${t('duration')}</div><div style="font-weight:700;">${h.duration}</div></div>
+    </div>
+
+    <div class="section-title" style="margin-top:18px;">${t('routeMapTitle')}</div>
+    ${renderNavMap(trailData || {})}
+    <div class="row" style="margin-top:8px; gap:8px;">
+      <button class="btn btn-outline btn-sm" style="flex:1;" onclick="setMapView('me')">${t('centerOnMe')}</button>
+      <button class="btn btn-outline btn-sm" style="flex:1;" onclick="setMapView('fit')">${t('fitRoute')}</button>
+    </div>
+    <p class="muted" style="font-size:11px; margin-top:4px;">${t('tileNote')}${dist ? ' · ' + dist + ' km ' + (state.lang==='ru'?'от тебя':'from you') : ''}</p>
+    <a class="sms-link" style="margin-top:6px;" href="${trailData ? mapsHref(trailData.lat, trailData.lng, trail) : '#'}" target="_blank" rel="noopener">${state.lang==='ru'?'Открыть в Картах':'Open in Maps'}</a>
+
+    <div class="card" style="background:var(--sand); margin-top:16px;">
+      <div class="space-between">
+        <span class="compat-badge">92% ${t('compatMatch')}</span>
+      </div>
+      <div style="margin-top:10px; font-size:13px; font-weight:700; color:var(--text-muted);">${t('whyMatch')}</div>
+      <ul style="margin:8px 0 0; padding-left:18px; font-size:13.5px;">
+        ${t('matchReasons').map(r=>`<li>${r}</li>`).join('')}
+      </ul>
+    </div>
+
+    <div class="section-title">${t('participants')} (${h.participants.length})</div>
+    <div class="row" style="flex-wrap:wrap; gap:10px;">
+      ${h.participants.map(p=>`<div style="text-align:center;"><div class="avatar clickable" style="margin:0 auto;" onclick="viewProfile('${p}')">${p[0]}</div><div style="font-size:11px; margin-top:4px;">${p}</div></div>`).join('')}
+    </div>
+
+    <div style="margin-top:22px; display:flex; flex-direction:column; gap:10px;">
+      ${state.hikeStatus === 'none'
+        ? `<button class="btn btn-primary" onclick="joinHike()">${t('join')}</button>`
+        : `<button class="btn btn-secondary" onclick="go('group')">${t('viewGroup')} →</button>
+           <button class="btn btn-primary" onclick="go('safetyCheck')">${t('startHike')}</button>`
+      }
+    </div>
+
+    <button class="btn btn-outline" style="margin-top:10px;" onclick="toggleOffline('${h.id}')">${state.offlineTrails[h.id] ? '✓ ' + t('offlineOn') : t('makeOffline')}</button>
+    ${state.offlineTrails[h.id] ? `<p class="muted" style="font-size:12px; margin-top:6px;">${t('offlineTilesNote')}</p>` : ''}
+
+    <div class="section-title">${t('trailReviewsTitle')}</div>
+    ${(state.trailReviews.h1 || []).length === 0
+      ? `<p class="muted">${t('noReviewsYet')}</p>`
+      : state.trailReviews.h1.map(r => `
+        <div class="card" style="margin-bottom:10px;">
+          <div class="row" style="margin-bottom:6px;">
+            <div class="avatar" style="width:26px; height:26px; font-size:11px;">Y</div>
+            <strong style="font-size:13px;">${state.lang==='ru'?'Ты':'You'}</strong>
+            <span class="muted" style="margin-left:auto;">${'★'.repeat(r.trailRating)}</span>
+          </div>
+          ${r.note ? `<div style="font-size:13.5px;">${escapeHtml(r.note)}</div>` : ''}
+          ${r.photos && r.photos.length ? `<div class="thumb-row">${r.photos.map(p=>`<img class="thumb" src="${p}">`).join('')}</div>` : ''}
+        </div>`).join('')
+    }
+  `;
+}
+function escapeHtml(s){ const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+
+// Replaces window.showToast()/confirm(): those native dialogs are unreliable
+// inside a sandboxed preview iframe — some hosts block them outright, in
+// which case the call silently returns without ever showing anything,
+// which is exactly what made the Finish button look broken. This toast is
+// a plain DOM element under our own control, so it always works.
+let toastTimer = null;
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  if (!el) return;
+  el.textContent = msg;
+  el.classList.add('show');
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
+}
+function joinHike() { state.hikeStatus = 'confirmed'; save(); go('group'); }
+
+function viewProfile(name) { state.viewingProfile = name; go('viewProfile'); }
+
+function toggleOffline(id) {
+  state.offlineTrails[id] = !state.offlineTrails[id];
+  save(); render();
+}
+
+function togglePingSetting() {
+  state.autoPingEnabled = !state.autoPingEnabled;
+  save(); render();
+}
+
+function smsHref() {
+  const phone = (state.trustedContact && state.trustedContact.phone) ? state.trustedContact.phone.replace(/\s+/g,'') : '';
+  let body = t('smsMsgBody');
+  if (userLocation) {
+    body += ' ' + mapsHref(userLocation.lat, userLocation.lng, 'My location');
+  }
+  return `sms:${phone}?body=${encodeURIComponent(body)}`;
+}
+
+function logPing() {
+  state.pingLog.push({ at: Date.now() });
+  state.lastPingAt = Date.now();
+  save(); render();
+}
+
+function handlePhotoUpload(evt) {
+  const files = Array.from(evt.target.files || []).slice(0, 4 - state.review.photos.length);
+  files.forEach(f => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      state.review.photos.push(e.target.result);
+      save(); render();
+    };
+    reader.readAsDataURL(f);
+  });
+  evt.target.value = '';
+}
+function removePhoto(i) { state.review.photos.splice(i,1); save(); render(); }
+function updateNote(val) { state.review.note = val; }
+
+let chatParticipantsOpen = false;
+let chatEntryPoint = 'messages'; // where the chat screen's back button should go
+function openChat(from) { chatEntryPoint = from || 'messages'; chatParticipantsOpen = false; go('chatScreen'); }
+function toggleChatParticipants() { chatParticipantsOpen = !chatParticipantsOpen; render(); }
+
+function screenChat() {
+  const h = SAMPLE_HIKE;
+  const title = state.lang==='ru' ? h.trailNameRu : h.trailName;
+  return `
+    <div class="space-between" style="margin-bottom:10px;">
+      <h2 style="font-size:18px; margin:0;">${title}</h2>
+      <button class="btn btn-outline btn-sm" onclick="toggleChatParticipants()">👥 ${t('participants')}</button>
+    </div>
+
+    ${chatParticipantsOpen ? `
+    <div class="card" style="margin-bottom:12px;">
+      ${h.participants.map(p=>`<div class="row" style="margin-bottom:8px;"><div class="avatar clickable" onclick="viewProfile('${p}')">${p[0]}</div><div style="flex:1; font-size:13.5px; cursor:pointer;" onclick="viewProfile('${p}')">${p}</div><span style="color:var(--forest);">✓</span></div>`).join('')}
+    </div>` : ''}
+
+    <div class="card" style="min-height:52vh;">
+      ${state.chatMessages.map(m=>`<div class="msg ${m.from==='You'?'me':''}"><strong style="font-size:11px; opacity:.75; display:block;">${m.from}</strong>${m.text[state.lang]||m.text.en}</div>`).join('')}
+    </div>
+    <div class="row" style="margin-top:8px; position:sticky; bottom:8px;">
+      <input type="text" id="chatScreenInput" placeholder="${t('sendMsg')}" style="flex:1;">
+      <button class="btn btn-primary btn-sm" onclick="sendChatScreenMsg()">${t('send')}</button>
+    </div>
+  `;
+}
+function sendChatScreenMsg() {
+  const input = document.getElementById('chatScreenInput');
+  const val = input.value.trim();
+  if (!val) return;
+  state.chatMessages.push({ from: 'You', text: { en: val, ru: val } });
+  save(); render();
+}
+
+function screenFindBuddies() {
+  const post = BUDDY_POST;
+  const sofia = PROFILES.Sofia || { hikes: 2 };
+  return `
+    <h2 style="font-size:20px;">${t('findBuddiesTitle')}</h2>
+    <div class="card row clickable" onclick="viewProfile('Sofia')" style="margin-top:10px; cursor:pointer;">
+      <div class="avatar" style="width:52px; height:52px; font-size:20px;">S</div>
+      <div style="flex:1;">
+        <div style="font-weight:700; font-size:15px;">${post.authorName}</div>
+        <div class="muted" style="font-size:12.5px;">${state.lang==='ru'?'Ереван, Армения':'Yerevan, Armenia'} · ${sofia.hikes||2} ${t('buddyHikesCount')} · ${t('buddyNewHiker')}</div>
+      </div>
+    </div>
+
+    <div class="chip-row" style="margin-top:14px;">
+      <div class="chip">📅 ${post.dateLabel[state.lang]}</div>
+      <div class="chip">🗺️ ${post.location[state.lang]}</div>
+      <div class="chip">🥾 ${post.difficulty[state.lang]}</div>
+    </div>
+
+    <h3 style="font-size:17px; margin-top:14px;">${post.title[state.lang]}</h3>
+    <p style="font-size:14px; line-height:1.5; margin-top:6px;">${post.body[state.lang]}</p>
+
+    <div style="height:150px; border-radius:var(--radius); background:var(--sand); margin-top:16px;"></div>
+
+    <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+      <button class="btn ${state.buddyJoined ? 'btn-secondary' : 'btn-primary'}" onclick="joinBuddyAndChat()">${state.buddyJoined ? t('buddyJoined') : t('buddyJoin')}</button>
+    </div>
+  `;
+}
+function joinBuddyAndChat() {
+  state.buddyJoined = true;
+  save();
+  openChat('findBuddies');
+}
+
+function screenRouteDescription() {
+  const r = state.myRoutes.find(x => x.id === state.viewingRouteId);
+  if (!r) return `<p class="muted">${state.lang==='ru'?'Маршрут не найден.':'Route not found.'}</p>`;
+  const saved = state.savedRoutes.includes(r.id);
+  return `
+    <h2 style="font-size:20px;">${escapeHtml(r.name)}</h2>
+    <div class="muted" style="font-size:12.5px;">${r.distanceKm.toFixed(2)} km · ${r.durationMin} min · ${r.points.length} ${t('pointsCount')}</div>
+    ${renderLiveTrack(r.points)}
+    ${r.description ? `<p style="font-size:14px; line-height:1.5; margin-top:12px;">${escapeHtml(r.description)}</p>` : ''}
+
+    <div class="section-title">${t('photosSection')}</div>
+    ${r.photos && r.photos.length ? `<div class="thumb-row">${r.photos.map(p=>`<img class="thumb" src="${p}">`).join('')}</div>` : `<p class="muted">${t('noPhotosYet')}</p>`}
+
+    <button class="btn ${saved ? 'btn-secondary' : 'btn-primary'}" style="margin-top:20px;" onclick="toggleSavedRoute('${r.id}')">${saved ? '✓ ' + t('addRoute') : t('addRoute')}</button>
+  `;
+}
+function toggleSavedRoute(id) {
+  const idx = state.savedRoutes.indexOf(id);
+  if (idx > -1) state.savedRoutes.splice(idx, 1);
+  else { state.savedRoutes.push(id); showToast(t('addedToMyRoutes')); }
+  save(); render();
+}
+function openRouteDescription(id) { state.viewingRouteId = id; go('routeDescription'); }
+
+function screenGroup() {
+  const h = SAMPLE_HIKE;
+  return `
+    <h2 style="font-size:22px;">${state.lang==='ru'?h.trailNameRu:h.trailName}</h2>
+    <div class="muted">${h.startTime} · ${state.lang==='ru'?h.locationRu:h.location}</div>
+
+    <div class="section-title">${t('confirmed')} (${h.participants.length}/5)</div>
+    <div class="card">
+      ${h.participants.map(p=>`<div class="row" style="margin-bottom:10px;"><div class="avatar clickable" onclick="viewProfile('${p}')">${p[0]}</div><div style="flex:1; font-size:14px; cursor:pointer;" onclick="viewProfile('${p}')">${p}</div><span style="color:var(--forest);">✓</span></div>`).join('')}
+    </div>
+
+    <div class="section-title">${t('transport')}</div>
+    <div class="card">
+      <div class="row" style="margin-bottom:10px;"><div class="avatar">A</div><div style="flex:1; font-size:14px;">Anna — 🚗 2 ${state.lang==='ru'?'места':'seats'}</div><button class="btn btn-outline btn-sm" onclick="showToast(t('requestSeat'))">${t('requestSeat')}</button></div>
+    </div>
+
+    <div class="section-title">${t('groupChat')}</div>
+    <div class="card" id="chatBox" style="max-height:180px; overflow-y:auto;">
+      ${state.chatMessages.map(m=>`<div class="msg ${m.from==='You'?'me':''}"><strong style="font-size:11px; opacity:.75; display:block;">${m.from}</strong>${m.text[state.lang]||m.text.en}</div>`).join('')}
+    </div>
+    <div class="row" style="margin-top:8px;">
+      <input type="text" id="chatInput" placeholder="${t('sendMsg')}" style="flex:1;">
+      <button class="btn btn-primary btn-sm" onclick="sendMsg()">${t('send')}</button>
+    </div>
+
+    <div style="margin-top:24px;">
+      <button class="btn btn-primary" onclick="go('hikeDetail')">${t('viewRoute')}</button>
+    </div>
+    <button class="btn btn-outline" style="margin-top:10px; border-color:var(--alert); color:var(--alert);" onclick="confirmLeaveGroup()">${t('leaveGroup')}</button>
+    ${showLeaveGroupConfirm ? `
+    <div class="inline-confirm">
+      <p style="margin:0 0 10px; font-weight:600;">${t('leaveGroupConfirm')}</p>
+      <div class="row" style="gap:10px;">
+        <button class="btn btn-secondary" style="flex:1;" onclick="cancelLeaveGroup()">${state.lang==='ru'?'Отмена':'Cancel'}</button>
+        <button class="btn" style="flex:1; background:var(--alert); color:#fff;" onclick="doLeaveGroup()">${t('leaveGroup')}</button>
+      </div>
+    </div>` : ''}
+  `;
+}
+let showLeaveGroupConfirm = false;
+function confirmLeaveGroup() { showLeaveGroupConfirm = true; render(); }
+function cancelLeaveGroup() { showLeaveGroupConfirm = false; render(); }
+function doLeaveGroup() {
+  showLeaveGroupConfirm = false;
+  state.hikeStatus = 'none';
+  save();
+  showToast(t('leftGroupToast'));
+  go('home');
+}
+function sendMsg() {
+  const input = document.getElementById('chatInput');
+  const val = input.value.trim();
+  if (!val) return;
+  state.chatMessages.push({ from: 'You', text: { en: val, ru: val } });
+  save(); render();
+}
+
+function screenTrustedContacts() {
+  return `
+    <h2 style="font-size:22px;">${t('trustedContacts')}</h2>
+    <p class="muted">${t('trustedSub')}</p>
+    <div class="field-label">${t('contactName')}</div>
+    <input type="text" id="tcName" placeholder="${t('contactName')}">
+    <div class="field-label">${t('contactPhone')}</div>
+    <input type="text" id="tcPhone" placeholder="${t('contactPhone')}">
+    <div style="margin-top:22px;">
+      <button class="btn btn-primary" onclick="saveContact()">${t('addTrustedContact')}</button>
+    </div>
+  `;
+}
+function saveContact() {
+  const name = document.getElementById('tcName').value.trim() || 'Contact';
+  const phone = document.getElementById('tcPhone').value.trim();
+  state.trustedContact = { name, phone };
+  save();
+  go('safetyCheck');
+}
+
+function screenSafetyCenter() {
+  const m = state.medicalInfo;
+  return `
+    <h2 style="font-size:22px;">${t('safetyCenterTitle')}</h2>
+    <p class="muted">${t('safetyCenterSub')}</p>
+
+    <div class="section-title">${t('trustedContactSection')}</div>
+    ${state.trustedContact
+      ? `<div class="card row">
+          <div class="avatar">${state.trustedContact.name[0].toUpperCase()}</div>
+          <div style="flex:1;"><div style="font-weight:600;">${escapeHtml(state.trustedContact.name)}</div><div class="muted">${escapeHtml(state.trustedContact.phone||'')}</div></div>
+          <button class="btn btn-outline btn-sm" onclick="goToTrustedContacts('safetyCenter')">${t('manageTrustedContact')}</button>
+        </div>`
+      : `<div class="card"><p class="muted" style="margin:0 0 10px;">${t('noContactSet')}</p><button class="btn btn-outline" onclick="goToTrustedContacts('safetyCenter')">${t('addTrustedContact')}</button></div>`}
+
+    <div class="section-title">${t('autoCheckinSection')}</div>
+    <div class="card toggle-row" style="padding:14px 16px;">
+      <span style="font-size:13.5px;">${t('autoPing')}</span>
+      <div class="switch ${state.autoPingEnabled?'on':''}" onclick="togglePingSetting()"><div class="knob"></div></div>
+    </div>
+
+    <div class="section-title">${t('emergencyNumbersTitle')}</div>
+    <a class="card row" style="text-decoration:none; color:inherit;" href="tel:112">
+      <div class="avatar" style="background:var(--alert);">☎</div>
+      <div style="flex:1;"><div style="font-weight:600;">112</div><div class="muted">${t('emergencyGeneral')}</div></div>
+    </a>
+    <button class="btn btn-outline" style="margin-top:10px;" onclick="go('sos')">${t('openSosScreen')}</button>
+
+    <div class="section-title">${t('medicalInfoTitle')}</div>
+    <p class="muted" style="margin-top:-6px; font-size:12px;">${t('medicalInfoSub')}</p>
+    <div class="field-label">${t('bloodType')}</div>
+    <input type="text" value="${escapeHtml(m.bloodType)}" placeholder="${t('bloodTypePh')}" oninput="updateMedicalField('bloodType', this.value)">
+    <div class="field-label">${t('allergies')}</div>
+    <input type="text" value="${escapeHtml(m.allergies)}" placeholder="${t('allergiesPh')}" oninput="updateMedicalField('allergies', this.value)">
+    <div class="field-label">${t('conditions')}</div>
+    <input type="text" value="${escapeHtml(m.conditions)}" placeholder="${t('conditionsPh')}" oninput="updateMedicalField('conditions', this.value)">
+    <button class="btn btn-primary" style="margin-top:14px;" onclick="saveMedicalInfo()">${t('saveMedicalInfo')}</button>
+
+    <div class="card" style="margin-top:22px; background:var(--sand);">
+      <strong style="font-size:13.5px;">${t('satelliteSOSTitle')}</strong>
+      <p style="font-size:12.5px; margin:8px 0 0; line-height:1.5;">${t('satelliteSOSDesc')}</p>
+      <p class="muted" style="font-size:11.5px; margin-top:8px;">${t('satelliteSOSHow')}</p>
+    </div>
+
+    <p class="muted" style="margin-top:22px; font-size:12px; line-height:1.5;">${t('disclaimer')}</p>
+  `;
+}
+function updateMedicalField(key, val) { state.medicalInfo[key] = val; }
+function saveMedicalInfo() { save(); showToast(t('savedConfirm')); }
+
+function screenSafetyCheck() {
+  const h = SAMPLE_HIKE;
+  const trailName = state.lang==='ru' ? h.trailNameRu : h.trailName;
+  return `
+    <h2 style="font-size:22px;">${t('safetyCheckTitle')}</h2>
+    <p class="muted">${t('safetyCheckSub')}</p>
+
+    <div class="card" style="margin-top:12px;">
+      <div class="space-between"><span class="muted">${state.lang==='ru'?'Маршрут':'Trail'}</span><strong>${trailName}</strong></div>
+      <div class="space-between" style="margin-top:8px;"><span class="muted">${t('expectedDuration')}</span><strong>${h.duration}</strong></div>
+    </div>
+
+    <div class="section-title">${t('trustedContacts')}</div>
+    ${state.trustedContact
+      ? `<div class="card row">
+          <div class="avatar">${state.trustedContact.name[0].toUpperCase()}</div>
+          <div style="flex:1;"><div style="font-weight:600;">${escapeHtml(state.trustedContact.name)}</div><div class="muted">${escapeHtml(state.trustedContact.phone||'')}</div></div>
+          <button class="btn btn-outline btn-sm" onclick="go('trustedContacts')">${t('editContact')}</button>
+        </div>`
+      : `<div class="card">
+          <p class="muted" style="margin:0 0 10px;">${t('noContactYet')}</p>
+          <button class="btn btn-outline" onclick="go('trustedContacts')">${t('addTrustedContact')}</button>
+        </div>`}
+
+    <div style="margin-top:26px;">
+      <button class="btn btn-primary" onclick="beginTracking()">${t('startTracking')}</button>
+    </div>
+    ${!state.trustedContact ? `<div style="margin-top:10px; text-align:center;"><button class="btn btn-secondary" onclick="beginTracking()">${t('skipForNow')}</button></div>` : ''}
+  `;
+}
+function beginTracking() {
+  startHikeSession(SAMPLE_HIKE.trailId);
+  if (locationStatus === 'idle') requestLocation();
+  go('activeTrip');
+}
+
+function screenViewProfile() {
+  const name = state.viewingProfile;
+  const p = PROFILES[name] || { experience:{en:'—',ru:'—'}, pace:{en:'—',ru:'—'}, hikes:0, bio:{en:'',ru:''} };
+  return `
+    <div style="text-align:center; margin-top:8px;">
+      <div class="avatar" style="width:70px; height:70px; font-size:26px; margin:0 auto;">${name[0]}</div>
+      <h2 style="margin-top:12px;">${name}</h2>
+      <div class="muted">${p.experience[state.lang]} · ${p.pace[state.lang]} ${t('pace').toLowerCase()}</div>
+    </div>
+
+    <div class="section-title">${t('about')}</div>
+    <p style="font-size:14px; line-height:1.5;">${p.bio[state.lang]}</p>
+
+    <div class="section-title">${t('hikingStats')}</div>
+    <div class="card row">
+      <div style="flex:1; text-align:center;"><div style="font-size:20px; font-weight:700;">${p.hikes}</div><div class="muted" style="font-size:11px;">${t('hikesCompleted')}</div></div>
+      <div style="flex:1; text-align:center;"><div style="font-size:20px; font-weight:700;">${p.experience[state.lang]}</div><div class="muted" style="font-size:11px;">${t('experience')}</div></div>
+    </div>
+
+    <div style="margin-top:22px;">
+      <button class="btn btn-primary" onclick="openChat('viewProfile')">${t('message')}</button>
+    </div>
+  `;
+}
+
+// ---------- Navigation-mode map rendering (SVG vector route — see note below) ----------
+// NOTE: this renders the route geometry as vector art, not live map tiles.
+// Real basemap tiles (satellite/street imagery) require fetching image tiles
+// from a map provider at render time; a published page's content-security
+// policy only allows script/font files from a fixed host list, not arbitrary
+// tile image requests, so no live-tile provider can load here. The
+// coordinates and math driving this view are real — the picture under them
+// is schematic, and is labeled as such in the UI rather than presented as a
+// live map.
+let mapViewMode = 'fit'; // 'fit' | 'me'
+let trustedContactsReturn = 'safetyCheck'; // where the "trustedContacts" screen's back button goes
+function goToTrustedContacts(from) { trustedContactsReturn = from; go('trustedContacts'); }
+function setMapView(mode) { mapViewMode = mode; if (mode==='me' && locationStatus==='idle') requestLocation(); else render(); }
+
+function routeBounds(route) {
+  const lats = route.map(p=>p.lat), lngs = route.map(p=>p.lng);
+  return { minLat:Math.min(...lats), maxLat:Math.max(...lats), minLng:Math.min(...lngs), maxLng:Math.max(...lngs) };
+}
+function projectSvg(p, b, w, h, pad) {
+  const spanLat = Math.max(b.maxLat-b.minLat, 0.0005), spanLng = Math.max(b.maxLng-b.minLng, 0.0005);
+  const x = pad + ((p.lng-b.minLng)/spanLng) * (w-2*pad);
+  const y = h - pad - ((p.lat-b.minLat)/spanLat) * (h-2*pad); // flip: north = up
+  return { x, y };
+}
+function renderNavMap(trail) {
+  const W=300, H=240, pad=22;
+  if (!trail.routeGeometry) {
+    return `
+      <div style="height:${H}px; border-radius:var(--radius); background:var(--sand); display:flex; align-items:center; justify-content:center; text-align:center; padding:20px;">
+        <div class="muted" style="font-size:13px;">${t('noRouteGeometry')}</div>
+      </div>`;
+  }
+  let bounds;
+  if (mapViewMode === 'me' && userLocation) {
+    const span = 0.01; // ~1km window centered on the hiker
+    bounds = { minLat:userLocation.lat-span, maxLat:userLocation.lat+span, minLng:userLocation.lng-span, maxLng:userLocation.lng+span };
+  } else {
+    bounds = routeBounds(trail.routeGeometry);
+  }
+  const pts = trail.routeGeometry.map(p => projectSvg(p, bounds, W, H, pad));
+  const pathD = pts.map((p,i) => (i===0?'M':'L') + p.x.toFixed(1) + ',' + p.y.toFixed(1)).join(' ');
+  const start = pts[0], finish = pts[pts.length-1];
+  let userMarker = '';
+  if (userLocation) {
+    const up = projectSvg(userLocation, bounds, W, H, pad);
+    if (up.x >= -10 && up.x <= W+10 && up.y >= -10 && up.y <= H+10) {
+      userMarker = `<circle cx="${up.x.toFixed(1)}" cy="${up.y.toFixed(1)}" r="9" fill="rgba(193,122,130,0.22)"/><circle cx="${up.x.toFixed(1)}" cy="${up.y.toFixed(1)}" r="5.5" fill="#C17A82" stroke="#fff" stroke-width="2"/>`;
+    }
+  }
+  return `
+    <div style="height:${H}px; border-radius:var(--radius); background:var(--sand); overflow:hidden;">
+      <svg width="100%" height="100%" viewBox="0 0 ${W} ${H}">
+        <path d="${pathD}" fill="none" stroke="#C17A82" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="${start.x.toFixed(1)}" cy="${start.y.toFixed(1)}" r="6" fill="#C9A6AE" stroke="#fff" stroke-width="2"/>
+        <circle cx="${finish.x.toFixed(1)}" cy="${finish.y.toFixed(1)}" r="6" fill="#D1495B" stroke="#fff" stroke-width="2"/>
+        ${userMarker}
+      </svg>
+    </div>`;
+}
+
+// ---------- Route recording (Strava-style: build your own route live via GPS) ----------
+// Ephemeral (not persisted mid-recording) — an interrupted recording is lost,
+// same honest limitation as any other in-page GPS state in this prototype.
+let recording = { active:false, paused:false, points:[], startedAt:null, pausedMs:0, pausedAt:null };
+let recordWatchId = null;
+
+function startRecordingRoute() {
+  recording = { active:true, paused:false, points:[], startedAt:Date.now(), pausedMs:0, pausedAt:null };
+  if (!('geolocation' in navigator)) { locationStatus='unsupported'; render(); return; }
+  recordWatchId = navigator.geolocation.watchPosition(
+    pos => {
+      const fix = { lat:pos.coords.latitude, lng:pos.coords.longitude, accuracy:pos.coords.accuracy };
+      userLocation = fix; locationStatus = 'granted';
+      // Skip clearly noisy fixes so a bad GPS jump doesn't inflate distance —
+      // same accuracy-gating principle as HikeSession tracking.
+      if (fix.accuracy == null || fix.accuracy <= 50) recording.points.push({ lat:fix.lat, lng:fix.lng });
+      if (state.screen === 'recordRoute') render();
+    },
+    err => { locationStatus = 'denied'; render(); },
+    { enableHighAccuracy:true, maximumAge:4000 }
+  );
+  render();
+}
+function pauseRecordingRoute() {
+  if (!recording.active) return;
+  recording.paused = true; recording.pausedAt = Date.now();
+  if (recordWatchId != null) { navigator.geolocation.clearWatch(recordWatchId); recordWatchId = null; }
+  render();
+}
+function resumeRecordingRoute() {
+  if (!recording.active || !recording.paused) return;
+  recording.pausedMs += Date.now() - recording.pausedAt;
+  recording.paused = false; recording.pausedAt = null;
+  recordWatchId = navigator.geolocation.watchPosition(
+    pos => {
+      const fix = { lat:pos.coords.latitude, lng:pos.coords.longitude, accuracy:pos.coords.accuracy };
+      userLocation = fix;
+      if (fix.accuracy == null || fix.accuracy <= 50) recording.points.push({ lat:fix.lat, lng:fix.lng });
+      if (state.screen === 'recordRoute') render();
+    },
+    err => { locationStatus = 'denied'; render(); },
+    { enableHighAccuracy:true, maximumAge:4000 }
+  );
+  render();
+}
+function finishRecordingRoute() {
+  if (recordWatchId != null) { navigator.geolocation.clearWatch(recordWatchId); recordWatchId = null; }
+  recording.active = false;
+  if (recording.points.length < 2) { showToast(t('minPointsWarning')); discardRecordingRoute(); return; }
+  go('publishRoute');
+}
+function discardRecordingRoute() {
+  if (recordWatchId != null) { navigator.geolocation.clearWatch(recordWatchId); recordWatchId = null; }
+  recording = { active:false, paused:false, points:[], startedAt:null, pausedMs:0, pausedAt:null };
+  go('hikes');
+}
+function recordingDistanceKm() {
+  let d = 0;
+  for (let i=1;i<recording.points.length;i++) d += haversineKm(recording.points[i-1].lat, recording.points[i-1].lng, recording.points[i].lat, recording.points[i].lng);
+  return d;
+}
+function recordingElapsedMs() {
+  if (!recording.startedAt) return 0;
+  const pausedNow = recording.paused && recording.pausedAt ? Date.now()-recording.pausedAt : 0;
+  return Math.max(0, Date.now() - recording.startedAt - recording.pausedMs - pausedNow);
+}
+function renderLiveTrack(points) {
+  const W=300, H=220, pad=20;
+  if (points.length < 2) {
+    return `<div style="height:${H}px; border-radius:var(--radius); background:var(--sand); display:flex; align-items:center; justify-content:center;"><div class="muted" style="font-size:13px;">${state.lang==='ru'?'Жду GPS-сигнал…':'Waiting for GPS signal…'}</div></div>`;
+  }
+  const bounds = routeBounds(points);
+  const pts = points.map(p => projectSvg(p, bounds, W, H, pad));
+  const pathD = pts.map((p,i) => (i===0?'M':'L') + p.x.toFixed(1) + ',' + p.y.toFixed(1)).join(' ');
+  const last = pts[pts.length-1];
+  return `
+    <div style="height:${H}px; border-radius:var(--radius); background:var(--sand); overflow:hidden;">
+      <svg width="100%" height="100%" viewBox="0 0 ${W} ${H}">
+        <path d="${pathD}" fill="none" stroke="#C17A82" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="${pts[0].x.toFixed(1)}" cy="${pts[0].y.toFixed(1)}" r="6" fill="#C9A6AE" stroke="#fff" stroke-width="2"/>
+        <circle cx="${last.x.toFixed(1)}" cy="${last.y.toFixed(1)}" r="7" fill="#C17A82" stroke="#fff" stroke-width="2.5"/>
+      </svg>
+    </div>`;
+}
+
+function screenRecordRoute() {
+  const distKm = recordingDistanceKm();
+  const elapsedMin = Math.floor(recordingElapsedMs()/60000);
+  const elapsedSec = Math.floor((recordingElapsedMs()%60000)/1000);
+  if (!recording.startedAt) {
+    return `
+      <h2 style="font-size:22px;">${t('recordRoute')}</h2>
+      <p class="muted">${t('recordRouteSub')}</p>
+      ${renderLiveTrack([])}
+      <button class="btn btn-primary" style="margin-top:16px;" onclick="startRecordingRoute()">${t('startRecording')}</button>
+    `;
+  }
+  return `
+    <div class="space-between">
+      <h2 style="font-size:20px;">${t('recordRoute')}</h2>
+      <span class="row" style="gap:6px;"><span class="pulse" style="width:8px;height:8px;border-radius:50%;background:${recording.paused?'#B08A8C':'#C17A82'}; display:inline-block;"></span><strong style="font-size:12.5px;">${recording.paused ? t('pauseRecording') : t('recording')}</strong></span>
+    </div>
+    ${renderLiveTrack(recording.points)}
+    <div class="space-between" style="margin-top:12px;">
+      <div><div class="muted" style="font-size:11px;">${t('liveDistance')}</div><div style="font-weight:700;">${distKm.toFixed(2)} km</div></div>
+      <div><div class="muted" style="font-size:11px;">${t('liveDuration')}</div><div style="font-weight:700;">${elapsedMin}:${String(elapsedSec).padStart(2,'0')}</div></div>
+      <div><div class="muted" style="font-size:11px;">${t('recordedPoints')}</div><div style="font-weight:700;">${recording.points.length}</div></div>
+    </div>
+    <div class="row" style="margin-top:16px; gap:10px;">
+      ${recording.paused
+        ? `<button class="btn btn-primary" style="flex:1;" onclick="resumeRecordingRoute()">${t('resumeRecording')}</button>`
+        : `<button class="btn btn-secondary" style="flex:1;" onclick="pauseRecordingRoute()">${t('pauseRecording')}</button>`}
+      <button class="btn btn-outline" style="flex:1;" onclick="finishRecordingRoute()">${t('finishRecording')}</button>
+    </div>
+    <button class="btn btn-outline" style="margin-top:10px; border-color:var(--alert); color:var(--alert);" onclick="discardRecordingRoute()">${t('discardRecording')}</button>
+  `;
+}
+
+function screenPublishRoute() {
+  const distKm = recordingDistanceKm();
+  const elapsedMin = Math.round(recordingElapsedMs()/60000);
+  return `
+    <h2 style="font-size:22px;">${t('publishRouteTitle')}</h2>
+    ${renderLiveTrack(recording.points)}
+    <div class="space-between" style="margin-top:10px;">
+      <div><div class="muted" style="font-size:11px;">${t('liveDistance')}</div><div style="font-weight:700;">${distKm.toFixed(2)} km</div></div>
+      <div><div class="muted" style="font-size:11px;">${t('liveDuration')}</div><div style="font-weight:700;">${elapsedMin} min</div></div>
+      <div><div class="muted" style="font-size:11px;">${t('recordedPoints')}</div><div style="font-weight:700;">${recording.points.length}</div></div>
+    </div>
+
+    <div class="field-label">${t('routeName')}</div>
+    <input type="text" id="routeNameInput" placeholder="${t('routeNamePh')}">
+    <div class="field-label">${t('routeDescription')}</div>
+    <textarea id="routeDescInput" placeholder="${t('routeDescPh')}"></textarea>
+
+    <div class="field-label">${t('visibility')}</div>
+    <div class="chip-row">
+      <div class="chip selected" data-vis="public" onclick="selectVisibility('public', this)">${t('visPublic')}</div>
+      <div class="chip" data-vis="private" onclick="selectVisibility('private', this)">${t('visPrivate')}</div>
+    </div>
+
+    <div style="margin-top:22px;">
+      <button class="btn btn-primary" onclick="submitPublishRoute()">${t('publishRoute')}</button>
+    </div>
+    <button class="btn btn-outline" style="margin-top:10px;" onclick="discardRecordingRoute()">${t('discardRecording')}</button>
+  `;
+}
+function selectVisibility(vis, el) {
+  el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  el.parentElement.dataset.selected = vis;
+}
+function submitPublishRoute() {
+  const name = document.getElementById('routeNameInput').value.trim() || (state.lang==='ru' ? 'Мой маршрут' : 'My route');
+  const description = document.getElementById('routeDescInput').value.trim();
+  const visibility = document.querySelector('.chip.selected[data-vis]')?.dataset.vis || 'public';
+  state.myRoutes.unshift({
+    id: 'route_' + Date.now(), name, description, visibility,
+    points: recording.points.slice(), distanceKm: recordingDistanceKm(),
+    durationMin: Math.round(recordingElapsedMs()/60000), createdAt: Date.now(),
+  });
+  recording = { active:false, paused:false, points:[], startedAt:null, pausedMs:0, pausedAt:null };
+  save();
+  setTab('hikes');
+}
+
+function screenActiveTrip() {
+  const s = state.hikeSession;
+  if (!s) return `<p class="muted">${state.lang==='ru'?'Нет активного похода.':'No active hike.'}</p>`;
+  const trail = trailForSession(s);
+  if (locationStatus === 'idle') requestLocation();
+
+  const elapsedMin = Math.round(elapsedMsForSession(s) / 60000);
+  const showPingReminder = state.autoPingEnabled && elapsedMin > 0 && elapsedMin % 30 === 0;
+  const locLine = userLocation
+    ? `${userLocation.lat.toFixed(4)}, ${userLocation.lng.toFixed(4)}${s.lastAccuracyM!=null ? ` (± ${s.lastAccuracyM} m)` : ''}`
+    : locationStatus === 'denied'
+      ? (state.lang==='ru' ? 'Доступ к геолокации отклонён' : 'Location access denied')
+      : (state.lang==='ru' ? 'Определяем местоположение…' : 'Getting your location…');
+  const hasRoute = !!(trail && trail.routeGeometry);
+  const distTravelled = hasRoute ? s.distanceTravelledKm.toFixed(1) : '—';
+  const distRemaining = hasRoute ? Math.max(0, trail.distance - s.distanceTravelledKm).toFixed(1) : '—';
+  const progressPct = hasRoute ? Math.min(100, Math.round((s.distanceTravelledKm / trail.distance) * 100)) : 0;
+
+  return `
+    <div class="space-between">
+      <h2 style="font-size:20px;">${t('navMode')}</h2>
+      <span class="row" style="gap:6px;"><span class="pulse" style="width:8px;height:8px;border-radius:50%;background:${s.status==='active'?'#C17A82':'#B08A8C'}; display:inline-block;"></span><strong style="font-size:12.5px;">${s.status==='active'?t('tripActive'):t('pause')}</strong></span>
+    </div>
+
+    ${s.offRoute ? `<div class="ping-card" style="margin-top:10px;"><strong>⚠ ${t('offRouteWarning')}</strong></div>` : ''}
+
+    ${renderNavMap(trail || {})}
+    <div class="row" style="margin-top:8px; gap:8px;">
+      <button class="btn btn-outline btn-sm" style="flex:1;" onclick="setMapView('me')">${t('centerOnMe')}</button>
+      <button class="btn btn-outline btn-sm" style="flex:1;" onclick="setMapView('fit')">${t('fitRoute')}</button>
+    </div>
+    <p class="muted" style="font-size:11px; margin-top:4px;">${t('tileNote')}</p>
+
+    ${hasRoute ? `
+    <div class="progress-track" style="margin-top:12px;"><div class="progress-fill" style="width:${progressPct}%;"></div></div>
+    <div class="space-between" style="margin-top:10px;">
+      <div><div class="muted" style="font-size:11px;">${t('distanceTravelled')}</div><div style="font-weight:700;">${distTravelled} km</div></div>
+      <div><div class="muted" style="font-size:11px;">${t('remainingDistance')}</div><div style="font-weight:700;">${distRemaining} km</div></div>
+      <div><div class="muted" style="font-size:11px;">${t('elapsedTime')}</div><div style="font-weight:700;">${elapsedMin} min</div></div>
+    </div>` : `
+    <div class="space-between" style="margin-top:12px;">
+      <div><div class="muted" style="font-size:11px;">${t('elapsedTime')}</div><div style="font-weight:700;">${elapsedMin} min</div></div>
+    </div>`}
+
+    <p class="muted" style="font-size:11.5px; margin-top:10px;">📍 ${locLine}</p>
+    <p class="muted" style="font-size:11.5px; margin-top:2px;">${state.trustedContact ? '✓ ' + t('startedTrip') : ''}</p>
+
+    <div class="row" style="margin-top:14px; gap:10px;">
+      ${s.status === 'active'
+        ? `<button class="btn btn-secondary" style="flex:1;" onclick="pauseHikeSession()">${t('pause')}</button>`
+        : `<button class="btn btn-secondary" style="flex:1;" onclick="resumeHikeSession()">${t('resume')}</button>`}
+      <button class="btn btn-alert" style="flex:1;" onclick="go('sos')">${t('sos')}</button>
+    </div>
+    <div style="margin-top:10px;">
+      <button class="btn btn-outline" onclick="confirmFinishHike()">${t('finishHike')}</button>
+    </div>
+    ${showFinishConfirm ? `
+    <div class="inline-confirm">
+      <p style="margin:0 0 10px; font-weight:600;">${t('confirmFinish')}</p>
+      <div class="row" style="gap:10px;">
+        <button class="btn btn-secondary" style="flex:1;" onclick="cancelFinishHike()">${state.lang==='ru'?'Отмена':'Cancel'}</button>
+        <button class="btn btn-primary" style="flex:1;" onclick="doFinishHike()">${state.lang==='ru'?'Да, завершить':'Yes, finish'}</button>
+      </div>
+    </div>` : ''}
+
+    <div class="toggle-row">
+      <span style="font-size:13.5px;">${t('autoPing')}</span>
+      <div class="switch ${state.autoPingEnabled?'on':''}" onclick="togglePingSetting()"><div class="knob"></div></div>
+    </div>
+
+    ${showPingReminder ? `
+    <div class="ping-card">
+      <strong>${t('pingReminder')}</strong>
+      <a class="sms-link" href="${smsHref()}" onclick="logPing()">${t('sendSmsUpdate')}</a>
+    </div>` : `
+    <a class="sms-link" href="${smsHref()}" onclick="logPing()">${t('sendSmsUpdate')}</a>
+    `}
+
+    <div class="section-title">${state.lang==='ru'?'Чек-ин':'Check-in'}</div>
+    <div class="card" style="text-align:center;">
+      <div style="margin-bottom:12px; font-weight:600;">${state.lang==='ru'?'Ты в порядке?':'Are you back safely?'}</div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <button class="btn btn-primary" onclick="checkin('safe')">${t('imBack')}</button>
+        <button class="btn btn-secondary" onclick="checkin('time')">${t('needTime')}</button>
+        <button class="btn btn-outline" onclick="checkin('help')">${t('needHelp')}</button>
+      </div>
+    </div>
+  `;
+}
+let showFinishConfirm = false;
+function confirmFinishHike() { showFinishConfirm = true; render(); }
+function cancelFinishHike() { showFinishConfirm = false; render(); }
+function doFinishHike() { showFinishConfirm = false; checkin('safe'); }
+function checkin(resp) {
+  if (!state.hikeSession) return;
+  if (resp === 'safe') {
+    state.hikeSession.status = 'finished';
+    state.hikeSession.finishedAt = Date.now();
+    state.completedHikes += 1;
+    if (!state.badges.includes('first_hike')) state.badges.push('first_hike');
+    save();
+    go('tripComplete');
+  } else if (resp === 'time') {
+    showToast(state.lang==='ru' ? 'Время продлено на 30 минут.' : 'Extended your window by 30 minutes.');
+  } else {
+    go('sos');
+  }
+}
+
+function screenTripComplete() {
+  const s = state.hikeSession;
+  const points = (s && s.points) || [];
+  const trail = s ? trailForSession(s) : null;
+  let distanceKm = s ? s.distanceTravelledKm : 0;
+  if ((!distanceKm || distanceKm === 0) && points.length >= 2) {
+    for (let i = 1; i < points.length; i++) distanceKm += haversineKm(points[i-1].lat, points[i-1].lng, points[i].lat, points[i].lng);
+  }
+  const durationMin = s ? Math.round(elapsedMsForSession(s) / 60000) : 0;
+  const estimatedSteps = Math.round((distanceKm * 1000) / 0.75); // ~0.75 m average stride — a rough estimate, not measured
+  return `
+    <div style="text-align:center; margin-top:6px;">
+      <h2 style="font-size:24px;">${t('tripCompleteTitle')}</h2>
+      <p class="muted">${t('tripCompleteSub')}</p>
+    </div>
+
+    <div class="section-title">${t('traveledMap')}</div>
+    ${points.length >= 2
+      ? renderLiveTrack(points)
+      : `<div class="card"><p class="muted" style="margin:0;">${t('noTraveledRoute')}</p></div>`}
+
+    <div class="card" style="margin-top:16px;">
+      <div class="space-between">
+        <div><div class="muted" style="font-size:11px;">${t('statDistance')}</div><div style="font-weight:700; font-size:16px;">${distanceKm.toFixed(2)} km</div></div>
+        <div><div class="muted" style="font-size:11px;">${t('statDuration')}</div><div style="font-weight:700; font-size:16px;">${durationMin} min</div></div>
+      </div>
+      <div class="space-between" style="margin-top:14px;">
+        <div><div class="muted" style="font-size:11px;">${t('statElevation')}</div><div style="font-weight:700; font-size:16px;">${trail ? '+' + trail.elevation + ' m' : '—'}</div></div>
+        <div><div class="muted" style="font-size:11px;">${t('statSteps')}</div><div style="font-weight:700; font-size:16px;">${estimatedSteps.toLocaleString()}</div></div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" style="margin-top:22px;" onclick="go('review')">${t('continueToReview')}</button>
+  `;
+}
+
+function screenSOS() {
+  const coordsLine = userLocation
+    ? `${userLocation.lat.toFixed(4)}° , ${userLocation.lng.toFixed(4)}°`
+    : (state.lang==='ru' ? 'Местоположение недоступно' : 'Location unavailable');
+  return `
+    <h2 style="font-size:24px; color:var(--alert);">${t('sosTitle')}</h2>
+    <p class="muted">${t('sosSub')}</p>
+    <div class="card" style="margin-top:10px;">
+      <div class="muted">${t('coords')}</div>
+      <div style="font-weight:700; font-family:monospace;">${coordsLine}</div>
+      ${!userLocation ? `<button class="btn btn-outline btn-sm" style="margin-top:8px;" onclick="requestLocation()">📍 ${state.lang==='ru'?'Определить моё местоположение':'Get my location'}</button>` : ''}
+      <div class="divider"></div>
+      <div class="muted">${t('nearestExit')}</div>
+      <div style="font-weight:600;">${state.lang==='ru'?'Парковка у входа в парк':'Park entrance parking lot'}</div>
+    </div>
+    ${(state.medicalInfo.bloodType || state.medicalInfo.allergies || state.medicalInfo.conditions) ? `
+    <div class="card" style="margin-top:10px;">
+      <div class="muted">${t('medicalInfoTitle')}</div>
+      ${state.medicalInfo.bloodType ? `<div style="margin-top:6px;"><strong>${t('bloodType')}:</strong> ${escapeHtml(state.medicalInfo.bloodType)}</div>` : ''}
+      ${state.medicalInfo.allergies ? `<div style="margin-top:4px;"><strong>${t('allergies')}:</strong> ${escapeHtml(state.medicalInfo.allergies)}</div>` : ''}
+      ${state.medicalInfo.conditions ? `<div style="margin-top:4px;"><strong>${t('conditions')}:</strong> ${escapeHtml(state.medicalInfo.conditions)}</div>` : ''}
+    </div>` : ''}
+    <div style="display:flex; flex-direction:column; gap:10px; margin-top:16px;">
+      <a class="btn btn-alert" style="text-decoration:none;" href="tel:112">${t('callEmergency')}</a>
+      ${state.trustedContact && state.trustedContact.phone
+        ? `<a class="btn btn-secondary" style="text-decoration:none; text-align:center;" href="tel:${state.trustedContact.phone.replace(/\s+/g,'')}">${escapeHtml(state.trustedContact.name)}</a>`
+        : `<button class="btn btn-secondary" onclick="showToast('${state.lang==='ru'?'Номер доверенного контакта не указан.':'No phone number saved for your trusted contact.'}')">${t('callContact')}</button>`}
+      ${userLocation ? `<a class="btn btn-outline" style="text-decoration:none; text-align:center;" href="${mapsHref(userLocation.lat, userLocation.lng, 'My location')}" target="_blank" rel="noopener">${t('shareLocation')}</a>` : `<button class="btn btn-outline" onclick="requestLocation()">${t('shareLocation')}</button>`}
+      <button class="btn btn-outline" onclick="copyCoords()">${t('copyCoords')}</button>
+    </div>
+    <div style="margin-top:20px;"><button class="btn btn-secondary" onclick="go('activeTrip')">← ${state.lang==='ru'?'Назад к походу':'Back to trip'}</button></div>
+  `;
+}
+function copyCoords() {
+  if (!userLocation) { requestLocation(); return; }
+  const text = `${userLocation.lat.toFixed(5)}, ${userLocation.lng.toFixed(5)}`;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(()=>showToast(state.lang==='ru'?'Координаты скопированы':'Coordinates copied')).catch(()=>showToast(text));
+  } else { showToast(text); }
+}
+
+function screenReview() {
+  const r = state.review;
+  return `
+    <h2 style="font-size:24px;">${t('reviewTitle')}</h2>
+    <div class="field-label">${t('trailCondition')}</div>
+    <div class="star-row">${[1,2,3,4,5].map(i=>`<span class="${r.trailRating>=i?'filled':''}" onclick="setRating('trailRating',${i})">★</span>`).join('')}</div>
+
+    <div class="field-label">${t('soloComfort')}</div>
+    <div class="star-row">${[1,2,3,4,5].map(i=>`<span class="${r.comfortRating>=i?'filled':''}" onclick="setRating('comfortRating',${i})">★</span>`).join('')}</div>
+
+    <div class="field-label">${t('companionFeedback')}</div>
+    <div class="chip-row">${t('compTags').map((c,i)=>`<div class="chip ${r.companionTags.includes(i)?'selected':''}" onclick="toggleCompTag(${i})">${c}</div>`).join('')}</div>
+
+    <div class="field-label">${t('hikeAgain')}</div>
+    <div class="chip-row">
+      <div class="chip ${r.hikeAgain==='yes'?'selected':''}" onclick="setAgain('yes')">${t('yes')}</div>
+      <div class="chip ${r.hikeAgain==='maybe'?'selected':''}" onclick="setAgain('maybe')">${t('maybe')}</div>
+      <div class="chip ${r.hikeAgain==='no'?'selected':''}" onclick="setAgain('no')">${t('no')}</div>
+    </div>
+
+    <div class="field-label">${t('addNote')}</div>
+    <textarea placeholder="${t('notePh')}" oninput="updateNote(this.value)">${r.note}</textarea>
+
+    <div class="field-label">${t('photosOptional')}</div>
+    ${r.photos.length ? `<div class="thumb-row">${r.photos.map((p,i)=>`<div class="thumb-wrap"><img class="thumb" src="${p}"><button class="thumb-remove" onclick="removePhoto(${i})">×</button></div>`).join('')}</div>` : ''}
+    ${r.photos.length < 4 ? `
+      <label class="upload-btn">
+        📷 ${t('addPhotos')}
+        <input type="file" accept="image/*" multiple capture="environment" style="display:none;" onchange="handlePhotoUpload(event)">
+      </label>` : ''}
+
+    <div style="margin-top:24px;">
+      <button class="btn btn-primary" onclick="submitReview()">${t('submitReview')}</button>
+    </div>
+  `;
+}
+function setRating(field, val) { state.review[field] = val; save(); render(); }
+function toggleCompTag(i) {
+  const arr = state.review.companionTags; const idx = arr.indexOf(i);
+  if (idx > -1) arr.splice(idx,1); else arr.push(i);
+  save(); render();
+}
+function setAgain(v) { state.review.hikeAgain = v; save(); render(); }
+function submitReview() {
+  const h = SAMPLE_HIKE;
+  const r = state.review;
+  state.routeHistory.unshift({
+    id: Date.now(),
+    trailName: h.trailName, trailNameRu: h.trailNameRu,
+    date: new Date().toISOString().slice(0,10),
+    distance: h.distance, elevation: h.elevation,
+    rating: r.trailRating, note: r.note, photos: r.photos.slice(),
+  });
+  if (!state.trailReviews.h1) state.trailReviews.h1 = [];
+  state.trailReviews.h1.unshift({
+    trailRating: r.trailRating, comfortRating: r.comfortRating,
+    note: r.note, photos: r.photos.slice(),
+  });
+  showToast(t('reviewDone'));
+  state.hikeStatus = 'none';
+  state.hikeSession = null;
+  progressTracker = null;
+  mapViewMode = 'fit';
+  state.review = { trailRating: 0, comfortRating: 0, companionTags: [], hikeAgain: null, note: '', photos: [] };
+  save();
+  setTab('home');
+}
+
+let exploreSortMode = null; // null | 'easy' | 'challenge'
+function goExploreSorted(mode) { exploreSortMode = mode; go('explore'); }
+function clearExploreSort() { exploreSortMode = null; render(); }
+function sortedExploreTrails() {
+  if (exploreSortMode === 'easy') return TRAILS.filter(t => t.difficulty === 'easy');
+  if (exploreSortMode === 'challenge') {
+    const order = { moderate: 0, hard: 1, easy: 2 };
+    return TRAILS.filter(t => t.difficulty !== 'easy').sort((a,b) => order[a.difficulty]-order[b.difficulty]);
+  }
+  return TRAILS;
+}
+const EXPLORE_SORT_LABEL = {
+  easy: { en: 'Easy hikes only', ru: 'Только лёгкие походы' },
+  challenge: { en: 'Challenge: moderate, then hard', ru: 'Вызов: средние, потом сложные' },
+};
+
+function screenExplore() {
+  const locLine = locationStatus === 'granted'
+    ? `<span class="offline-tag">📍 ${state.lang==='ru'?'Локация включена':'Location on'}</span>`
+    : `<button class="btn btn-outline btn-sm" onclick="requestLocation()">📍 ${state.lang==='ru'?'Включить геолокацию':'Enable location'}</button>`;
+  const trailList = sortedExploreTrails();
+  return `
+    <div class="space-between">
+      <h2 style="font-size:22px;">${t('explore')}</h2>
+      ${locLine}
+    </div>
+    ${locationStatus === 'denied' ? `<p class="muted" style="font-size:12px; margin-top:4px;">${state.lang==='ru'?'Доступ к геолокации отклонён. Включи его в настройках браузера, чтобы видеть расстояние до троп.':'Location access was denied. Enable it in your browser settings to see distance to trailheads.'}</p>` : ''}
+    ${exploreSortMode ? `
+    <div class="chip selected" style="margin-top:10px;" onclick="clearExploreSort()">${EXPLORE_SORT_LABEL[exploreSortMode][state.lang]} · ✕</div>
+    ` : ''}
+
+    <div class="section-title">${state.lang==='ru'?'Популярные маршруты Армении':'Popular trails in Armenia'}</div>
+    ${trailList.length === 0 ? `<p class="muted">${state.lang==='ru'?'Ничего не найдено.':'Nothing matches this filter.'}</p>` : ''}
+    ${trailList.map(tr => {
+      const name = state.lang==='ru' ? tr.nameRu : tr.name;
+      const region = state.lang==='ru' ? tr.regionRu : tr.region;
+      const dist = userLocation ? haversineKm(userLocation.lat, userLocation.lng, tr.lat, tr.lng).toFixed(0) + ' km' : null;
+      return `
+      <div class="card" style="margin-bottom:10px; cursor:pointer;" onclick="openTrail('${tr.id}')">
+        <div class="space-between">
+          <div style="font-weight:600; font-size:14.5px;">${name}</div>
+          <span class="tag" style="background:${tr.difficulty==='hard'?'var(--alert)':tr.difficulty==='moderate'?'var(--forest)':'var(--sage)'};">${difficultyLabel(tr.difficulty)}</span>
+        </div>
+        <div class="muted" style="font-size:12.5px; margin-top:2px;">${region}</div>
+        <div class="muted" style="font-size:12.5px; margin-top:6px;">${tr.distance} km · +${tr.elevation} m · ${tr.duration}${dist ? ' · ' + dist + ' ' + (state.lang==='ru'?'от тебя':'away') : ''}</div>
+      </div>`;
+    }).join('')}
+
+    <div class="section-title">${t('communityRoutesTitle')}</div>
+
+    <div class="card clickable" style="margin-bottom:10px; cursor:pointer;" onclick="go('hikeDetail')">
+      ${renderNavMap(TRAILS.find(x=>x.id==='parz') || {})}
+      <div class="space-between" style="margin-top:8px;">
+        <div style="font-weight:600; font-size:14.5px;">${state.lang==='ru'?SAMPLE_HIKE.trailNameRu:SAMPLE_HIKE.trailName}</div>
+        <span class="tag">🔒 ${state.lang==='ru'?'Группа':'Group'}</span>
+      </div>
+      <div class="muted" style="font-size:12.5px; margin-top:4px;">${SAMPLE_HIKE.distance} km · ${SAMPLE_HIKE.joinedCount} ${state.lang==='ru'?'участниц':'joined'}</div>
+      <button class="btn btn-outline btn-sm" style="margin-top:10px;" onclick="event.stopPropagation(); ${state.hikeStatus==='none' ? 'joinHike()' : "go('hikeDetail')"}">${state.hikeStatus==='none' ? t('join') : t('viewGroup') + ' →'}</button>
+    </div>
+
+    ${state.myRoutes.filter(r => r.visibility === 'public').length === 0
+      ? `<p class="muted">${t('noCommunityRoutes')}</p>`
+      : state.myRoutes.filter(r => r.visibility === 'public').map(r => `
+        <div class="card clickable" style="margin-bottom:10px; cursor:pointer;" onclick="openRouteDescription('${r.id}')">
+          ${renderLiveTrack(r.points)}
+          <div class="space-between" style="margin-top:8px;">
+            <div style="font-weight:600; font-size:14.5px;">${escapeHtml(r.name)}</div>
+            <span class="tag">${t('recordedByUser')}</span>
+          </div>
+          <div class="muted" style="font-size:12.5px; margin-top:4px;">${r.distanceKm.toFixed(2)} km · ${r.durationMin} min</div>
+          ${r.description ? `<div class="muted" style="font-size:12.5px; margin-top:4px;">${escapeHtml(r.description)}</div>` : ''}
+          <button class="btn btn-outline btn-sm" style="margin-top:10px;" onclick="event.stopPropagation(); openRouteDescription('${r.id}')">${t('addRoute')}</button>
+        </div>`).join('')}
+  `;
+}
+function openTrail(id) { state.viewingTrailId = id; go('trailDetail'); }
+
+function screenTrailDetail() {
+  const tr = TRAILS.find(x => x.id === state.viewingTrailId) || TRAILS[0];
+  const name = state.lang==='ru' ? tr.nameRu : tr.name;
+  const region = state.lang==='ru' ? tr.regionRu : tr.region;
+  const desc = state.lang==='ru' ? tr.descRu : tr.desc;
+  const dist = userLocation ? haversineKm(userLocation.lat, userLocation.lng, tr.lat, tr.lng).toFixed(0) : null;
+  const interest = state.trailInterest[tr.id] || 0;
+  return `
+    <div class="hero-img" style="height:160px;">
+      <div>
+        <div class="display" style="font-size:20px;">${name}</div>
+        <div style="font-size:13px; opacity:.9;">${region}</div>
+      </div>
+    </div>
+    <div class="space-between" style="margin-top:16px;">
+      <div><div class="muted">${state.lang==='ru'?'Дистанция':'Distance'}</div><div style="font-weight:700;">${tr.distance} km</div></div>
+      <div><div class="muted">${t('elevation')}</div><div style="font-weight:700;">+${tr.elevation} m</div></div>
+      <div><div class="muted">${t('duration')}</div><div style="font-weight:700;">${tr.duration}</div></div>
+    </div>
+    <div class="section-title">${t('routeMapTitle')}</div>
+    ${renderNavMap(tr)}
+    <div class="row" style="margin-top:8px; gap:8px;">
+      <button class="btn btn-outline btn-sm" style="flex:1;" onclick="setMapView('me')">${t('centerOnMe')}</button>
+      <button class="btn btn-outline btn-sm" style="flex:1;" onclick="setMapView('fit')">${t('fitRoute')}</button>
+    </div>
+    <p class="muted" style="font-size:11px; margin-top:4px;">${t('tileNote')}${dist ? ' · ' + dist + ' km ' + (state.lang==='ru'?'от тебя':'away') : ''}</p>
+
+    <p style="font-size:14px; line-height:1.5; margin-top:14px;">${desc}</p>
+
+    <div class="card" style="margin-top:6px;">
+      ${!dist ? `<button class="btn btn-outline btn-sm" onclick="requestLocation()">${state.lang==='ru'?'Показать расстояние от меня':'Show distance from me'}</button>` : ''}
+      <a class="sms-link" style="margin-top:${dist?'0':'10px'};" href="${mapsHref(tr.lat, tr.lng, name)}" target="_blank" rel="noopener">${state.lang==='ru'?'Открыть в Картах':'Open in Maps'}</a>
+      <details style="margin-top:10px;"><summary class="muted" style="font-size:12px; cursor:pointer;">${state.lang==='ru'?'Координаты старта':'Trailhead coordinates'}</summary><div style="font-family:monospace; font-size:12px; margin-top:4px;">${tr.lat.toFixed(4)}, ${tr.lng.toFixed(4)}</div></details>
+    </div>
+
+    <button class="btn btn-outline" style="margin-top:14px;" onclick="toggleOffline('${tr.id}')">${state.offlineTrails[tr.id] ? '✓ ' + t('offlineOn') : t('makeOffline')}</button>
+    ${state.offlineTrails[tr.id] ? `<p class="muted" style="font-size:12px; margin-top:6px;">${t('offlineTilesNote')}</p>` : ''}
+
+    <div class="card" style="margin-top:16px; text-align:center;">
+      <div style="font-size:13.5px; margin-bottom:10px;">${state.lang==='ru'?`${interest} женщин(ы) хотят пойти сюда`:`${interest} women interested in this trail`}</div>
+      <button class="btn btn-primary" onclick="expressInterest('${tr.id}')">${state.lang==='ru'?'Я хочу сюда в поход':'I want to hike here'}</button>
+    </div>
+  `;
+}
+function expressInterest(id) {
+  state.trailInterest[id] = (state.trailInterest[id] || 0) + 1;
+  save(); render();
+}
+
+function screenHikes() {
+  return `
+    <h2 style="font-size:22px;">${t('routesTab')}</h2>
+
+    <div class="search-pill" style="margin-top:10px;">
+      <span>🥾</span>
+      <input type="text" placeholder="${state.lang==='ru'?'Поиск':'Search'}" disabled>
+      <span style="font-size:12px; font-weight:700; color:var(--text-muted);">🔖 ${state.lang==='ru'?'Сохранённые':'Saved'}</span>
+    </div>
+    <div class="chip-row" style="margin-top:10px;">
+      <div class="chip selected">${state.lang==='ru'?'Маршруты ⌄':'Routes ⌄'}</div>
+      <div class="chip">${state.lang==='ru'?'Длина':'Distance'}</div>
+      <div class="chip">${state.lang==='ru'?'Высота':'Elevation'}</div>
+      <div class="chip">${state.lang==='ru'?'Покрытие':'Terrain'}</div>
+    </div>
+
+    <div class="route-hero">
+      <svg width="100%" height="100%" viewBox="0 0 390 190" preserveAspectRatio="xMidYMid slice">
+        <path d="M-20,60 C60,30 120,90 200,50 S340,20 420,70" fill="none" stroke="#C9A6AE" stroke-width="1.5" opacity="0.5"/>
+        <path d="M-20,120 C70,90 150,150 230,110 S360,80 420,130" fill="none" stroke="#C9A6AE" stroke-width="1.5" opacity="0.5"/>
+        <path d="M40,170 C70,120 55,80 100,60 S160,20 150,-10" fill="none" stroke="#C17A82" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+        <circle cx="95" cy="95" r="9" fill="#C17A82" opacity="0.22"/>
+        <circle cx="95" cy="95" r="5" fill="#C17A82" stroke="#fff" stroke-width="2"/>
+      </svg>
+      <div class="badge"><span class="dot">🥾</span>${state.myRoutes.length} ${state.lang==='ru'?'моих маршрутов':'my routes'}</div>
+      <button class="fab" onclick="go('recordRoute')">● ${t('recordRoute')}</button>
+    </div>
+
+    <div class="section-title">${state.lang==='ru'?'Предстоящие':'Upcoming'}</div>
+    ${state.hikeStatus !== 'none' && (!state.hikeSession || state.hikeSession.status !== 'finished') ? hikeCardHTML() : `<p class="muted">${state.lang==='ru'?'Пока нет запланированных походов.':'No upcoming hikes yet.'}</p>`}
+
+    <div class="section-title">${t('myRoutesTitle')}</div>
+    ${state.myRoutes.length === 0
+      ? `<p class="muted">${t('noMyRoutesYet')}</p>`
+      : state.myRoutes.map(r => `
+        <div class="card" style="margin-bottom:10px;">
+          ${renderLiveTrack(r.points)}
+          <div class="space-between" style="margin-top:8px;">
+            <div style="font-weight:600; font-size:14px;">${escapeHtml(r.name)}</div>
+            <span class="tag" style="background:${r.visibility==='public'?'var(--sage)':'var(--stone)'};">${r.visibility==='public' ? t('visPublic').split(' —')[0] : t('visPrivate').split(' —')[0]}</span>
+          </div>
+          <div class="muted" style="font-size:12px; margin-top:4px;">${r.distanceKm.toFixed(2)} km · ${r.durationMin} min · ${r.points.length} ${t('pointsCount')}</div>
+          ${r.description ? `<div style="font-size:13px; margin-top:6px;">${escapeHtml(r.description)}</div>` : ''}
+        </div>`).join('')}
+
+    <div class="section-title">${t('routeHistoryTitle')}</div>
+    ${state.routeHistory.length === 0
+      ? `<p class="muted">${t('noHistoryYet')}</p>`
+      : state.routeHistory.map(rh => `
+        <div class="card route-card" style="margin-bottom:10px;">
+          <div class="avatar" style="background:var(--forest);">✓</div>
+          <div style="flex:1;">
+            <div class="space-between">
+              <div style="font-weight:600; font-size:14px;">${state.lang==='ru'?rh.trailNameRu:rh.trailName}</div>
+              <span class="muted" style="font-size:12px;">${rh.date}</span>
+            </div>
+            <div class="muted" style="font-size:12px;">${rh.distance} km · +${rh.elevation} m ${rh.rating ? '· ' + '★'.repeat(rh.rating) : ''}</div>
+            ${rh.note ? `<div style="font-size:13px; margin-top:6px;">${escapeHtml(rh.note)}</div>` : ''}
+            ${rh.photos && rh.photos.length ? `<div class="thumb-row">${rh.photos.map(p=>`<img class="thumb" src="${p}">`).join('')}<span class="muted" style="align-self:center; font-size:11px;">${rh.photos.length} ${t('photosCount')}</span></div>` : ''}
+          </div>
+        </div>`).join('')}
+  `;
+}
+
+function screenMessages() {
+  return `
+    <h2 style="font-size:22px;">${t('messages')}</h2>
+    <div class="card row" style="margin-top:12px; cursor:pointer;" onclick="openChat('messages')">
+      <div class="avatar">A</div>
+      <div style="flex:1;">
+        <div style="font-weight:600;">${state.lang==='ru'?SAMPLE_HIKE.trailNameRu:SAMPLE_HIKE.trailName}</div>
+        <div class="muted">${(state.chatMessages[state.chatMessages.length-1]||{}).text ? (state.chatMessages[state.chatMessages.length-1].text[state.lang]||state.chatMessages[state.chatMessages.length-1].text.en) : ''}</div>
+      </div>
+    </div>
+  `;
+}
+
+function screenNotifications() {
+  const n = state.notificationSettings;
+  const rows = [
+    ['invites', t('notifInvites')],
+    ['messages', t('notifMessages')],
+    ['reminders', t('notifReminders')],
+    ['weather', t('notifWeather')],
+    ['waitlist', t('notifWaitlist')],
+  ];
+  return `
+    <h2 style="font-size:22px;">${t('notificationsTitle')}</h2>
+    ${rows.map(([key,label]) => `
+    <div class="card toggle-row" style="padding:14px 16px; margin-top:10px;">
+      <span style="font-size:13.5px; flex:1;">${label}</span>
+      <div class="switch ${n[key]?'on':''}" onclick="toggleNotifSetting('${key}')"><div class="knob"></div></div>
+    </div>`).join('')}
+  `;
+}
+function toggleNotifSetting(key) { state.notificationSettings[key] = !state.notificationSettings[key]; save(); render(); }
+
+function screenPrivacy() {
+  const p = state.privacySettings;
+  return `
+    <h2 style="font-size:22px;">${t('privacyTitle')}</h2>
+    <div class="card toggle-row" style="padding:14px 16px; margin-top:10px;">
+      <span style="font-size:13.5px; flex:1;">${t('profileVisibility')}</span>
+      <div class="switch ${p.profileVisible?'on':''}" onclick="togglePrivacySetting('profileVisible')"><div class="knob"></div></div>
+    </div>
+    <div class="card toggle-row" style="padding:14px 16px; margin-top:10px;">
+      <span style="font-size:13.5px; flex:1;">${t('shareLocationDefault')}</span>
+      <div class="switch ${p.shareLocationDefault?'on':''}" onclick="togglePrivacySetting('shareLocationDefault')"><div class="knob"></div></div>
+    </div>
+
+    <div class="section-title">${t('blockedUsers')}</div>
+    <p class="muted">${t('noBlockedUsers')}</p>
+
+    <button class="btn btn-outline" style="margin-top:16px;" onclick="exportMyData()">${t('exportData')}</button>
+    <button class="btn btn-outline" style="margin-top:10px; border-color:var(--alert); color:var(--alert);" onclick="confirmDeleteAccount()">${t('deleteAccount')}</button>
+    ${showDeleteAccountConfirm ? `
+    <div class="inline-confirm">
+      <p style="margin:0 0 10px; font-weight:600; color:var(--alert);">${t('deleteAccountConfirmTitle')}</p>
+      <div class="row" style="gap:10px;">
+        <button class="btn btn-secondary" style="flex:1;" onclick="cancelDeleteAccount()">${state.lang==='ru'?'Отмена':'Cancel'}</button>
+        <button class="btn" style="flex:1; background:var(--alert); color:#fff;" onclick="doDeleteAccount()">${t('deleteAccount')}</button>
+      </div>
+    </div>` : ''}
+  `;
+}
+function togglePrivacySetting(key) { state.privacySettings[key] = !state.privacySettings[key]; save(); render(); }
+function exportMyData() { showToast(t('exportRequested')); }
+let showDeleteAccountConfirm = false;
+function confirmDeleteAccount() { showDeleteAccountConfirm = true; render(); }
+function cancelDeleteAccount() { showDeleteAccountConfirm = false; showToast(t('deleteAccountCancelled')); render(); }
+function doDeleteAccount() {
+  // Prototype only — there's no backend/account to actually delete, so this
+  // resets local state and returns to Welcome rather than pretending to hit
+  // a real endpoint.
+  showDeleteAccountConfirm = false;
+  localStorage.removeItem(STORAGE_KEY);
+  state = defaultState();
+  save();
+  go('welcome');
+}
+function doLogOut() {
+  // Non-destructive: keeps the saved profile/history in localStorage
+  // (like a real app would keep your account server-side), just ends the
+  // current session and sends you back to Welcome.
+  state.onboarded = false;
+  save();
+  showToast(t('loggedOutToast'));
+  go('welcome');
+}
+
+function screenProfileMe() {
+  const p = state.profile;
+  return `
+    <div style="text-align:center; margin-top:8px;">
+      <div class="avatar" style="width:70px; height:70px; font-size:26px; margin:0 auto;">${(p.name||'?').slice(0,1).toUpperCase()}</div>
+      <h2 style="margin-top:12px;">${p.name || '—'}</h2>
+      <div class="muted">${p.city || ''}</div>
+    </div>
+
+    <div class="row" style="margin-top:20px; gap:10px;">
+      <div class="card" style="flex:1; text-align:center;">
+        <div style="font-size:22px; font-weight:700;">${state.completedHikes}</div>
+        <div class="muted" style="font-size:11px;">${t('hikesCompleted')}</div>
+      </div>
+      <div class="card" style="flex:1; text-align:center;">
+        <div style="font-size:22px; font-weight:700;">${state.badges.length}</div>
+        <div class="muted" style="font-size:11px;">${t('badges')}</div>
+      </div>
+    </div>
+
+    <div class="section-title">${t('badges')}</div>
+    ${state.badges.length ? `<div class="chip-row"><div class="chip selected">🥇 ${t('firstHikeBadge')}</div></div>` : `<p class="muted">${t('noneYet')}</p>`}
+
+    <div class="section-title">${t('settings')}</div>
+    <div class="card space-between">
+      <span>${t('language')}</span>
+      <div class="lang-toggle">
+        <button class="${state.lang==='en'?'active':''}" onclick="toggleLang('en')">EN</button>
+        <button class="${state.lang==='ru'?'active':''}" onclick="toggleLang('ru')">RU</button>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <button class="btn btn-outline" onclick="goToProfileBuild('profileMe')">${t('editProfile')}</button>
+    </div>
+    <button class="btn btn-outline" style="margin-top:10px; border-color:var(--alert); color:var(--alert);" onclick="go('safetyCenter')">🛟 ${t('safetyCenterTitle')}</button>
+    <button class="btn btn-outline" style="margin-top:10px;" onclick="go('notifications')">🔔 ${t('notificationsTitle')}</button>
+    <button class="btn btn-outline" style="margin-top:10px;" onclick="go('privacy')">🔒 ${t('privacyTitle')}</button>
+    <button class="btn btn-outline" style="margin-top:10px; border-color:var(--alert); color:var(--alert);" onclick="doLogOut()">🚪 ${t('logOut')}</button>
+
+    <p class="muted" style="margin-top:26px; font-size:12px; line-height:1.5;">${t('disclaimer')}</p>
+  `;
+}
+
+// ---------- Chrome (topbar / tabbar / active bar) ----------
+
+function renderActiveBar() {
+  const el = document.getElementById('activebar');
+  const preOnboard = ['welcome','motivation','profileBuild'].includes(state.screen);
+  if (!preOnboard && state.hikeSession && state.hikeSession.status !== 'finished') {
+    const label = state.hikeSession.status === 'paused' ? t('pause') : t('tripActive');
+    el.innerHTML = `<div class="active-bar" onclick="go('activeTrip')"><span><span class="pulse"></span>${label}</span><span>${t('navMode')} →</span></div>`;
+  } else {
+    el.innerHTML = '';
+  }
+}
+
+function renderTopbar() {
+  const el = document.getElementById('topbar');
+  const preOnboard = ['welcome','motivation','profileBuild'].includes(state.screen);
+  if (preOnboard && state.screen !== 'welcome') {
+    const backAction = state.screen==='profileBuild'
+      ? `go('${profileBuildReturnTo}')`
+      : `go('welcome')`;
+    el.innerHTML = `<button class="back-btn" onclick="${backAction}">←</button><div class="lang-toggle"><button class="${state.lang==='en'?'active':''}" onclick="toggleLang('en')">EN</button><button class="${state.lang==='ru'?'active':''}" onclick="toggleLang('ru')">RU</button></div>`;
+  } else if (!preOnboard) {
+    const backMap = { hikeDetail: 'home', group: 'hikeDetail', trustedContacts: trustedContactsReturn, safetyCheck: 'group', activeTrip: null, sos: 'activeTrip', review: 'tripComplete', viewProfile: 'hikeDetail', trailDetail: 'explore', recordRoute: 'hikes', publishRoute: 'recordRoute', createEvent: 'home', safetyCenter: 'profileMe', chatScreen: chatEntryPoint, findBuddies: 'home', routeDescription: 'explore', tripComplete: null, notifications: 'profileMe', privacy: 'profileMe' };
+    const backTo = backMap[state.screen];
+    el.innerHTML = backTo !== undefined && backTo !== null ? `<button class="back-btn" onclick="go('${backTo}')">←</button>` : `<div style="width:36px;"></div>`;
+    el.innerHTML += `<span class="display" style="font-size:15px; font-weight:600;">🥾 Trailkin</span><div style="width:36px;"></div>`;
+  } else {
+    el.innerHTML = '';
+  }
+}
+
+function renderTabbar() {
+  const el = document.getElementById('tabbar');
+  const preOnboard = ['welcome','motivation','profileBuild'].includes(state.screen);
+  if (preOnboard) { el.innerHTML = ''; return; }
+  const tabs = [
+    { key: 'home', icon: '🏠', label: t('home') },
+    { key: 'explore', icon: '🧭', label: t('explore') },
+    { key: 'hikes', icon: '🥾', label: t('routesTab') },
+    { key: 'messages', icon: '💬', label: t('messages') },
+    { key: 'profileMe', icon: '👤', label: t('profile') },
+  ];
+  el.innerHTML = tabs.map(tb => `
+    <button class="tab ${(state.screen===tb.key || (tb.key==='hikes' && state.screen==='activeTrip'))?'active':''}" onclick="${tb.key==='hikes' ? 'goRoutesTab()' : `go('${tb.key}')`}">
+      <span class="ic">${tb.icon}</span>${tb.label}
+    </button>`).join('');
+}
+function goRoutesTab() {
+  // "Routes" tab: while a hike is active, this should land on Navigation
+  // (the live-tracking screen) rather than the general Routes hub.
+  go(state.hikeSession && state.hikeSession.status !== 'finished' ? 'activeTrip' : 'hikes');
+}
+
+const SCREENS = {
+  welcome: screenWelcome,
+  motivation: screenMotivation,
+  profileBuild: screenProfileBuild,
+  home: screenHome,
+  explore: screenExplore,
+  hikes: screenHikes,
+  messages: screenMessages,
+  profileMe: screenProfileMe,
+  hikeDetail: screenHikeDetail,
+  group: screenGroup,
+  trustedContacts: screenTrustedContacts,
+  activeTrip: screenActiveTrip,
+  sos: screenSOS,
+  review: screenReview,
+  viewProfile: screenViewProfile,
+  trailDetail: screenTrailDetail,
+  safetyCheck: screenSafetyCheck,
+  recordRoute: screenRecordRoute,
+  publishRoute: screenPublishRoute,
+  createEvent: screenCreateEvent,
+  safetyCenter: screenSafetyCenter,
+  chatScreen: screenChat,
+  findBuddies: screenFindBuddies,
+  routeDescription: screenRouteDescription,
+  tripComplete: screenTripComplete,
+  notifications: screenNotifications,
+  privacy: screenPrivacy,
+};
+
+function render() {
+  document.documentElement.lang = state.lang;
+  if (state.screen === 'activeTrip' && !state.hikeSession) state.screen = 'home';
+  if (state.screen === 'publishRoute' && recording.points.length === 0) state.screen = 'hikes';
+  const fn = SCREENS[state.screen] || screenHome;
+  document.getElementById('screen').innerHTML = fn();
+  renderTopbar();
+  renderTabbar();
+  renderActiveBar();
+}
+
+// init
+if (!state.onboarded) { state.screen = 'welcome'; }
+else if (!['home','explore','hikes','messages','profileMe','hikeDetail','group','trustedContacts','safetyCheck','activeTrip','sos','review','viewProfile','trailDetail','recordRoute','publishRoute','createEvent','safetyCenter','chatScreen','findBuddies','routeDescription','tripComplete','notifications','privacy'].includes(state.screen)) {
+  state.screen = 'home';
+}
+render();
+
+// While a hike is active and the nav screen is open, take one fresh GPS fix
+// every 30s (getCurrentPosition, not a continuous watchPosition stream) to
+// advance route progress/off-route status — deliberately not polling when
+// the hike is paused, finished, or the screen isn't open, per the battery
+// guidance above. Also keeps the elapsed-time display ticking.
+setInterval(() => {
+  const s = state.hikeSession;
+  if (s && s.status === 'active' && state.screen === 'activeTrip') {
+    if (locationStatus !== 'requesting' && locationStatus !== 'unsupported') requestLocation();
+    else render();
+  }
+}, 30000);
+</script>
+</body>
+</html>
