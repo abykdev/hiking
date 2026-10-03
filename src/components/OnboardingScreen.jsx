@@ -1,13 +1,23 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
+import { useLanguage } from '../i18n/LanguageContext';
 
 function OnboardingScreen({ navigate }) {
   const { t, i18n } = useTranslation('onboarding');
   //console.log('language:', i18n.language);
   //console.log('all data:', i18n.store.data);
   //console.log('t:', t('heading'));
-  const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
+  //const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
+  const { setLang } = useLanguage();
+  const [picked, setPicked] = useState(i18n.language || 'en');
+    const chooseLanguage = (lng) => {
+    setPicked(lng);
+    i18n.changeLanguage(lng);       // сразу переключаем тексты
+  };
+
+  const finish = () => {
+    setLang(picked);                
+  };
 
   return (
     <div className="screen">
@@ -30,13 +40,13 @@ function OnboardingScreen({ navigate }) {
             <p className="subheading">{t('subheading')}</p>
 
             <div className="lang-toggle">
-              <button className={lang === 'en' ? 'active' : ''} type="button" onClick={() => { setLang('en'); i18n.changeLanguage('en'); }}>EN</button>
-              <button className={lang === 'ru' ? 'active' : ''} type="button" onClick={() => { setLang('ru'); i18n.changeLanguage('ru'); }}>RU</button>
+              <button className={picked  === 'en' ? 'active' : ''} type="button" onClick={() => chooseLanguage('en')}>EN</button>
+              <button className={picked  === 'ru' ? 'active' : ''} type="button" onClick={() => chooseLanguage('ru')}>RU</button>
             </div>
           </div>
 
           <div className="bottom-group">
-            <button className="btn btn-primary" type="button" onClick={() => navigate('signin')}>{t('getStarted')}</button>
+            <button className="btn btn-primary" type="button" onClick={() => navigate('finish')}>{t('getStarted')}</button>
           </div>
 
         </div>
