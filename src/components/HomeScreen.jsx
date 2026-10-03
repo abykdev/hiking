@@ -10,7 +10,7 @@ export default function HomeScreen({ navigate }) {
   const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
   const go = (target, params) => navigate?.(target, params);
   return (
-    <div id="shell">
+    <>
       <div id="activebar"></div>
 
       <div id="topbar" className="topbar">
@@ -129,26 +129,7 @@ export default function HomeScreen({ navigate }) {
           </div>
         </div>
       </div>
-
       <div id="toast" className="">Запросить место</div>
-
-      <div id="tabbar" className="tabbar">
-        <button className="tab active" onClick={() => go('home')}>
-          <span className="ic">🏠</span>Главная
-        </button>
-        <button className="tab" onClick={() => go('explore')}>
-          <span className="ic">🧭</span>Открыть
-        </button>
-        <button className="tab" onClick={() => go('routes')}>
-          <span className="ic">🥾</span>Маршруты
-        </button>
-        <button className="tab" onClick={() => go('messages')}>
-          <span className="ic">💬</span>Сообщения
-        </button>
-        <button className="tab" onClick={() => go('profileMe')}>
-          <span className="ic">👤</span>Профиль
-        </button>
-      </div>
-    </div>
+    </>
   );
 }

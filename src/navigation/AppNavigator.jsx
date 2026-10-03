@@ -1,8 +1,9 @@
 import { useState, useCallback } from 'react';
 import { screens } from './screens';
+import Footer from '../components/Footer';
 
 export default function AppNavigator() {
-  const [route, setRoute] = useState({ name: 'Home', params: {} });
+  const [route, setRoute] = useState({ name: 'home', params: {} });
 
   const navigate = useCallback((name, params = {}) => {
     setRoute({ name, params });
@@ -10,7 +11,7 @@ export default function AppNavigator() {
 
   const goBack = useCallback(() => {
     // заглушка под RN-стиль; в вебе можно хранить стек
-    setRoute({ name: 'Home', params: {} });
+    setRoute({ name: 'home', params: {} });
   }, []);
 
   const CurrentScreen = screens[route.name];
@@ -20,10 +21,16 @@ export default function AppNavigator() {
   }
 
   return (
-    <CurrentScreen
-      params={route.params}
-      navigate={navigate}
-      goBack={goBack}
-    />
-  );
+    <>
+      <div id="shell">
+        <CurrentScreen
+          params={route.params}
+          navigate={navigate}
+          goBack={goBack}
+        />
+        <Footer
+          navigate={navigate}
+        />
+      </div>
+    </>);
 }

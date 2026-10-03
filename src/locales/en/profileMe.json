@@ -1,0 +1,121 @@
+{
+  "profileBuild": {
+    "title": "Build your hiking profile",
+    "subtitle": "Takes about a minute. You can skip anything.",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "How should we call you?"
+      },
+      "city": {
+        "label": "City",
+        "placeholder": "Where are you based?"
+      },
+      "bio": {
+        "label": "Short bio (optional)",
+        "placeholder": "A sentence or two about you…"
+      },
+      "experience": {
+        "label": "Outdoor experience",
+        "options": {
+          "beginner": "Beginner",
+          "intermediate": "Intermediate",
+          "advanced": "Advanced",
+          "expert": "Expert"
+        }
+      },
+      "pace": {
+        "label": "Hiking pace",
+        "options": {
+          "chill": "Chill",
+          "moderate": "Moderate",
+          "fast": "Fast",
+          "veryFast": "Very fast"
+        }
+      },
+      "distance": {
+        "label": "Preferred distance",
+        "options": {
+          "0_5": "0–5 km",
+          "5_10": "5–10 km",
+          "10_15": "10–15 km",
+          "15_25": "15–25 km",
+          "25plus": "25+ km"
+        }
+      },
+      "elevation": {
+        "label": "Preferred elevation gain",
+        "options": {
+          "low": "Low",
+          "moderate": "Moderate",
+          "high": "High",
+          "veryHigh": "Very high"
+        }
+      },
+      "style": {
+        "label": "Hiking style",
+        "options": {
+          "social": "Social",
+          "photography": "Photography",
+          "fitness": "Fitness",
+          "nature": "Nature",
+          "quiet": "Quiet",
+          "adventure": "Adventure",
+          "exploration": "Exploration"
+        }
+      },
+      "startTime": {
+        "label": "Preferred start",
+        "options": {
+          "sunrise": "Sunrise",
+          "morning": "Morning",
+          "afternoon": "Afternoon",
+          "flexible": "Flexible"
+        }
+      },
+      "stops": {
+        "label": "Stops along the way",
+        "options": {
+          "frequent": "Frequent",
+          "normal": "Normal",
+          "minimal": "Minimal"
+        }
+      },
+      "hasCar": {
+        "label": "Transportation",
+        "options": {
+          "yes": "Has a car",
+          "no": "No car"
+        }
+      },
+      "carSeats": {
+        "label": "Available passenger seats",
+        "options": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4"
+        }
+      },
+      "dogsOk": {
+        "label": "Hiking with dogs",
+        "options": {
+          "yes": "Dogs okay",
+          "no": "No dogs"
+        }
+      },
+      "extra": {
+        "label": "Also interested in",
+        "options": {
+          "camping": "Camping",
+          "trailRunning": "Trail running",
+          "climbing": "Climbing",
+          "cycling": "Cycling",
+          "sup": "SUP",
+          "snowActivities": "Snow activities"
+        }
+      }
+    },
+    "finishButton": "Finish profile"
+  }
+}
