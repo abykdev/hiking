@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../i18n/LanguageContext';
 
-function OnboardingScreen({ navigate }) {
+function OnboardingScreen() {
   const { t, i18n } = useTranslation('onboarding');
   //console.log('language:', i18n.language);
   //console.log('all data:', i18n.store.data);
