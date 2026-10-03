@@ -46,7 +46,7 @@ function OnboardingScreen({ navigate }) {
           </div>
 
           <div className="bottom-group">
-            <button className="btn btn-primary" type="button" onClick={() => navigate('finish')}>{t('getStarted')}</button>
+            <button className="btn btn-primary" type="button" onClick={finish}>{t('getStarted')}</button>
           </div>
 
         </div>
