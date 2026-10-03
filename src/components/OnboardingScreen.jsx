@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 
-function OnboardingScreen({ onNext }) {
+function OnboardingScreen({ navigate }) {
   const { t, i18n } = useTranslation('onboarding');
   //console.log('language:', i18n.language);
   //console.log('all data:', i18n.store.data);
@@ -36,7 +36,7 @@ function OnboardingScreen({ onNext }) {
           </div>
 
           <div className="bottom-group">
-            <button className="btn btn-primary" type="button" onClick={() => onNext('signin')}>{t('getStarted')}</button>
+            <button className="btn btn-primary" type="button" onClick={() => navigate('signin')}>{t('getStarted')}</button>
           </div>
 
         </div>
