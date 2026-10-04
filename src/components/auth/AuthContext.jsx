@@ -8,6 +8,7 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(() => localStorage.getItem('token'));
   const [status, setStatus] = useState('loading');
+  const [profile, setProfile] = useState(null);
 
   const logout = useCallback(() => {
     localStorage.removeItem('token');
@@ -77,6 +78,7 @@ export function AuthProvider({ children }) {
     console.log("localStorage token", localStorage.getItem('token'));
     setToken(data.accessToken);
     setUser(data.user);
+    setProfile(data.profile)
     setStatus('authenticated');
   };
 

@@ -8,7 +8,7 @@ export default function ProfileScreen({ navigate }) {
     //console.log('all data:', i18n.store.data);
     //console.log('t:', t('heading'));
     const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
-    const go = (target, params) => navigate?.(target, params);
+    const go = (target, params) => navigate(target, params);
     return (
         <div id="shell">
             <div id="activebar"></div>
@@ -47,7 +47,7 @@ export default function ProfileScreen({ navigate }) {
                     </div>
                 </div>
                 <div style={{ marginTop: '12px' }}>
-                    <button className="btn btn-outline" onClick={() => goToProfileBuild('profileMe')}>Редактировать профиль</button>
+                    <button className="btn btn-outline" onClick={() => go('profileMe')}>Редактировать профиль</button>
                 </div>
                 <button className="btn btn-outline" style={{ marginTop: '10px', borderColor: 'var(--alert)', color: 'var(--alert)' }} onClick={() => go('safetyCenter')}>🛟 Центр безопасности</button>
                 <button className="btn btn-outline" style={{ marginTop: '10px' }} onClick={() => go('notifications')}>🔔 Уведомления</button>
@@ -56,24 +56,7 @@ export default function ProfileScreen({ navigate }) {
 
                 <p className="muted" style={{ marginTop: '26px', fontSize: '12px', lineHeight: 1.5 }}>Отзывы сообщества субъективны, а условия могут меняться. Ответственность за оценку маршрута остаётся на тебе. Функции безопасности зависят от связи на устройстве.</p>
             </div>
-            <div id="toast" className="">Запросить место</div>
-            <div id="tabbar" className="tabbar">
-                <button className="tab" onClick={() => go('home')}>
-                    <span className="ic">🏠</span>Главная
-                </button>
-                <button className="tab" onClick={() => go('explore')}>
-                    <span className="ic">🧭</span>Открыть
-                </button>
-                <button className="tab" onClick={() => go('routes')}>
-                    <span className="ic">🥾</span>Маршруты
-                </button>
-                <button className="tab" onClick={() => go('messages')}>
-                    <span className="ic">💬</span>Сообщения
-                </button>
-                <button className="tab active" onClick={() => go('profileMe')}>
-                    <span className="ic">👤</span>Профиль
-                </button>
-            </div>
+            
         </div>
     );
 }

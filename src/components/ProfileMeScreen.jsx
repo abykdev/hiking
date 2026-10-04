@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 
 export default function ProfileMeScreen({ navigate }) {
-    const { t, i18n } = useTranslation('onboarding');
+    const { t, i18n } = useTranslation('profileMe');
     //console.log('language:', i18n.language);
     //console.log('all data:', i18n.store.data);
     //console.log('t:', t('heading'));
@@ -105,7 +105,7 @@ export default function ProfileMeScreen({ navigate }) {
             </div>
 
             <div style={{ marginTop: '26px' }}>
-                <button className="btn btn-primary" onClick={finishProfile}>{t('profileBuild.finishButton')}</button>
+                <button className="btn btn-primary" onClick={() => go('profileMe')}>{t('profileBuild.finishButton')}</button>
             </div>
         </div>
     );

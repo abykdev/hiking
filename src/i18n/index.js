@@ -19,9 +19,9 @@ for (const key_lang in resources){
   for(const key_screen in resources[key_lang]){
     let strJson=resources[key_lang][key_screen];
     strJson=strJson.replace(/\\[rn]/g, ' ');
-    //console.log("strJson",strJson);
+    console.log("strJson",strJson);
     resources[key_lang][key_screen]=JSON.parse(strJson.trim());
-    
+    console.log("resources[key_lang][key_screen] ",resources[key_lang][key_screen]);
   }
 }
 //console.log("i18n resources", resources)
@@ -32,6 +32,7 @@ i18n
     lng: localStorage.getItem('lang') || 'en',
     fallbackLng: 'en',
     interpolation: { escapeValue: false },
+    debug: true,
   });
 
 i18n.on('languageChanged', (lng) => localStorage.setItem('lang', lng));
