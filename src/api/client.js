@@ -1,7 +1,18 @@
 let refreshPromise = null;   // защита от параллельных refresh
 const API_URL = import.meta.env.VITE_API_URL;
-// Вызывается из AuthProvider, чтобы разлогинить при провале refresh
-let onUnauthorized = () => { };
+
+let getToken = () => null;
+let onTokenRefreshed = () => { };
+let onUnauthorized = () => { };// Вызывается из AuthProvider, чтобы разлогинить при провале refresh
+
+export function configureAuth({ getToken: gt, onTokenRefreshed: otr, onUnauthorized: ou }) {
+    if (gt) getToken = gt;
+    if (otr) onTokenRefreshed = otr;
+    if (ou) onUnauthorized = ou;
+}
+
+
+
 export function setOnUnauthorized(fn) {
     onUnauthorized = fn;
 }
@@ -29,8 +40,8 @@ export async function refreshAccessToken() {
     return refreshPromise;
 }
 
-export async function apiFetch(path, options = {}, getToken) {
-    const token = getToken?.();     // актуальный access-токен
+export async function apiFetch(path, options = {}) {
+    const token = getToken();     // актуальный access-токен
 
     const doRequest = (t) =>
         fetch(`${API_URL}${path}`, {
@@ -48,6 +59,7 @@ export async function apiFetch(path, options = {}, getToken) {
     if (res.status === 401) {
         try {
             const newToken = await refreshAccessToken();
+            onTokenRefreshed(newToken);
             // Повторяем исходный запрос с новым токеном
             res = await doRequest(newToken);
             // Сообщаем наверх, что токен обновился (чтобы сохранить его в state)
@@ -59,5 +71,5 @@ export async function apiFetch(path, options = {}, getToken) {
         }
     }
 
-    return { res, newToken: null };
+    return { res };
 }

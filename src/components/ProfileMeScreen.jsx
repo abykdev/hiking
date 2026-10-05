@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import ChoiceGroup from './ChoiceGroup';
+import { useAuth } from './auth/AuthContext';
 
 
 export default function ProfileMeScreen({ navigate }) {
@@ -9,6 +11,8 @@ export default function ProfileMeScreen({ navigate }) {
     //console.log('t:', t('heading'));
     const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
     const go = (target, params) => navigate?.(target, params);
+    const { user } = useAuth();
+
     return (
         <div id="screen">
             <h2 style={{ fontSize: '24px' }}>{t('profileBuild.title')}</h2>
@@ -22,58 +26,49 @@ export default function ProfileMeScreen({ navigate }) {
             <textarea placeholder={t('profileBuild.fields.bio.placeholder')} onInput={(e) => updateProfile('bio', e.target.value)}></textarea>
 
             <div className="field-label">{t('profileBuild.fields.experience.label')}</div>
-            <div className="chip-row">
-                <div className="chip" onClick={() => updateProfile('experience', 0)}>{t('profileBuild.fields.experience.options.beginner')}</div>
-                <div className="chip" onClick={() => updateProfile('experience', 1)}>{t('profileBuild.fields.experience.options.intermediate')}</div>
-                <div className="chip" onClick={() => updateProfile('experience', 2)}>{t('profileBuild.fields.experience.options.advanced')}</div>
-                <div className="chip selected" onClick={() => updateProfile('experience', 3)}>{t('profileBuild.fields.experience.options.expert')}</div>
-            </div>
+            <ChoiceGroup
+              group="experience"
+              value={user.experience_id}
+              onChange={(newValue) => updateProfile('experience', newValue)}
+            />
+            
             <div className="field-label">{t('profileBuild.fields.pace.label')}</div>
-            <div className="chip-row">
-                <div className="chip" onClick={() => updateProfile('pace', 0)}>{t('profileBuild.fields.pace.options.chill')}</div>
-                <div className="chip" onClick={() => updateProfile('pace', 1)}>{t('profileBuild.fields.pace.options.moderate')}</div>
-                <div className="chip selected" onClick={() => updateProfile('pace', 2)}>{t('profileBuild.fields.pace.options.fast')}</div>
-                <div className="chip" onClick={() => updateProfile('pace', 3)}>{t('profileBuild.fields.pace.options.veryFast')}</div>
-            </div>
+            <ChoiceGroup
+              group="pace"
+              value={user.pace_id}
+              onChange={(newValue) => updateProfile('pace', newValue)}
+            />            
             <div className="field-label">{t('profileBuild.fields.distance.label')}</div>
-            <div className="chip-row">
-                <div className="chip" onClick={() => updateProfile('distance', 0)}>{t('profileBuild.fields.distance.options.0_5')}</div>
-                <div className="chip" onClick={() => updateProfile('distance', 1)}>{t('profileBuild.fields.distance.options.5_10')}</div>
-                <div className="chip selected" onClick={() => updateProfile('distance', 2)}>{t('profileBuild.fields.distance.options.10_15')}</div>
-                <div className="chip" onClick={() => updateProfile('distance', 3)}>{t('profileBuild.fields.distance.options.15_25')}</div>
-                <div className="chip" onClick={() => updateProfile('distance', 4)}>{t('profileBuild.fields.distance.options.25plus')}</div>
-            </div>
+            <ChoiceGroup
+              group="distance"
+              value={user.distance_id}
+              onChange={(newValue) => updateProfile('distance', newValue)}
+            />
             <div className="field-label">{t('profileBuild.fields.elevation.label')}</div>
-            <div className="chip-row">
-                <div className="chip" onClick={() => updateProfile('elevation', 0)}>{t('profileBuild.fields.elevation.options.low')}</div>
-                <div className="chip" onClick={() => updateProfile('elevation', 1)}>{t('profileBuild.fields.elevation.options.moderate')}</div>
-                <div className="chip" onClick={() => updateProfile('elevation', 2)}>{t('profileBuild.fields.elevation.options.high')}</div>
-                <div className="chip selected" onClick={() => updateProfile('elevation', 3)}>{t('profileBuild.fields.elevation.options.veryHigh')}</div>
-            </div>
+            <ChoiceGroup
+              group="elevation"
+              value={user.elevation_id}
+              onChange={(newValue) => updateProfile('elevation', newValue)}
+            />
 
             <div className="field-label">{t('profileBuild.fields.style.label')}</div>
-            <div className="chip-row">
-                <div className="chip" onClick={() => toggleStyle(0)}>{t('profileBuild.fields.style.options.social')}</div>
-                <div className="chip selected" onClick={() => toggleStyle(1)}>{t('profileBuild.fields.style.options.photography')}</div>
-                <div className="chip selected" onClick={() => toggleStyle(2)}>{t('profileBuild.fields.style.options.fitness')}</div>
-                <div className="chip" onClick={() => toggleStyle(3)}>{t('profileBuild.fields.style.options.nature')}</div>
-                <div className="chip" onClick={() => toggleStyle(4)}>{t('profileBuild.fields.style.options.quiet')}</div>
-                <div className="chip" onClick={() => toggleStyle(5)}>{t('profileBuild.fields.style.options.adventure')}</div>
-                <div className="chip" onClick={() => toggleStyle(6)}>{t('profileBuild.fields.style.options.exploration')}</div>
-            </div>
+            <ChoiceGroup
+              group="style"
+              value={user.style_id}
+              onChange={(newValue) => updateProfile('style', newValue)}
+            />
             <div className="field-label">{t('profileBuild.fields.startTime.label')}</div>
-            <div className="chip-row">
-                <div className="chip" onClick={() => updateProfile('startTime', 0)}>{t('profileBuild.fields.startTime.options.sunrise')}</div>
-                <div className="chip" onClick={() => updateProfile('startTime', 1)}>{t('profileBuild.fields.startTime.options.morning')}</div>
-                <div className="chip" onClick={() => updateProfile('startTime', 2)}>{t('profileBuild.fields.startTime.options.afternoon')}</div>
-                <div className="chip selected" onClick={() => updateProfile('startTime', 3)}>{t('profileBuild.fields.startTime.options.flexible')}</div>
-            </div>
+            <ChoiceGroup
+              group="startTime"
+              value={user.startTime_id}
+              onChange={(newValue) => updateProfile('startTime', newValue)}
+            />
             <div className="field-label">{t('profileBuild.fields.stops.label')}</div>
-            <div className="chip-row">
-                <div className="chip" onClick={() => updateProfile('stops', 0)}>{t('profileBuild.fields.stops.options.frequent')}</div>
-                <div className="chip selected" onClick={() => updateProfile('stops', 1)}>{t('profileBuild.fields.stops.options.normal')}</div>
-                <div className="chip" onClick={() => updateProfile('stops', 2)}>{t('profileBuild.fields.stops.options.minimal')}</div>
-            </div>
+            <ChoiceGroup
+              group="stops"
+              value={user.stops_id}
+              onChange={(newValue) => updateProfile('stops', newValue)}
+            />
 
             <div className="field-label">{t('profileBuild.fields.hasCar.label')}</div>
             <div className="chip-row">

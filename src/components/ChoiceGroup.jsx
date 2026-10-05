@@ -1,28 +1,29 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { api } from '../api/client';
+import { apiFetch } from '../api/client';
 
-export default function ChoiceGroup({
+
+export default function ChoiceGroup({ 
   group,           // '/api/activities'
   value,              // выбранные id: строка или массив
   onChange,           // (newValue) => void
-  label,              // заголовок группы
 }) {
   const { i18n } = useTranslation();
+
   const [options, setOptions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const [modeProp, setModeProp] = useState('single');
   // Загрузка опций
   useEffect(() => {
     let cancelled = false;
 
     setLoading(true);
-    api.get(`/api/refs/${group}`)
+    apiFetch(`/api/refs/${group}`)
       .then((data) => {
         if (cancelled) return;
         setOptions(data.options ?? []);
-        setMode(data.mode ?? 'single');
+        setModeProp(data.mode ?? 'single');
         setError(null);
       })
       .catch(() => {
@@ -35,18 +36,18 @@ export default function ChoiceGroup({
       });
 
     return () => { cancelled = true; };
-  }, [group, modeProp]);
-
+      }, [group]);
+  
   if (loading) return <div className="muted">…</div>;
   if (error)   return <div className="error">{error}</div>;
 
   const isSelected = (id) => {
-    if (mode === 'single') return value === id;
+    if (modeProp === 'single') return value === id;
     return Array.isArray(value) && value.includes(id);
   };
 
   const handleClick = (id) => {
-    if (mode === 'single') {
+    if (modeProp === 'single') {
       onChange(id);
       return;
     }
@@ -60,7 +61,6 @@ export default function ChoiceGroup({
 
   return (
     <div>
-      {label && <div className="field-label">{label}</div>}
       <div className="chip-row">
         {options.map((option) => (
           <button

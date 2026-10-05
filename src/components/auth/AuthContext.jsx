@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import { apiFetch, setOnUnauthorized, refreshAccessToken } from '../../api/client';
+import { configureAuth, apiFetch, setOnUnauthorized, refreshAccessToken } from '../../api/client';
 
 const AuthContext = createContext(null);
 const API_URL = import.meta.env.VITE_API_URL;
@@ -8,7 +8,6 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(() => localStorage.getItem('token'));
   const [status, setStatus] = useState('loading');
-  const [profile, setProfile] = useState(null);
 
   const logout = useCallback(() => {
     localStorage.removeItem('token');
@@ -16,6 +15,19 @@ export function AuthProvider({ children }) {
     setUser(null);
     setStatus('guest');
   }, []);
+  const handleTokenRefreshed = useCallback((newToken) => {
+    localStorage.setItem('token', newToken);
+    setToken(newToken);
+  }, []);
+
+  // Регистрируем колбэки в apiFetch — один раз
+  useEffect(() => {
+    configureAuth({
+      getToken: () => localStorage.getItem('token'),   // актуальный токен
+      onTokenRefreshed: handleTokenRefreshed,
+      onUnauthorized: logout,
+    });
+  }, [handleTokenRefreshed, logout]);
 
   // Регистрируем колбэк: если refresh провалился — разлогиниваем
   useEffect(() => {
@@ -65,7 +77,7 @@ export function AuthProvider({ children }) {
 
   const login = async (email, password) => {
     console.log("login start");
-    const res = await fetch(API_URL+'/api/users/login', {
+    const res = await fetch(API_URL + '/api/users/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',       // ← бэк должен поставить refreshToken в куку
@@ -98,8 +110,17 @@ export function AuthProvider({ children }) {
     return data.accessToken;
   }, [logout]);
 
+  const setUserField = (field, value) => {
+    setUser(prev => ({ ...prev, [field]: value }));
+    apiFetch('/api/users/me', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ [field]: value }),
+    }, () => token);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, token, status, login, logout, refresh }}>
+    <AuthContext.Provider value={{ user, token, status, login, logout, refresh, setUserField }}>
       {children}
     </AuthContext.Provider>
   );
