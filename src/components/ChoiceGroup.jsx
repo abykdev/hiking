@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { apiFetch } from '../api/client';
 
 
-export default function ChoiceGroup({ 
+export default function ChoiceGroup({
   group,           // '/api/activities'
   value,              // выбранные id: строка или массив
   onChange,           // (newValue) => void
@@ -19,12 +19,17 @@ export default function ChoiceGroup({
     let cancelled = false;
 
     setLoading(true);
-    apiFetch(`/api/refs/${group}`)
+    apiFetch(`/api/refs/${group}?lang=${i18n.language}`)
+      .then(({ res }) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();            // ← вот здесь парсим JSON
+      })
       .then((data) => {
         if (cancelled) return;
         setOptions(data.options ?? []);
         setModeProp(data.mode ?? 'single');
         setError(null);
+        console.log("data " + group + ": ", data)
       })
       .catch(() => {
         if (cancelled) return;
@@ -36,10 +41,10 @@ export default function ChoiceGroup({
       });
 
     return () => { cancelled = true; };
-      }, [group]);
-  
+  }, [group]);
+
   if (loading) return <div className="muted">…</div>;
-  if (error)   return <div className="error">{error}</div>;
+  if (error) return <div className="error">{error}</div>;
 
   const isSelected = (id) => {
     if (modeProp === 'single') return value === id;
@@ -69,7 +74,7 @@ export default function ChoiceGroup({
             className={`chip ${isSelected(option.id) ? 'selected' : ''}`}
             onClick={() => handleClick(option.id)}
           >
-            {option.labels[i18n.language] ?? option.labels.en ?? option.id}
+            {option.label}
           </button>
         ))}
       </div>

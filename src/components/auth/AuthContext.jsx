@@ -61,6 +61,7 @@ export function AuthProvider({ children }) {
 
         if (cancelled) return;
         setUser(data.user);
+        console.log('setUser called with:', data.user);
         setStatus('authenticated');
       } catch {
         if (cancelled) return;
@@ -116,7 +117,7 @@ export function AuthProvider({ children }) {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ [field]: value }),
-    }, () => token);
+    });
   };
 
   return (

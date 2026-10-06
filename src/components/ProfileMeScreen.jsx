@@ -11,7 +11,8 @@ export default function ProfileMeScreen({ navigate }) {
     //console.log('t:', t('heading'));
     const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
     const go = (target, params) => navigate?.(target, params);
-    const { user } = useAuth();
+    const {user} = useAuth();
+    
 
     return (
         <div id="screen">
