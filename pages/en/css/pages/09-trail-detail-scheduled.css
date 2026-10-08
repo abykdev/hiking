@@ -1,0 +1,85 @@
+/* Page-specific styles for "Trail detail (scheduled)".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u2 {
+  position:relative;
+}
+
+#shell .u3 {
+  height:160px;
+}
+
+#shell .u4 {
+  font-size:20px;
+}
+
+#shell .u5 {
+  font-size:13px;
+  opacity:.9;
+}
+
+#shell .u6 {
+  margin-top:16px;
+}
+
+#shell .u7 {
+  font-weight:700;
+}
+
+#shell .u8 {
+  height:240px;
+  border-radius:var(--radius);
+  background:var(--sand);
+  overflow:hidden;
+}
+
+#shell .u9 {
+  margin-top:8px;
+  gap:8px;
+}
+
+#shell .u10 {
+  flex:1;
+}
+
+#shell .u11 {
+  font-size:11px;
+  margin-top:4px;
+}
+
+#shell .u12 {
+  font-size:14px;
+  line-height:1.5;
+  margin-top:14px;
+}
+
+#shell .u13 {
+  margin-top:6px;
+}
+
+#shell .u14 {
+  margin-top:10px;
+}
+
+#shell .u15 {
+  font-size:12px;
+  cursor:pointer;
+}
+
+#shell .u16 {
+  font-family:monospace;
+  font-size:12px;
+  margin-top:4px;
+}
+
+#shell .u17 {
+  margin-top:14px;
+}
+
+#shell .u18 {
+  margin-top:12px;
+}

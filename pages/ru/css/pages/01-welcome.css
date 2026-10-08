@@ -1,0 +1,33 @@
+/* Page-specific styles for "Приветствие".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  min-height:70vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  gap:22px;
+}
+
+#shell .u2 {
+  font-size:46px;
+}
+
+#shell .u3 {
+  font-size:32px;
+  line-height:1.15;
+}
+
+#shell .u4 {
+  font-size:15px;
+}
+
+#shell .u5 {
+  margin-top:8px;
+}
+
+#shell .u6 {
+  width:100%;
+  margin-top:18px;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Навигация (свой маршрут)</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/37-active-trip-route.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Навигация (свой маршрут)». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="activebar">
+        <div class="active-bar" data-action="go('activeTrip')">
+          <span><span class="pulse"></span>ПОХОД АКТИВЕН</span><span>Навигация →</span>
+        </div>
+      </div>
+      <div id="topbar" class="topbar">
+        <div class="u1"></div>
+        <span class="display u2">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u3"
+          aria-label="Уведомления"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <div class="space-between">
+          <h2 class="u4">Навигация</h2>
+          <span class="row u5"><span class="pulse u6"></span><strong class="u7">ПОХОД АКТИВЕН</strong></span>
+        </div>
+
+        <div class="u8">
+          <svg width="100%" height="100%" viewBox="0 0 300 240">
+            <path
+              d="M22.0,218.0 L55.3,190.5 L73.2,159.5 L119.3,128.6 L173.0,111.4 L219.1,87.3 L242.2,49.5 L278.0,22.0"
+              fill="none"
+              stroke="#C17A82"
+              stroke-width="3.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <circle cx="22.0" cy="218.0" r="6" fill="#C9A6AE" stroke="#fff" stroke-width="2"></circle>
+            <circle cx="278.0" cy="22.0" r="6" fill="#D1495B" stroke="#fff" stroke-width="2"></circle>
+            <circle cx="119.3" cy="128.6" r="9" fill="rgba(193,122,130,0.22)"></circle>
+            <circle cx="119.3" cy="128.6" r="5.5" fill="#C17A82" stroke="#fff" stroke-width="2"></circle>
+          </svg>
+        </div>
+        <div class="row u9">
+          <!-- TODO: wire up button — Центрировать на мне --><button
+            class="btn btn-outline btn-sm u10"
+            data-action="setMapView('me')"
+          >
+            Центрировать на мне
+          </button>
+          <!-- TODO: wire up button — Весь маршрут --><button
+            class="btn btn-outline btn-sm u10"
+            data-action="setMapView('fit')"
+          >
+            Весь маршрут
+          </button>
+        </div>
+        <p class="muted u11">Маршрут показан схематично — в этой сборке недоступны живые тайлы карты.</p>
+        <!-- TODO: wire up button — ▶ Демо: пройти маршрут виртуально --><button
+          class="btn btn-outline btn-sm u12"
+          data-action="simulateWalk()"
+        >
+          ▶ Демо: пройти маршрут виртуально
+        </button>
+
+        <div class="progress-track u13"><div class="progress-fill u14"></div></div>
+        <div class="space-between u15">
+          <div>
+            <div class="muted u16">Пройдено</div>
+            <div class="u17">0.6 km</div>
+          </div>
+          <div>
+            <div class="muted u16">Осталось</div>
+            <div class="u17">2.8 km</div>
+          </div>
+          <div>
+            <div class="muted u16">Прошло времени</div>
+            <div class="u17">30 min</div>
+          </div>
+        </div>
+
+        <p class="muted u18">📍 40.1089, 44.7340 (± 6 m)</p>
+        <p class="muted u19"></p>
+
+        <div class="row u20">
+          <!-- TODO: wire up button — Пауза --><button
+            class="btn btn-secondary u10"
+            data-action="pauseHikeSession()"
+          >
+            Пауза
+          </button>
+          <!-- TODO: wire up button — SOS --><button class="btn btn-alert u10" data-action="go('sos')">
+            SOS
+          </button>
+        </div>
+        <div class="u15">
+          <!-- TODO: wire up button — Завершить поход --><button
+            class="btn btn-outline"
+            data-action="confirmFinishHike()"
+          >
+            Завершить поход
+          </button>
+        </div>
+
+        <div class="toggle-row">
+          <span class="u21">Автопроверка каждые 30 минут</span>
+          <div class="switch on" data-action="togglePingSetting()"><div class="knob"></div></div>
+        </div>
+
+        <div class="ping-card">
+          <strong>Прошло 30 минут на маршруте.</strong>
+          <a
+            class="sms-link"
+            href="sms:?body=%D0%AF%20%D0%BD%D0%B0%20%D0%BC%D0%B0%D1%80%D1%88%D1%80%D1%83%D1%82%D0%B5%2C%20%D0%B2%D1%81%D1%91%20%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE.%20%D0%A1%D0%BA%D0%BE%D1%80%D0%BE%20%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%20%D0%BD%D0%B0%D0%BF%D0%B8%D1%88%D1%83.%20https%3A%2F%2Fmaps.apple.com%2F%3Fll%3D40.1089%2C44.734%26q%3DMy%2520location"
+            data-action="logPing()"
+            >Отправить SMS с коротким апдейтом</a
+          >
+        </div>
+
+        <div class="section-title">Чек-ин</div>
+        <div class="card u22">
+          <div class="u23">Ты в порядке?</div>
+          <div class="u24">
+            <!-- TODO: wire up button — Я в безопасности --><button
+              class="btn btn-primary"
+              data-action="checkin('safe')"
+            >
+              Я в безопасности
+            </button>
+            <!-- TODO: wire up button — Нужно больше времени --><button
+              class="btn btn-secondary"
+              data-action="checkin('time')"
+            >
+              Нужно больше времени
+            </button>
+            <!-- TODO: wire up button — Нужна помощь --><button
+              class="btn btn-outline"
+              data-action="checkin('help')"
+            >
+              Нужна помощь
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Главная --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Главная
+        </button>
+        <!-- TODO: wire up button — 🧭Открыть --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Открыть
+        </button>
+        <!-- TODO: wire up button — 🥾Маршруты --><button class="tab active" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Маршруты
+        </button>
+        <!-- TODO: wire up button — 💬Сообщения --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Сообщения
+        </button>
+        <!-- TODO: wire up button — 👤Профиль --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Профиль
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

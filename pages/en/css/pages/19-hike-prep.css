@@ -1,0 +1,83 @@
+/* Page-specific styles for "Hike prep".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u2 {
+  position:relative;
+}
+
+#shell .u3 {
+  font-size:22px;
+}
+
+#shell .u4 {
+  margin-bottom:0;
+}
+
+#shell .u5 {
+  margin-top:10px;
+}
+
+#shell .u6 {
+  margin-bottom:10px;
+  cursor:pointer;
+}
+
+#shell .u7 {
+  width:22px;
+  height:22px;
+  border-radius:6px;
+  border:1.5px solid var(--forest);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--forest);
+  flex-shrink:0;
+}
+
+#shell .u8 {
+  color:#fff;
+  font-size:13px;
+}
+
+#shell .u9 {
+  flex:1;
+  font-size:13.5px;
+  text-decoration:line-through;
+  opacity:.55;
+}
+
+#shell .u10 {
+  width:22px;
+  height:22px;
+  border-radius:6px;
+  border:1.5px solid var(--forest);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  flex-shrink:0;
+}
+
+#shell .u11 {
+  flex:1;
+  font-size:13.5px;
+}
+
+#shell .u12 {
+  margin-bottom:10px;
+}
+
+#shell .u13 {
+  font-size:13.5px;
+}
+
+#shell .u14 {
+  font-size:12.5px;
+  line-height:1.5;
+  margin:8px 0 0;
+  color:var(--text-muted);
+}

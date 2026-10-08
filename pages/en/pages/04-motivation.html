@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — What brings you outdoors</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/04-motivation.css" />
+  </head>
+  <body>
+    <!-- Static export of the "What brings you outdoors" screen. No JavaScript on purpose: every interactive element carries a data-action / data-on-input / data-on-change attribute holding the original prototype handler as a hint. Wire these up yourself. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="go('welcome')">←</button>
+        <div class="lang-toggle">
+          <!-- TODO: wire up button — EN --><button class="active" data-action="toggleLang('en')">EN</button
+          ><!-- TODO: wire up button — RU --><button class="" data-action="toggleLang('ru')">RU</button>
+        </div>
+      </div>
+      <div id="screen">
+        <h2 class="u1">What brings you outdoors?</h2>
+        <div class="chip-row">
+          <div class="chip selected" data-action="toggleMotivation(0)">Meet hiking friends</div>
+          <div class="chip" data-action="toggleMotivation(1)">Explore new trails</div>
+          <div class="chip selected" data-action="toggleMotivation(2)">Feel safer outdoors</div>
+          <div class="chip" data-action="toggleMotivation(3)">Start hiking</div>
+          <div class="chip" data-action="toggleMotivation(4)">Find weekend adventures</div>
+          <div class="chip" data-action="toggleMotivation(5)">Join group hikes</div>
+          <div class="chip" data-action="toggleMotivation(6)">Travel and explore</div>
+        </div>
+        <div class="u2">
+          <!-- TODO: wire up button — Continue --><button
+            class="btn btn-primary"
+            data-action="goToProfileBuild('motivation')"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

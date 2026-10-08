@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Маршрут</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/08-trail-detail.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Маршрут». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="goBack('explore')">←</button
+        ><span class="display u1">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u2"
+          aria-label="Уведомления"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <div class="hero-img u3">
+          <div>
+            <div class="display u4">Озеро Парз — Гошаванк</div>
+            <div class="u5">Дилижан, Тавушская область</div>
+          </div>
+        </div>
+        <div class="space-between u6">
+          <div>
+            <div class="muted">Дистанция</div>
+            <div class="u7">8 km</div>
+          </div>
+          <div>
+            <div class="muted">Набор высоты</div>
+            <div class="u7">+250 m</div>
+          </div>
+          <div>
+            <div class="muted">Прим. длительность</div>
+            <div class="u7">3h</div>
+          </div>
+        </div>
+        <div class="section-title">Карта маршрута</div>
+
+        <div class="u8">
+          <svg width="100%" height="100%" viewBox="0 0 300 240">
+            <path
+              d="M278.0,218.0 L244.2,170.9 L214.3,113.8 L171.4,69.1 L124.7,36.9 L75.3,22.0 L22.0,27.0"
+              fill="none"
+              stroke="#C17A82"
+              stroke-width="3.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <circle cx="278.0" cy="218.0" r="6" fill="#C9A6AE" stroke="#fff" stroke-width="2"></circle>
+            <circle cx="22.0" cy="27.0" r="6" fill="#D1495B" stroke="#fff" stroke-width="2"></circle>
+          </svg>
+        </div>
+        <div class="row u9">
+          <!-- TODO: wire up button — Центрировать на мне --><button
+            class="btn btn-outline btn-sm u10"
+            data-action="setMapView('me')"
+          >
+            Центрировать на мне
+          </button>
+          <!-- TODO: wire up button — Весь маршрут --><button
+            class="btn btn-outline btn-sm u10"
+            data-action="setMapView('fit')"
+          >
+            Весь маршрут
+          </button>
+        </div>
+        <p class="muted u11">Маршрут показан схематично — в этой сборке недоступны живые тайлы карты.</p>
+
+        <p class="u12">Лесная тропа от озера Парз через буковый лес к монастырю Гошаванк XIII века.</p>
+
+        <div class="card u13">
+          <!-- TODO: wire up button — Показать расстояние от меня --><button
+            class="btn btn-outline btn-sm"
+            data-action="requestLocation()"
+          >
+            Показать расстояние от меня
+          </button>
+          <a
+            class="sms-link u14"
+            href="https://maps.apple.com/?ll=40.7419,44.8927&amp;q=%D0%9E%D0%B7%D0%B5%D1%80%D0%BE%20%D0%9F%D0%B0%D1%80%D0%B7%20%E2%80%94%20%D0%93%D0%BE%D1%88%D0%B0%D0%B2%D0%B0%D0%BD%D0%BA"
+            target="_blank"
+            rel="noopener"
+            >Открыть в Картах</a
+          >
+          <details class="u14">
+            <summary class="muted u15">Координаты старта</summary>
+            <div class="u16">40.7419, 44.8927</div>
+          </details>
+        </div>
+
+        <!-- TODO: wire up button — Сделать доступным офлайн --><button
+          class="btn btn-outline u17"
+          data-action="toggleOffline('parz')"
+        >
+          Сделать доступным офлайн
+        </button>
+
+        <div class="card u18">
+          <div class="u19">0 женщин(ы) хотят пойти сюда</div>
+          <!-- TODO: wire up button — Добавить маршрут --><button
+            class="btn btn-primary"
+            data-action="toggleAddedTrail('parz')"
+          >
+            Добавить маршрут
+          </button>
+        </div>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Главная --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Главная
+        </button>
+        <!-- TODO: wire up button — 🧭Открыть --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Открыть
+        </button>
+        <!-- TODO: wire up button — 🥾Маршруты --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Маршруты
+        </button>
+        <!-- TODO: wire up button — 💬Сообщения --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Сообщения
+        </button>
+        <!-- TODO: wire up button — 👤Профиль --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Профиль
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

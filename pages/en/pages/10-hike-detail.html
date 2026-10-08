@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Hike detail</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/10-hike-detail.css" />
+  </head>
+  <body>
+    <!-- Static export of the "Hike detail" screen. No JavaScript on purpose: every interactive element carries a data-action / data-on-input / data-on-change attribute holding the original prototype handler as a hint. Wire these up yourself. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="goBack('home')">←</button
+        ><span class="display u1">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u2"
+          aria-label="Notifications"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <div class="hero-img u3">
+          <div>
+            <div class="display u4">Parz Lake — Goshavank</div>
+            <div class="u5">Dilijan · 09:30</div>
+          </div>
+        </div>
+
+        <div class="space-between u6">
+          <div>
+            <div class="muted">Distance</div>
+            <div class="u7">8 km</div>
+          </div>
+          <div>
+            <div class="muted">Elevation gain</div>
+            <div class="u7">+250 m</div>
+          </div>
+          <div>
+            <div class="muted">Est. duration</div>
+            <div class="u7">3h</div>
+          </div>
+        </div>
+
+        <div class="section-title u8">Route map</div>
+
+        <div class="u9">
+          <svg width="100%" height="100%" viewBox="0 0 300 240">
+            <path
+              d="M278.0,218.0 L244.2,170.9 L214.3,113.8 L171.4,69.1 L124.7,36.9 L75.3,22.0 L22.0,27.0"
+              fill="none"
+              stroke="#C17A82"
+              stroke-width="3.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <circle cx="278.0" cy="218.0" r="6" fill="#C9A6AE" stroke="#fff" stroke-width="2"></circle>
+            <circle cx="22.0" cy="27.0" r="6" fill="#D1495B" stroke="#fff" stroke-width="2"></circle>
+          </svg>
+        </div>
+        <div class="row u10">
+          <!-- TODO: wire up button — Center on me --><button
+            class="btn btn-outline btn-sm u11"
+            data-action="setMapView('me')"
+          >
+            Center on me
+          </button>
+          <!-- TODO: wire up button — Fit route --><button
+            class="btn btn-outline btn-sm u11"
+            data-action="setMapView('fit')"
+          >
+            Fit route
+          </button>
+        </div>
+        <p class="muted u12">Route shown schematically — live map tiles aren't available in this build.</p>
+        <a
+          class="sms-link u13"
+          href="https://maps.apple.com/?ll=40.7419,44.8927&amp;q=Parz%20Lake%20%E2%80%94%20Goshavank"
+          target="_blank"
+          rel="noopener"
+          >Open in Maps</a
+        >
+
+        <div class="card u14">
+          <div class="space-between">
+            <span class="compat-badge">92% hiking match</span>
+          </div>
+          <div class="u15">Why you match</div>
+          <ul class="u16">
+            <li>Same pace</li>
+            <li>Both prefer morning starts</li>
+            <li>Similar distance preference</li>
+          </ul>
+        </div>
+
+        <div class="section-title">Participants (4)</div>
+        <div class="row u17">
+          <div class="u18">
+            <div class="avatar clickable u19" data-action="viewProfile('Anna')">A</div>
+            <div class="u12">Anna</div>
+          </div>
+          <div class="u18">
+            <div class="avatar clickable u19" data-action="viewProfile('Elena')">E</div>
+            <div class="u12">Elena</div>
+          </div>
+          <div class="u18">
+            <div class="avatar clickable u19" data-action="viewProfile('Maria')">M</div>
+            <div class="u12">Maria</div>
+          </div>
+          <div class="u18">
+            <div class="avatar clickable u19" data-action="viewProfile('Sofia')">S</div>
+            <div class="u12">Sofia</div>
+          </div>
+        </div>
+
+        <div class="u20">
+          <!-- TODO: wire up button — Join hike --><button class="btn btn-primary" data-action="joinHike()">
+            Join hike
+          </button>
+        </div>
+
+        <!-- TODO: wire up button — Make available offline --><button
+          class="btn btn-outline u21"
+          data-action="toggleOffline('h1')"
+        >
+          Make available offline
+        </button>
+
+        <div class="section-title">Reviews from this trail</div>
+        <p class="muted">No reviews yet — be the first.</p>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Home --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Home
+        </button>
+        <!-- TODO: wire up button — 🧭Explore --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Explore
+        </button>
+        <!-- TODO: wire up button — 🥾Routes --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Routes
+        </button>
+        <!-- TODO: wire up button — 💬Messages --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Messages
+        </button>
+        <!-- TODO: wire up button — 👤Profile --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Profile
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

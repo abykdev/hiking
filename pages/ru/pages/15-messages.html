@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Сообщения</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/15-messages.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Сообщения». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <div class="u1"></div>
+        <span class="display u2">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u3"
+          aria-label="Уведомления"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <h2 class="u4">Сообщения</h2>
+        <div class="card row u5" data-action="openChat('messages')">
+          <div class="avatar">A</div>
+          <div class="u6">
+            <div class="u7">Озеро Парз — Гошаванк</div>
+            <div class="muted">Возьму запасную воду 💧</div>
+          </div>
+        </div>
+        <div class="card row u8" data-action="openDM('Sofia', 'messages')">
+          <div class="avatar u9">S</div>
+          <div class="u6">
+            <div class="u7">Sofia</div>
+            <div class="muted">Да! Я возьму перекус.</div>
+          </div>
+        </div>
+        <div class="card row u8" data-action="openDM('Anna', 'messages')">
+          <div class="avatar u9">A</div>
+          <div class="u6">
+            <div class="u7">Anna</div>
+            <div class="muted">Увидимся на старте тропы в 9:15!</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Главная --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Главная
+        </button>
+        <!-- TODO: wire up button — 🧭Открыть --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Открыть
+        </button>
+        <!-- TODO: wire up button — 🥾Маршруты --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Маршруты
+        </button>
+        <!-- TODO: wire up button — 💬Сообщения --><button class="tab active" data-action="go('messages')">
+          <span class="ic">💬</span>Сообщения
+        </button>
+        <!-- TODO: wire up button — 👤Профиль --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Профиль
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

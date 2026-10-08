@@ -1,0 +1,78 @@
+/* Page-specific styles for "Safety center".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u2 {
+  position:relative;
+}
+
+#shell .u3 {
+  font-size:22px;
+}
+
+#shell .u4 {
+  margin:0 0 10px;
+}
+
+#shell .u5 {
+  padding:14px 16px;
+}
+
+#shell .u6 {
+  font-size:13.5px;
+}
+
+#shell .u7 {
+  text-decoration:none;
+  color:inherit;
+}
+
+#shell .u8 {
+  background:var(--alert);
+}
+
+#shell .u9 {
+  flex:1;
+}
+
+#shell .u10 {
+  font-weight:600;
+}
+
+#shell .u11 {
+  margin-top:10px;
+}
+
+#shell .u12 {
+  margin-top:-6px;
+  font-size:12px;
+}
+
+#shell .u13 {
+  margin-top:14px;
+}
+
+#shell .u14 {
+  margin-top:22px;
+  background:var(--sand);
+}
+
+#shell .u15 {
+  font-size:12.5px;
+  margin:8px 0 0;
+  line-height:1.5;
+}
+
+#shell .u16 {
+  font-size:11.5px;
+  margin-top:8px;
+}
+
+#shell .u17 {
+  margin-top:22px;
+  font-size:12px;
+  line-height:1.5;
+}

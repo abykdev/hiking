@@ -1,0 +1,101 @@
+/* Page-specific styles for "Главная".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  width:36px;
+}
+
+#shell .u2 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u3 {
+  position:relative;
+}
+
+#shell .u4 {
+  position:absolute;
+  top:2px;
+  right:2px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--alert);
+  border:1.5px solid var(--surface);
+}
+
+#shell .u5 {
+  font-size:24px;
+}
+
+#shell .u6 {
+  cursor:pointer;
+}
+
+#shell .u7 {
+  margin-top:16px;
+}
+
+#shell .u8 {
+  margin-top:14px;
+}
+
+#shell .u9 {
+  margin-bottom:8px;
+  cursor:pointer;
+}
+
+#shell .u10 {
+  flex:1;
+}
+
+#shell .u11 {
+  font-weight:600;
+  font-size:14px;
+}
+
+#shell .u12 {
+  margin-top:8px;
+}
+
+#shell .u13 {
+  margin-bottom:10px;
+  cursor:pointer;
+}
+
+#shell .u14 {
+  background:var(--sage);
+}
+
+#shell .u15 {
+  font-size:12px;
+}
+
+#shell .u16 {
+  margin-top:10px;
+  cursor:pointer;
+}
+
+#shell .u17 {
+  font-size:11px;
+  font-weight:700;
+  opacity:.85;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+
+#shell .u18 {
+  font-size:20px;
+}
+
+#shell .u19 {
+  margin-top:12px;
+}
+
+#shell .u20 {
+  margin-top:10px;
+}
+
+#shell .u21 {
+  background:var(--stone);
+}

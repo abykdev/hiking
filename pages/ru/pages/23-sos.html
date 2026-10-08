@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — SOS</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/23-sos.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «SOS». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="activebar">
+        <div class="active-bar" data-action="go('activeTrip')">
+          <span><span class="pulse"></span>ПОХОД АКТИВЕН</span><span>Навигация →</span>
+        </div>
+      </div>
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="goBack('activeTrip')">←</button
+        ><span class="display u1">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u2"
+          aria-label="Уведомления"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <h2 class="u3">SOS</h2>
+        <p class="muted">Твоё местоположение и план — готовы к отправке.</p>
+        <div class="card u4">
+          <div class="muted">Текущие координаты</div>
+          <div class="u5">Местоположение недоступно</div>
+          <!-- TODO: wire up button — 📍 Определить моё местоположение --><button
+            class="btn btn-outline btn-sm u6"
+            data-action="requestLocation()"
+          >
+            📍 Определить моё местоположение
+          </button>
+          <div class="divider"></div>
+          <div class="muted">Ближайший известный выход</div>
+          <div class="u7">Парковка у входа в парк</div>
+        </div>
+
+        <div class="u8">
+          <a class="btn btn-alert u9" href="tel:112">Позвонить в экстренную службу</a>
+          <!-- TODO: wire up button — Позвонить доверенному контакту --><button
+            class="btn btn-secondary"
+            data-action="showToast('Номер доверенного контакта не указан.')"
+          >
+            Позвонить доверенному контакту
+          </button>
+          <!-- TODO: wire up button — Поделиться местоположением --><button
+            class="btn btn-outline"
+            data-action="requestLocation()"
+          >
+            Поделиться местоположением
+          </button>
+          <!-- TODO: wire up button — Скопировать координаты --><button
+            class="btn btn-outline"
+            data-action="copyCoords()"
+          >
+            Скопировать координаты
+          </button>
+        </div>
+        <div class="u10">
+          <!-- TODO: wire up button — ← Назад к походу --><button
+            class="btn btn-secondary"
+            data-action="go('activeTrip')"
+          >
+            ← Назад к походу
+          </button>
+        </div>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Главная --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Главная
+        </button>
+        <!-- TODO: wire up button — 🧭Открыть --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Открыть
+        </button>
+        <!-- TODO: wire up button — 🥾Маршруты --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Маршруты
+        </button>
+        <!-- TODO: wire up button — 💬Сообщения --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Сообщения
+        </button>
+        <!-- TODO: wire up button — 👤Профиль --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Профиль
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

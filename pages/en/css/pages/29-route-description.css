@@ -1,0 +1,39 @@
+/* Page-specific styles for "Route description".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u2 {
+  position:relative;
+}
+
+#shell .u3 {
+  font-size:20px;
+}
+
+#shell .u4 {
+  font-size:12.5px;
+}
+
+#shell .u5 {
+  height:220px;
+  border-radius:var(--radius);
+  background:var(--sand);
+  overflow:hidden;
+}
+
+#shell .u6 {
+  margin-top:14px;
+}
+
+#shell .u7 {
+  font-size:14px;
+  line-height:1.5;
+  margin-top:12px;
+}
+
+#shell .u8 {
+  margin-top:12px;
+}

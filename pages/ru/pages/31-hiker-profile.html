@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Профиль хайкера</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/31-hiker-profile.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Профиль хайкера». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="goBack('hikeDetail')">←</button
+        ><span class="display u1">Профиль туристки</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u2"
+          aria-label="Уведомления"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <div class="space-between u3">
+          <span></span>
+          <!-- TODO: wire up button — ••• --><button
+            class="btn btn-outline btn-sm"
+            data-action="toggleProfileMenu()"
+          >
+            •••
+          </button>
+        </div>
+
+        <div class="u4">
+          <div class="avatar u5">A</div>
+          <h2 class="u6">Anna</h2>
+          <div class="muted">📍 Дилижан, Армения</div>
+          <!-- TODO: wire up button — Подписаться --><button
+            class="btn btn-primary btn-sm u7"
+            data-action="toggleFollowProfile('Anna')"
+          >
+            Подписаться
+          </button>
+        </div>
+
+        <div class="row u8">
+          <div class="card u9">
+            <div class="u10">24</div>
+            <div class="muted u11">Завершено походов</div>
+          </div>
+          <div class="card u9">
+            <div class="u10">3</div>
+            <div class="muted u11">Значки</div>
+          </div>
+          <div class="card u9">
+            <div class="u10">4.9</div>
+            <div class="muted u11">Рейтинг</div>
+          </div>
+        </div>
+
+        <div class="section-title">О себе</div>
+        <p class="u12">Почти каждый месяц организует походы в районе Дилижана. Всегда берёт запасную воду.</p>
+        <div class="chip-row u13">
+          <div class="chip">Средний</div>
+          <div class="chip">5–15 km</div>
+          <div class="chip">EN</div>
+          <div class="chip">RU</div>
+        </div>
+
+        <div class="section-title">Значки</div>
+        <div class="row u14">
+          <div class="u15">
+            <div class="u16">🥇</div>
+            <div class="muted u17">Первый поход</div>
+          </div>
+          <div class="u15">
+            <div class="u16">⛰️</div>
+            <div class="muted u17">Любит горы</div>
+          </div>
+          <div class="u15">
+            <div class="u16">🧭</div>
+            <div class="muted u17">Исследователь</div>
+          </div>
+        </div>
+
+        <div class="section-title">Предстоящие походы</div>
+
+        <div class="row u18">
+          <div class="u19"></div>
+          <div class="u20">
+            <div class="muted u21">Sep 27</div>
+            <div class="u22">Озеро Парз — Гошаванк</div>
+            <div class="muted u23">Группа: 4/5 · Средний</div>
+          </div>
+        </div>
+
+        <div class="u24">
+          <!-- TODO: wire up button — Написать --><button
+            class="btn btn-primary"
+            data-action="openDM('Anna', 'viewProfile')"
+          >
+            Написать
+          </button>
+        </div>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Главная --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Главная
+        </button>
+        <!-- TODO: wire up button — 🧭Открыть --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Открыть
+        </button>
+        <!-- TODO: wire up button — 🥾Маршруты --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Маршруты
+        </button>
+        <!-- TODO: wire up button — 💬Сообщения --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Сообщения
+        </button>
+        <!-- TODO: wire up button — 👤Профиль --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Профиль
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

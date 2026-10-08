@@ -1,0 +1,13 @@
+/* Page-specific styles for "Настройка профиля".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:24px;
+}
+
+#shell .u2 {
+  margin:4px 0 6px;
+}
+
+#shell .u3 {
+  margin-top:26px;
+}

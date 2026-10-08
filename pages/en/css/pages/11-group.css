@@ -1,0 +1,62 @@
+/* Page-specific styles for "Group".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u2 {
+  position:relative;
+}
+
+#shell .u3 {
+  font-size:22px;
+}
+
+#shell .u4 {
+  margin-bottom:10px;
+}
+
+#shell .u5 {
+  flex:1;
+  font-size:14px;
+  cursor:pointer;
+}
+
+#shell .u6 {
+  color:var(--forest);
+}
+
+#shell .u7 {
+  flex:1;
+  font-size:14px;
+}
+
+#shell .u8 {
+  max-height:180px;
+  overflow-y:auto;
+}
+
+#shell .u9 {
+  font-size:11px;
+  opacity:.75;
+  display:block;
+}
+
+#shell .u10 {
+  margin-top:8px;
+}
+
+#shell .u11 {
+  flex:1;
+}
+
+#shell .u12 {
+  margin-top:24px;
+}
+
+#shell .u13 {
+  margin-top:10px;
+  border-color:var(--alert);
+  color:var(--alert);
+}

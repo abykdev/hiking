@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Уведомления</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/34-notification-feed.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Уведомления». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="goBack('home')">←</button
+        ><span class="display u1">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u2"
+          aria-label="Уведомления"
+          data-action="openNotifFeed()"
+        >
+          🔔<span class="u3"></span>
+        </button>
+      </div>
+      <div id="screen">
+        <div class="space-between">
+          <h2 class="u4">Уведомления</h2>
+          <!-- TODO: wire up button — Настройки уведомлений --><button
+            class="btn btn-outline btn-sm"
+            data-action="go('notifications')"
+          >
+            Настройки уведомлений
+          </button>
+        </div>
+
+        <div class="card u5" data-action="markNotifRead('n1')">
+          <div class="u6">Приглашение отправлено Анне.</div>
+          <span class="tag u7">Новое</span>
+        </div>
+        <div class="card u8" data-action="markNotifRead('n2')">
+          <div class="u6">София присоединилась к вашей группе.</div>
+        </div>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Главная --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Главная
+        </button>
+        <!-- TODO: wire up button — 🧭Открыть --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Открыть
+        </button>
+        <!-- TODO: wire up button — 🥾Маршруты --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Маршруты
+        </button>
+        <!-- TODO: wire up button — 💬Сообщения --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Сообщения
+        </button>
+        <!-- TODO: wire up button — 👤Профиль --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Профиль
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

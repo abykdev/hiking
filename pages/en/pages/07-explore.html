@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Explore</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/07-explore.css" />
+  </head>
+  <body>
+    <!-- Static export of the "Explore" screen. No JavaScript on purpose: every interactive element carries a data-action / data-on-input / data-on-change attribute holding the original prototype handler as a hint. Wire these up yourself. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <div class="u1"></div>
+        <span class="display u2">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u3"
+          aria-label="Notifications"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <div class="space-between">
+          <h2 class="u4">Explore</h2>
+          <!-- TODO: wire up button — 📍 Enable location --><button
+            class="btn btn-outline btn-sm"
+            data-action="requestLocation()"
+          >
+            📍 Enable location
+          </button>
+        </div>
+
+        <div class="section-title">Popular trails in Armenia</div>
+
+        <div class="card u5" data-action="openTrail('garni')">
+          <div class="space-between">
+            <div class="u6">Garni Gorge — Symphony of Stones</div>
+            <span class="tag u7">Easy</span>
+          </div>
+          <div class="muted u8">Garni, Kotayk</div>
+          <div class="muted u9">6 km · +180 m · 2h</div>
+        </div>
+        <div class="card u5" data-action="openTrail('parz')">
+          <div class="space-between">
+            <div class="u6">Parz Lake — Goshavank</div>
+            <span class="tag u10">Moderate</span>
+          </div>
+          <div class="muted u8">Dilijan, Tavush</div>
+          <div class="muted u9">8 km · +250 m · 3h</div>
+        </div>
+        <div class="card u5" data-action="openTrail('matosavank')">
+          <div class="space-between">
+            <div class="u6">Matosavank — Jukhtak Monastery Loop</div>
+            <span class="tag u7">Easy</span>
+          </div>
+          <div class="muted u8">Dilijan, Tavush</div>
+          <div class="muted u9">5.8 km · +160 m · 2h</div>
+        </div>
+        <div class="card u5" data-action="openTrail('aragats')">
+          <div class="space-between">
+            <div class="u6">Mount Aragats — Southern Summit</div>
+            <span class="tag u11">Hard</span>
+          </div>
+          <div class="muted u8">Aragatsotn, Kari Lake</div>
+          <div class="muted u9">11.7 km · +900 m · 5h</div>
+        </div>
+        <div class="card u5" data-action="openTrail('jermuk')">
+          <div class="space-between">
+            <div class="u6">Jermuk Waterfall &amp; Hot Springs</div>
+            <span class="tag u7">Easy</span>
+          </div>
+          <div class="muted u8">Jermuk, Vayots Dzor</div>
+          <div class="muted u9">7 km · +200 m · 2.5h</div>
+        </div>
+        <div class="card u5" data-action="openTrail('tatev')">
+          <div class="space-between">
+            <div class="u6">Tatev — Devil's Bridge Gorge</div>
+            <span class="tag u10">Moderate</span>
+          </div>
+          <div class="muted u8">Syunik, near Tatev</div>
+          <div class="muted u9">9 km · +350 m · 3.5h</div>
+        </div>
+        <div class="card u5" data-action="openTrail('debed')">
+          <div class="space-between">
+            <div class="u6">Haghpat — Sanahin Monastery Trail</div>
+            <span class="tag u7">Easy</span>
+          </div>
+          <div class="muted u8">Debed Canyon, Lori</div>
+          <div class="muted u9">6.5 km · +150 m · 2h</div>
+        </div>
+        <div class="card u5" data-action="openTrail('khustup')">
+          <div class="space-between">
+            <div class="u6">Khustup Peak</div>
+            <span class="tag u11">Hard</span>
+          </div>
+          <div class="muted u8">Kapan, Syunik</div>
+          <div class="muted u9">14 km · +1400 m · 7-8h</div>
+        </div>
+
+        <div class="section-title">Community routes</div>
+
+        <div class="card clickable u5" data-action="go('hikeDetail')">
+          <div class="u12">
+            <svg width="100%" height="100%" viewBox="0 0 300 240">
+              <path
+                d="M278.0,218.0 L244.2,170.9 L214.3,113.8 L171.4,69.1 L124.7,36.9 L75.3,22.0 L22.0,27.0"
+                fill="none"
+                stroke="#C17A82"
+                stroke-width="3.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <circle cx="278.0" cy="218.0" r="6" fill="#C9A6AE" stroke="#fff" stroke-width="2"></circle>
+              <circle cx="22.0" cy="27.0" r="6" fill="#D1495B" stroke="#fff" stroke-width="2"></circle>
+            </svg>
+          </div>
+          <div class="space-between u13">
+            <div class="u6">Parz Lake — Goshavank</div>
+            <span class="tag">🔒 Group</span>
+          </div>
+          <div class="muted u14">8 km · 4 joined</div>
+          <!-- TODO: wire up button — Join hike --><button
+            class="btn btn-outline btn-sm u15"
+            data-action="event.stopPropagation(); joinHike()"
+          >
+            Join hike
+          </button>
+        </div>
+
+        <div class="card clickable u5" data-action="openRouteDescription('r1')">
+          <div class="u16">
+            <svg width="100%" height="100%" viewBox="0 0 300 220">
+              <path
+                d="M20.0,200.0 L53.8,174.7 L72.0,146.3 L118.8,117.9 L173.4,102.1 L220.2,80.0 L243.6,45.3 L280.0,20.0"
+                fill="none"
+                stroke="#C17A82"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <circle cx="20.0" cy="200.0" r="6" fill="#C9A6AE" stroke="#fff" stroke-width="2"></circle>
+              <circle cx="280.0" cy="20.0" r="7" fill="#C17A82" stroke="#fff" stroke-width="2.5"></circle>
+            </svg>
+          </div>
+          <div class="space-between u13">
+            <div class="u6">Sunset ridge loop</div>
+            <span class="tag">Recorded by a hiker</span>
+          </div>
+          <div class="muted u14">3.40 km · 72 min</div>
+          <div class="muted u14">A gentle loop with great views over the valley.</div>
+          <!-- TODO: wire up button — Add route --><button
+            class="btn btn-outline btn-sm u15"
+            data-action="event.stopPropagation(); openRouteDescription('r1')"
+          >
+            Add route
+          </button>
+        </div>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Home --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Home
+        </button>
+        <!-- TODO: wire up button — 🧭Explore --><button class="tab active" data-action="go('explore')">
+          <span class="ic">🧭</span>Explore
+        </button>
+        <!-- TODO: wire up button — 🥾Routes --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Routes
+        </button>
+        <!-- TODO: wire up button — 💬Messages --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Messages
+        </button>
+        <!-- TODO: wire up button — 👤Profile --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Profile
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

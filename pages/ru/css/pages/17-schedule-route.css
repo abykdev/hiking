@@ -1,0 +1,67 @@
+/* Page-specific styles for "Запланировать маршрут".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u2 {
+  position:relative;
+}
+
+#shell .u3 {
+  font-size:20px;
+}
+
+#shell .u4 {
+  margin-top:10px;
+}
+
+#shell .u5 {
+  font-weight:700;
+  font-size:15px;
+}
+
+#shell .u6 {
+  font-size:12.5px;
+  margin-top:4px;
+}
+
+#shell .u7 {
+  font-size:13.5px;
+  line-height:1.5;
+  margin-top:10px;
+}
+
+#shell .u8 {
+  margin-top:18px;
+  padding:14px 16px;
+}
+
+#shell .u9 {
+  flex:1;
+}
+
+#shell .u10 {
+  font-size:13.5px;
+  font-weight:600;
+}
+
+#shell .u11 {
+  font-size:11.5px;
+  margin-top:2px;
+}
+
+#shell .u12 {
+  margin-top:12px;
+  padding:14px 16px;
+}
+
+#shell .u13 {
+  width:100%;
+  accent-color:var(--forest);
+}
+
+#shell .u14 {
+  margin-top:22px;
+}

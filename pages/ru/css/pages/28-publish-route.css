@@ -1,0 +1,37 @@
+/* Page-specific styles for "Публикация маршрута".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u2 {
+  position:relative;
+}
+
+#shell .u3 {
+  font-size:22px;
+}
+
+#shell .u4 {
+  height:220px;
+  border-radius:var(--radius);
+  background:var(--sand);
+  overflow:hidden;
+}
+
+#shell .u5 {
+  margin-top:10px;
+}
+
+#shell .u6 {
+  font-size:11px;
+}
+
+#shell .u7 {
+  font-weight:700;
+}
+
+#shell .u8 {
+  margin-top:22px;
+}

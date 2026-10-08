@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Поиск попутчиков</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/12-find-buddies.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Поиск попутчиков». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="goBack('home')">←</button
+        ><span class="display u1">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u2"
+          aria-label="Уведомления"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <h2 class="u3">Найти попутчиц</h2>
+        <div class="card row clickable u4" data-action="viewProfile('Sofia')">
+          <div class="avatar u5">S</div>
+          <div class="u6">
+            <div class="u7">Sofia</div>
+            <div class="muted u8">Ереван, Армения · 31 походов · Новенькая</div>
+          </div>
+        </div>
+
+        <div class="chip-row u9">
+          <div class="chip">📅 Сб, 28 сентября</div>
+          <div class="chip">🗺️ Дилижан</div>
+          <div class="chip">🥾 Средняя</div>
+        </div>
+
+        <h3 class="u10">Ищу компанию на субботу</h3>
+        <p class="u11">
+          Привет! Хочу найти 2-3 человек для похода на Парз — Гошаванк в эту субботу. Средний темп, около 8-10
+          км. Рада новым знакомствам!
+        </p>
+
+        <div class="u12"></div>
+
+        <div class="u13">
+          <!-- TODO: wire up button — Вступить --><button
+            class="btn btn-primary"
+            data-action="joinBuddyAndChat()"
+          >
+            Вступить
+          </button>
+          <!-- TODO: wire up button — 🥾 Вступить в поход --><button
+            class="btn btn-outline"
+            data-action="joinHike()"
+          >
+            🥾 Вступить в поход
+          </button>
+        </div>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Главная --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Главная
+        </button>
+        <!-- TODO: wire up button — 🧭Открыть --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Открыть
+        </button>
+        <!-- TODO: wire up button — 🥾Маршруты --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Маршруты
+        </button>
+        <!-- TODO: wire up button — 💬Сообщения --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Сообщения
+        </button>
+        <!-- TODO: wire up button — 👤Профиль --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Профиль
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+/* Page-specific styles for "Маршруты".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  width:36px;
+}
+
+#shell .u2 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u3 {
+  position:relative;
+}
+
+#shell .u4 {
+  font-size:22px;
+}
+
+#shell .u5 {
+  margin-top:10px;
+}
+
+#shell .u6 {
+  font-size:12px;
+  font-weight:700;
+  color:var(--text-muted);
+}
+
+#shell .u7 {
+  margin-top:12px;
+}
+
+#shell .u8 {
+  display:none;
+}
+
+#shell .u9 {
+  margin-bottom:10px;
+}
+
+#shell .u10 {
+  cursor:pointer;
+}
+
+#shell .u11 {
+  height:220px;
+  border-radius:var(--radius);
+  background:var(--sand);
+  overflow:hidden;
+}
+
+#shell .u12 {
+  margin-top:8px;
+}
+
+#shell .u13 {
+  font-weight:600;
+  font-size:14px;
+}
+
+#shell .u14 {
+  background:var(--sage);
+}
+
+#shell .u15 {
+  font-size:12px;
+  margin-top:4px;
+}
+
+#shell .u16 {
+  font-size:13px;
+  margin-top:6px;
+}

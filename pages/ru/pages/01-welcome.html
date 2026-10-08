@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Приветствие</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/01-welcome.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Приветствие». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar"></div>
+      <div id="screen">
+        <div class="u1">
+          <div class="u2">🥾</div>
+          <h1 class="display u3">Найди свою тропу. Найди своих людей.</h1>
+          <p class="muted u4">В эти выходные тебе будет с кем пойти в поход.</p>
+          <div class="lang-toggle u5">
+            <!-- TODO: wire up button — EN --><button class="" data-action="toggleLang('en')">EN</button>
+            <!-- TODO: wire up button — RU --><button class="active" data-action="toggleLang('ru')">
+              RU
+            </button>
+          </div>
+          <div class="u6">
+            <!-- TODO: wire up button — Начать --><button class="btn btn-primary" data-action="go('signIn')">
+              Начать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

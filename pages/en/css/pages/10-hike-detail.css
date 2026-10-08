@@ -1,0 +1,102 @@
+/* Page-specific styles for "Hike detail".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u2 {
+  position:relative;
+}
+
+#shell .u3 {
+  height:150px;
+}
+
+#shell .u4 {
+  font-size:22px;
+}
+
+#shell .u5 {
+  font-size:13px;
+  opacity:.9;
+}
+
+#shell .u6 {
+  margin-top:16px;
+}
+
+#shell .u7 {
+  font-weight:700;
+}
+
+#shell .u8 {
+  margin-top:18px;
+}
+
+#shell .u9 {
+  height:240px;
+  border-radius:var(--radius);
+  background:var(--sand);
+  overflow:hidden;
+}
+
+#shell .u10 {
+  margin-top:8px;
+  gap:8px;
+}
+
+#shell .u11 {
+  flex:1;
+}
+
+#shell .u12 {
+  font-size:11px;
+  margin-top:4px;
+}
+
+#shell .u13 {
+  margin-top:6px;
+}
+
+#shell .u14 {
+  background:var(--sand);
+  margin-top:16px;
+}
+
+#shell .u15 {
+  margin-top:10px;
+  font-size:13px;
+  font-weight:700;
+  color:var(--text-muted);
+}
+
+#shell .u16 {
+  margin:8px 0 0;
+  padding-left:18px;
+  font-size:13.5px;
+}
+
+#shell .u17 {
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+#shell .u18 {
+  text-align:center;
+}
+
+#shell .u19 {
+  margin:0 auto;
+}
+
+#shell .u20 {
+  margin-top:22px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+#shell .u21 {
+  margin-top:10px;
+}

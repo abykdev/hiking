@@ -1,0 +1,47 @@
+/* Page-specific styles for "SOS".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u2 {
+  position:relative;
+}
+
+#shell .u3 {
+  font-size:24px;
+  color:var(--alert);
+}
+
+#shell .u4 {
+  margin-top:10px;
+}
+
+#shell .u5 {
+  font-weight:700;
+  font-family:monospace;
+}
+
+#shell .u6 {
+  margin-top:8px;
+}
+
+#shell .u7 {
+  font-weight:600;
+}
+
+#shell .u8 {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:16px;
+}
+
+#shell .u9 {
+  text-decoration:none;
+}
+
+#shell .u10 {
+  margin-top:20px;
+}

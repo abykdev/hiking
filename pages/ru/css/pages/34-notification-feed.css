@@ -1,0 +1,46 @@
+/* Page-specific styles for "Уведомления".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u2 {
+  position:relative;
+}
+
+#shell .u3 {
+  position:absolute;
+  top:2px;
+  right:2px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--alert);
+  border:1.5px solid var(--surface);
+}
+
+#shell .u4 {
+  font-size:22px;
+  margin:0;
+}
+
+#shell .u5 {
+  margin-top:10px;
+  cursor:pointer;
+}
+
+#shell .u6 {
+  font-size:13.5px;
+}
+
+#shell .u7 {
+  margin-top:6px;
+  display:inline-block;
+}
+
+#shell .u8 {
+  margin-top:10px;
+  opacity:.6;
+  cursor:pointer;
+}

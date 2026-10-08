@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Что привело вас на природу</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/04-motivation.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Что привело вас на природу». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="go('welcome')">←</button>
+        <div class="lang-toggle">
+          <!-- TODO: wire up button — EN --><button class="" data-action="toggleLang('en')">EN</button
+          ><!-- TODO: wire up button — RU --><button class="active" data-action="toggleLang('ru')">RU</button>
+        </div>
+      </div>
+      <div id="screen">
+        <h2 class="u1">Что привело тебя на природу?</h2>
+        <div class="chip-row">
+          <div class="chip selected" data-action="toggleMotivation(0)">Найти подруг для походов</div>
+          <div class="chip" data-action="toggleMotivation(1)">Открыть новые тропы</div>
+          <div class="chip selected" data-action="toggleMotivation(2)">Чувствовать себя безопаснее</div>
+          <div class="chip" data-action="toggleMotivation(3)">Начать ходить в походы</div>
+          <div class="chip" data-action="toggleMotivation(4)">Найти приключения на выходные</div>
+          <div class="chip" data-action="toggleMotivation(5)">Присоединиться к групповым походам</div>
+          <div class="chip" data-action="toggleMotivation(6)">Путешествовать и исследовать</div>
+        </div>
+        <div class="u2">
+          <!-- TODO: wire up button — Продолжить --><button
+            class="btn btn-primary"
+            data-action="goToProfileBuild('motivation')"
+          >
+            Продолжить
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Создание аккаунта</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/03-register.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Создание аккаунта». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="go('signIn')">←</button>
+        <div class="lang-toggle">
+          <!-- TODO: wire up button — EN --><button class="" data-action="toggleLang('en')">EN</button
+          ><!-- TODO: wire up button — RU --><button class="active" data-action="toggleLang('ru')">RU</button>
+        </div>
+      </div>
+      <div id="screen">
+        <div class="u1">
+          <div class="u2">🥾</div>
+          <h2 class="u3">Создай аккаунт</h2>
+          <p class="muted u4">Регистрация по email за пару секунд.</p>
+        </div>
+
+        <!-- TODO: wire up button — Продолжить через Apple --><button
+          class="btn u5"
+          data-action="submitRegister()"
+        >
+          Продолжить через Apple
+        </button>
+        <!-- TODO: wire up button — G Продолжить через Google --><button
+          class="btn btn-secondary u6"
+          data-action="submitRegister()"
+        >
+          G Продолжить через Google
+        </button>
+
+        <div class="row u7">
+          <div class="u8"></div>
+          <span class="muted u9">или</span>
+          <div class="u8"></div>
+        </div>
+
+        <div class="field-label">МОБИЛЬНЫЙ ТЕЛЕФОН</div>
+        <input type="text" id="regPhone" placeholder="+1 (555) 000-0000" />
+        <div class="field-label">EMAIL</div>
+        <input type="text" id="regEmail" placeholder="you@example.com" />
+        <div class="field-label">ПАРОЛЬ</div>
+        <input type="text" id="regPassword" placeholder="Придумай пароль" />
+
+        <!-- TODO: wire up button — Создать аккаунт --><button
+          class="btn btn-primary u10"
+          data-action="submitRegister()"
+        >
+          Создать аккаунт
+        </button>
+        <p class="muted u11">
+          Продолжая, ты соглашаешься с Условиями использования и Политикой конфиденциальности.
+        </p>
+        <p class="u12">
+          <span class="muted">Уже есть аккаунт? </span>
+          <span data-action="go('signIn')" class="u13">Войти</span>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

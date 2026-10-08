@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Routes</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/26-routes-hub.css" />
+  </head>
+  <body>
+    <!-- Static export of the "Routes" screen. No JavaScript on purpose: every interactive element carries a data-action / data-on-input / data-on-change attribute holding the original prototype handler as a hint. Wire these up yourself. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <div class="u1"></div>
+        <span class="display u2">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u3"
+          aria-label="Notifications"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <h2 class="u4">Routes</h2>
+
+        <div class="search-pill u5">
+          <span>🥾</span>
+          <input type="text" placeholder="Search" disabled="" />
+          <span class="u6">🔖 Saved</span>
+        </div>
+        <div class="chip-row u5">
+          <div class="chip selected">Routes ⌄</div>
+          <div class="chip">Distance</div>
+          <div class="chip">Elevation</div>
+          <div class="chip">Terrain</div>
+        </div>
+
+        <div class="route-hero">
+          <svg width="100%" height="100%" viewBox="0 0 390 190" preserveAspectRatio="xMidYMid slice">
+            <path
+              d="M-20,60 C60,30 120,90 200,50 S340,20 420,70"
+              fill="none"
+              stroke="#C9A6AE"
+              stroke-width="1.5"
+              opacity="0.5"
+            ></path>
+            <path
+              d="M-20,120 C70,90 150,150 230,110 S360,80 420,130"
+              fill="none"
+              stroke="#C9A6AE"
+              stroke-width="1.5"
+              opacity="0.5"
+            ></path>
+            <path
+              d="M40,170 C70,120 55,80 100,60 S160,20 150,-10"
+              fill="none"
+              stroke="#C17A82"
+              stroke-width="4"
+              stroke-linecap="round"
+              opacity="0.85"
+            ></path>
+            <circle cx="95" cy="95" r="9" fill="#C17A82" opacity="0.22"></circle>
+            <circle cx="95" cy="95" r="5" fill="#C17A82" stroke="#fff" stroke-width="2"></circle>
+          </svg>
+          <div class="badge"><span class="dot">🥾</span>1 my routes</div>
+          <!-- TODO: wire up button — ● Record a route --><button class="fab" data-action="go('recordRoute')">
+            ● Record a route
+          </button>
+        </div>
+        <label class="upload-btn u7">
+          ⬆ Upload GPX file
+          <input
+            type="file"
+            accept=".gpx,application/gpx+xml,application/xml,text/xml,application/octet-stream"
+            data-on-change="handleRoutesGpxUpload(event)"
+            class="u8"
+          />
+        </label>
+
+        <div class="section-title">Upcoming</div>
+        <p class="muted">No upcoming hikes yet.</p>
+
+        <div class="section-title">My routes</div>
+
+        <div class="card u9">
+          <div data-action="openRouteDescription('r1')" class="u10">
+            <div class="u11">
+              <svg width="100%" height="100%" viewBox="0 0 300 220">
+                <path
+                  d="M20.0,200.0 L53.8,174.7 L72.0,146.3 L118.8,117.9 L173.4,102.1 L220.2,80.0 L243.6,45.3 L280.0,20.0"
+                  fill="none"
+                  stroke="#C17A82"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <circle cx="20.0" cy="200.0" r="6" fill="#C9A6AE" stroke="#fff" stroke-width="2"></circle>
+                <circle cx="280.0" cy="20.0" r="7" fill="#C17A82" stroke="#fff" stroke-width="2.5"></circle>
+              </svg>
+            </div>
+          </div>
+          <div class="space-between u12">
+            <div class="u13">Sunset ridge loop</div>
+            <span class="tag u14">Public</span>
+          </div>
+          <div class="muted u15">3.40 km · 72 min · 8 points</div>
+          <div class="u16">A gentle loop with great views over the valley.</div>
+          <!-- TODO: wire up button — 🧭 Follow this route --><button
+            class="btn btn-primary btn-sm u5"
+            data-action="followRoute('r1')"
+          >
+            🧭 Follow this route
+          </button>
+        </div>
+
+        <div class="section-title">Route history</div>
+        <p class="muted">Completed hikes will show up here with your notes and photos.</p>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Home --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Home
+        </button>
+        <!-- TODO: wire up button — 🧭Explore --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Explore
+        </button>
+        <!-- TODO: wire up button — 🥾Routes --><button class="tab active" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Routes
+        </button>
+        <!-- TODO: wire up button — 💬Messages --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Messages
+        </button>
+        <!-- TODO: wire up button — 👤Profile --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Profile
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

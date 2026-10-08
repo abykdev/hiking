@@ -1,0 +1,22 @@
+/* Page-specific styles for "Отзыв".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u2 {
+  position:relative;
+}
+
+#shell .u3 {
+  font-size:24px;
+}
+
+#shell .u4 {
+  display:none;
+}
+
+#shell .u5 {
+  margin-top:24px;
+}

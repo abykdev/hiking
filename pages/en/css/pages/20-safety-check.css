@@ -1,0 +1,35 @@
+/* Page-specific styles for "Safety check".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u2 {
+  position:relative;
+}
+
+#shell .u3 {
+  font-size:22px;
+}
+
+#shell .u4 {
+  margin-top:12px;
+}
+
+#shell .u5 {
+  margin-top:8px;
+}
+
+#shell .u6 {
+  margin:0 0 10px;
+}
+
+#shell .u7 {
+  margin-top:26px;
+}
+
+#shell .u8 {
+  margin-top:10px;
+  text-align:center;
+}

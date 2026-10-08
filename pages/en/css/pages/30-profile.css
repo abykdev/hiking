@@ -1,0 +1,91 @@
+/* Page-specific styles for "My profile".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  width:36px;
+}
+
+#shell .u2 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u3 {
+  position:relative;
+}
+
+#shell .u4 {
+  text-align:center;
+  margin-top:8px;
+}
+
+#shell .u5 {
+  width:70px;
+  height:70px;
+  font-size:26px;
+  margin:0 auto;
+}
+
+#shell .u6 {
+  margin-top:12px;
+}
+
+#shell .u7 {
+  margin-top:20px;
+  gap:10px;
+}
+
+#shell .u8 {
+  flex:1;
+  text-align:center;
+}
+
+#shell .u9 {
+  font-size:22px;
+  font-weight:700;
+}
+
+#shell .u10 {
+  font-size:11px;
+}
+
+#shell .u11 {
+  margin-top:22px;
+  gap:10px;
+}
+
+#shell .u12 {
+  flex:1;
+  text-align:center;
+  cursor:pointer;
+}
+
+#shell .u13 {
+  font-size:18px;
+  font-weight:700;
+}
+
+#shell .u14 {
+  margin-top:10px;
+}
+
+#shell .u15 {
+  margin-bottom:8px;
+  cursor:pointer;
+}
+
+#shell .u16 {
+  flex:1;
+  font-weight:600;
+}
+
+#shell .u17 {
+  margin-top:10px;
+  border-color:var(--alert);
+  color:var(--alert);
+}
+
+#shell .u18 {
+  margin-top:26px;
+  font-size:12px;
+  line-height:1.5;
+}

@@ -1,0 +1,77 @@
+/* Page-specific styles for "Explore".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  width:36px;
+}
+
+#shell .u2 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u3 {
+  position:relative;
+}
+
+#shell .u4 {
+  font-size:22px;
+}
+
+#shell .u5 {
+  margin-bottom:10px;
+  cursor:pointer;
+}
+
+#shell .u6 {
+  font-weight:600;
+  font-size:14.5px;
+}
+
+#shell .u7 {
+  background:var(--sage);
+}
+
+#shell .u8 {
+  font-size:12.5px;
+  margin-top:2px;
+}
+
+#shell .u9 {
+  font-size:12.5px;
+  margin-top:6px;
+}
+
+#shell .u10 {
+  background:var(--forest);
+}
+
+#shell .u11 {
+  background:var(--alert);
+}
+
+#shell .u12 {
+  height:240px;
+  border-radius:var(--radius);
+  background:var(--sand);
+  overflow:hidden;
+}
+
+#shell .u13 {
+  margin-top:8px;
+}
+
+#shell .u14 {
+  font-size:12.5px;
+  margin-top:4px;
+}
+
+#shell .u15 {
+  margin-top:10px;
+}
+
+#shell .u16 {
+  height:220px;
+  border-radius:var(--radius);
+  background:var(--sand);
+  overflow:hidden;
+}

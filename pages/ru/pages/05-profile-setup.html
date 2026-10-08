@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Настройка профиля</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/05-profile-setup.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Настройка профиля». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="go('motivation')">←</button>
+        <div class="lang-toggle">
+          <!-- TODO: wire up button — EN --><button class="" data-action="toggleLang('en')">EN</button
+          ><!-- TODO: wire up button — RU --><button class="active" data-action="toggleLang('ru')">RU</button>
+        </div>
+      </div>
+      <div id="screen">
+        <h2 class="u1">Заполни профиль туриста</h2>
+        <p class="muted u2">Займёт около минуты. Любой пункт можно пропустить.</p>
+
+        <div class="field-label">Имя</div>
+        <input
+          type="text"
+          placeholder="Как тебя называть?"
+          value="Лилит"
+          data-on-input="updateProfile('name', this.value)"
+        />
+        <div class="field-label">Город</div>
+        <input
+          type="text"
+          placeholder="Где ты находишься?"
+          value="Ереван, Армения"
+          data-on-input="updateProfile('city', this.value)"
+        />
+        <div class="field-label">Короткая биография (необязательно)</div>
+        <textarea placeholder="Пара предложений о тебе…" data-on-input="updateProfile('bio', this.value)">
+Хайкер выходного дня, всегда готова к рассвету на тропе.</textarea>
+
+        <div class="field-label">Опыт походов</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('experience', 0)">Новичок</div>
+          <div class="chip" data-action="updateProfile('experience', 1)">Средний</div>
+          <div class="chip" data-action="updateProfile('experience', 2)">Продвинутый</div>
+          <div class="chip" data-action="updateProfile('experience', 3)">Эксперт</div>
+        </div>
+        <div class="field-label">Темп ходьбы</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('pace', 0)">Неспешный</div>
+          <div class="chip" data-action="updateProfile('pace', 1)">Средний</div>
+          <div class="chip" data-action="updateProfile('pace', 2)">Быстрый</div>
+          <div class="chip" data-action="updateProfile('pace', 3)">Очень быстрый</div>
+        </div>
+        <div class="field-label">Предпочитаемая дистанция</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('distance', 0)">0–5 км</div>
+          <div class="chip" data-action="updateProfile('distance', 1)">5–10 км</div>
+          <div class="chip" data-action="updateProfile('distance', 2)">10–15 км</div>
+          <div class="chip" data-action="updateProfile('distance', 3)">15–25 км</div>
+          <div class="chip" data-action="updateProfile('distance', 4)">25+ км</div>
+        </div>
+        <div class="field-label">Предпочитаемый набор высоты</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('elevation', 0)">Низкий</div>
+          <div class="chip" data-action="updateProfile('elevation', 1)">Средний</div>
+          <div class="chip" data-action="updateProfile('elevation', 2)">Высокий</div>
+          <div class="chip" data-action="updateProfile('elevation', 3)">Очень высокий</div>
+        </div>
+
+        <div class="field-label">Стиль похода</div>
+        <div class="chip-row">
+          <div class="chip" data-action="toggleStyle(0)">Общение</div>
+          <div class="chip" data-action="toggleStyle(1)">Фотография</div>
+          <div class="chip" data-action="toggleStyle(2)">Фитнес</div>
+          <div class="chip" data-action="toggleStyle(3)">Природа</div>
+          <div class="chip" data-action="toggleStyle(4)">Тишина</div>
+          <div class="chip" data-action="toggleStyle(5)">Приключения</div>
+          <div class="chip" data-action="toggleStyle(6)">Исследование</div>
+        </div>
+        <div class="field-label">Предпочитаемое начало</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('startTime', 0)">Рассвет</div>
+          <div class="chip" data-action="updateProfile('startTime', 1)">Утро</div>
+          <div class="chip" data-action="updateProfile('startTime', 2)">День</div>
+          <div class="chip" data-action="updateProfile('startTime', 3)">Гибко</div>
+        </div>
+        <div class="field-label">Остановки в пути</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('stops', 0)">Часто</div>
+          <div class="chip" data-action="updateProfile('stops', 1)">Обычно</div>
+          <div class="chip" data-action="updateProfile('stops', 2)">Минимум</div>
+        </div>
+
+        <div class="field-label">Транспорт</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('hasCar', true)">Есть машина</div>
+          <div class="chip" data-action="updateProfile('hasCar', false)">Без машины</div>
+        </div>
+
+        <div class="field-label">Походы с собаками</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('dogsOk', true)">Можно с собакой</div>
+          <div class="chip" data-action="updateProfile('dogsOk', false)">Без собак</div>
+        </div>
+        <div class="field-label">Также интересует</div>
+        <div class="chip-row">
+          <div class="chip" data-action="toggleExtra(0)">Кемпинг</div>
+          <div class="chip" data-action="toggleExtra(1)">Трейл-ран</div>
+          <div class="chip" data-action="toggleExtra(2)">Скалолазание</div>
+          <div class="chip" data-action="toggleExtra(3)">Велоспорт</div>
+          <div class="chip" data-action="toggleExtra(4)">SUP</div>
+          <div class="chip" data-action="toggleExtra(5)">Зимние активности</div>
+        </div>
+
+        <div class="u3">
+          <!-- TODO: wire up button — Завершить профиль --><button
+            class="btn btn-primary"
+            data-action="finishProfile()"
+          >
+            Завершить профиль
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

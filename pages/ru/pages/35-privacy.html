@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Приватность</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/35-privacy.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Приватность». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="goBack('profileMe')">←</button
+        ><span class="display u1">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u2"
+          aria-label="Уведомления"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <h2 class="u3">Приватность</h2>
+        <div class="card toggle-row u4">
+          <span class="u5">Профиль виден другим</span>
+          <div class="switch on" data-action="togglePrivacySetting('profileVisible')">
+            <div class="knob"></div>
+          </div>
+        </div>
+        <div class="card toggle-row u4">
+          <span class="u5">Делиться геолокацией по умолчанию в новых походах</span>
+          <div class="switch" data-action="togglePrivacySetting('shareLocationDefault')">
+            <div class="knob"></div>
+          </div>
+        </div>
+
+        <div class="section-title">Заблокированные</div>
+        <p class="muted">Ты никого не заблокировала.</p>
+
+        <!-- TODO: wire up button — Выгрузить мои данные --><button
+          class="btn btn-outline u6"
+          data-action="exportMyData()"
+        >
+          Выгрузить мои данные
+        </button>
+        <!-- TODO: wire up button — Удалить аккаунт --><button
+          class="btn btn-outline u7"
+          data-action="confirmDeleteAccount()"
+        >
+          Удалить аккаунт
+        </button>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Главная --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Главная
+        </button>
+        <!-- TODO: wire up button — 🧭Открыть --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Открыть
+        </button>
+        <!-- TODO: wire up button — 🥾Маршруты --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Маршруты
+        </button>
+        <!-- TODO: wire up button — 💬Сообщения --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Сообщения
+        </button>
+        <!-- TODO: wire up button — 👤Профиль --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Профиль
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

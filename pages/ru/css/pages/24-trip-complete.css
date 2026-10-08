@@ -1,0 +1,51 @@
+/* Page-specific styles for "Поход завершён".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  width:36px;
+}
+
+#shell .u2 {
+  font-size:15px;
+  font-weight:600;
+}
+
+#shell .u3 {
+  position:relative;
+}
+
+#shell .u4 {
+  text-align:center;
+  margin-top:6px;
+}
+
+#shell .u5 {
+  font-size:24px;
+}
+
+#shell .u6 {
+  height:220px;
+  border-radius:var(--radius);
+  background:var(--sand);
+  overflow:hidden;
+}
+
+#shell .u7 {
+  margin-top:16px;
+}
+
+#shell .u8 {
+  font-size:11px;
+}
+
+#shell .u9 {
+  font-weight:700;
+  font-size:16px;
+}
+
+#shell .u10 {
+  margin-top:14px;
+}
+
+#shell .u11 {
+  margin-top:22px;
+}

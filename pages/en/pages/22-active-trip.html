@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Navigation</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/22-active-trip.css" />
+  </head>
+  <body>
+    <!-- Static export of the "Navigation" screen. No JavaScript on purpose: every interactive element carries a data-action / data-on-input / data-on-change attribute holding the original prototype handler as a hint. Wire these up yourself. -->
+    <div id="shell">
+      <div id="activebar">
+        <div class="active-bar" data-action="go('activeTrip')">
+          <span><span class="pulse"></span>TRIP ACTIVE</span><span>Navigation →</span>
+        </div>
+      </div>
+      <div id="topbar" class="topbar">
+        <div class="u1"></div>
+        <span class="display u2">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u3"
+          aria-label="Notifications"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <div class="space-between">
+          <h2 class="u4">Navigation</h2>
+          <span class="row u5"><span class="pulse u6"></span><strong class="u7">TRIP ACTIVE</strong></span>
+        </div>
+
+        <div class="u8">
+          <svg width="100%" height="100%" viewBox="0 0 300 240">
+            <path
+              d="M278.0,218.0 L244.2,170.9 L214.3,113.8 L171.4,69.1 L124.7,36.9 L75.3,22.0 L22.0,27.0"
+              fill="none"
+              stroke="#C17A82"
+              stroke-width="3.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <circle cx="278.0" cy="218.0" r="6" fill="#C9A6AE" stroke="#fff" stroke-width="2"></circle>
+            <circle cx="22.0" cy="27.0" r="6" fill="#D1495B" stroke="#fff" stroke-width="2"></circle>
+          </svg>
+        </div>
+        <div class="row u9">
+          <!-- TODO: wire up button — Center on me --><button
+            class="btn btn-outline btn-sm u10"
+            data-action="setMapView('me')"
+          >
+            Center on me
+          </button>
+          <!-- TODO: wire up button — Fit route --><button
+            class="btn btn-outline btn-sm u10"
+            data-action="setMapView('fit')"
+          >
+            Fit route
+          </button>
+        </div>
+        <p class="muted u11">Route shown schematically — live map tiles aren't available in this build.</p>
+        <!-- TODO: wire up button — ▶ Demo: simulate walking the route --><button
+          class="btn btn-outline btn-sm u12"
+          data-action="simulateWalk()"
+        >
+          ▶ Demo: simulate walking the route
+        </button>
+
+        <div class="progress-track u13"><div class="progress-fill u14"></div></div>
+        <div class="space-between u15">
+          <div>
+            <div class="muted u16">Travelled</div>
+            <div class="u17">0.6 km</div>
+          </div>
+          <div>
+            <div class="muted u16">Remaining</div>
+            <div class="u17">7.4 km</div>
+          </div>
+          <div>
+            <div class="muted u16">Elapsed</div>
+            <div class="u17">42 min</div>
+          </div>
+        </div>
+
+        <p class="muted u18">📍 Location access denied</p>
+        <p class="muted u19"></p>
+
+        <div class="row u20">
+          <!-- TODO: wire up button — Pause --><button
+            class="btn btn-secondary u10"
+            data-action="pauseHikeSession()"
+          >
+            Pause
+          </button>
+          <!-- TODO: wire up button — SOS --><button class="btn btn-alert u10" data-action="go('sos')">
+            SOS
+          </button>
+        </div>
+        <div class="u15">
+          <!-- TODO: wire up button — Finish hike --><button
+            class="btn btn-outline"
+            data-action="confirmFinishHike()"
+          >
+            Finish hike
+          </button>
+        </div>
+
+        <div class="toggle-row">
+          <span class="u21">Auto safety ping every 30 min</span>
+          <div class="switch on" data-action="togglePingSetting()"><div class="knob"></div></div>
+        </div>
+
+        <a
+          class="sms-link"
+          href="sms:?body=I'm%20on%20the%20trail%2C%20all%20good.%20Will%20check%20in%20again%20soon."
+          data-action="logPing()"
+          >Send a quick SMS update</a
+        >
+
+        <div class="section-title">Check-in</div>
+        <div class="card u22">
+          <div class="u23">Are you back safely?</div>
+          <div class="u24">
+            <!-- TODO: wire up button — I'm back safely --><button
+              class="btn btn-primary"
+              data-action="checkin('safe')"
+            >
+              I'm back safely
+            </button>
+            <!-- TODO: wire up button — Need more time --><button
+              class="btn btn-secondary"
+              data-action="checkin('time')"
+            >
+              Need more time
+            </button>
+            <!-- TODO: wire up button — Need help --><button
+              class="btn btn-outline"
+              data-action="checkin('help')"
+            >
+              Need help
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Home --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Home
+        </button>
+        <!-- TODO: wire up button — 🧭Explore --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Explore
+        </button>
+        <!-- TODO: wire up button — 🥾Routes --><button class="tab active" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Routes
+        </button>
+        <!-- TODO: wire up button — 💬Messages --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Messages
+        </button>
+        <!-- TODO: wire up button — 👤Profile --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Profile
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

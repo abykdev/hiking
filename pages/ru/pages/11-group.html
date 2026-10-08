@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Группа</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/11-group.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Группа». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="goBack('hikeDetail')">←</button
+        ><span class="display u1">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u2"
+          aria-label="Уведомления"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <h2 class="u3">Озеро Парз — Гошаванк</h2>
+        <div class="muted">09:30 · Дилижан</div>
+
+        <div class="section-title">Подтверждено (4/5)</div>
+        <div class="card">
+          <div class="row u4">
+            <div class="avatar clickable" data-action="viewProfile('Anna')">A</div>
+            <div data-action="viewProfile('Anna')" class="u5">Anna</div>
+            <span class="u6">✓</span>
+          </div>
+          <div class="row u4">
+            <div class="avatar clickable" data-action="viewProfile('Elena')">E</div>
+            <div data-action="viewProfile('Elena')" class="u5">Elena</div>
+            <span class="u6">✓</span>
+          </div>
+          <div class="row u4">
+            <div class="avatar clickable" data-action="viewProfile('Maria')">M</div>
+            <div data-action="viewProfile('Maria')" class="u5">Maria</div>
+            <span class="u6">✓</span>
+          </div>
+          <div class="row u4">
+            <div class="avatar clickable" data-action="viewProfile('Sofia')">S</div>
+            <div data-action="viewProfile('Sofia')" class="u5">Sofia</div>
+            <span class="u6">✓</span>
+          </div>
+        </div>
+
+        <div class="section-title">Как добираемся?</div>
+        <div class="card">
+          <div class="row u4">
+            <div class="avatar">A</div>
+            <div class="u7">Anna — 🚗 2 места</div>
+            <!-- TODO: wire up button — Запросить место --><button
+              class="btn btn-outline btn-sm"
+              data-action="showToast(t('requestSeat'))"
+            >
+              Запросить место
+            </button>
+          </div>
+        </div>
+
+        <div class="section-title">Чат группы</div>
+        <div class="card u8" id="chatBox">
+          <div class="msg"><strong class="u9">Anna</strong>Встречаемся у начала тропы в 9:15!</div>
+          <div class="msg"><strong class="u9">Elena</strong>Возьму запасную воду 💧</div>
+        </div>
+        <div class="row u10">
+          <input type="text" id="chatInput" placeholder="Сообщение…" class="u11" />
+          <!-- TODO: wire up button — Отправить --><button
+            class="btn btn-primary btn-sm"
+            data-action="sendMsg()"
+          >
+            Отправить
+          </button>
+        </div>
+
+        <div class="u12">
+          <!-- TODO: wire up button — Смотреть маршрут --><button
+            class="btn btn-primary"
+            data-action="go('hikeDetail')"
+          >
+            Смотреть маршрут
+          </button>
+        </div>
+        <!-- TODO: wire up button — Покинуть группу --><button
+          class="btn btn-outline u13"
+          data-action="confirmLeaveGroup()"
+        >
+          Покинуть группу
+        </button>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Главная --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Главная
+        </button>
+        <!-- TODO: wire up button — 🧭Открыть --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Открыть
+        </button>
+        <!-- TODO: wire up button — 🥾Маршруты --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Маршруты
+        </button>
+        <!-- TODO: wire up button — 💬Сообщения --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Сообщения
+        </button>
+        <!-- TODO: wire up button — 👤Профиль --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Профиль
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

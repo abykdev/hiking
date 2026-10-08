@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Safety check</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/20-safety-check.css" />
+  </head>
+  <body>
+    <!-- Static export of the "Safety check" screen. No JavaScript on purpose: every interactive element carries a data-action / data-on-input / data-on-change attribute holding the original prototype handler as a hint. Wire these up yourself. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="goBack('group')">←</button
+        ><span class="display u1">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u2"
+          aria-label="Notifications"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <h2 class="u3">Safety check</h2>
+        <p class="muted">One quick step before you start tracking.</p>
+
+        <div class="card u4">
+          <div class="space-between">
+            <span class="muted">Trail</span><strong>Parz Lake — Goshavank</strong>
+          </div>
+          <div class="space-between u5"><span class="muted">Expected duration</span><strong>3h</strong></div>
+        </div>
+
+        <div class="section-title">Trusted contacts</div>
+        <div class="card">
+          <p class="muted u6">No trusted contact set for this hike.</p>
+          <!-- TODO: wire up button — Add a trusted contact --><button
+            class="btn btn-outline"
+            data-action="go('trustedContacts')"
+          >
+            Add a trusted contact
+          </button>
+        </div>
+
+        <div class="u7">
+          <!-- TODO: wire up button — Start tracking --><button
+            class="btn btn-primary"
+            data-action="beginTracking()"
+          >
+            Start tracking
+          </button>
+        </div>
+        <div class="u8">
+          <!-- TODO: wire up button — Skip for now --><button
+            class="btn btn-secondary"
+            data-action="beginTracking()"
+          >
+            Skip for now
+          </button>
+        </div>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Home --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Home
+        </button>
+        <!-- TODO: wire up button — 🧭Explore --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Explore
+        </button>
+        <!-- TODO: wire up button — 🥾Routes --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Routes
+        </button>
+        <!-- TODO: wire up button — 💬Messages --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Messages
+        </button>
+        <!-- TODO: wire up button — 👤Profile --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Profile
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Review</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/25-review.css" />
+  </head>
+  <body>
+    <!-- Static export of the "Review" screen. No JavaScript on purpose: every interactive element carries a data-action / data-on-input / data-on-change attribute holding the original prototype handler as a hint. Wire these up yourself. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="goBack('tripComplete')">
+          ←</button
+        ><span class="display u1">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u2"
+          aria-label="Notifications"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <h2 class="u3">How was your hike?</h2>
+        <div class="field-label">Trail condition</div>
+        <div class="star-row">
+          <span class="" data-action="setRating('trailRating',1)">★</span
+          ><span class="" data-action="setRating('trailRating',2)">★</span
+          ><span class="" data-action="setRating('trailRating',3)">★</span
+          ><span class="" data-action="setRating('trailRating',4)">★</span
+          ><span class="" data-action="setRating('trailRating',5)">★</span>
+        </div>
+
+        <div class="field-label">Solo comfort experience</div>
+        <div class="star-row">
+          <span class="" data-action="setRating('comfortRating',1)">★</span
+          ><span class="" data-action="setRating('comfortRating',2)">★</span
+          ><span class="" data-action="setRating('comfortRating',3)">★</span
+          ><span class="" data-action="setRating('comfortRating',4)">★</span
+          ><span class="" data-action="setRating('comfortRating',5)">★</span>
+        </div>
+
+        <div class="field-label">Companion feedback</div>
+        <div class="chip-row">
+          <div class="chip" data-action="toggleCompTag(0)">Punctual</div>
+          <div class="chip" data-action="toggleCompTag(1)">Respectful</div>
+          <div class="chip" data-action="toggleCompTag(2)">Pace accurate</div>
+          <div class="chip" data-action="toggleCompTag(3)">Prepared</div>
+          <div class="chip" data-action="toggleCompTag(4)">Good communicator</div>
+        </div>
+
+        <div class="field-label">Would you hike together again?</div>
+        <div class="chip-row">
+          <div class="chip" data-action="setAgain('yes')">Yes</div>
+          <div class="chip" data-action="setAgain('maybe')">Maybe</div>
+          <div class="chip" data-action="setAgain('no')">No</div>
+        </div>
+
+        <div class="field-label">Add a note about this route</div>
+        <textarea
+          placeholder="How was it? Anything worth remembering…"
+          data-on-input="updateNote(this.value)"
+        ></textarea>
+
+        <div class="field-label">Photos (optional)</div>
+
+        <label class="upload-btn">
+          📷 Add photos
+          <input
+            type="file"
+            accept="image/*"
+            multiple=""
+            capture="environment"
+            data-on-change="handlePhotoUpload(event)"
+            class="u4"
+          />
+        </label>
+
+        <div class="u5">
+          <!-- TODO: wire up button — Submit review --><button
+            class="btn btn-primary"
+            data-action="submitReview()"
+          >
+            Submit review
+          </button>
+        </div>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Home --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Home
+        </button>
+        <!-- TODO: wire up button — 🧭Explore --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Explore
+        </button>
+        <!-- TODO: wire up button — 🥾Routes --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Routes
+        </button>
+        <!-- TODO: wire up button — 💬Messages --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Messages
+        </button>
+        <!-- TODO: wire up button — 👤Profile --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Profile
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

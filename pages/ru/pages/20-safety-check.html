@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Проверка безопасности</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/20-safety-check.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Проверка безопасности». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="goBack('group')">←</button
+        ><span class="display u1">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u2"
+          aria-label="Уведомления"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <h2 class="u3">Проверка безопасности</h2>
+        <p class="muted">Один короткий шаг перед началом отслеживания.</p>
+
+        <div class="card u4">
+          <div class="space-between">
+            <span class="muted">Маршрут</span><strong>Озеро Парз — Гошаванк</strong>
+          </div>
+          <div class="space-between u5">
+            <span class="muted">Ожидаемая длительность</span><strong>3h</strong>
+          </div>
+        </div>
+
+        <div class="section-title">Доверенные контакты</div>
+        <div class="card">
+          <p class="muted u6">Для этого похода доверенный контакт не выбран.</p>
+          <!-- TODO: wire up button — Добавить доверенный контакт --><button
+            class="btn btn-outline"
+            data-action="go('trustedContacts')"
+          >
+            Добавить доверенный контакт
+          </button>
+        </div>
+
+        <div class="u7">
+          <!-- TODO: wire up button — Начать отслеживание --><button
+            class="btn btn-primary"
+            data-action="beginTracking()"
+          >
+            Начать отслеживание
+          </button>
+        </div>
+        <div class="u8">
+          <!-- TODO: wire up button — Пропустить пока --><button
+            class="btn btn-secondary"
+            data-action="beginTracking()"
+          >
+            Пропустить пока
+          </button>
+        </div>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Главная --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Главная
+        </button>
+        <!-- TODO: wire up button — 🧭Открыть --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Открыть
+        </button>
+        <!-- TODO: wire up button — 🥾Маршруты --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Маршруты
+        </button>
+        <!-- TODO: wire up button — 💬Сообщения --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Сообщения
+        </button>
+        <!-- TODO: wire up button — 👤Профиль --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Профиль
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

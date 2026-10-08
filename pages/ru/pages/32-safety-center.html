@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Центр безопасности</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/32-safety-center.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Центр безопасности». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="goBack('profileMe')">←</button
+        ><span class="display u1">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u2"
+          aria-label="Уведомления"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <h2 class="u3">Центр безопасности</h2>
+        <p class="muted">Всё, что нужно до, во время и после похода.</p>
+
+        <div class="section-title">Доверенный контакт</div>
+        <div class="card">
+          <p class="muted u4">Доверенный контакт пока не указан.</p>
+          <!-- TODO: wire up button — Добавить доверенный контакт --><button
+            class="btn btn-outline"
+            data-action="goToTrustedContacts('safetyCenter')"
+          >
+            Добавить доверенный контакт
+          </button>
+        </div>
+
+        <div class="section-title">Автоматический чек-ин безопасности</div>
+        <div class="card toggle-row u5">
+          <span class="u6">Автопроверка каждые 30 минут</span>
+          <div class="switch on" data-action="togglePingSetting()"><div class="knob"></div></div>
+        </div>
+
+        <div class="section-title">Экстренные номера</div>
+        <a class="card row u7" href="tel:112">
+          <div class="avatar u8">☎</div>
+          <div class="u9">
+            <div class="u10">112</div>
+            <div class="muted">Единый номер экстренных служб (Армения)</div>
+          </div>
+        </a>
+        <!-- TODO: wire up button — Открыть экран SOS --><button
+          class="btn btn-outline u11"
+          data-action="go('sos')"
+        >
+          Открыть экран SOS
+        </button>
+
+        <div class="section-title">Медицинская информация</div>
+        <p class="muted u12">Хранится только на этом устройстве — видна тебе и показывается на экране SOS.</p>
+        <div class="field-label">Группа крови</div>
+        <input
+          type="text"
+          value=""
+          placeholder="например, O+"
+          data-on-input="updateMedicalField('bloodType', this.value)"
+        />
+        <div class="field-label">Аллергии</div>
+        <input
+          type="text"
+          value=""
+          placeholder="например, пенициллин, укусы пчёл"
+          data-on-input="updateMedicalField('allergies', this.value)"
+        />
+        <div class="field-label">Хронические заболевания</div>
+        <input
+          type="text"
+          value=""
+          placeholder="например, астма, диабет"
+          data-on-input="updateMedicalField('conditions', this.value)"
+        />
+        <!-- TODO: wire up button — Сохранить --><button
+          class="btn btn-primary u13"
+          data-action="saveMedicalInfo()"
+        >
+          Сохранить
+        </button>
+
+        <div class="card u14">
+          <strong class="u6">Нет сигнала? Спутниковый SOS</strong>
+          <p class="u15">
+            У многих современных телефонов (iPhone 14+, некоторые новые Android) есть встроенная спутниковая
+            связь для экстренных случаев — как раз для удалённых троп Армении без покрытия сети. Trailkin не
+            может это обеспечить сам — это функция самого телефона.
+          </p>
+          <p class="muted u16">
+            Как проверить: Настройки → Экстренный SOS на iPhone, либо приложение безопасности производителя на
+            Android.
+          </p>
+        </div>
+
+        <p class="muted u17">
+          Отзывы сообщества субъективны, а условия могут меняться. Ответственность за оценку маршрута остаётся
+          на тебе. Функции безопасности зависят от связи на устройстве.
+        </p>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Главная --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Главная
+        </button>
+        <!-- TODO: wire up button — 🧭Открыть --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Открыть
+        </button>
+        <!-- TODO: wire up button — 🥾Маршруты --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Маршруты
+        </button>
+        <!-- TODO: wire up button — 💬Сообщения --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Сообщения
+        </button>
+        <!-- TODO: wire up button — 👤Профиль --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Профиль
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

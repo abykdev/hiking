@@ -1,0 +1,10 @@
+/* Page-specific styles for "What brings you outdoors".
+   Extracted from the inline styles of the interactive prototype; shared styles are in ../base.css. */
+#shell .u1 {
+  font-size:24px;
+  margin-bottom:18px;
+}
+
+#shell .u2 {
+  margin-top:28px;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Создать событие</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/16-create-event.css" />
+  </head>
+  <body>
+    <!-- Статический экспорт экрана «Создать событие». JavaScript намеренно не подключён: у каждого интерактивного элемента есть атрибут data-action / data-on-input / data-on-change с исходным обработчиком прототипа в качестве подсказки. Подключите их сами. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="goBack('home')">←</button
+        ><span class="display u1">🥾 Trailkin</span><!-- TODO: wire up button — 🔔 --><button
+          class="back-btn u2"
+          aria-label="Уведомления"
+          data-action="openNotifFeed()"
+        >
+          🔔
+        </button>
+      </div>
+      <div id="screen">
+        <h2 class="u3">Спланировать событие</h2>
+        <div class="field-label">Маршрут</div>
+        <select id="evTrail" data-on-change="setCeField('trailId', this.value)">
+          <option value="">Выбери маршрут…</option>
+          <option value="garni">🥾 Ущелье Гарни — Симфония камней</option>
+          <option value="parz">🥾 Озеро Парз — Гошаванк</option>
+          <option value="matosavank">🥾 Матосаванк — петля Джухтак</option>
+          <option value="aragats">🥾 Гора Арагац — Южная вершина</option>
+          <option value="jermuk">🥾 Джермукский водопад и горячие источники</option>
+          <option value="tatev">🥾 Татев — ущелье Чёртова моста</option>
+          <option value="debed">🥾 Ахпат — Санаин, тропа монастырей</option>
+          <option value="khustup">🥾 Пик Хуступ</option>
+        </select>
+        <div class="field-label">GPX-маршрут (необязательно)</div>
+
+        <label class="upload-btn">
+          ⬆ Загрузить GPX-файл
+          <input
+            type="file"
+            accept=".gpx,application/gpx+xml,application/xml,text/xml,application/octet-stream"
+            data-on-change="handleEventGpxUpload(event)"
+            class="u4"
+          />
+        </label>
+        <div class="muted u5">
+          Загрузи .gpx-трек, чтобы увидеть маршрут на карте и идти по нему во время похода.
+        </div>
+        <div class="field-label">Название события</div>
+        <input
+          type="text"
+          id="evTitle"
+          placeholder="например, Поход на рассвете в Гарни"
+          value=""
+          data-on-input="ceState.title=this.value"
+        />
+        <div class="field-label">Когда</div>
+        <input
+          type="text"
+          id="evDate"
+          placeholder="например, Эта суббота, 9:00"
+          value=""
+          data-on-input="ceState.date=this.value"
+        />
+        <div class="field-label">Место встречи</div>
+        <input
+          type="text"
+          id="evMeeting"
+          placeholder="например, площадь Республики"
+          value=""
+          data-on-input="ceState.meetingPoint=this.value"
+        />
+
+        <div class="field-label">Темп</div>
+        <div class="chip-row">
+          <div class="chip" data-action="setCeField('pace', 0)">Неспешный</div>
+          <div class="chip selected" data-action="setCeField('pace', 1)">Средний</div>
+          <div class="chip" data-action="setCeField('pace', 2)">Быстрый</div>
+        </div>
+
+        <div class="card toggle-row u6">
+          <div class="u7">
+            <div class="u8">Создать группу</div>
+            <div class="muted u9">Включи, чтобы задать размер группы для этого похода.</div>
+          </div>
+          <div class="switch on" data-action="setCeField('createGroup', !ceState.createGroup)">
+            <div class="knob"></div>
+          </div>
+        </div>
+
+        <div class="field-label">Размер группы: <span id="groupSizeLabel">6</span> человек</div>
+        <input
+          type="range"
+          min="2"
+          max="12"
+          step="1"
+          value="6"
+          data-on-input="ceState.groupSize=Number(this.value); document.getElementById('groupSizeLabel').textContent=this.value;"
+          class="u10"
+        />
+
+        <div class="field-label">Описание</div>
+        <textarea
+          id="evDescription"
+          placeholder="Что стоит знать перед тем, как присоединиться?"
+          data-on-input="ceState.description=this.value"
+        ></textarea>
+
+        <div class="field-label">Фото (необязательно)</div>
+
+        <label class="upload-btn">
+          📷 Добавить фото
+          <input type="file" accept="image/*" data-on-change="handleEventPhotoUpload(event)" class="u4" />
+        </label>
+
+        <div class="card toggle-row u6">
+          <div class="u7">
+            <div class="u8">🙋 Ищу попутчиков</div>
+            <div class="muted u9">Показать это событие в блоке «Ищу попутчиков» на главной.</div>
+          </div>
+          <div class="switch" data-action="setCeField('lookingForBuddies', !ceState.lookingForBuddies)">
+            <div class="knob"></div>
+          </div>
+        </div>
+
+        <div class="card toggle-row u11">
+          <div class="u7">
+            <div class="u8">🚗 Могу подвезти</div>
+          </div>
+          <div class="switch on" data-action="setCeField('offersRide', !ceState.offersRide)">
+            <div class="knob"></div>
+          </div>
+        </div>
+
+        <div class="field-label">Свободных мест</div>
+        <div class="chip-row">
+          <div class="chip" data-action="setCeField('rideSeats', 1)">1</div>
+          <div class="chip selected" data-action="setCeField('rideSeats', 2)">2</div>
+          <div class="chip" data-action="setCeField('rideSeats', 3)">3</div>
+          <div class="chip" data-action="setCeField('rideSeats', 4)">4</div>
+        </div>
+
+        <div class="u12">
+          <!-- TODO: wire up button — Создать событие --><button
+            class="btn btn-primary"
+            data-action="submitCreateEvent()"
+          >
+            Создать событие
+          </button>
+        </div>
+      </div>
+
+      <div id="tabbar" class="tabbar">
+        <!-- TODO: wire up button — 🏠Главная --><button class="tab" data-action="go('home')">
+          <span class="ic">🏠</span>Главная
+        </button>
+        <!-- TODO: wire up button — 🧭Открыть --><button class="tab" data-action="go('explore')">
+          <span class="ic">🧭</span>Открыть
+        </button>
+        <!-- TODO: wire up button — 🥾Маршруты --><button class="tab" data-action="goRoutesTab()">
+          <span class="ic">🥾</span>Маршруты
+        </button>
+        <!-- TODO: wire up button — 💬Сообщения --><button class="tab" data-action="go('messages')">
+          <span class="ic">💬</span>Сообщения
+        </button>
+        <!-- TODO: wire up button — 👤Профиль --><button class="tab" data-action="go('profileMe')">
+          <span class="ic">👤</span>Профиль
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

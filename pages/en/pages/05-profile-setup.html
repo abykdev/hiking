@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#C17A82" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trailkin — Profile setup</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/pages/05-profile-setup.css" />
+  </head>
+  <body>
+    <!-- Static export of the "Profile setup" screen. No JavaScript on purpose: every interactive element carries a data-action / data-on-input / data-on-change attribute holding the original prototype handler as a hint. Wire these up yourself. -->
+    <div id="shell">
+      <div id="topbar" class="topbar">
+        <!-- TODO: wire up button — ← --><button class="back-btn" data-action="go('motivation')">←</button>
+        <div class="lang-toggle">
+          <!-- TODO: wire up button — EN --><button class="active" data-action="toggleLang('en')">EN</button
+          ><!-- TODO: wire up button — RU --><button class="" data-action="toggleLang('ru')">RU</button>
+        </div>
+      </div>
+      <div id="screen">
+        <h2 class="u1">Build your hiking profile</h2>
+        <p class="muted u2">Takes about a minute. You can skip anything.</p>
+
+        <div class="field-label">Name</div>
+        <input
+          type="text"
+          placeholder="How should we call you?"
+          value="Lilit"
+          data-on-input="updateProfile('name', this.value)"
+        />
+        <div class="field-label">City</div>
+        <input
+          type="text"
+          placeholder="Where are you based?"
+          value="Yerevan, Armenia"
+          data-on-input="updateProfile('city', this.value)"
+        />
+        <div class="field-label">Short bio (optional)</div>
+        <textarea placeholder="A sentence or two about you…" data-on-input="updateProfile('bio', this.value)">
+Weekend hiker, always up for a sunrise trail.</textarea>
+
+        <div class="field-label">Outdoor experience</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('experience', 0)">Beginner</div>
+          <div class="chip" data-action="updateProfile('experience', 1)">Intermediate</div>
+          <div class="chip" data-action="updateProfile('experience', 2)">Advanced</div>
+          <div class="chip" data-action="updateProfile('experience', 3)">Expert</div>
+        </div>
+        <div class="field-label">Hiking pace</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('pace', 0)">Chill</div>
+          <div class="chip" data-action="updateProfile('pace', 1)">Moderate</div>
+          <div class="chip" data-action="updateProfile('pace', 2)">Fast</div>
+          <div class="chip" data-action="updateProfile('pace', 3)">Very fast</div>
+        </div>
+        <div class="field-label">Preferred distance</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('distance', 0)">0–5 km</div>
+          <div class="chip" data-action="updateProfile('distance', 1)">5–10 km</div>
+          <div class="chip" data-action="updateProfile('distance', 2)">10–15 km</div>
+          <div class="chip" data-action="updateProfile('distance', 3)">15–25 km</div>
+          <div class="chip" data-action="updateProfile('distance', 4)">25+ km</div>
+        </div>
+        <div class="field-label">Preferred elevation gain</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('elevation', 0)">Low</div>
+          <div class="chip" data-action="updateProfile('elevation', 1)">Moderate</div>
+          <div class="chip" data-action="updateProfile('elevation', 2)">High</div>
+          <div class="chip" data-action="updateProfile('elevation', 3)">Very high</div>
+        </div>
+
+        <div class="field-label">Hiking style</div>
+        <div class="chip-row">
+          <div class="chip" data-action="toggleStyle(0)">Social</div>
+          <div class="chip" data-action="toggleStyle(1)">Photography</div>
+          <div class="chip" data-action="toggleStyle(2)">Fitness</div>
+          <div class="chip" data-action="toggleStyle(3)">Nature</div>
+          <div class="chip" data-action="toggleStyle(4)">Quiet</div>
+          <div class="chip" data-action="toggleStyle(5)">Adventure</div>
+          <div class="chip" data-action="toggleStyle(6)">Exploration</div>
+        </div>
+        <div class="field-label">Preferred start</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('startTime', 0)">Sunrise</div>
+          <div class="chip" data-action="updateProfile('startTime', 1)">Morning</div>
+          <div class="chip" data-action="updateProfile('startTime', 2)">Afternoon</div>
+          <div class="chip" data-action="updateProfile('startTime', 3)">Flexible</div>
+        </div>
+        <div class="field-label">Stops along the way</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('stops', 0)">Frequent</div>
+          <div class="chip" data-action="updateProfile('stops', 1)">Normal</div>
+          <div class="chip" data-action="updateProfile('stops', 2)">Minimal</div>
+        </div>
+
+        <div class="field-label">Transportation</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('hasCar', true)">Has a car</div>
+          <div class="chip" data-action="updateProfile('hasCar', false)">No car</div>
+        </div>
+
+        <div class="field-label">Hiking with dogs</div>
+        <div class="chip-row">
+          <div class="chip" data-action="updateProfile('dogsOk', true)">Dogs okay</div>
+          <div class="chip" data-action="updateProfile('dogsOk', false)">No dogs</div>
+        </div>
+        <div class="field-label">Also interested in</div>
+        <div class="chip-row">
+          <div class="chip" data-action="toggleExtra(0)">Camping</div>
+          <div class="chip" data-action="toggleExtra(1)">Trail running</div>
+          <div class="chip" data-action="toggleExtra(2)">Climbing</div>
+          <div class="chip" data-action="toggleExtra(3)">Cycling</div>
+          <div class="chip" data-action="toggleExtra(4)">SUP</div>
+          <div class="chip" data-action="toggleExtra(5)">Snow activities</div>
+        </div>
+
+        <div class="u3">
+          <!-- TODO: wire up button — Finish profile --><button
+            class="btn btn-primary"
+            data-action="finishProfile()"
+          >
+            Finish profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
