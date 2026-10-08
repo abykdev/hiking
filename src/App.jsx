@@ -12,6 +12,7 @@ function App() {
   //const CurrentScreen = screens[screen];
   //const [value, setValue] = useState('');
   const { status } = useAuth();
+  console.log('App: status =', status);
   const { lang } = useLanguage();
 
   const [authScreen, setAuthScreen] = useState('signin');  // 'signin' | 'signup'

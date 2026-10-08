@@ -6,6 +6,9 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const setUserField = useCallback((field, value) => {
+    setUser((prev) => (prev ? { ...prev, [field]: value } : prev));
+  }, []);
   const [token, setToken] = useState(() => localStorage.getItem('token'));
   const [status, setStatus] = useState('loading');
 
@@ -20,6 +23,9 @@ export function AuthProvider({ children }) {
     setToken(newToken);
   }, []);
 
+  useEffect(() => {
+    console.log('AuthProvider: status =', status);
+  }, [status]);
   // Регистрируем колбэки в apiFetch — один раз
   useEffect(() => {
     configureAuth({
@@ -44,7 +50,7 @@ export function AuthProvider({ children }) {
         let currentToken = token;
         if (!currentToken) {
 
-          currentToken = refreshAccessToken();
+          currentToken = await refreshAccessToken();
           localStorage.setItem('token', currentToken);
           console.log("localStorage token check", localStorage.getItem('token'))
           if (!cancelled) setToken(currentToken);
@@ -84,14 +90,18 @@ export function AuthProvider({ children }) {
       credentials: 'include',       // ← бэк должен поставить refreshToken в куку
       body: JSON.stringify({ email, password }),
     });
+    console.log('login: response', res.status);
     if (!res.ok) throw new Error('Login failed');
     console.log("login middle");
     const data = await res.json();
+    console.log('login: data', data);
+    console.log('login: accessToken', data.accessToken); // ← есть ли
+    console.log('login: user', data.user);
     localStorage.setItem('token', data.accessToken);
     console.log("localStorage token", localStorage.getItem('token'));
     setToken(data.accessToken);
     setUser(data.user);
-    setProfile(data.profile)
+    // setProfile(data.profile)
     setStatus('authenticated');
   };
 
@@ -111,14 +121,6 @@ export function AuthProvider({ children }) {
     return data.accessToken;
   }, [logout]);
 
-  const setUserField = (field, value) => {
-    setUser(prev => ({ ...prev, [field]: value }));
-    apiFetch('/api/users/me', {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ [field]: value }),
-    });
-  };
 
   return (
     <AuthContext.Provider value={{ user, token, status, login, logout, refresh, setUserField }}>

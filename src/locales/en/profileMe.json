@@ -116,6 +116,7 @@
         }
       }
     },
-    "finishButton": "Finish profile"
+    "finishButton": "Finish profile",
+    "saveError": "Couldn't save your profile changes. Please try again."
   }
 }
