@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mapbox/togeojson": "^0.16.2",
+    "@react-google-maps/api": "^2.20.8",
     "bcrypt": "^6.0.0",
     "i18next": "^26.4.2",
     "react": "^19.2.8",

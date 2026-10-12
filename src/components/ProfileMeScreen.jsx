@@ -129,9 +129,9 @@ export default function ProfileMeScreen({ navigate }) {
       />
       <div className="field-label">{t('profileBuild.fields.startTime.label')}</div>
       <ChoiceGroup
-        group="startTime"
-        value={user.startTime_id}
-        onChange={(newValue) => patchChoiceGroup('startTime', newValue)}
+        group="starttime"
+        value={user.starttime_id}
+        onChange={(newValue) => patchChoiceGroup('starttime', newValue)}
       />
       <div className="field-label">{t('profileBuild.fields.stops.label')}</div>
       <ChoiceGroup
@@ -142,25 +142,24 @@ export default function ProfileMeScreen({ navigate }) {
 
       <div className="field-label">{t('profileBuild.fields.hasCar.label')}</div>
       <ChoiceGroup
-        group="hasCar"
+        group="hascar"
         value={user.hascar_id}
-        onChange={(newValue) => patchChoiceGroup('hasCar', newValue)}
+        onChange={(newValue) => patchChoiceGroup('hascar', newValue)}
       />
 
 
       <div className="field-label">{t('profileBuild.fields.carSeats.label')}</div>
-      <div className="chip-row">
-        <div className="chip selected" onClick={() => patchChoiceGroup('carSeats', 1)}>{t('profileBuild.fields.carSeats.options.1')}</div>
-        <div className="chip" onClick={() => patchChoiceGroup('carSeats', 2)}>{t('profileBuild.fields.carSeats.options.2')}</div>
-        <div className="chip" onClick={() => patchChoiceGroup('carSeats', 3)}>{t('profileBuild.fields.carSeats.options.3')}</div>
-        <div className="chip" onClick={() => patchChoiceGroup('carSeats', 4)}>{t('profileBuild.fields.carSeats.options.4')}</div>
-      </div>
+      <ChoiceGroup
+        group="carseats"
+        value={user.carseats_id}
+        onChange={(newValue) => patchChoiceGroup('carseats', newValue)}
+      />
 
       <div className="field-label">{t('profileBuild.fields.dogsOk.label')}</div>
       <ChoiceGroup
-        group="dogsOk"
+        group="dogsok"
         value={user.dogsok_id}
-        onChange={(newValue) => patchChoiceGroup('dogsOk', newValue)}
+        onChange={(newValue) => patchChoiceGroup('dogsok', newValue)}
       />
       <div className="field-label">{t('profileBuild.fields.extra.label')}</div>
       <ChoiceGroup
@@ -170,7 +169,7 @@ export default function ProfileMeScreen({ navigate }) {
       />
 
       <div style={{ marginTop: '26px' }}>
-        <button className="btn btn-primary" onClick={() => go('profileMe')}>{t('profileBuild.finishButton')}</button>
+        <button className="btn btn-primary" onClick={() => go('profile')}>{t('profileBuild.finishButton')}</button>
       </div>
     </div>
   );

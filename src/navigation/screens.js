@@ -7,6 +7,9 @@ import MessagesScreen from '../components/MessagesScreen';
 import ProfileScreen from '../components/ProfileScreen';
 import ProfileMeScreen from '../components/ProfileMeScreen';
 import RoutesScreen from '../components/RoutesScreen';
+import UploadRouteScreen from '../components/UploadRouteScreen';
+import RouteSingleScreen from '../components/RouteSingleScreen';
+
 export const screens = {
   home: HomeScreen,
   explore: ExploreScreen,
@@ -17,4 +20,6 @@ export const screens = {
   profile: ProfileScreen,
   profileMe: ProfileMeScreen,
   routes: RoutesScreen,
+  uploadRoute: UploadRouteScreen,
+  routeSingle: RouteSingleScreen
 };

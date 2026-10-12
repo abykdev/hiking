@@ -8,6 +8,10 @@ export default function ProfileScreen({ navigate }) {
     //console.log('all data:', i18n.store.data);
     //console.log('t:', t('heading'));
     const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
+    const chooseLanguage = (lng) => {
+    setPicked(lng);
+    i18n.changeLanguage(lng);       // сразу переключаем тексты
+  };
     const go = (target, params) => navigate(target, params);
     return (
         <div id="shell">
@@ -42,8 +46,8 @@ export default function ProfileScreen({ navigate }) {
                 <div className="card space-between">
                     <span>Язык</span>
                     <div className="lang-toggle">
-                        <button className="" onClick={() => toggleLang('en')}>EN</button>
-                        <button className="active" onClick={() => toggleLang('ru')}>RU</button>
+                        <button className={lang === 'en' ? 'active' : ''} onClick={() => chooseLanguage('en')}>EN</button>
+                        <button className={lang === 'ru' ? 'active' : ''} onClick={() => chooseLanguage('ru')}>RU</button>
                     </div>
                 </div>
                 <div style={{ marginTop: '12px' }}>
