@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import RouteSingle from './RouteSingle';
+import RouteSingle from '../RouteSingle';
 
 export default function RouteSingleScreen({ navigate, params }) {
     const { t, i18n } = useTranslation('onboarding');

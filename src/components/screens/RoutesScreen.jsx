@@ -24,7 +24,7 @@ export default function RoutesScreen({ navigate }) {
                     <div className="avatar" style={{ width: '70px', height: '70px', fontSize: '26px', margin: '0 auto' }}>?</div>
                     <h2 style={{ marginTop: '12px' }}>—</h2>
                     
-                    <button onClick={() => go('uploadRoute')} >
+                    <button onClick={() => go('addRoute')} >
                         New Route
                     </button>
                     <div className="muted"></div>

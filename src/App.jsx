@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { useAuth } from './components/auth/AuthContext'
 import './App.css'
 import { useLanguage } from './i18n/LanguageContext';
-import OnboardingScreen from './components/OnboardingScreen.jsx'
-import SignInScreen from './components/SignInScreen.jsx'
-import SignUpScreen from './components/SignUpScreen.jsx';
+import OnboardingScreen from './components/screens/OnboardingScreen.jsx'
+import SignInScreen from './components/screens/SignInScreen.jsx'
+import SignUpScreen from './components/screens/SignUpScreen.jsx';
 import AppNavigator from './navigation/AppNavigator.jsx'
 
 function App() {

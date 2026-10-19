@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from '../i18n/LanguageContext';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 function OnboardingScreen() {
   const { t, i18n } = useTranslation('onboarding');

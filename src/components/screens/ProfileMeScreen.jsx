@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import ChoiceGroup from './ChoiceGroup';
-import { useAuth } from './auth/AuthContext';
-import { apiFetch } from '../api/client';
+import ChoiceGroup from '../ChoiceGroup';
+import { useAuth } from '../auth/AuthContext';
+import { apiFetch } from '../../api/client';
 
 
 export default function ProfileMeScreen({ navigate }) {

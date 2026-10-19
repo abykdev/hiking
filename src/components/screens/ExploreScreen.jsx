@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import RoutesList from './RoutesList';
+import RoutesList from '../RoutesList';
 
 export default function ExploreScreen({ navigate }) {
     const { t, i18n } = useTranslation('onboarding');

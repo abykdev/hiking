@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import ChoiceGroup from '../ChoiceGroup';
 
 
 export default function HomeScreen({ navigate }) {
@@ -30,16 +31,11 @@ export default function HomeScreen({ navigate }) {
           <div className="avatar">?</div>
         </div>
 
-        <div className="chip-row" style={{ marginTop: 16 }}>
-          <div className="chip" onClick={() => go('explore', { sort: 'easy' })}>🥾 Лёгкий поход</div>
-          <div className="chip" onClick={() => go('explore', { sort: 'challenge' })}>⛰ Бросить вызов</div>
-          <div className="chip" onClick={() => go('explore')}>🌅 Поход на рассвете</div>
-          <div className="chip" onClick={() => go('explore')}>📸 Живописный маршрут</div>
-          <div className="chip" onClick={() => go('explore')}>☕ Поход + кофе</div>
-          <div className="chip" onClick={() => go('explore')}>🏕 С ночёвкой</div>
-          <div className="chip" onClick={() => go('explore')}>🏃 Трейл-ран</div>
-          <div className="chip" onClick={() => go('explore')}>✨ Удиви меня</div>
-        </div>
+        <ChoiceGroup
+                group="hikeStyle"
+                
+                onChange={(hikeStyleId) => go('explore', {hiking_style_id:hikeStyleId})}
+              />
 
         <div className="section-title">Предстоящие события</div>
 

@@ -1,14 +1,14 @@
-import HomeScreen from '../components/HomeScreen';
-import ExploreScreen from '../components/ExploreScreen';
-import HikeDetailScreen from '../components/HikeDetailScreen';
-import CreateEventScreen from '../components/CreateEventScreen';
-import FindBuddiesScreen from '../components/FindBuddiesScreen';
-import MessagesScreen from '../components/MessagesScreen';
-import ProfileScreen from '../components/ProfileScreen';
-import ProfileMeScreen from '../components/ProfileMeScreen';
-import RoutesScreen from '../components/RoutesScreen';
-import UploadRouteScreen from '../components/UploadRouteScreen';
-import RouteSingleScreen from '../components/RouteSingleScreen';
+import HomeScreen from '../components/screens/HomeScreen';
+import ExploreScreen from '../components/screens/ExploreScreen';
+import HikeDetailScreen from '../components/screens/HikeDetailScreen';
+import CreateEventScreen from '../components/screens/CreateEventScreen';
+import FindBuddiesScreen from '../components/screens/FindBuddiesScreen';
+import MessagesScreen from '../components/screens/MessagesScreen';
+import ProfileScreen from '../components/screens/ProfileScreen';
+import ProfileMeScreen from '../components/screens/ProfileMeScreen';
+import RoutesScreen from '../components/screens/RoutesScreen';
+import AddRouteScreen from '../components/screens/AddRouteScreen';
+import RouteSingleScreen from '../components/screens/RouteSingleScreen';
 
 export const screens = {
   home: HomeScreen,
@@ -20,6 +20,6 @@ export const screens = {
   profile: ProfileScreen,
   profileMe: ProfileMeScreen,
   routes: RoutesScreen,
-  uploadRoute: UploadRouteScreen,
+  addRoute: AddRouteScreen,
   routeSingle: RouteSingleScreen
 };
