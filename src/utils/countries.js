@@ -1,4 +1,4 @@
-const countries = [
+export const COUNTRIES = [
     { name: { en: "Afghanistan", ru: "Афганистан" }, alpha2: "AF", alpha3: "AFG" },
     { name: { en: "Albania", ru: "Албания" }, alpha2: "AL", alpha3: "ALB" },
     { name: { en: "Algeria", ru: "Алжир" }, alpha2: "DZ", alpha3: "DZA" },

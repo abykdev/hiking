@@ -182,3 +182,24 @@
     border-right-color: var(--border);
   }
 }
+.lang-toggle {
+    display: flex; background: var(--sand); border-radius: 20px; padding: 3px;
+    font-size: 12px; font-weight: 600;
+  }
+  .lang-toggle button {
+    border: none; background: none; padding: 5px 12px; border-radius: 16px;
+    cursor: pointer; color: var(--text-muted); font-family: inherit; font-weight: 600;
+  }
+  .lang-toggle button.active { background: var(--forest); color: #fff; }
+  .lang-btn { border: none; background: var(--sand); color: var(--text); border-radius: 20px; padding: 7px 14px; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer; white-space: nowrap; }
+  #langSheet { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: flex-end; justify-content: center; }
+  .lang-backdrop { position: absolute; inset: 0; background: rgba(46,26,30,.45); }
+  .lang-panel { position: relative; width: 100%; max-width: 480px; background: var(--surface, #fff); border-radius: 22px 22px 0 0; padding: 16px 12px calc(12px + env(safe-area-inset-bottom,0px)); box-shadow: 0 -8px 30px rgba(0,0,0,.2); }
+  .lang-title { font-weight: 700; font-size: 15px; padding: 2px 8px 10px; }
+  .lang-list { max-height: 55vh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .lang-opt { display: flex; justify-content: space-between; align-items: center; width: 100%; border: none; background: none; padding: 13px 10px; border-radius: 12px; font-family: inherit; font-size: 15px; color: var(--text); cursor: pointer; text-align: left; }
+  .lang-opt:hover { background: var(--sand); }
+  .lang-opt.active { background: var(--sand); font-weight: 700; }
+  .lang-code { font-size: 11.5px; color: var(--text-muted); font-weight: 600; }
+
+.lang-btn .emo {background-image: url('./assets/globe.png');}

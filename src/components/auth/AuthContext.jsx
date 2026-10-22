@@ -100,6 +100,7 @@ export function AuthProvider({ children }) {
     localStorage.setItem('token', data.accessToken);
     console.log("localStorage token", localStorage.getItem('token'));
     setToken(data.accessToken);
+    if(!data.user.country_code) data.user.country_code= 'AM';
     setUser(data.user);
     // setProfile(data.profile)
     setStatus('authenticated');

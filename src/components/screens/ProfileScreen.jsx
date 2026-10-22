@@ -1,17 +1,31 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
+import { useLanguage } from '../../i18n/LanguageContext';
+import LangSheet from '../LangSheet';
+import CountrySheet from '../CountrySheet';
+import {  useAuth } from '../auth/AuthContext';
 
 export default function ProfileScreen({ navigate }) {
     const { t, i18n } = useTranslation('onboarding');
-    //console.log('language:', i18n.language);
-    //console.log('all data:', i18n.store.data);
-    //console.log('t:', t('heading'));
-    const [lang, setLang] = useState(localStorage.getItem('lang') || 'en');
-    const chooseLanguage = (lng) => {
-    setPicked(lng);
-    i18n.changeLanguage(lng);       // сразу переключаем тексты
-  };
+    const { lang, setLang } = useLanguage();
+    const [isLangOpen, setIsLangOpen] = useState(false);
+    const { user, setUserField } = useAuth();
+    const handleLangSelect = (code) => {
+        setLang(code);
+
+        setIsLangOpen(false);
+        console.log('handleLangSelect lang', lang)
+    };
+    const [isCountryOpen, setIsCountryOpen] = useState(false);
+    const [country, setCountry] = useState('RU'); // alpha2
+
+    const handleCountrySelect = (alpha2) => {
+        setCountry(alpha2);
+        setIsCountryOpen(false);
+        setUserField('country_code', alpha2);
+        // при необходимости — сохранить на бэк
+    };
+
     const go = (target, params) => navigate(target, params);
     return (
         <div id="shell">
@@ -43,13 +57,29 @@ export default function ProfileScreen({ navigate }) {
                 <p className="muted">Пока нет значков — заверши поход, чтобы получить первый.</p>
 
                 <div className="section-title">Настройки</div>
+
                 <div className="card space-between">
-                    <span>Язык</span>
-                    <div className="lang-toggle">
-                        <button className={lang === 'en' ? 'active' : ''} onClick={() => chooseLanguage('en')}>EN</button>
-                        <button className={lang === 'ru' ? 'active' : ''} onClick={() => chooseLanguage('ru')}>RU</button>
-                    </div>
+                    <span>Language</span>
+                    <button className="lang-btn" onClick={() => setIsLangOpen(true)} aria-label="Language"><span clasNames="emo" >🌐</span> {lang.toUpperCase()} ▾</button>
                 </div>
+                <LangSheet
+                    isOpen={isLangOpen}
+                    currentLang={lang}
+                    onSelect={handleLangSelect}
+                    onClose={() => setIsLangOpen(false)}
+                />
+                <div className="card space-between">
+                    <span>Country</span>
+                    <button className="lang-btn" onClick={() => setIsCountryOpen(true)} aria-label="Country"><span clasNames="emo" >🌐</span> {user.country_code.toUpperCase()} ▾</button>
+                </div>
+                <CountrySheet
+                    isOpen={isCountryOpen}
+                    currentCode={user.country_code}
+                    onSelect={handleCountrySelect}
+                    onClose={() => setIsCountryOpen(false)}
+                />
+
+
                 <div style={{ marginTop: '12px' }}>
                     <button className="btn btn-outline" onClick={() => go('profileMe')}>Редактировать профиль</button>
                 </div>
@@ -60,7 +90,7 @@ export default function ProfileScreen({ navigate }) {
 
                 <p className="muted" style={{ marginTop: '26px', fontSize: '12px', lineHeight: 1.5 }}>Отзывы сообщества субъективны, а условия могут меняться. Ответственность за оценку маршрута остаётся на тебе. Функции безопасности зависят от связи на устройстве.</p>
             </div>
-            
+
         </div>
     );
 }

@@ -34,7 +34,7 @@ export default function HomeScreen({ navigate }) {
         <ChoiceGroup
                 group="hikeStyle"
                 
-                onChange={(hikeStyleId) => go('explore', {hiking_style_id:hikeStyleId})}
+                onChange={(hikeStyleId) => go('explore', {hike_style_id:hikeStyleId})}
               />
 
         <div className="section-title">Предстоящие события</div>

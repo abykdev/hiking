@@ -206,13 +206,13 @@ export default function AddRouteScreen({ navigate }) {
   const toggleClone = async () => {
     const next = !cloneOpen;
     setCloneOpen(next);
-    if (!next || cloneRoutes || !user?.country) return;
+    if (!next || cloneRoutes || !user?.country_code) return;
 
     setCloneLoading(true);
     setCloneError(null);
     try {
       const params = new URLSearchParams({
-        country_code: user.country,
+        country_code: user.country_code,
         lang: i18n.language,
         limit: '20',
       });
@@ -277,7 +277,7 @@ export default function AddRouteScreen({ navigate }) {
       if (routeDescription.trim()) formData.append('description', routeDescription.trim());
       hikeStyle.forEach((id) => formData.append('hike_style', String(id)));
       formData.append('is_public', false);
-      if (user?.country) formData.append('country_code', user.country);
+      if (user?.country_code) formData.append('country_code', user.country_code);
 
       // Все геоданные (линии и маркеры) — одним GeoJSON-файлом
       const file = new File([JSON.stringify(geojson)], 'route.geojson', {
@@ -556,10 +556,10 @@ export default function AddRouteScreen({ navigate }) {
           <div className="muted" style={{ fontSize: '12.5px', marginBottom: '8px' }}>
             {t('cloneHint')}
           </div>
-          {!user?.country && <div className="muted">{t('cloneNoCountry')}</div>}
-          {user?.country && cloneLoading && <div className="muted">{t('cloneLoading')}</div>}
+          {!user?.country_code && <div className="muted">{t('cloneNoCountry')}</div>}
+          {user?.country_code && cloneLoading && <div className="muted">{t('cloneLoading')}</div>}
           {cloneError && <div className="error">{cloneError}</div>}
-          {user?.country && !cloneLoading && !cloneError && cloneRoutes?.length === 0 && (
+          {user?.country_code && !cloneLoading && !cloneError && cloneRoutes?.length === 0 && (
             <div className="muted">{t('cloneEmpty')}</div>
           )}
           {cloneRoutes?.map((route) => (
