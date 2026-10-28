@@ -10,6 +10,7 @@ import RoutesScreen from '../components/screens/RoutesScreen';
 import AddRouteScreen from '../components/screens/AddRouteScreen';
 import RouteSingleScreen from '../components/screens/RouteSingleScreen';
 import AdminPanelScreen from '../components/screens/AdminPanelScreen';
+import AddEventScreen from '../components/screens/AddEventScreen';
 
 export const screens = {
   home: HomeScreen,
@@ -23,6 +24,6 @@ export const screens = {
   routes: RoutesScreen,
   addRoute: AddRouteScreen,
   routeSingle: RouteSingleScreen,
-  adminPanel: AdminPanelScreen
-
+  adminPanel: AdminPanelScreen,
+  addEvent: AddEventScreen,
 };
