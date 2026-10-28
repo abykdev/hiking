@@ -9,6 +9,7 @@ import ProfileMeScreen from '../components/screens/ProfileMeScreen';
 import RoutesScreen from '../components/screens/RoutesScreen';
 import AddRouteScreen from '../components/screens/AddRouteScreen';
 import RouteSingleScreen from '../components/screens/RouteSingleScreen';
+import AdminPanelScreen from '../components/screens/AdminPanelScreen';
 
 export const screens = {
   home: HomeScreen,
@@ -21,5 +22,7 @@ export const screens = {
   profileMe: ProfileMeScreen,
   routes: RoutesScreen,
   addRoute: AddRouteScreen,
-  routeSingle: RouteSingleScreen
+  routeSingle: RouteSingleScreen,
+  adminPanel: AdminPanelScreen
+
 };

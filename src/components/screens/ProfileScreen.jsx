@@ -10,6 +10,7 @@ export default function ProfileScreen({ navigate }) {
     const { lang, setLang } = useLanguage();
     const [isLangOpen, setIsLangOpen] = useState(false);
     const { user, setUserField } = useAuth();
+    const isAdmin=user?.role === 'admin';
     const handleLangSelect = (code) => {
         setLang(code);
 
@@ -60,7 +61,7 @@ export default function ProfileScreen({ navigate }) {
 
                 <div className="card space-between">
                     <span>Language</span>
-                    <button className="lang-btn" onClick={() => setIsLangOpen(true)} aria-label="Language"><span clasNames="emo" >🌐</span> {lang.toUpperCase()} ▾</button>
+                    <button className="lang-btn" onClick={() => setIsLangOpen(true)} aria-label="Language"><span className="emo" >🌐</span> {lang.toUpperCase()} ▾</button>
                 </div>
                 <LangSheet
                     isOpen={isLangOpen}
@@ -70,7 +71,7 @@ export default function ProfileScreen({ navigate }) {
                 />
                 <div className="card space-between">
                     <span>Country</span>
-                    <button className="lang-btn" onClick={() => setIsCountryOpen(true)} aria-label="Country"><span clasNames="emo" >🌐</span> {user.country_code.toUpperCase()} ▾</button>
+                    <button className="lang-btn" onClick={() => setIsCountryOpen(true)} aria-label="Country"><span className="emo" >🌐</span> {user.country_code.toUpperCase()} ▾</button>
                 </div>
                 <CountrySheet
                     isOpen={isCountryOpen}
@@ -87,6 +88,9 @@ export default function ProfileScreen({ navigate }) {
                 <button className="btn btn-outline" style={{ marginTop: '10px' }} onClick={() => go('notifications')}>🔔 Уведомления</button>
                 <button className="btn btn-outline" style={{ marginTop: '10px' }} onClick={() => go('privacy')}>🔒 Приватность</button>
                 <button className="btn btn-outline" style={{ marginTop: '10px', borderColor: 'var(--alert)', color: 'var(--alert)' }} onClick={() => go('home')}>🚪 Выйти</button>
+                {isAdmin && (
+                    <button className="btn btn-outline" style={{ marginTop: '10px', borderColor: 'var(--alert)', color: 'var(--alert)' }} onClick={() => go('adminPanel')}>🛠 Админ-панель</button>
+                )}
 
                 <p className="muted" style={{ marginTop: '26px', fontSize: '12px', lineHeight: 1.5 }}>Отзывы сообщества субъективны, а условия могут меняться. Ответственность за оценку маршрута остаётся на тебе. Функции безопасности зависят от связи на устройстве.</p>
             </div>

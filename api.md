@@ -83,3 +83,6 @@
     "length_m": 8115,
     "elevation_gain_m": 1234
   }
+  ## PATCH /api/routes/:id
+  Редактировать маршрут
+  
