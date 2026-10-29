@@ -13,5 +13,11 @@
   "kmShort": "km",
   "mShort": "m",
   "pointsCount": "points",
-  "mapEmpty": "No routes to show on the map yet."
+  "mapEmpty": "No routes to show on the map yet.",
+  "mapExpand": "Expand map",
+  "mapCollapse": "Collapse map",
+  "mapLoading": "Loading map…",
+  "mapLoadError": "Could not load the map.",
+  "loadMore": "Load more...",
+  "toTop": "Back to top"
 }

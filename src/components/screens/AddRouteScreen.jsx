@@ -63,12 +63,36 @@ export default function AddRouteScreen({ navigate }) {
 
   // Центрируем карту на позиции пользователя, если она доступна
   useEffect(() => {
+    let cancelled = false;
+
+    // 1. Пытаемся получить позицию пользователя
     navigator.geolocation?.getCurrentPosition(
-      (pos) => setCenter({ lat: pos.coords.latitude, lng: pos.coords.longitude }),
-      () => {},
+      (pos) => {
+        if (cancelled) return;
+        setCenter({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+      },
+      async () => {
+        // 2. Геолокация не удалась — берём координаты страны из API
+        if (cancelled || !user?.country_code) return;
+
+        try {
+          const res = await apiFetch(`/api/countries/${user.country_code}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+
+          if (!cancelled) {
+            setCenter({ lat: data.center_lat, lng: data.center_lon });
+          }
+        } catch (err) {
+          // 3. Совсем не удалось — оставляем дефолтный центр (или логируем)
+          if (!cancelled) console.warn('Не удалось определить центр:', err.message);
+        }
+      },
       { timeout: 8000 },
     );
-  }, []);
+
+    return () => { cancelled = true; };
+  }, [user?.country_code]);
 
   const mapLabels = {
     loading: t('mapLoading'),
