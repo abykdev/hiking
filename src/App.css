@@ -202,4 +202,19 @@
   .lang-opt.active { background: var(--sand); font-weight: 700; }
   .lang-code { font-size: 11.5px; color: var(--text-muted); font-weight: 600; }
 
+.emo {
+	display: inline-block;
+	width: 1.15em;
+	height: 1.15em;
+	vertical-align: -0.2em;
+	overflow: hidden;
+	white-space: nowrap;
+	text-indent: 300%;
+	color: transparent;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	line-height: 1;
+	user-select: all;
+}
 .lang-btn .emo {background-image: url('./assets/globe.png');}

@@ -1,4 +1,5 @@
 import HomeScreen from '../components/screens/HomeScreen';
+import MyRoutesScreen from '../components/screens/MyRoutesScreen';
 import ExploreScreen from '../components/screens/ExploreScreen';
 import HikeDetailScreen from '../components/screens/HikeDetailScreen';
 import CreateEventScreen from '../components/screens/CreateEventScreen';
@@ -26,4 +27,5 @@ export const screens = {
   routeSingle: RouteSingleScreen,
   adminPanel: AdminPanelScreen,
   addEvent: AddEventScreen,
+  myRoutes: MyRoutesScreen
 };

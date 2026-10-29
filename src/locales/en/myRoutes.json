@@ -1,0 +1,17 @@
+{
+  "title": "My routes",
+  "recordRoute": "● Record a route",
+  "createRoute": "＋ Create route",
+  "sectionTitle": "My routes",
+  "noRoutes": "Routes you record will show up here.",
+  "loading": "Loading…",
+  "loadFailed": "Could not load your routes. Please try again.",
+  "openDetails": "📄 Details & edit",
+  "followRoute": "🧭 Follow this route",
+  "schedule": "📅 Schedule",
+  "deleteRoute": "🗑 Delete from my routes",
+  "kmShort": "km",
+  "mShort": "m",
+  "pointsCount": "points",
+  "mapEmpty": "No routes to show on the map yet."
+}
