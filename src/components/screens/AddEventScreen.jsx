@@ -64,7 +64,7 @@ function Toggle({ label, hint, on, onChange }) {
 }
 
 export function AddEventScreen({ params, navigate }) {
-  const { t } = useTranslation('addEvent');
+  const { t, i18n } = useTranslation('addEvent');
   const routeId = params?.route_id ?? null;
   const route = params?.route ?? null; // необязательно: данные маршрута для карточки
 
@@ -111,6 +111,7 @@ export function AddEventScreen({ params, navigate }) {
       create_group: createGroup,
       offers_ride: offersRide,
       map_visibility: mapVis,
+      lang: i18n.language,
     };
     if (routeId != null) body.route_id = routeId;
     if (createGroup) body.group_size = groupSize;
@@ -146,7 +147,7 @@ export function AddEventScreen({ params, navigate }) {
   };
 
   return (
-    <div>
+    <div id="screen">
       <h2 style={{ fontSize: '20px' }}>{t('title')}</h2>
 
       {route && (

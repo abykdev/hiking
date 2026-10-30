@@ -29,3 +29,11 @@ export const screens = {
   addEvent: AddEventScreen,
   myRoutes: MyRoutesScreen
 };
+
+export const ROOT_SCREENS = new Set([
+  'home',
+  'explore',
+  'myRoutes',
+  'messages',
+  'profile',
+]);

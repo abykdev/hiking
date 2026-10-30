@@ -56,7 +56,7 @@ function routeItem(route, geoms) {
 
 /* --------------------------------- Экран -------------------------------- */
 
-export function MyRoutesScreen() {
+export function MyRoutesScreen({ navigate }) {
   const { t, i18n } = useTranslation('myRoutes');
   const { user } = useAuth();
   const userId = user?.id;
@@ -76,8 +76,10 @@ export function MyRoutesScreen() {
   const onCreateRoute = () => {};
   const onOpenDetails = () => {};
   const onFollowRoute = () => {};
-  const onSchedule = () => {};
+  const onSchedule = (route) => {go('addEvent',{route})};
   const onDeleteRoute = () => {};
+
+  const go = (target, params) => navigate?.(target, params);
 
   // Загружает страницу маршрутов начиная с offset; append — добавить к уже загруженным
   const loadPage = useCallback(
