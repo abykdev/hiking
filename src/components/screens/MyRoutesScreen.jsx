@@ -74,7 +74,7 @@ export function MyRoutesScreen({ navigate }) {
   // Кнопки пока заглушки — навигацию и действия подключим отдельно
   const onRecordRoute = () => {};
   const onCreateRoute = () => {};
-  const onOpenDetails = () => {};
+  const onOpenDetails = (route) => {go('myRouteDetail',{id: route.id})};
   const onFollowRoute = () => {};
   const onSchedule = (route) => {go('addEvent',{route})};
   const onDeleteRoute = () => {};

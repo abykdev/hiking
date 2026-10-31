@@ -6,6 +6,19 @@
 
 Ошибки имеют вид `{ "error": "..." }`.
 
+## Многоязычные поля
+
+Текстовые поля `name`, `description`, `region`, `start_name`, `finish_name`
+клиент отправляет обычной строкой (на любом языке). Сервер сам определяет язык,
+переводит значение на `en` и `ru` и сохраняет в одноимённые `*_multilang`
+(`{ "en": "...", "ru": "..." }`). Для `name` и `description` исходная строка
+дополнительно сохраняется как есть. Поля `*_multilang`, присланные клиентом,
+игнорируются. Параметра `lang` в запросах на запись больше нет.
+
+В ответах `name`, `description`, `region`, `start_name`, `finish_name` отдаются
+на языке из query-параметра `lang` (по умолчанию `en`); в `GET /:id`, если
+перевода на этот язык нет, берётся `en`.
+
 ## GET `/api/routes` — список маршрутов
 
 ### Query-параметры
@@ -41,6 +54,11 @@ GET /api/routes?q=эльбрус&lang=ru&country_code=RU&limit=20
       "id": 12,
       "name": "Эльбрус",
       "description": "Восхождение",
+      "region": "Кабардино-Балкария, Россия",
+      "start_name": "Азау",
+      "finish_name": "Приют 11",
+      "difficulty": "moderate",
+      "duration_min": 112,
       "user_id": 5,
       "gpx_file_id": "a8f4c136-9404-41d9-84d4-520fed9fc3c8",
       "geojson_file_id": "0c1f0f4e-52d3-4b57-9c52-2f3a1f6e0b11",
@@ -72,9 +90,21 @@ GET /api/routes?q=эльбрус&lang=ru&country_code=RU&limit=20
     "id": 12,
     "name": "Elbrus",
     "description": "Ascent",
+    "region": "Kabardino-Balkaria, Russia",
+    "start_name": "Azau",
+    "finish_name": "Priyut 11",
     "name_multilang": { "en": "Elbrus", "ru": "Эльбрус" },
     "description_multilang": { "en": "Ascent", "ru": "Восхождение" },
+    "region_multilang": { "en": "Kabardino-Balkaria, Russia", "ru": "Кабардино-Балкария, Россия" },
+    "start_name_multilang": { "en": "Azau", "ru": "Азау" },
+    "finish_name_multilang": { "en": "Priyut 11", "ru": "Приют 11" },
     "user_id": 5,
+    "is_public": true,
+    "country_code": "RU",
+    "difficulty": "moderate",
+    "duration_min": 112,
+    "duration_estimated": true,
+    "cover_file_id": null,
     "gpx_file_id": "a8f4c136-9404-41d9-84d4-520fed9fc3c8",
     "geojson_file_id": "0c1f0f4e-52d3-4b57-9c52-2f3a1f6e0b11",
     "gpx_url": "https://files.abyk.ru/uploads/....gpx",
@@ -85,14 +115,24 @@ GET /api/routes?q=эльбрус&lang=ru&country_code=RU&limit=20
     "elevation_gain_m": 620,
     "elevation_max_m": 1800,
     "elevation_min_m": 1180,
-    "created_at": "2026-10-28T12:00:00.000Z"
+    "created_at": "2026-10-28T12:00:00.000Z",
+    "photos": [
+      {
+        "file_id": "a8f4c136-9404-41d9-84d4-520fed9fc3c8",
+        "sort_order": 0,
+        "added_by": 5,
+        "created_at": "2026-10-28T12:00:00.000Z",
+        "url": "https://files.abyk.ru/uploads/….jpg"
+      }
+    ]
   }
 }
 ```
 
-Параметр `lang` (query, необязательный, по умолчанию `en`) задаёт язык `name` и
-`description`; если перевода на этот язык нет, берётся `en`. Полные переводы —
-в `name_multilang` / `description_multilang`.
+Параметр `lang` (query, необязательный, по умолчанию `en`) задаёт язык
+текстовых полей; если перевода на этот язык нет, берётся `en`. Полные переводы —
+в `*_multilang`. `photos` — галерея маршрута (управляется через
+`POST`/`DELETE /api/routes/:id/photos`), отсортирована по `sort_order`.
 
 ```http
 GET /api/routes/12?lang=ru
@@ -109,13 +149,16 @@ GET /api/routes/12?lang=ru
 | `file` | file | да | Трек: `.gpx` или GeoJSON (Feature/FeatureCollection). До 20 МиБ. Из GPX дополнительно строится GeoJSON |
 | `name` | string (до 200) | да | Название |
 | `description` | string (до 5000) | да | Описание |
-| `lang` | string | нет | Язык введённых `name`/`description`, по умолчанию `en` |
+| `region` | string (до 300) | нет | Регион. Если не передан — определяется по финишу через OSM |
+| `start_name` | string (до 300) | нет | Название старта. Если не передано — определяется по старту через OSM |
+| `finish_name` | string (до 300) | нет | Название финиша. Если не передано — определяется по финишу через OSM |
 | `is_public` | boolean | нет | Публичный ли маршрут |
 | `hike_style` | integer (поле можно повторять) | нет | Стили похода (`/api/refs/hikeStyle`). Несуществующий id → `400 unknown hike_style id` |
 
 Сервер сам считает по треку длину, набор/мин/макс высоту, стартовую точку,
 расчётное время и сложность (`easy` / `moderate` / `hard` / `expert`),
-определяет страну и переводит название, описание и регион на `en`/`ru`.
+определяет страну, а `name`, `description`, `region`, `start_name`,
+`finish_name` переводит на `en`/`ru` (см. «Многоязычные поля»).
 
 ### Ответ `201 Created`
 
@@ -147,13 +190,17 @@ GET /api/routes/12?lang=ru
 
 | Поле | Тип | Описание |
 |---|---|---|
-| `name` | string (1–100) | Название. Вместе с `lang` обновляет и перевод для этого языка |
-| `description` | string | Описание. Вместе с `lang` обновляет перевод |
-| `lang` | string (2–5 символов) | Язык, к которому относятся `name`/`description` |
+| `name` | string (1–100) | Название (пустое/из пробелов → `400`). Перевод пересоздаётся |
+| `description` | string (до 5000) | Описание. Перевод пересоздаётся |
+| `region`, `start_name`, `finish_name` | string (до 300) | Регион, название старта/финиша. Переводы пересоздаются |
 | `is_public` | boolean | Публичность |
 | `start_lon`, `start_lat` | number | Стартовая точка |
 | `length_m` | integer ≥ 0 | Длина, м |
 | `elevation_gain_m`, `elevation_max_m`, `elevation_min_m` | integer | Высоты, м |
+| `difficulty` | `easy` \| `moderate` \| `hard` \| `expert` | Сложность |
+| `duration_min` | integer ≥ 0 | Время прохождения, мин |
+| `duration_estimated` | boolean | Время расчётное (`true`) или фактическое (`false`) |
+| `country_code` | string (2 символа) | Код страны |
 | `cloned_from_route_id` | integer или `null` | Исходный маршрут при клонировании |
 | `hike_style` | array of integer | Полный набор стилей похода (`/api/refs/hikeStyle`): заменяет текущий. `[]` — очистить. Не передан — стили не меняются |
 
@@ -163,7 +210,7 @@ GET /api/routes/12?lang=ru
 PATCH /api/routes/12
 Content-Type: application/json
 
-{ "name": "Эльбрус", "lang": "ru", "is_public": false }
+{ "name": "Эльбрус", "region": "Кабардино-Балкария", "is_public": false }
 ```
 
 ### Ответ `200 OK`
@@ -239,3 +286,63 @@ Content-Type: application/json
 ### Ошибки
 
 - `404` — маршрут не найден или не ваш: `{ "error": "Route not found" }`.
+
+## POST `/api/routes/:id/photos` — добавить фото в галерею маршрута
+
+Только автор маршрута. `Content-Type: multipart/form-data`. Файл передаётся
+непосредственно в поле `photo`. Допустимы `.jpg`, `.jpeg`, `.png`, `.webp`
+с MIME `image/jpeg`, `image/png`, `image/webp`. Сервер сохраняет файл в storage,
+создаёт запись в `files` и связывает её с маршрутом в `route_photos`.
+
+### Пример
+
+```text
+POST /api/routes/12/photos
+Content-Type: multipart/form-data
+
+photo: <binary file>
+```
+
+### Ответ `201 Created`
+
+```json
+{
+  "photo": {
+    "file_id": "a8f4c136-9404-41d9-84d4-520fed9fc3c8",
+    "sort_order": 0,
+    "added_by": 5,
+    "created_at": "2026-10-28T12:00:00.000Z",
+    "url": "https://files.abyk.ru/uploads/….jpg"
+  }
+}
+```
+
+`sort_order` присваивается автоматически (следующий по порядку номер) и
+определяет порядок показа в галерее.
+
+### Ошибки
+
+- `400` — запрос не multipart, поле `photo` не передано, неподдерживаемое расширение или MIME.
+- `413` — файл больше допустимого лимита.
+- `404` — маршрут не найден или не ваш.
+
+## DELETE `/api/routes/:id/photos` — убрать фото из галереи маршрута
+
+Только автор маршрута. `Content-Type: application/json`. Удаляется связь в
+`route_photos`, запись из `files` и физический файл в хранилище.
+
+```http
+DELETE /api/routes/12/photos
+Content-Type: application/json
+
+{ "file_id": "a8f4c136-9404-41d9-84d4-520fed9fc3c8" }
+```
+
+### Ответ `204 No Content`
+
+Без тела.
+
+### Ошибки
+
+- `400` — `file_id` не передан или не uuid.
+- `404` — маршрут не найден/не ваш, либо это фото не привязано к маршруту (`Photo not found`).

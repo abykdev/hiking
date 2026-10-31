@@ -12,6 +12,8 @@ import AddRouteScreen from '../components/screens/AddRouteScreen';
 import RouteSingleScreen from '../components/screens/RouteSingleScreen';
 import AdminPanelScreen from '../components/screens/AdminPanelScreen';
 import AddEventScreen from '../components/screens/AddEventScreen';
+import EditRouteScreen from '../components/screens/EditRouteScreen';
+import MyRouteDetailScreen from '../components/screens/MyRouteDetailScreen';
 
 export const screens = {
   home: HomeScreen,
@@ -27,7 +29,9 @@ export const screens = {
   routeSingle: RouteSingleScreen,
   adminPanel: AdminPanelScreen,
   addEvent: AddEventScreen,
-  myRoutes: MyRoutesScreen
+  myRoutes: MyRoutesScreen,
+  editRoute: EditRouteScreen,
+  myRouteDetail: MyRouteDetailScreen
 };
 
 export const ROOT_SCREENS = new Set([
