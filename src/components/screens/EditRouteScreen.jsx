@@ -366,18 +366,18 @@ export default function EditRouteScreen({ navigate, goBack, params }) {
     <div id="screen">
       <h2 style={{ fontSize: '22px' }}>{t('title')}</h2>
 
-      <div className="field-label">{t('routeName')}</div>
+      <div className="field-label">{t('addRoute:routeName')}</div>
       <input
         type="text"
         maxLength={100}
-        placeholder={t('routeNamePh')}
+        placeholder={t('addRoute:routeNamePh')}
         value={form.name}
         onChange={(e) => updateField('name', e.target.value)}
       />
 
-      <div className="field-label">{t('routeDescription')}</div>
+      <div className="field-label">{t('addRoute:routeDescription')}</div>
       <textarea
-        placeholder={t('routeDescPh')}
+        placeholder={t('addRoute:routeDescPh')}
         value={form.description}
         onChange={(e) => updateField('description', e.target.value)}
       />
@@ -427,7 +427,7 @@ export default function EditRouteScreen({ navigate, goBack, params }) {
         <div className="muted" style={{ fontSize: '12px', marginTop: '4px' }}>{t('durationEstimated')}</div>
       )}
 
-      <div className="field-label">{t('routeType')}</div>
+      <div className="field-label">{t('addRoute:routeType')}</div>
       <ChoiceGroup group="hikeStyle" value={hikeStyle} onChange={handleStyleChange} />
 
       <div className="field-label">{t('cover')}</div>
@@ -458,18 +458,18 @@ export default function EditRouteScreen({ navigate, goBack, params }) {
           className={`chip ${mode === 'route' ? 'selected' : ''}`}
           onClick={() => changeMode('route')}
         >
-          <span className="emo">〰</span> {t('modeRoute')}
+          <span className="emo">〰</span> {t('addRoute:modeRoute')}
         </button>
         <button
           type="button"
           className={`chip ${mode === 'pin' ? 'selected' : ''}`}
           onClick={() => changeMode('pin')}
         >
-          <span className="emo">📍</span> {t('modePin')}
+          <span className="emo">📍</span> {t('addRoute:modePin')}
         </button>
       </div>
       <div className="muted" style={{ fontSize: '12px', margin: '8px 0' }}>
-        {mode === 'pin' ? t('mapHintPin') : t('mapHintRoute')}
+        {mode === 'pin' ? t('addRoute:mapHintPin') : t('addRoute:mapHintRoute')}
         {markers.length > 0 && ` ${t('tapMarkerToDelete')}`}
       </div>
 
@@ -492,14 +492,14 @@ export default function EditRouteScreen({ navigate, goBack, params }) {
 
       <div className="space-between" style={{ marginTop: '8px' }}>
         <div className="muted" style={{ fontSize: '12.5px' }}>
-          {t('stats', { points: stats.points, markers: stats.markers, km: stats.km.toFixed(2) })}
+          {t('addRoute:stats', { points: stats.points, markers: stats.markers, km: stats.km.toFixed(2) })}
         </div>
         <div className="row" style={{ gap: '6px' }}>
           <button type="button" className="btn btn-outline btn-sm" onClick={() => mapRef.current?.undo()}>
-            ↶ {t('undo')}
+            ↶ {t('addRoute:undo')}
           </button>
           <button type="button" className="btn btn-outline btn-sm" onClick={() => mapRef.current?.clear()}>
-            {t('clear')}
+            {t('addRoute:clear')}
           </button>
         </div>
       </div>

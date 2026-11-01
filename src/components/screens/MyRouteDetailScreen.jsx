@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { apiFetch } from '../../api/client';
 import RouteMapDetail from '../RouteMapDetail';
+import { useAuth } from '../auth/AuthContext';
 
 function formatDuration(min, t) {
   if (min == null) return '';
@@ -13,6 +14,7 @@ function formatDuration(min, t) {
 export default function MyRouteDetailScreen({ navigate, params }) {
   const { t, i18n } = useTranslation('myRouteDetail');
   const routeId = params?.id;
+  const { user } = useAuth();
 
   const [route, setRoute] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -138,7 +140,7 @@ export default function MyRouteDetailScreen({ navigate, params }) {
     );
   }
 
-  const locked = Boolean(route.is_public);
+  const locked = false; //Boolean(route.is_public)&&(user.role!="admin");
   const km = route.length_m == null ? null : (route.length_m / 1000).toFixed(2);
   const stats = [
     km != null && `${km} ${t('kmShort')}`,
