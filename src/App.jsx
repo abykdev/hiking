@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useAuth } from './components/auth/AuthContext'
-import './App.css'
 import { useLanguage } from './i18n/LanguageContext';
 import OnboardingScreen from './components/screens/OnboardingScreen.jsx'
 import SignInScreen from './components/screens/SignInScreen.jsx'

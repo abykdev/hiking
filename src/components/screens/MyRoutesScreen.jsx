@@ -7,6 +7,14 @@ import RouteMapView from '../RouteMapView';
 
 const PAGE_SIZE = 3;
 
+// Цвета бейджей сложности — как в прототипе (hard — alert, moderate — forest, easy — sage)
+const DIFFICULTY_BADGES = {
+  easy: { label: 'diffEasy', bg: 'var(--sage)' },
+  moderate: { label: 'diffModerate', bg: 'var(--forest)' },
+  hard: { label: 'diffHard', bg: 'var(--alert)' },
+  expert: { label: 'diffExpert', bg: 'var(--forest-deep)' },
+};
+
 /* ------------------------------ Геометрия ------------------------------ */
 
 // Достаём из GeoJSON линии и точки (маркеры). Координаты GeoJSON: [lng, lat].
@@ -68,6 +76,7 @@ export function MyRoutesScreen({ navigate }) {
   const [hasMore, setHasMore] = useState(false);
   const [showToTop, setShowToTop] = useState(false);
   const [error, setError] = useState(false);
+  const [styleLabels, setStyleLabels] = useState({}); // id стиля похода → подпись
   const screenRef = useRef(null);
   const requestedGeoms = useRef(new Set());
 
@@ -118,6 +127,30 @@ export function MyRoutesScreen({ navigate }) {
     init();
   }, [loadPage]);
 
+  // Справочник стилей похода (для бейджей hike_style); при ошибке бейджи стилей просто не показываем
+  useEffect(() => {
+    let cancelled = false;
+    const loadStyles = async () => {
+      try {
+        const { res } = await apiFetch(`/api/refs/hikeStyle?lang=${i18n.language}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (cancelled) return;
+        const labels = {};
+        (data.options ?? []).forEach((o) => {
+          labels[o.id] = o.label;
+        });
+        setStyleLabels(labels);
+      } catch (err) {
+        console.error('Error loading hike styles:', err);
+      }
+    };
+    loadStyles();
+    return () => {
+      cancelled = true;
+    };
+  }, [i18n.language]);
+
   // Геометрия маршрутов для карт. Каждый файл грузим один раз; ошибка одного не ломает остальные.
   useEffect(() => {
     routes.forEach(async (route) => {
@@ -162,6 +195,16 @@ export function MyRoutesScreen({ navigate }) {
     empty: t('mapEmpty'),
   };
 
+  // hike_style может прийти массивом id или массивом объектов { id, label }
+  const styleBadges = (route) =>
+    (Array.isArray(route.hike_style) ? route.hike_style : [])
+      .map((x) => {
+        const id = typeof x === 'object' && x !== null ? x.id : x;
+        const label = (typeof x === 'object' && x !== null && x.label) || styleLabels[id];
+        return label ? { id, label } : null;
+      })
+      .filter(Boolean);
+
   const statsLine = (route) =>
     `${((route.length_m ?? 0) / 1000).toFixed(1)} ${t('kmShort')} · +${route.elevation_gain_m ?? 0} ${t('mShort')}`;
 
@@ -169,14 +212,9 @@ export function MyRoutesScreen({ navigate }) {
     <div id="screen" ref={screenRef}>
       <h2 style={{ fontSize: '22px' }}>{t('title')}</h2>
 
-      <div style={{ position: 'relative' }}>
+      <div className="route-hero" style={{ overflow: 'visible' }}>
         <RouteMapView items={overviewItems} height={240} labels={mapLabels} />
-        <button
-          type="button"
-          className="fab map-overlay"
-          style={{ position: 'absolute', right: '10px', bottom: '10px' }}
-          onClick={onRecordRoute}
-        >
+        <button type="button" className="fab map-overlay" onClick={onRecordRoute}>
           {t('recordRoute')}
         </button>
       </div>
@@ -222,6 +260,24 @@ export function MyRoutesScreen({ navigate }) {
               >
                 {route.name}
               </div>
+              <span className="row" style={{ gap: '6px' }}>
+                {DIFFICULTY_BADGES[route.difficulty] && (
+                  <span
+                    className="tag"
+                    style={{ background: DIFFICULTY_BADGES[route.difficulty].bg }}
+                  >
+                    {t(DIFFICULTY_BADGES[route.difficulty].label)}
+                  </span>
+                )}
+                {typeof route.is_public === 'boolean' && (
+                  <span
+                    className="tag"
+                    style={{ background: route.is_public ? 'var(--sage)' : 'var(--stone)' }}
+                  >
+                    {route.is_public ? t('public') : t('private')}
+                  </span>
+                )}
+              </span>
             </div>
 
             <div className="muted" style={{ fontSize: '12px', marginTop: '4px' }}>
@@ -229,6 +285,20 @@ export function MyRoutesScreen({ navigate }) {
               {pointsCount > 0 && ` · ${pointsCount} ${t('pointsCount')}`}
               {item.pins.length > 0 && ` · ${item.pins.length} 📍`}
             </div>
+
+            {styleBadges(route).length > 0 && (
+              <div className="chip-row" style={{ marginTop: '6px' }}>
+                {styleBadges(route).map((st) => (
+                  <span
+                    key={st.id}
+                    className="tag"
+                    style={{ background: 'var(--stone)', margin: '0 6px 6px 0' }}
+                  >
+                    {st.label}
+                  </span>
+                ))}
+              </div>
+            )}
 
             {route.description && (
               <div style={{ fontSize: '13px', marginTop: '6px' }}>{route.description}</div>
