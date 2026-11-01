@@ -29,13 +29,6 @@ export default function ProfileScreen({ navigate }) {
 
     const go = (target, params) => navigate(target, params);
     return (
-        <div id="shell">
-            <div id="activebar"></div>
-            <div id="topbar" className="topbar">
-                <div style={{ width: '36px' }}></div>
-                <span className="display" style={{ fontSize: '15px', fontWeight: 600 }}>🥾 Trailkin</span>
-                <div style={{ width: '36px' }}></div>
-            </div>
             <div id="screen">
                 <div style={{ textAlign: 'center', marginTop: '8px' }}>
                     <div className="avatar" style={{ width: '70px', height: '70px', fontSize: '26px', margin: '0 auto' }}>?</div>
@@ -94,7 +87,5 @@ export default function ProfileScreen({ navigate }) {
 
                 <p className="muted" style={{ marginTop: '26px', fontSize: '12px', lineHeight: 1.5 }}>Отзывы сообщества субъективны, а условия могут меняться. Ответственность за оценку маршрута остаётся на тебе. Функции безопасности зависят от связи на устройстве.</p>
             </div>
-
-        </div>
     );
 }

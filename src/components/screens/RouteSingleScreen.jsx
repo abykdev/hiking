@@ -18,13 +18,6 @@ export default function RouteSingleScreen({ navigate, params }) {
         console.log('Joining hike...');
     };
     return (
-        <>
-            <div id="activebar"></div>
-            <div id="topbar" className="topbar">
-                <div style={{ width: '36px' }}></div>
-                <span className="display" style={{ fontSize: '15px', fontWeight: 600 }}>🥾 Trailkin</span>
-                <div style={{ width: '36px' }}></div>
-            </div>
             <div id="screen">
                 <RouteSingle
                     id={params.id}
@@ -50,6 +43,5 @@ export default function RouteSingleScreen({ navigate, params }) {
                 </div>
 
             </div>
-        </>
     );
 }

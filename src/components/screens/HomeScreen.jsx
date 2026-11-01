@@ -12,16 +12,6 @@ export default function HomeScreen({ navigate }) {
   const go = (target, params) => navigate?.(target, params);
   return (
     <>
-      <div id="activebar"></div>
-
-      <div id="topbar" className="topbar">
-        <div style={{ width: 36 }}></div>
-        <span className="display" style={{ fontSize: 15, fontWeight: 600 }}>
-          🥾 Trailkin
-        </span>
-        <div style={{ width: 36 }}></div>
-      </div>
-
       <div id="screen">
         <div className="space-between">
           <div>
