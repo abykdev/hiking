@@ -19,5 +19,11 @@
   "mapLoading": "Loading map…",
   "mapLoadError": "Could not load the map.",
   "loadMore": "Load more...",
-  "toTop": "Back to top"
+  "toTop": "Back to top",
+  "diffEasy": "Easy",
+  "diffModerate": "Moderate",
+  "diffHard": "Hard",
+  "diffExpert": "Expert",
+  "public": "Public",
+  "private": "Private"
 }

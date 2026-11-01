@@ -19,5 +19,11 @@
   "mapLoading": "Загрузка карты…",
   "mapLoadError": "Не удалось загрузить карту.",
   "loadMore": "Загрузить ещё…",
-  "toTop": "Наверх"
+  "toTop": "Наверх",
+  "diffEasy": "Лёгкая",
+  "diffModerate": "Средняя",
+  "diffHard": "Сложная",
+  "diffExpert": "Экспертная",
+  "public": "Публичный",
+  "private": "Приватный"
 }
