@@ -44,7 +44,7 @@ export default function HomeScreen({ navigate }) {
         <button
           className="btn btn-outline"
           style={{ marginTop: 8 }}
-          onClick={() => go('createEvent')}
+          onClick={() => go('addEvent')}
         >
           + Спланировать событие
         </button>
