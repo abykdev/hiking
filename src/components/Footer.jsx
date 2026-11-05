@@ -26,7 +26,7 @@ export default function Footer({ navigate }) {
                 <button className="tab" onClick={() => go('home')}>                  
                     <span className="ic" ><span className="emo" style={{backgroundImage:`url(${icons.home})`}}>🏠</span></span>Home
                 </button>
-                <button className="tab" onClick={() => go('explore')}>
+                <button className="tab" onClick={() => go('routes')}>
                     <span className="ic">
                         <span className="emo" style={{backgroundImage:`url(${icons.explore})`}}>🧭</span>
                     </span>Available routes
