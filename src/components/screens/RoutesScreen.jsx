@@ -82,8 +82,14 @@ export function RoutesScreen({ navigate }) {
   const { user } = useAuth();
   const userId = user?.id;
   const countryCode = user?.country_code ?? null;
+  const [pickedCountry, setPickedCountry] = useState(null);
+  const [countries, setCountries] = useState([]);
+  const routesCountry = pickedCountry ?? countryCode; // по умолчанию — страна профиля
+  const selectedCountry = countries.find((c) => c.code === routesCountry);
   const countryName =
-    COUNTRIES.find((c) => c.alpha2 === countryCode)?.name[i18n.language] ?? countryCode;
+    selectedCountry?.name ??
+    COUNTRIES.find((c) => c.alpha2 === routesCountry)?.name[i18n.language] ??
+    routesCountry;
 
   const [routes, setRoutes] = useState([]);
   const [geoms, setGeoms] = useState({}); // id маршрута → { lines, pins }
@@ -115,6 +121,27 @@ export function RoutesScreen({ navigate }) {
     return () => clearTimeout(timer);
   }, [query]);
 
+  // Страны для селектора + счётчики маршрутов
+  useEffect(() => {
+    let cancelled = false;
+    const loadCountries = async () => {
+      try {
+        const { res } = await apiFetch(`/api/countries?lang=${i18n.language}&with_counts=1`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const list = listFrom(await res.json(), 'countries');
+        if (!cancelled) {
+          setCountries(list);
+        }
+      } catch (err) {
+        console.error('Error loading countries:', err);
+      }
+    };
+    loadCountries();
+    return () => {
+      cancelled = true;
+    };
+  }, [i18n.language]);
+
   const showToast = useCallback((text) => {
     clearTimeout(toastTimer.current);
     setToast(text);
@@ -126,14 +153,15 @@ export function RoutesScreen({ navigate }) {
   // Страница маршрутов страны пользователя; append — добавить к уже загруженным
   const loadPage = useCallback(
     async (offset, append) => {
-      if (!countryCode) {
+      if (!routesCountry) {
         setLoading(false);
         return;
       }
       try {
         const params = new URLSearchParams({
-          country_code: countryCode,
+          country_code: routesCountry,
           lang: i18n.language,
+          is_public: 'true',
           limit: String(PAGE_SIZE),
           offset: String(offset),
         });
@@ -154,8 +182,18 @@ export function RoutesScreen({ navigate }) {
         setLoadingMore(false);
       }
     },
-    [countryCode, i18n.language, debouncedQuery, showToast, t],
+    [routesCountry, i18n.language, debouncedQuery, showToast, t],
   );
+
+  const pickCountry = (code) => {
+    if (code === routesCountry) return;
+    setRoutes([]);
+    setHasMore(false);
+    setLoading(true);
+    setEvents([]);
+    setEventsLoading(true);
+    setPickedCountry(code);
+  };
 
   // Первая страница (и перезагрузка при смене страны или языка)
   useEffect(() => {
@@ -184,14 +222,14 @@ export function RoutesScreen({ navigate }) {
 
   // Предстоящие события страны минус те, где я уже участвую или организатор
   useEffect(() => {
-    if (!countryCode) return undefined;
+    if (!routesCountry) return undefined;
     let cancelled = false;
 
     const load = async () => {
       try {
         const base = { upcoming: '1', limit: String(EVENTS_LIMIT) };
         const [countryRes, mineRes] = await Promise.all([
-          apiFetch(`/api/events?${new URLSearchParams({ ...base, country_code: countryCode })}`),
+          apiFetch(`/api/events?${new URLSearchParams({ ...base, country_code: routesCountry })}`),
           apiFetch(`/api/events?${new URLSearchParams({ ...base, mine: '1' })}`),
         ]);
         if (!countryRes.res.ok) throw new Error(`HTTP ${countryRes.res.status}`);
@@ -214,7 +252,7 @@ export function RoutesScreen({ navigate }) {
     return () => {
       cancelled = true;
     };
-  }, [countryCode, userId]);
+  }, [routesCountry, userId]);
 
   // Маршруты событий (для карты и длины): GET /api/routes/:id, каждый один раз
   useEffect(() => {
@@ -311,6 +349,41 @@ export function RoutesScreen({ navigate }) {
         autoComplete="off"
       />
 
+      <div className="country-rail" tabIndex={0} role="region" aria-label={t('countries')}>
+        {countries.map((c) => {
+          const name = c.name ?? COUNTRIES.find((x) => x.alpha2 === c.code)?.name[i18n.language] ?? c.code;
+          const routeCount = Number(c.route_count ?? 0);
+          const hasFlagImage = typeof c.flag === 'string' && (c.flag.startsWith('/') || c.flag.startsWith('http'));
+          return (
+            <div
+              key={c.code}
+              className={`country-card ${routesCountry === c.code ? 'sel' : ''}`}
+              role="button"
+              tabIndex={0}
+              onClick={() => pickCountry(c.code)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  pickCountry(c.code);
+                }
+              }}
+            >
+              <div style={{ fontSize: '26px', lineHeight: 1 }}>
+                {hasFlagImage ? (
+                  <span className="emo" style={{ backgroundImage: `url(${c.flag})` }}>
+                    {name}
+                  </span>
+                ) : (
+                  <span>{c.flag ?? ''}</span>
+                )}
+              </div>
+              <div style={{ fontWeight: 600, fontSize: '13.5px', marginTop: '4px' }}>{name}</div>
+              <div style={{ fontSize: '11.5px' }}>{t('routesCount', { count: routeCount })}</div>
+            </div>
+          );
+        })}
+      </div>
+
       <div className="section-title">
         {countryName ? t('routesIn', { country: countryName }) : t('routes')}
       </div>
@@ -321,11 +394,11 @@ export function RoutesScreen({ navigate }) {
           {t('loadFailed')}
         </div>
       )}
-      {countryCode && !loading && !error && routes.length === 0 && debouncedQuery && (
+      {routesCountry && !loading && !error && routes.length === 0 && debouncedQuery && (
         <p className="muted">{t('noMatch', { q: debouncedQuery })}</p>
       )}
-      {!countryCode && <p className="muted">{t('noCountry')}</p>}
-      {countryCode && !loading && !error && routes.length === 0 && !debouncedQuery && (
+      {!routesCountry && <p className="muted">{t('noCountry')}</p>}
+      {routesCountry && !loading && !error && routes.length === 0 && !debouncedQuery && (
         <p className="muted">{t('noRoutes')}</p>
       )}
 
@@ -384,14 +457,14 @@ export function RoutesScreen({ navigate }) {
 
       <div className="section-title">{t('communityTitle')}</div>
 
-      {eventsLoading && countryCode && <div className="muted">{t('loading')}</div>}
+      {eventsLoading && routesCountry && <div className="muted">{t('loading')}</div>}
       {eventsError && (
         <div className="error" role="alert">
           {t('eventsLoadFailed')}
         </div>
       )}
-      {countryCode && !eventsLoading && !eventsError && events.length === 0 && (
-        <p className="muted">{t('noCommunity')}</p>
+      {routesCountry && !eventsLoading && !eventsError && events.length === 0 && (
+        <p className="muted">{t('noCommunity')} {events.length}</p>
       )}
 
       {events.map((ev) => {

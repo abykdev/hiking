@@ -29,6 +29,10 @@
   "mapLoading": "Loading map…",
   "mapLoadError": "Could not load the map.",
   "mapEmpty": "No route to show on the map.",
+  "countries": "Countries",
+  "routesCount_one": "{{count}} route",
+  "routesCount_other": "{{count}} routes",
+  "comingSoon": "Coming soon",
   "searchPh": "Search routes",
   "noMatch": "Nothing found for “{{q}}”"
 }

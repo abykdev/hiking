@@ -29,6 +29,12 @@
   "mapLoading": "Загрузка карты…",
   "mapLoadError": "Не удалось загрузить карту.",
   "mapEmpty": "Нет маршрута для карты.",
+  "countries": "Страны",
+  "routesCount_one": "{{count}} маршрут",
+  "routesCount_few": "{{count}} маршрута",
+  "routesCount_many": "{{count}} маршрутов",
+  "routesCount_other": "{{count}} маршрута",
+  "comingSoon": "Скоро",
   "searchPh": "Поиск маршрутов",
   "noMatch": "Ничего не найдено по запросу «{{q}}»"
 }

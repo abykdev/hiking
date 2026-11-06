@@ -28,6 +28,7 @@
 | `lang` | string | Язык `name`/`description` в ответе. По умолчанию `en` |
 | `q` | string (до 100 символов) | Быстрый поиск по названию, описанию, региону, названиям старта/финиша и названию страны на всех языках. Без учёта регистра и диакритики. Несколько слов через пробел — все должны встречаться |
 | `user_id` | integer | Маршруты автора |
+| `is_public` | boolean | Фильтр по публичности маршрута |
 | `country_code` | string | Код страны, например `RU` |
 | `min_length_m`, `max_length_m` | integer | Диапазон длины, м |
 | `min_elevation_m`, `max_elevation_m` | integer | Диапазон набора высоты, м |
@@ -45,6 +46,19 @@
 GET /api/routes?q=эльбрус&lang=ru&country_code=RU&limit=20
 ```
 
+Для `is_public` фронту нужно передавать boolean в query-строке:
+
+- `is_public=true` — только публичные маршруты
+- `is_public=false` — только непубличные маршруты
+
+Также поддерживаются эквиваленты `1`/`0`.
+
+Пример:
+
+```http
+GET /api/routes?is_public=true&limit=20
+```
+
 ### Ответ `200 OK`
 
 ```json
@@ -59,6 +73,7 @@ GET /api/routes?q=эльбрус&lang=ru&country_code=RU&limit=20
       "finish_name": "Приют 11",
       "difficulty": "moderate",
       "duration_min": 112,
+      "source": "gpx",
       "user_id": 5,
       "gpx_file_id": "a8f4c136-9404-41d9-84d4-520fed9fc3c8",
       "geojson_file_id": "0c1f0f4e-52d3-4b57-9c52-2f3a1f6e0b11",
@@ -101,6 +116,7 @@ GET /api/routes?q=эльбрус&lang=ru&country_code=RU&limit=20
     "user_id": 5,
     "is_public": true,
     "country_code": "RU",
+    "source": "gpx",
     "difficulty": "moderate",
     "duration_min": 112,
     "duration_estimated": true,
@@ -152,7 +168,8 @@ GET /api/routes/12?lang=ru
 | `region` | string (до 300) | нет | Регион. Если не передан — определяется по финишу через OSM |
 | `start_name` | string (до 300) | нет | Название старта. Если не передано — определяется по старту через OSM |
 | `finish_name` | string (до 300) | нет | Название финиша. Если не передано — определяется по финишу через OSM |
-| `is_public` | boolean | нет | Публичный ли маршрут |
+| `is_public` | boolean | no | Route visibility flag |
+| `source` | `drawn` \| `gpx` \| `recorded` \| `curated` \| `library` | no | Route source enum |
 | `hike_style` | integer (поле можно повторять) | нет | Стили похода (`/api/refs/hikeStyle`). Несуществующий id → `400 unknown hike_style id` |
 
 Сервер сам считает по треку длину, набор/мин/макс высоту, стартовую точку,
@@ -170,6 +187,7 @@ GET /api/routes/12?lang=ru
   "name": "Elbrus",
   "user_id": 5,
   "is_public": true,
+  "source": "gpx",
   "name_multilang": { "en": "Elbrus", "ru": "Эльбрус" },
   "length_m": 7472,
   "difficulty": "moderate",
@@ -193,7 +211,8 @@ GET /api/routes/12?lang=ru
 | `name` | string (1–100) | Название (пустое/из пробелов → `400`). Перевод пересоздаётся |
 | `description` | string (до 5000) | Описание. Перевод пересоздаётся |
 | `region`, `start_name`, `finish_name` | string (до 300) | Регион, название старта/финиша. Переводы пересоздаются |
-| `is_public` | boolean | Публичность |
+| `is_public` | boolean | Visibility flag |
+| `source` | `drawn` \| `gpx` \| `recorded` \| `curated` \| `library` | Route source enum |
 | `start_lon`, `start_lat` | number | Стартовая точка |
 | `length_m` | integer ≥ 0 | Длина, м |
 | `elevation_gain_m`, `elevation_max_m`, `elevation_min_m` | integer | Высоты, м |
