@@ -31,6 +31,11 @@
   "photoAdded": "Photo added.",
   "photoFailed": "Could not add the photo (JPG, PNG or WebP).",
   "openPhoto": "Open photo",
+  "removePhoto": "Remove photo",
+  "photoDeleteConfirm": "Remove this photo from the route?",
+  "deletingPhoto": "Removing…",
+  "photoDeleted": "Photo removed.",
+  "photoDeleteFailed": "Could not remove the photo. Please try again.",
   "close": "Close",
   "deleteRoute": "Delete from my routes",
   "deleteConfirm": "Remove this route from My routes? Planned hikes on it will be removed too."

@@ -24,6 +24,8 @@ export default function MyRouteDetailScreen({ navigate, params }) {
   const [saving, setSaving] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [photoToDelete, setPhotoToDelete] = useState(null);
+  const [deletingPhotoId, setDeletingPhotoId] = useState(null);
   const [viewerUrl, setViewerUrl] = useState(null);
   const fileInputRef = useRef(null);
   const [toast, setToast] = useState(null);
@@ -118,6 +120,30 @@ export default function MyRouteDetailScreen({ navigate, params }) {
       showToast(t('photoFailed'));
     } finally {
       setUploading(false);
+    }
+  };
+
+  const deletePhoto = async () => {
+    if (photoToDelete == null) return;
+    setDeletingPhotoId(photoToDelete);
+    try {
+      const { res } = await apiFetch(`/api/routes/${routeId}/photos`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ file_id: photoToDelete }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setRoute((prev) => ({
+        ...prev,
+        photos: (prev.photos ?? []).filter((photo) => photo.file_id !== photoToDelete),
+      }));
+      setPhotoToDelete(null);
+      showToast(t('photoDeleted'));
+    } catch (err) {
+      console.error('Error deleting photo:', err);
+      showToast(t('photoDeleteFailed'));
+    } finally {
+      setDeletingPhotoId(null);
     }
   };
 
@@ -233,16 +259,55 @@ export default function MyRouteDetailScreen({ navigate, params }) {
       ) : (
         <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px' }}>
           {photos.map((photo) => (
-            <button
-              key={photo.file_id}
-              type="button"
-              onClick={() => setViewerUrl(photo.url)}
-              aria-label={t('openPhoto')}
-              style={{ flex: '0 0 33%', aspectRatio: '1', padding: 0, border: 0, borderRadius: 'var(--radius)', overflow: 'hidden', cursor: 'pointer' }}
-            >
-              <img src={photo.url} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-            </button>
+            <div key={photo.file_id} style={{ flex: '0 0 33%', minWidth: 0 }}>
+              <div style={{ position: 'relative', aspectRatio: '1' }}>
+                <button
+                  type="button"
+                  onClick={() => setViewerUrl(photo.url)}
+                  aria-label={t('openPhoto')}
+                  style={{ width: '100%', height: '100%', padding: 0, border: 0, borderRadius: 'var(--radius)', overflow: 'hidden', cursor: 'pointer' }}
+                >
+                  <img src={photo.url} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPhotoToDelete(photo.file_id)}
+                  aria-label={t('removePhoto')}
+                  disabled={deletingPhotoId != null}
+                  style={{ position: 'absolute', top: '5px', right: '5px', width: '32px', height: '32px', padding: 0, border: 0, borderRadius: '50%', background: 'rgba(0,0,0,0.65)', color: '#fff', cursor: 'pointer' }}
+                >
+                  ×
+                </button>
+              </div>
+            </div>
           ))}
+        </div>
+      )}
+      {photoToDelete != null && (
+        <div className="inline-confirm" style={{ marginTop: '10px' }}>
+          <p style={{ margin: '0 0 10px', fontWeight: 600, fontSize: '13.5px' }}>
+            {t('photoDeleteConfirm')}
+          </p>
+          <div className="row" style={{ gap: '10px' }}>
+            <button
+              type="button"
+              className="btn btn-secondary"
+              style={{ flex: 1 }}
+              onClick={() => setPhotoToDelete(null)}
+              disabled={deletingPhotoId != null}
+            >
+              {t('cancel')}
+            </button>
+            <button
+              type="button"
+              className="btn"
+              style={{ flex: 1, background: 'var(--alert)', color: '#fff' }}
+              onClick={deletePhoto}
+              disabled={deletingPhotoId != null}
+            >
+              {deletingPhotoId != null ? t('deletingPhoto') : t('removePhoto')}
+            </button>
+          </div>
         </div>
       )}
       <input

@@ -411,13 +411,22 @@ export function RoutesScreen({ navigate }) {
             style={{ marginBottom: '10px', cursor: 'pointer', padding: 0, overflow: 'hidden' }}
             onClick={() => go('routeSingle', { id: route.id })}
           >
-            <RouteMapView
-              items={[routeItem(route, geoms)]}
-              height={150}
-              labels={mapLabels}
-              interactive={false}
-              expandable={false}
-            />
+            {route.cover_file_url ? (
+              <img
+                src={route.cover_file_url}
+                alt={route.name}
+                loading="lazy"
+                style={{ display: 'block', width: '100%', height: '150px', objectFit: 'cover' }}
+              />
+            ) : (
+              <RouteMapView
+                items={[routeItem(route, geoms)]}
+                height={150}
+                labels={mapLabels}
+                interactive={false}
+                expandable={false}
+              />
+            )}
             <div style={{ padding: '12px 14px 14px' }}>
               <div className="space-between">
                 <div style={{ fontWeight: 600, fontSize: '14.5px' }}>{route.name}</div>

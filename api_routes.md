@@ -75,8 +75,10 @@ GET /api/routes?is_public=true&limit=20
       "duration_min": 112,
       "source": "gpx",
       "user_id": 5,
+      "cover_file_id": "d365b66c-3fab-46d7-971e-9fd92cd237d4",
       "gpx_file_id": "a8f4c136-9404-41d9-84d4-520fed9fc3c8",
       "geojson_file_id": "0c1f0f4e-52d3-4b57-9c52-2f3a1f6e0b11",
+      "cover_file_url": "https://files.abyk.ru/uploads/....jpg",
       "gpx_url": "https://files.abyk.ru/uploads/....gpx",
       "geojson_url": "https://files.abyk.ru/uploads/....geojson",
       "start_lon": 42.45,
@@ -91,9 +93,10 @@ GET /api/routes?is_public=true&limit=20
 }
 ```
 
-`gpx_url` и `geojson_url` присутствуют, только если у маршрута есть
-соответствующий файл. Пагинации с `total` нет: если вернулось меньше `limit`
-записей, это последняя страница.
+`cover_file_url` — URL обложки или `null`, если обложки нет. `gpx_url` и
+`geojson_url` присутствуют, только если у маршрута есть соответствующий файл.
+Пагинации с `total` нет: если вернулось меньше `limit` записей, это последняя
+страница.
 
 ## GET `/api/routes/:id` — один маршрут
 
@@ -121,6 +124,7 @@ GET /api/routes?is_public=true&limit=20
     "duration_min": 112,
     "duration_estimated": true,
     "cover_file_id": null,
+    "cover_file_url": null,
     "gpx_file_id": "a8f4c136-9404-41d9-84d4-520fed9fc3c8",
     "geojson_file_id": "0c1f0f4e-52d3-4b57-9c52-2f3a1f6e0b11",
     "gpx_url": "https://files.abyk.ru/uploads/....gpx",

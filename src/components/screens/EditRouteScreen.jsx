@@ -78,6 +78,7 @@ export default function EditRouteScreen({ navigate, goBack, params }) {
 
   const [coverPreview, setCoverPreview] = useState(null);
   const [coverBusy, setCoverBusy] = useState(false);
+  const [confirmCoverDelete, setConfirmCoverDelete] = useState(false);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState(null); // { type: 'error' | 'ok', text }
 
@@ -271,6 +272,27 @@ export default function EditRouteScreen({ navigate, goBack, params }) {
     }
   };
 
+  const handleCoverDelete = async () => {
+    setCoverBusy(true);
+    setMessage(null);
+    try {
+      const { res } = await apiFetch(`/api/routes/${routeId}/cover`, { method: 'DELETE' });
+      if (!res.ok) {
+        showError(await readError(res, t('coverDeleteFailed')));
+        return;
+      }
+      setRoute((prev) => ({ ...prev, cover_file_id: null, cover_file_url: null }));
+      setCoverPreview(null);
+      setConfirmCoverDelete(false);
+      setMessage({ type: 'ok', text: t('coverDeleted') });
+    } catch (err) {
+      console.error('Error deleting cover:', err);
+      showError(t('coverDeleteFailed'));
+    } finally {
+      setCoverBusy(false);
+    }
+  };
+
   useEffect(() => () => {
     if (coverPreview) URL.revokeObjectURL(coverPreview);
   }, [coverPreview]);
@@ -362,9 +384,89 @@ export default function EditRouteScreen({ navigate, goBack, params }) {
     );
   }
 
+  const coverUrl = coverPreview ?? route.cover_file_url;
+
   return (
     <div id="screen">
       <h2 style={{ fontSize: '22px' }}>{t('title')}</h2>
+
+      <div
+        style={{
+          minHeight: '190px',
+          borderRadius: 'var(--radius)',
+          marginBottom: '14px',
+          padding: '16px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          backgroundImage: coverUrl
+            ? `linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.08)), url("${coverUrl}")`
+            : 'linear-gradient(135deg, var(--forest), var(--sage))',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          color: '#fff',
+        }}
+      >
+        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
+          <label
+            className="btn btn-secondary"
+            style={{ cursor: coverBusy ? 'default' : 'pointer', opacity: coverBusy ? 0.7 : 1 }}
+          >
+            {coverBusy
+              ? t(confirmCoverDelete ? 'coverDeleting' : 'coverUploading')
+              : coverUrl
+                ? t('coverReplace')
+                : t('coverUpload')}
+            <input
+              type="file"
+              accept={COVER_ACCEPT}
+              style={{ display: 'none' }}
+              disabled={coverBusy}
+              onChange={handleCoverChange}
+            />
+          </label>
+          {coverUrl && (
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={() => setConfirmCoverDelete(true)}
+              disabled={coverBusy}
+            >
+              {t('coverRemove')}
+            </button>
+          )}
+        </div>
+        <div style={{ fontSize: '22px', fontWeight: 700, overflowWrap: 'anywhere' }}>
+          {form.name || route.name}
+        </div>
+      </div>
+      {confirmCoverDelete && (
+        <div className="inline-confirm" style={{ marginBottom: '14px' }}>
+          <p style={{ margin: '0 0 10px', fontWeight: 600, fontSize: '13.5px' }}>
+            {t('coverDeleteConfirm')}
+          </p>
+          <div className="row" style={{ gap: '10px' }}>
+            <button
+              type="button"
+              className="btn btn-secondary"
+              style={{ flex: 1 }}
+              onClick={() => setConfirmCoverDelete(false)}
+              disabled={coverBusy}
+            >
+              {t('cancel')}
+            </button>
+            <button
+              type="button"
+              className="btn"
+              style={{ flex: 1, background: 'var(--alert)', color: '#fff' }}
+              onClick={handleCoverDelete}
+              disabled={coverBusy}
+            >
+              {coverBusy ? t('coverDeleting') : t('coverRemove')}
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="field-label">{t('addRoute:routeName')}</div>
       <input
@@ -429,28 +531,6 @@ export default function EditRouteScreen({ navigate, goBack, params }) {
 
       <div className="field-label">{t('addRoute:routeType')}</div>
       <ChoiceGroup group="hikeStyle" value={hikeStyle} onChange={handleStyleChange} />
-
-      <div className="field-label">{t('cover')}</div>
-      {coverPreview && (
-        <img
-          src={coverPreview}
-          alt=""
-          style={{ width: '100%', maxHeight: '180px', objectFit: 'cover', borderRadius: '12px', marginBottom: '8px' }}
-        />
-      )}
-      {!coverPreview && route.cover_file_id && (
-        <div className="muted" style={{ fontSize: '12.5px', marginBottom: '8px' }}>{t('coverSet')}</div>
-      )}
-      <label className="upload-btn">
-        {coverBusy ? t('coverUploading') : t('coverUpload')}
-        <input
-          type="file"
-          accept={COVER_ACCEPT}
-          style={{ display: 'none' }}
-          disabled={coverBusy}
-          onChange={handleCoverChange}
-        />
-      </label>
 
       <div className="chip-row" style={{ marginTop: '14px' }}>
         <button

@@ -1,3 +1,4 @@
+задача устарела, игнорировать содержимое этого файла, т.е. того, что написано ниже.
 Твоя задача - реализовать функционал записи gps трека и сопутствующих этому процессу экранов. Функционал реализуется в виде контекста src\recording\RecordingContext.jsx. Экраны 1) src\components\screens\RecordStartScreen.jsx и src\components\screens\RecordControlScreen.jsx (соответвуют экранам прототипа Record a route) (React 19 + Vite) . Кроме этих экранов можно изменять языковые файлы, относящиеся к этому экрану в src\locales.  Остальные файлы и экраны без необходимости не трогай, они будут правиться отдельной задачей потом. 
 У тебя есть работающий на чистом js прототип tmp\girlpeak-prototype.html, его экраны "Record a route" соответствует экранам RecordStartScreen и RecordControlScreen, который тебе надо сдлеать по его образцу. 
 Режим записи. Исправь контекст src\recording\RecordingContext.jsx для работы в режиме офлайн, для этого:
